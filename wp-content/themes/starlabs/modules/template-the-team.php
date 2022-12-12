@@ -10,7 +10,7 @@ get_header();
 
 <section class="bg-slate-100">
 
-    <h1> Meet The Team</h1>
+    <h1 class="text-center font-bold text-black text-3xl p-10"> Meet The Team</h1>
 
     <div class="flex flex-wrap justify-center ">
 

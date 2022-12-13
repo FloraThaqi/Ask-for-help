@@ -1,0 +1,86 @@
+{
+    "key": "group_63988ec098237",
+    "title": "Modules",
+    "fields": [
+        {
+            "key": "field_63988ecd0c1ef",
+            "label": "Modules",
+            "name": "modules",
+            "type": "flexible_content",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_63988ee57c37b": {
+                    "key": "layout_63988ee57c37b",
+                    "name": "module1",
+                    "label": "module1",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63988f98c2a58": {
+                    "key": "layout_63988f98c2a58",
+                    "name": "module2",
+                    "label": "module2",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_63988f96c2a57": {
+                    "key": "layout_63988f96c2a57",
+                    "name": "offermodule",
+                    "label": "OfferModule",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Row",
+            "min": "",
+            "max": ""
+        },
+        {
+            "key": "field_63988f5c16a99",
+            "label": "OfferModule",
+            "name": "offermodule",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1670942640
+}

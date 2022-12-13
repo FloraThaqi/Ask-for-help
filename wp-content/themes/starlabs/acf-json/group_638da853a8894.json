@@ -15,19 +15,18 @@
                 "class": "",
                 "id": ""
             },
-            "aria-label": "",
             "layouts": {
-                "layout_638da8ac5be2a": {
-                    "key": "layout_638da8ac5be2a",
-                    "name": "module1",
-                    "label": "module1",
+                "layout_6398413bab617": {
+                    "key": "layout_6398413bab617",
+                    "name": "team_layout",
+                    "label": "Team Layout",
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_63930b4b8c90d",
-                            "label": "module1",
-                            "name": "module1",
-                            "type": "group",
+                            "key": "field_63984144ab618",
+                            "label": "test1",
+                            "name": "team_layout",
+                            "type": "text",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -36,28 +35,11 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "layout": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_63930b588c90e",
-                                    "label": "test",
-                                    "name": "test",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
-                                }
-                            ]
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -65,14 +47,14 @@
                 },
                 "layout_638da8b928cfd": {
                     "key": "layout_638da8b928cfd",
-                    "name": "module2",
-                    "label": "module2",
+                    "name": "user_reactions",
+                    "label": "User Reactions",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_639309b693662",
-                            "label": "module2",
-                            "name": "module2",
+                            "label": "User Reactions",
+                            "name": "user_reactions",
                             "type": "group",
                             "instructions": "",
                             "required": 0,
@@ -85,9 +67,9 @@
                             "layout": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_639305ca7309b",
-                                    "label": "test",
-                                    "name": "test",
+                                    "key": "field_63987336e8403",
+                                    "label": "User Reactions",
+                                    "name": "user_reactions",
                                     "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
@@ -102,46 +84,7 @@
                                     "max": 0,
                                     "layout": "table",
                                     "button_label": "",
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_639307775cb2d",
-                                            "label": "news",
-                                            "name": "news",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "maxlength": ""
-                                        }
-                                    ]
-                                },
-                                {
-                                    "key": "field_639305be7309a",
-                                    "label": "Title",
-                                    "name": "title",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "sub_fields": []
                                 }
                             ]
                         }
@@ -150,9 +93,9 @@
                     "max": ""
                 }
             },
+            "button_label": "Add Row",
             "min": "",
-            "max": "",
-            "button_label": "Add Row"
+            "max": ""
         }
     ],
     "location": [
@@ -172,5 +115,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1670581086
+    "modified": 1670935537
 }

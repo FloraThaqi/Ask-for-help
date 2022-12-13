@@ -1,4 +1,4 @@
-<div class=" customize-support bg-blue-800">
+<div class="bg-blue-800">
     <h1 class=" font-semibold flex justify-center text-base my-8 text-white">Get Started</h1><br>
 
     <h1 class=" flex justify-center text-white text-[40px]">Simple, Transparent Pricing</h1>

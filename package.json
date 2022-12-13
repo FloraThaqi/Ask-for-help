@@ -1,0 +1,23 @@
+{
+  "name": "ask-for-help",
+  "version": "1.0.0",
+  "description": "commands to run in terminal in order to run the project properly:\r npm i (inside the 'Starlabs' theme directory, only once you clone the project or if updates are made inside package.json)\r npm run watch (in order to run tailwind compiler)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rinori-g/ask-for-help.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rinori-g/ask-for-help/issues"
+  },
+  "homepage": "https://github.com/rinori-g/ask-for-help#readme",
+  "devDependencies": {
+    "install": "^0.13.0",
+    "tailwindcss": "^3.2.4"
+  }
+}

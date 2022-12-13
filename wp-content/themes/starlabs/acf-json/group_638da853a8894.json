@@ -45,6 +45,32 @@
                     "min": "",
                     "max": ""
                 },
+                "layout_639895ac7b2ec": {
+                    "key": "layout_639895ac7b2ec",
+                    "name": "offermodule",
+                    "label": "OfferModule",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_639895b77b2ed",
+                            "label": "OfferModule",
+                            "name": "offermodule",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": []
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_638da8b928cfd": {
                     "key": "layout_638da8b928cfd",
                     "name": "user_reactions",
@@ -115,5 +141,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1670935537
+    "modified": 1670944206
 }

@@ -5,7 +5,7 @@
 get_header();
 ?>
 <?php 
-     $array = array("Sara", "Ardi", "Denisa","Abedin");
+    $array = array("Sara", "Ardi", "Denisa","Abedin");
 ?>
 
 <section class="bg-slate-100">

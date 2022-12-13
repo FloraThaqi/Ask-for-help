@@ -1,1 +1,0 @@
-<h1 class=" font-bold text-lg text-red-200"><?= $module['title'];?></h1>

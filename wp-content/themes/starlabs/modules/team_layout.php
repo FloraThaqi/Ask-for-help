@@ -1,10 +1,4 @@
 <?php 
-/* 
-    Template Name:The Team
-*/
-get_header();
-?>
-<?php 
     $array = array("Sara", "Ardi", "Denisa","Abedin");
 ?>
 
@@ -57,5 +51,3 @@ get_header();
         <?php endforeach ; ?>
     </div>
 </section>
-
-<?php get_footer(); ?>

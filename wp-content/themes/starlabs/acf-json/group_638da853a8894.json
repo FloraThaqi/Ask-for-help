@@ -16,6 +16,52 @@
                 "id": ""
             },
             "layouts": {
+                "layout_638da8ac5be2a": {
+                    "key": "layout_638da8ac5be2a",
+                    "name": "module1",
+                    "label": "module1",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_63930b4b8c90d",
+                            "label": "module1",
+                            "name": "module1",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_63930b588c90e",
+                                    "label": "test",
+                                    "name": "test",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_6398413bab617": {
                     "key": "layout_6398413bab617",
                     "name": "team_layout",
@@ -139,8 +185,8 @@
                                         },
                                         {
                                             "key": "field_63988ee8b93f1",
-                                            "label": "Link",
-                                            "name": "link",
+                                            "label": "Facebook URL",
+                                            "name": "facebook_url",
                                             "type": "link",
                                             "instructions": "",
                                             "required": 0,
@@ -151,60 +197,12 @@
                                                 "id": ""
                                             },
                                             "return_format": "array"
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "layout_639895ac7b2ec": {
-                    "key": "layout_639895ac7b2ec",
-                    "name": "offermodule",
-                    "label": "OfferModule",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_63984144ab618",
-                            "label": "Team Layout",
-                            "name": "team_layout",
-                            "type": "group",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "layout": "block",
-                            "sub_fields": [
-                                {
-                                    "key": "field_63988e63b93ec",
-                                    "label": "Team",
-                                    "name": "team",
-                                    "type": "repeater",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "collapsed": "",
-                                    "min": 0,
-                                    "max": 0,
-                                    "layout": "table",
-                                    "button_label": "",
-                                    "sub_fields": [
+                                        },
                                         {
-                                            "key": "field_63988e71b93ed",
-                                            "label": "Job role",
-                                            "name": "job_role",
-                                            "type": "text",
+                                            "key": "field_6399a62c60c5b",
+                                            "label": "Instagram URL",
+                                            "name": "instagram_url",
+                                            "type": "link",
                                             "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
@@ -213,78 +211,12 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "default_value": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "maxlength": ""
+                                            "return_format": "array"
                                         },
                                         {
-                                            "key": "field_63988eabb93ee",
-                                            "label": "Name",
-                                            "name": "name",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "maxlength": ""
-                                        },
-                                        {
-                                            "key": "field_63988eb8b93ef",
-                                            "label": "Description",
-                                            "name": "description",
-                                            "type": "textarea",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "placeholder": "",
-                                            "maxlength": "",
-                                            "rows": "",
-                                            "new_lines": ""
-                                        },
-                                        {
-                                            "key": "field_63988ecbb93f0",
-                                            "label": "Image",
-                                            "name": "image",
-                                            "type": "image",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "return_format": "array",
-                                            "preview_size": "medium",
-                                            "library": "all",
-                                            "min_width": "",
-                                            "min_height": "",
-                                            "min_size": "",
-                                            "max_width": "",
-                                            "max_height": "",
-                                            "max_size": "",
-                                            "mime_types": ""
-                                        },
-                                        {
-                                            "key": "field_63988ee8b93f1",
-                                            "label": "Link",
-                                            "name": "link",
+                                            "key": "field_6399a64e60c5c",
+                                            "label": "Twitter URL",
+                                            "name": "twitter_url",
                                             "type": "link",
                                             "instructions": "",
                                             "required": 0,
@@ -306,14 +238,14 @@
                 },
                 "layout_638da8b928cfd": {
                     "key": "layout_638da8b928cfd",
-                    "name": "user_reactions",
-                    "label": "User Reactions",
+                    "name": "module2",
+                    "label": "module2",
                     "display": "block",
                     "sub_fields": [
                         {
                             "key": "field_639309b693662",
-                            "label": "User Reactions",
-                            "name": "user_reactions",
+                            "label": "module2",
+                            "name": "module2",
                             "type": "group",
                             "instructions": "",
                             "required": 0,
@@ -326,9 +258,9 @@
                             "layout": "block",
                             "sub_fields": [
                                 {
-                                    "key": "field_63987336e8403",
-                                    "label": "User Reactions",
-                                    "name": "user_reactions",
+                                    "key": "field_639305ca7309b",
+                                    "label": "test",
+                                    "name": "test",
                                     "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
@@ -343,7 +275,46 @@
                                     "max": 0,
                                     "layout": "table",
                                     "button_label": "",
-                                    "sub_fields": []
+                                    "sub_fields": [
+                                        {
+                                            "key": "field_639307775cb2d",
+                                            "label": "news",
+                                            "name": "news",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "field_639305be7309a",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
                                 }
                             ]
                         }
@@ -374,5 +345,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1670946754
+    "modified": 1671021061
 }

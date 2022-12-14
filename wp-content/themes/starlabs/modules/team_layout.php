@@ -1,14 +1,7 @@
 <?php 
-/* 
-    Template Name:The Team
-*/
-get_header();
-?>
-
-<?php 
     $team = $module['team'];
     $default_pic="https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Profile-pic.jpg";
-    ?>
+?>
 
 <section class="bg-[#F2F2F2]">
 
@@ -73,7 +66,4 @@ get_header();
             <?php endforeach ; ?>
         </div>
     </div>
-
-
-
 </section>

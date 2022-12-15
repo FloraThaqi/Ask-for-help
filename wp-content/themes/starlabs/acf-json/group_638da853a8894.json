@@ -276,7 +276,7 @@
                                     "button_label": "",
                                     "sub_fields": [
                                         {
-                                            "key": "field_639af99c241ae",
+                                            "key": "field_639ba336553eb",
                                             "label": "Name",
                                             "name": "name",
                                             "type": "text",
@@ -288,14 +288,14 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "default_value": "Name",
-                                            "placeholder": "Name",
+                                            "default_value": "",
+                                            "placeholder": "",
                                             "prepend": "",
                                             "append": "",
                                             "maxlength": ""
                                         },
                                         {
-                                            "key": "field_639af9be241af",
+                                            "key": "field_639ba33c553ec",
                                             "label": "Job_role",
                                             "name": "job_role",
                                             "type": "text",
@@ -307,16 +307,16 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "default_value": "Job Role",
-                                            "placeholder": "Job Role",
+                                            "default_value": "",
+                                            "placeholder": "",
                                             "prepend": "",
                                             "append": "",
                                             "maxlength": ""
                                         },
                                         {
-                                            "key": "field_639af9d4241b0",
-                                            "label": "Profile_picture",
-                                            "name": "profile_picture",
+                                            "key": "field_639ba344553ed",
+                                            "label": "Profile_image",
+                                            "name": "profile_image",
                                             "type": "image",
                                             "instructions": "",
                                             "required": 0,
@@ -338,9 +338,9 @@
                                             "mime_types": ""
                                         },
                                         {
-                                            "key": "field_639af9e6241b1",
-                                            "label": "Comment",
-                                            "name": "comment",
+                                            "key": "field_639ba353553ee",
+                                            "label": "User_comment",
+                                            "name": "user_comment",
                                             "type": "text",
                                             "instructions": "",
                                             "required": 0,
@@ -350,13 +350,51 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "default_value": "Comment",
-                                            "placeholder": "Comment",
+                                            "default_value": "",
+                                            "placeholder": "",
                                             "prepend": "",
                                             "append": "",
                                             "maxlength": ""
                                         }
                                     ]
+                                },
+                                {
+                                    "key": "field_639ba31e553e9",
+                                    "label": "Section_title",
+                                    "name": "section_title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_639ba328553ea",
+                                    "label": "Section_button",
+                                    "name": "section_button",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
                                 }
                             ]
                         }
@@ -387,5 +425,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671117985
+    "modified": 1671144289
 }

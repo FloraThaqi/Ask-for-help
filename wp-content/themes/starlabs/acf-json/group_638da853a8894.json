@@ -239,8 +239,8 @@
                             "sub_fields": [
                                 {
                                     "key": "field_63987336e8403",
-                                    "label": "User Reactions",
-                                    "name": "user_reactions",
+                                    "label": "Users",
+                                    "name": "users",
                                     "type": "repeater",
                                     "instructions": "",
                                     "required": 0,
@@ -257,9 +257,9 @@
                                     "button_label": "",
                                     "sub_fields": [
                                         {
-                                            "key": "field_6399cd9bf9d07",
-                                            "label": "title",
-                                            "name": "title",
+                                            "key": "field_639af99c241ae",
+                                            "label": "Name",
+                                            "name": "name",
                                             "type": "text",
                                             "instructions": "",
                                             "required": 0,
@@ -269,8 +269,70 @@
                                                 "class": "",
                                                 "id": ""
                                             },
-                                            "default_value": "",
-                                            "placeholder": "",
+                                            "default_value": "Name",
+                                            "placeholder": "Name",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_639af9be241af",
+                                            "label": "Job_role",
+                                            "name": "job_role",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "Job Role",
+                                            "placeholder": "Job Role",
+                                            "prepend": "",
+                                            "append": "",
+                                            "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_639af9d4241b0",
+                                            "label": "Profile_picture",
+                                            "name": "profile_picture",
+                                            "type": "image",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "return_format": "array",
+                                            "preview_size": "medium",
+                                            "library": "all",
+                                            "min_width": "",
+                                            "min_height": "",
+                                            "min_size": "",
+                                            "max_width": "",
+                                            "max_height": "",
+                                            "max_size": "",
+                                            "mime_types": ""
+                                        },
+                                        {
+                                            "key": "field_639af9e6241b1",
+                                            "label": "Comment",
+                                            "name": "comment",
+                                            "type": "text",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "Comment",
+                                            "placeholder": "Comment",
                                             "prepend": "",
                                             "append": "",
                                             "maxlength": ""
@@ -306,5 +368,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671024832
+    "modified": 1671105391
 }

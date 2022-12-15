@@ -7,27 +7,27 @@
 
     <h1 class="text-center font-bold text-black text-3xl p-10"> Meet The Team</h1>
 
-    <div class="flex flex-wrap justify-center max-w-screen-2xl items-center row border">
+    <div class="flex flex-wrap justify-center max-w-screen-2xl items-center row">
 
         <?php foreach($team as $value):?>
 
         <div class="container w-full  bg-white border-none rounded-3xl m-10  max-w-md ">
-            <div class=" flex flex-col md:flex-row max-w-md  items-center">
+            <div class=" flex flex-col md:flex-row  items-center">
 
                 <!-- Image-->
-                <div class="p-1">
+                <div class="p-3">
 
                     <?php if($value['image']): ?>
                     <img src="<?php echo $value['image']['url']; ?>" alt=""
-                        class="w-40 h-40  md:h-auto md:w-72  rounded-full border-4 border-slate-50 object-cover">
+                        class="w-40 h-40  md:h-auto md:w-72  rounded-full border-none object-cover">
                     <?php else:?>
                     <img src="<?php  echo $default_pic ?>" alt=""
-                        class=" w-40 h-40  md:h-auto md:w-72  rounded-full border-4 border-slate-50 object-cover">
+                        class=" w-40 h-40  md:h-auto md:w-72  rounded-full border-none  object-cover">
                     <?php endif;?>
                 </div>
 
                 <!-- Name and Description -->
-                <div class=" flex flex-col justify-between w-full p-5 space-y-2 ">
+                <div class="p-3 flex flex-col justify-between w-full space-y-3 ">
                     <span class=" text-slate-300 font-semibold text-center
                         md:text-left"><?php  echo $value['job_role'];?>
                     </span>
@@ -43,7 +43,7 @@
 
                         <a rel="noopener noreferrer" href="<?php echo $value['facebook_url']['url']; ?>"
                             target=<?php echo $value['facebook_url']['target'] ?> aria-label="Dribble"
-                            class="p-1 rounded-full bg-[#4767C9] mt-3">
+                            class="p-1 rounded-full bg-[#4767C9] ">
                             <svg class="h-6 w-6 text-white" width="6" height="6" viewBox="0 0 24 24" stroke-width="1"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
@@ -54,7 +54,7 @@
 
                         <a rel="noopener noreferrer" href="<?php echo $value['twitter_url']['url']; ?>"
                             target=<?php echo $value['twitter_url']['target'] ?> aria-label="Twitter"
-                            class="p-1 rounded-full bg-[#4767C9] mt-3 ml-5">
+                            class="p-1 rounded-full bg-[#4767C9] ml-5">
                             <svg class="h-6 w-6 text-white " viewBox="0 0 24 24" fill="white" stroke="currentColor"
                                 stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                                 <path
@@ -64,7 +64,7 @@
 
                         <a rel="noopener noreferrer" href="<?php echo $value['instagram_url']['url']; ?>"
                             target=<?php echo $value['instagram_url']['target'] ?> aria-label="Email"
-                            class="p-1 rounded-full bg-[#4767C9] mt-3 ml-5">
+                            class="p-1 rounded-full bg-[#4767C9]  ml-5">
                             <svg class="h-6 w-6 text-white" width="4" height="4" viewBox="0 0 24 24" stroke-width="1"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />

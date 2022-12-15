@@ -1,11 +1,13 @@
 <?php 
     $team = $module['team'];
+    $title=$module['title'];
+
     $default_pic="https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Profile-pic.jpg";
 ?>
 
 <section class="bg-[#F2F2F2] flex flex-col items-center ">
 
-    <h1 class="text-center font-bold text-black text-3xl p-10"> Meet The Team</h1>
+    <h1 class="text-center font-bold text-black text-3xl p-10"><?php echo $title?></h1>
 
     <div class="flex flex-wrap justify-center max-w-screen-2xl items-center row">
 

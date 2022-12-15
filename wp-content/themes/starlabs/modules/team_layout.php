@@ -3,26 +3,26 @@
     $default_pic="https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Profile-pic.jpg";
 ?>
 
-<section class="bg-[#F2F2F2] ">
+<section class="bg-[#F2F2F2] flex flex-col items-center ">
 
     <h1 class="text-center font-bold text-black text-3xl p-10"> Meet The Team</h1>
 
-    <div class="flex flex-wrap justify-center row  ">
+    <div class="flex flex-wrap justify-center max-w-screen-2xl items-center row border">
 
         <?php foreach($team as $value):?>
 
-        <div class="container w-full  bg-white border-none rounded-3xl m-5 max-w-md ">
-            <div class=" flex flex-col md:flex-row md:max-w-md  ">
+        <div class="container w-full  bg-white border-none rounded-3xl m-10  max-w-md ">
+            <div class=" flex flex-col md:flex-row max-w-md  items-center">
 
                 <!-- Image-->
-                <div class="p-5">
+                <div class="p-1">
 
                     <?php if($value['image']): ?>
                     <img src="<?php echo $value['image']['url']; ?>" alt=""
-                        class=" w-96 h-96  object-center border rounded-full md:justify-self-start">
+                        class="w-40 h-40  md:h-auto md:w-72  rounded-full border-4 border-slate-50 object-cover">
                     <?php else:?>
                     <img src="<?php  echo $default_pic ?>" alt=""
-                        class=" w-96 h-96  object-center border rounded-full md:justify-self-start">
+                        class=" w-40 h-40  md:h-auto md:w-72  rounded-full border-4 border-slate-50 object-cover">
                     <?php endif;?>
                 </div>
 
@@ -39,32 +39,32 @@
 
 
                     <!-- Icons -->
-                    <div class="flex  justify-between">
+                    <div class="flex">
 
                         <a rel="noopener noreferrer" href="<?php echo $value['facebook_url']['url']; ?>"
                             target=<?php echo $value['facebook_url']['target'] ?> aria-label="Dribble"
-                            class="p-1 rounded-full bg-[#4767C9] ">
+                            class="p-1 rounded-full bg-[#4767C9] mt-3">
                             <svg class="h-6 w-6 text-white" width="6" height="6" viewBox="0 0 24 24" stroke-width="1"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
                                 <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
                             </svg>
-                        </a> &nbsp &nbsp &nbsp
+                        </a>
 
 
                         <a rel="noopener noreferrer" href="<?php echo $value['twitter_url']['url']; ?>"
                             target=<?php echo $value['twitter_url']['target'] ?> aria-label="Twitter"
-                            class="p-1 rounded-full bg-[#4767C9]">
+                            class="p-1 rounded-full bg-[#4767C9] mt-3 ml-5">
                             <svg class="h-6 w-6 text-white " viewBox="0 0 24 24" fill="white" stroke="currentColor"
                                 stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                                 <path
                                     d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
                             </svg>
-                        </a>&nbsp &nbsp &nbsp
+                        </a>
 
                         <a rel="noopener noreferrer" href="<?php echo $value['instagram_url']['url']; ?>"
                             target=<?php echo $value['instagram_url']['target'] ?> aria-label="Email"
-                            class="p-1 rounded-full bg-[#4767C9]">
+                            class="p-1 rounded-full bg-[#4767C9] mt-3 ml-5">
                             <svg class="h-6 w-6 text-white" width="4" height="4" viewBox="0 0 24 24" stroke-width="1"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />

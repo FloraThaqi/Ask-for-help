@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 
-  content: {
+  content: 
+  {
     relative: true,
     files: [
       './modules/*.php', 
@@ -10,9 +11,11 @@ module.exports = {
       './header.php',
       './sidebar.php',
     ],
+    
   },
   theme: {
     extend: {},
   },
   plugins: [],
+
 }

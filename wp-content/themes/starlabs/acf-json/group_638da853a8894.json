@@ -438,6 +438,90 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_639c84be0b9f9": {
+                    "key": "layout_639c84be0b9f9",
+                    "name": "homepage_banner_layout",
+                    "label": "Homepage Banner Layout",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_639c84c80b9fa",
+                            "label": "Homepage Banner Layout",
+                            "name": "homepage_banner_layout",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_639c84d70b9fb",
+                                    "label": "Left Text",
+                                    "name": "left_text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_639c84e80b9fc",
+                                    "label": "Right Text",
+                                    "name": "right_text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_639c84f10b9fd",
+                                    "label": "Paragraph",
+                                    "name": "paragraph",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -462,5 +546,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671181720
+    "modified": 1671202052
 }

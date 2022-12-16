@@ -310,7 +310,7 @@
                                     "key": "field_639c87c023f54",
                                     "label": "Button",
                                     "name": "button",
-                                    "type": "text",
+                                    "type": "link",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -319,11 +319,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "return_format": "array"
                                 },
                                 {
                                     "key": "field_639c87c523f55",
@@ -699,5 +695,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671202826
+    "modified": 1671204082
 }

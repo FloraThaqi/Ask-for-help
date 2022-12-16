@@ -1,5 +1,4 @@
 <?php
-$array = array("Ardi Alickaj", "Rinor Gerxhaliu");
 $users = $module['users'];
 $section_title = $module['section_title'];
 $section_button = $module['section_button'];
@@ -30,7 +29,7 @@ $default_pic = "https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Pr
                             <?php endif; ?>
                             <div class="pl-6 max-lg:pl-0">
                                 <p class="font-bold"><?php echo $value['name']; ?></p>
-                                <p class="text-gray-400">Full-Stack Intern</p>
+                                <p class="text-gray-400"><?php echo $value['job_role']; ?></p>
                             </div>
                         </div>
                     </div>
@@ -39,11 +38,9 @@ $default_pic = "https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Pr
         </div>
         <div class="flex justify-center my-16">
             <div class="flex justify-self-center justify-center w-72 h-16 bg-[#4767c9] rounded-full items-center">
-                <?php if ($section_button) : ?>
-                    <a class=" text-white text-2xl font-bold"><?php echo $section_button; ?></a>
-                <?php else : ?>
-                    <a class=" text-white text-2xl font-bold">Get Started</a>
-                <?php endif; ?>
+                <?php foreach ($section_button as $btvalue) : ?>
+                    <a href="<?php echo $btvalue['button_link']; ?>" class="text-white text-2xl font-bold"><?php echo $btvalue['button_name']; ?></a>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

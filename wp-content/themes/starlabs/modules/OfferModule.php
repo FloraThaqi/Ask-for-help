@@ -15,10 +15,10 @@
         <h5 class=" leading-3 space-y-1.5 font-semibold flex justify-center text-lg	 text-white"><?php echo $title ?></h5><br>
         <h2 class=" flex justify-center text-white text-[30px]"><?php echo $sub_title ?></h2>
         <h1 class=" font-bold  flex justify-center text-white text-[70px]"><?php echo $offer ?></h1>
-        <p class="tracking-tight text-white flex justify-center px-6 text-center"><?php echo $description ?></p>
+            <p class="tracking-tight text-white flex justify-center px-6 text-center"><?php echo $description ?></p>
         <div class=" my-10 text-white flex justify-center">
         <?php if($button): ?>
-        <a href="<?php echo $button ?>" target="_blank" class="self-center font-bold bg-white rounded-full hover:bg-sky-700"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button ?></h3></a>
+        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white rounded-full hover:bg-sky-700"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button['title']?></h3></a>
         <?php endif ?>        </div>
         <div class="text-[14px] text-white flex justify-center">
     <?php 

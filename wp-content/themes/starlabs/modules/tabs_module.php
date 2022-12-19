@@ -13,13 +13,8 @@ $tab_button = $module['tab_button'];
         <div class="p-6 py-4">
             <div class="tab-content">
                 <?php foreach ($tabs as $value) : ?>
-                    <div id="<?php echo $value['tab_name'] ?>" class="hidden">
+                    <div id="<?php echo $value['tab_name'] ?>" class="hidden pb-6">
                         <p class="text-gray-600"><?php echo $value['tab_description']; ?></p>
-                        <div class="py-4 text-gray-600">
-                            <p><a class="text-[#4767c9] font-black">✓ </a>ullamcorper eget nulla facilisi etiam</p>
-                            <p><a class="text-[#4767c9] font-black">✓ </a>nisl suscipit adipiscing bibendum est ultricies</p>
-                            <p><a class="text-[#4767c9] font-black">✓ </a>ullamcorper eget nulla facilisi etiam</p>
-                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>

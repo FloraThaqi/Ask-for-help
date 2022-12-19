@@ -735,7 +735,7 @@
                                             "key": "field_639e3e98ea851",
                                             "label": "Tab description",
                                             "name": "tab_description",
-                                            "type": "text",
+                                            "type": "wysiwyg",
                                             "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
@@ -745,69 +745,10 @@
                                                 "id": ""
                                             },
                                             "default_value": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "maxlength": ""
-                                        },
-                                        {
-                                            "key": "field_639e3ea4ea852",
-                                            "label": "Tab list",
-                                            "name": "tab_list",
-                                            "type": "repeater",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "collapsed": "",
-                                            "min": 0,
-                                            "max": 0,
-                                            "layout": "table",
-                                            "button_label": "",
-                                            "sub_fields": [
-                                                {
-                                                    "key": "field_639e3ed1ea853",
-                                                    "label": "Tab List Item",
-                                                    "name": "tab_list_item",
-                                                    "type": "text",
-                                                    "instructions": "",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "default_value": "",
-                                                    "placeholder": "",
-                                                    "prepend": "",
-                                                    "append": "",
-                                                    "maxlength": ""
-                                                },
-                                                {
-                                                    "key": "field_639e43e141f77",
-                                                    "label": "Tab List Decoration",
-                                                    "name": "tab_list_decoration",
-                                                    "type": "text",
-                                                    "instructions": "",
-                                                    "required": 0,
-                                                    "conditional_logic": 0,
-                                                    "wrapper": {
-                                                        "width": "",
-                                                        "class": "",
-                                                        "id": ""
-                                                    },
-                                                    "default_value": "",
-                                                    "placeholder": "",
-                                                    "prepend": "",
-                                                    "append": "",
-                                                    "maxlength": ""
-                                                }
-                                            ]
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1,
+                                            "delay": 0
                                         }
                                     ]
                                 },
@@ -896,5 +837,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671399792
+    "modified": 1671441966
 }

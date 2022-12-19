@@ -4,7 +4,7 @@ $tab_button = $module['tab_button'];
 ?>
 
 <section class="my-8 bg-white" id="tabs-id">
-    <div>
+    <div class="py-8">
         <div class="max-w-[1008px] mx-auto min-h-[208px]">
             <ul class="flex max-lg:w-full flex-wrap">
                 <?php foreach ($tabs as $value) : ?>

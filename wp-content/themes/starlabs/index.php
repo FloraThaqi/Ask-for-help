@@ -8,4 +8,7 @@
             include (get_template_directory().'/modules/'.$value['acf_fc_layout'].'.php');
         }
    }
+include (get_template_directory().'/modules/CardsModule.php');
 get_footer();
+
+

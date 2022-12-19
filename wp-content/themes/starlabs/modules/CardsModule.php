@@ -9,27 +9,17 @@ $cards_title = $module['cards_title'];
       </h1>
 
       <div
-        class="container mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 mb-14"
+        class="container w-8/12 mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-10 mt-10 mb-14"
       > <?php foreach ($cards as $card) : ?>
-        <div class="bg-white rounded-md p-5 shadow-lg">
+        <div class="bg-white rounded-2xl p-5 shadow-lg">
           <div class="space-y-2">
             <img src="<?php echo $card['card_image']['url']; ?>" class="w-16 h-16" />
-            <h2 class="font-semibold"><?php echo $card['card_name']; ?></h2>
+            <h2 class="font-bold"><?php echo $card['card_name']; ?></h2>
           </div>
-          <div class="pt-5 text-gray-400">
+          <div class="pt-3 text-gray-400">
             <p><?php echo $card['card_description']; ?></p>
           </div>
         </div>
         <?php endforeach; ?>
-        <div class="bg-white rounded-md p-5 shadow-lg">
-          <div class="space-y-2">
-            <img src="<?php echo esc_url( get_template_directory_uri() . '/public/images/icon2.png' ); ?>" class="w-16 h-16" />
-            <h2 class="font-semibold">Idea Generation</h2>
-          </div>
-          <div class="pt-5 text-gray-400">
-            <p>Become a category leader using designops and UX/UI design</p>
-          </div>
-        </div>
-
       </div>
     </div>

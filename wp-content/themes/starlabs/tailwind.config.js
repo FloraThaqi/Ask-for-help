@@ -14,7 +14,11 @@ module.exports = {
     
   },
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: '320px',
+      }
+    },
   },
   plugins: [],
 

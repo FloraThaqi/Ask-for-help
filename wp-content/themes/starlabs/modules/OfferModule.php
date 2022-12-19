@@ -1,55 +1,16 @@
 <div class="bg-indigo-500" >
-<?php
-    $title = $module['title'];
-    $sub_title = $module['sub_title'];
-    $offer = $module['offer'];
-    $description = $module['description'];
-    $button = $module['button'];
-    $copyright = $module['copyright'];
-    $terms = $module['terms'];
-    $privacy_policy = $module['privacy_policy'];
-    
-?>
-<div class="bg-indigo-500" >
     <div class="py-14">
-       <?php if($title): ?>
-        <h5 class=" leading-3 space-y-1.5 font-semibold flex justify-center text-lg	 text-white"><?php echo $title ?></h5><br>
-        <?php endif; ?>
+        <h5 class=" leading-3 space-y-1.5 font-semibold flex justify-center text-lg	 text-white">Get Started</h5><br>
 
-        <?php if($sub_title): ?>
-        <h2 class=" flex justify-center text-white text-[30px]"><?php echo $sub_title ?></h2>
-        <?php endif; ?>
+        <h2 class=" flex justify-center text-white text-[40px]">Simple, Transparent Pricing</h2>
 
-        <?php if($offer): ?>
-        <h1 class=" font-bold  flex justify-center text-white text-[70px]"><?php echo $offer ?></h1>
-        <?php endif; ?>
+        <h1 class=" font-bold  flex justify-center text-white text-[70px]">It's Free!</h1>
 
-        <?php if($description): ?>
-        <p class="tracking-tight text-white flex justify-center px-6 text-center"><?php echo $description ?></p>
-        <?php endif; ?>
-            
+        <p class="tracking-tight text-white flex justify-center ">We're still in beta and we will be for awhile.As we add more </br> functionality, 
+            we'll look into other plans with more controls.</p>
         <div class=" my-10 text-white flex justify-center">
-        <?php if($button): ?>
-        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white rounded-full hover:bg-sky-700"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button['title']?></h3></a>
-        <?php endif ?></div>
-        <div class="text-[14px] text-white flex justify-center">
-    
-    <?php 
-        if( $copyright ): ?>
-        <p class="text-white flex justify-center"><?php echo $copyright ?>  
-    <?php endif;?>
-
-    <?php 
-        if( $terms ): ?>    
-        <a class="underline underline-offset-1"> <?php echo $terms ?> </a>
-    <?php endif; ?>
-
-    
-    <?php 
-        if( $privacy_policy ): ?> 
-     <a class="ml-1 underline underline-offset-1">  <?php echo $privacy_policy ?></a></p>
-     <?php endif; ?>
-    </div>
-         </div>
+            <button class="self-center font-bold bg-white rounded-full hover:bg-sky-700"><h3 class="px-20 py-4 text-lg font-bold text-slate-500">Get Started</h3></button>
+        </div>
+        <p class=" text-white flex justify-center">Copyright 2021 nicepage.com • <a class="underline underline-offset-1" href=""> Terms of Service • </a> <a class="underline underline-offset-1" href=""> Privacy Policy</a></p>
     </div>
 </div>

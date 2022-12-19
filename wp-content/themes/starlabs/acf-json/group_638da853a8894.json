@@ -751,62 +751,6 @@
                                             "delay": 0
                                         }
                                     ]
-                                },
-                                {
-                                    "key": "field_639e3e67ea84f",
-                                    "label": "Tab button",
-                                    "name": "tab_button",
-                                    "type": "repeater",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "collapsed": "",
-                                    "min": 0,
-                                    "max": 0,
-                                    "layout": "table",
-                                    "button_label": "",
-                                    "sub_fields": [
-                                        {
-                                            "key": "field_639e40d060731",
-                                            "label": "Button name",
-                                            "name": "button_name",
-                                            "type": "text",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "placeholder": "",
-                                            "prepend": "",
-                                            "append": "",
-                                            "maxlength": ""
-                                        },
-                                        {
-                                            "key": "field_639e40d860732",
-                                            "label": "Button link",
-                                            "name": "button_link",
-                                            "type": "url",
-                                            "instructions": "",
-                                            "required": 0,
-                                            "conditional_logic": 0,
-                                            "wrapper": {
-                                                "width": "",
-                                                "class": "",
-                                                "id": ""
-                                            },
-                                            "default_value": "",
-                                            "placeholder": ""
-                                        }
-                                    ]
                                 }
                             ]
                         }
@@ -837,5 +781,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671441966
+    "modified": 1671463163
 }

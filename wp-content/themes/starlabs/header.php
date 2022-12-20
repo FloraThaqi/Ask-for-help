@@ -34,7 +34,7 @@
                 <?php
         						wp_nav_menu(array(
 									'theme_location' => 'primary',
-                                    'menu_class'=>' flex flex-col mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent',
+                                    'menu_class'=>'flex flex-col mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent',
                                     'container' => false,
                                     'walker'=>new Walker_Nav_Primary()
 									)

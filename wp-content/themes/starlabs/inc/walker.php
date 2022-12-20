@@ -196,6 +196,9 @@ class Walker_Nav_Primary extends Walker {
 			$atts['class']='block p-1  text-[#F1F3F7] text-center hover:bg-gray-600 ';
 		}
 		
+
+
+        
         /**
 		 * Filters the HTML attributes applied to a menu item's anchor element.
 		 *
@@ -248,7 +251,7 @@ class Walker_Nav_Primary extends Walker {
 		 //add children icon style
 		if( $this->has_children){
 				
-			$atts.= '<span class="dashicons dashicons-arrow-down-alt2 text-white  p-1 md:p-0.5"></span>';
+			$atts.= '<span class="dashicons dashicons-arrow-down-alt2 text-white w-1 h-1 p-1 md:p-0.5"></span>';
 			}
 		$atts .= '</a>';
 

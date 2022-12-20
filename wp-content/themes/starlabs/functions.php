@@ -1,5 +1,5 @@
-<?php 
-if( function_exists('acf_add_options_page') ) {
+<?php
+if (function_exists('acf_add_options_page')) {
 
     acf_add_options_page(array(
         'page_title'     => 'Theme Settings',
@@ -16,10 +16,10 @@ if( function_exists('acf_add_options_page') ) {
         'capability'    => 'edit_posts',
         'redirect'        => false
     ));
-
 }
 function style_enqueue() {
 	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/public/css/tailwind.css');
+    wp_enqueue_script('script', get_template_directory_uri() . '/scripts/script.js');
     wp_enqueue_script('script',get_template_directory_uri() . '/js/navbar.js',array( 'jquery' ), 1.1, true);
     wp_enqueue_style('dashicons');
 }

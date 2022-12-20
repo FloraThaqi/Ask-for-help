@@ -1,5 +1,4 @@
 <?php get_header();?>
-<p class="w-12"></p>
 <?php 
    $field = get_field('modules');
    if (is_array($field)) {

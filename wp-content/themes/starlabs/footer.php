@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 /**
  * The template for displaying the footer
  *
@@ -116,9 +116,9 @@
             </a>
             <p class="mb-2 items-center py-2">©Copyright. All rights reserved.</p>
         </div>
-        <div class="container mx-auto px-4 py-8 flex items-center justify-center">
+        <div class="container mx-auto px-4 py-8 flex items-center justify-center"> -->
 
-            <?php wp_footer(); ?>
-            </body>
+<?php wp_footer(); ?>
+</body>
 
-            </html>
+</html>

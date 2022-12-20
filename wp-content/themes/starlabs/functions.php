@@ -19,7 +19,7 @@ if (function_exists('acf_add_options_page')) {
 }
 function style_enqueue() {
 	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/public/css/tailwind.css');
-    wp_enqueue_script('script',get_template_directory_uri() . '/js/navbar.js',array( 'jquery' ), 1.1, true);
+    wp_enqueue_script('script',get_template_directory_uri() . '/js/script.js',array( 'jquery' ), 1.1, true);
     wp_enqueue_style('dashicons');
 }
 add_action( 'wp_enqueue_scripts', 'style_enqueue' );

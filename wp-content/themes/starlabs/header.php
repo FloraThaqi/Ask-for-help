@@ -12,7 +12,7 @@
 <body class="bg-gray-100">
 
 
-    <nav class="p-3 border-gray-300 bg-[#232428]">
+    <nav class="p-3 border-gray-300 bg-[#4767C9] ">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
             <a href="#" class="flex items-center">
                 <span class="self-center text-lg text-[#F1F3F7] font-semibold whitespace-nowrap">ASK FOR HELP</span>
@@ -46,12 +46,3 @@
         </div>
 
     </nav>
-    <script type="text/javascript">
-    // Dropdown Menu
-    const dropdownBtn = document.querySelector(".dropdown-menu");
-    const div = document.querySelector(".doubleDropdown");
-
-    dropdownBtn.addEventListener("click", () => {
-        div.classList.toggle("hidden");
-    });
-    </script>

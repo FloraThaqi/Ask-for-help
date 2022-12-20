@@ -46,7 +46,7 @@ class Walker_Nav_Primary extends Walker {
 			$n = "\n";
 		}
 		$indent = str_repeat( $t, $depth );
-        $output .= "\n$indent<div class=\"doubleDropdown hidden md:absolute bg-[#232428] text-center mx-auto rounded-lg md:mt-2 z-10 w-44 divide-y md:py-2  \">\n";
+        $output .= "\n$indent<div class=\"doubleDropdown hidden md:absolute bg-white shadow-lg mx-auto  md:mt-2 z-10 w-40 divide-y md:py-2  \">\n";
 		// Default class.
 		$classes = array( 'sub-menu' );
 
@@ -181,19 +181,19 @@ class Walker_Nav_Primary extends Walker {
 		$atts['aria-current'] = $menu_item->current ? 'page' : '';
         
         // add style for link
-        $atts['class']='block p-1 text-[#F1F3F7] text-center hover:bg-gray-600 md:hover:bg-transparent ';
+        $atts['class']='block p-1 text-[#F1F3F7] text-center  ';
 		
         //add link style
         if($this->has_children){
           
             $atts['href']='#';
             $atts['role']='button';
-            $atts['class']='dropdown-menu block p-1  text-[#F1F3F7] text-center hover:bg-gray-600 md:hover:bg-transparent  ';
+            $atts['class']='dropdown-menu block p-1  text-[#F1F3F7] text-center  ';
        
 		}
 
 		if($depth > 0){
-			$atts['class']='block p-1  text-[#F1F3F7] text-center hover:bg-gray-600 ';
+			$atts['class']='block p-1  text-black  hover:bg-gray-200 px-3 ';
 		}
 		
 
@@ -251,7 +251,7 @@ class Walker_Nav_Primary extends Walker {
 		 //add children icon style
 		if( $this->has_children){
 				
-			$atts.= '<span class="dashicons dashicons-arrow-down-alt2 text-white w-1 h-1 p-1 md:p-0.5"></span>';
+			$atts.= '<span class="dashicons dashicons-arrow-down-alt2 text-white w-1 h-1 p-1 md:p-0.5 px-1 ml-1 "></span>';
 			}
 		$atts .= '</a>';
 

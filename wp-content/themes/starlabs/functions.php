@@ -20,7 +20,20 @@ if( function_exists('acf_add_options_page') ) {
 }
 function style_enqueue() {
 	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/public/css/tailwind.css');
+    wp_enqueue_script('script',get_template_directory_uri() . '/js/navbar.js',array( 'jquery' ), 1.1, true);
 }
 add_action( 'wp_enqueue_scripts', 'style_enqueue' );
 
+
+
+//Add navbar
+
+function add_navbar(){
+    add_theme_support('menus');
+    register_nav_menu('primary','Primary Header Navigation');
+}
+add_action('init','add_navbar');
+
+    // Include Walker file
+    require get_template_directory() . '/inc/walker.php';
 ?>

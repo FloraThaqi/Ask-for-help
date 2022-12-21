@@ -68,3 +68,39 @@ function questions_post_type (){
 	register_post_type('questions',$args);
 }
 add_action('init','questions_post_type');
+
+function questions_custom_taxonomies(){
+	//add new taxonomy hirarchical
+	$labels = array(
+		'name' => 'Questions',
+		'singular_name' => 'Questions',
+		'search_items' => 'Search Questions',
+		'all_items' => 'All Questions',
+		'parent_item' => 'Parent Questions',
+		'parent_item_colon' => 'Parent Questions: ',
+		'edit_item' => 'Edit Questions',
+		'update_item' => 'Update Questions',
+		'add_new_item' => 'Add New Questions',
+		'new_item_name' => 'New Questions Name',
+		'menu_name' => 'Question Type',
+	);
+	$args = array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'rewrite' => array('slug' => 'questions')
+	);
+	register_taxonomy('field',array('questions'),$args);
+
+	// add new taxonomy NOT hirarchical
+
+	register_taxonomy('software', 'questions',array(
+		'label' => 'Other Questions',
+		'rewrite' => array('slug' => 'software'),
+		'hierarchical' => false,
+
+	));
+}
+add_action('init','questions_custom_taxonomies');

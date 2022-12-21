@@ -46,7 +46,7 @@ class Walker_Nav_Primary extends Walker {
 			$n = "\n";
 		}
 		$indent = str_repeat( $t, $depth );
-        $output .= "\n$indent<div class=\"doubleDropdown hidden md:absolute bg-white shadow-lg mx-auto  md:mt-2 z-10 w-40 divide-y md:py-2  \">\n";
+        $output .= "\n$indent<div class=\"doubleDropdown hidden md:absolute bg-white shadow-lg mx-auto  md:mt-2 z-10 w-full divide-y md:py-2  \">\n";
 		// Default class.
 		$classes = array( 'sub-menu' );
 
@@ -181,14 +181,14 @@ class Walker_Nav_Primary extends Walker {
 		$atts['aria-current'] = $menu_item->current ? 'page' : '';
         
         // add style for link
-        $atts['class']='block p-1 text-[#F1F3F7] text-center  ';
+        $atts['class']='block p-1 text-[#F1F3F7] text-right px-3 ';
 		
         //add link style
         if($this->has_children){
           
             $atts['href']='#';
             $atts['role']='button';
-            $atts['class']='dropdown-menu block p-1  text-[#F1F3F7] text-center  ';
+            $atts['class']='dropdown-menu block p-1 px-3 text-[#F1F3F7] text-right  ';
        
 		}
 

@@ -10,21 +10,23 @@
 </head>
 
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 ">
 
 
-    <nav class=" border-gray-300 bg-black ">
-        <div class="container flex flex-wrap items-center justify-between mx-auto">
-
-            <a href="<?php echo home_url(); ?>" class="w-40 flex items-center">
+    <nav class="bg-black ">
+        <div class=" container flex flex-wrap items-center justify-between md:mx-auto max-w-screen-lg px-2 ">
+            <!-- Logo  -->
+            <a href="<?php echo home_url(); ?>" class="w-40 flex items-center ">
                 <?php 
                 $header_logo = get_field('header_logo','option');
 
-            if( !empty( $header_logo ) ): ?>
+                if( !empty( $header_logo ) ): ?>
                 <img class="object-contain " src="<?php echo esc_url($header_logo['url']); ?>"
                     alt="<?php echo esc_attr($header_logo['alt']); ?>" />
                 <?php endif; ?>
             </a>
+
+            <!-- Burger Menu -->
             <button type="button"
                 class="mobile-menu-button inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200  "
                 aria-expanded="false">
@@ -36,18 +38,19 @@
                         clip-rule="evenodd"></path>
                 </svg>
             </button>
+
+            <!-- Navbar  -->
             <div class="hidden mobile-menu w-full md:block md:w-auto">
 
-
                 <?php
-        						wp_nav_menu(array(
-									'theme_location' => 'primary',
-                                    'menu_class'=>'mt-2 flex flex-col  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent',
-                                    'container' => false,
-                                    'walker'=>new Walker_Nav_Primary()
+            			wp_nav_menu(array(
+								'theme_location' => 'primary',
+                                'menu_class'=>'mt-2 flex flex-col  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent',
+                                'container' => false,
+                                'walker'=>new Walker_Nav_Primary()
 									)
 								);
-							?>
+				?>
 
 
             </div>

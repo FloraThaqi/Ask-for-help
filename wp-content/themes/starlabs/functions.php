@@ -61,10 +61,70 @@ function questions_post_type (){
 			'thumbnail',
 			'revisions',
 		),
-		'taxonomies' => array('category', 'post_tag'),
+		//'taxonomies' => array('category', 'post_tag'),
 		'menu_position' => 5,
 		'exclude_from_search' => false
 	);
 	register_post_type('questions',$args);
 }
 add_action('init','questions_post_type');
+
+
+
+/*
+	==========================================
+	 Sidebar function
+	==========================================
+*/
+function awesome_widget_setup() {
+	
+	register_sidebar(
+		array(	
+			'name'	=> 'Sidebar',
+			'id'	=> 'sidebar-1',
+			'class'	=> 'custom',
+			'description' => 'Standard Sidebar',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+	
+}
+add_action('widgets_init','awesome_widget_setup');
+function questions_custom_taxonomies(){
+	//add new taxonomy hirarchical
+	$labels = array(
+		'name' => 'Questions Category',
+		'singular_name' => 'Questions Category',
+		'search_items' => 'Search Questions Category',
+		'all_items' => 'All Questions ',
+		'parent_item' => 'Parent Questions',
+		'parent_item_colon' => 'Parent Questions: ',
+		'edit_item' => 'Edit Questions Category',
+		'update_item' => 'Update Questions Category',
+		'add_new_item' => 'Add New Question Category',
+		'new_item_name' => 'New Questions Name',
+		'menu_name' => 'Question Category',
+	);
+	$args = array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'query_var' => true,
+		'rewrite' => array('slug' => 'questions')
+	);
+	register_taxonomy('field',array('questions'),$args);
+
+	// add new taxonomy NOT hirarchical
+
+	register_taxonomy('software', 'questions',array(
+		'label' => 'Other Questions',
+		'rewrite' => array('slug' => 'software'),
+		'hierarchical' => false,
+
+	));
+}
+add_action('init','questions_custom_taxonomies');

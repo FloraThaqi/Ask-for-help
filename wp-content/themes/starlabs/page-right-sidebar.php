@@ -6,7 +6,7 @@
 	
 get_header(); ?>
 
-<div class="w-full min-h-screen">
+<div class="w-full">
   <div class="p-4 flex flex-col md:flex-row">
     <div class="w-full">
       <?php if(have_posts()):

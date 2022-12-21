@@ -18,10 +18,11 @@
 
             <a href="<?php echo home_url(); ?>" class="flex items-center">
                 <?php 
-                $image = get_field('logo_image','option');
+                $header_logo = get_field('header_logo','option');
 
-            if( !empty( $image ) ): ?>
-                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+            if( !empty( $header_logo ) ): ?>
+                <img src="<?php echo esc_url($header_logo['url']); ?>"
+                    alt="<?php echo esc_attr($header_logo['alt']); ?>" />
                 <?php endif; ?>
             </a>
             <button type="button"
@@ -41,7 +42,7 @@
                 <?php
         						wp_nav_menu(array(
 									'theme_location' => 'primary',
-                                    'menu_class'=>'flex flex-col mt-4 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent',
+                                    'menu_class'=>'mt-2 flex flex-col  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent',
                                     'container' => false,
                                     'walker'=>new Walker_Nav_Primary()
 									)

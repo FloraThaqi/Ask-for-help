@@ -1,11 +1,11 @@
 {
     "key": "group_63a2d544184ea",
-    "title": "Logo",
+    "title": "Theme settings",
     "fields": [
         {
             "key": "field_63a2d54968f99",
-            "label": "Logo Image",
-            "name": "logo_image",
+            "label": "Header Logo",
+            "name": "header_logo",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -44,5 +44,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671624934
+    "modified": 1671627368
 }

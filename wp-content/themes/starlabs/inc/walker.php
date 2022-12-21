@@ -46,7 +46,7 @@ class Walker_Nav_Primary extends Walker {
 			$n = "\n";
 		}
 		$indent = str_repeat( $t, $depth );
-        $output .= "\n$indent<div class=\"doubleDropdown hidden md:absolute bg-white shadow-lg mx-auto  md:mt-2 z-10 w-full divide-y md:py-2  \">\n";
+        $output .= "\n$indent<div class=\"doubleDropdown hidden md:absolute bg-white shadow-lg mx-auto  md:mt-2 z-10 w-full md:w-auto md:min-w-[150px] divide-y md:py-2  \">\n";
 		// Default class.
 		$classes = array( 'sub-menu' );
 

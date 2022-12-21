@@ -17,17 +17,30 @@ if (function_exists('acf_add_options_page')) {
         'redirect'        => false
     ));
 }
-function style_enqueue()
-{
-    wp_enqueue_style('style-name', get_template_directory_uri() . '/public/css/tailwind.css');
-    wp_enqueue_script('script', get_template_directory_uri() . '/scripts/script.js');
+function style_enqueue() {
+	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/public/css/tailwind.css');
+    wp_enqueue_script('script',get_template_directory_uri() . '/js/script.js',array( 'jquery' ), 1.1, true);
+    wp_enqueue_style('dashicons');
 }
-add_action('wp_enqueue_scripts', 'style_enqueue');
+add_action( 'wp_enqueue_scripts', 'style_enqueue' );
+
+
+
+//Add navbar
+
+function add_navbar(){
+    add_theme_support('menus');
+    register_nav_menu('primary','Primary Header Navigation');
+}
+add_action('init','add_navbar');
+
+    // Include Walker file
+    require get_template_directory() . '/inc/walker.php';
 
 /*
-	==========================================
-	 Questions Post Type
-	==========================================
+==========================================
+Questions Post Type
+==========================================
 */
 function questions_post_type (){
 	
@@ -69,6 +82,30 @@ function questions_post_type (){
 }
 add_action('init','questions_post_type');
 
+
+
+/*
+	==========================================
+	 Sidebar function
+	==========================================
+*/
+function awesome_widget_setup() {
+	
+	register_sidebar(
+		array(	
+			'name'	=> 'Sidebar',
+			'id'	=> 'sidebar-1',
+			'class'	=> 'custom',
+			'description' => 'Standard Sidebar',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h1 class="widget-title">',
+			'after_title'   => '</h1>',
+		)
+	);
+	
+}
+add_action('widgets_init','awesome_widget_setup');
 function questions_custom_taxonomies(){
 	//add new taxonomy hirarchical
 	$labels = array(
@@ -94,13 +131,13 @@ function questions_custom_taxonomies(){
 	);
 	register_taxonomy('field',array('questions'),$args);
 
-	// add new taxonomy NOT hirarchical
+// add new taxonomy NOT hirarchical
 
-	register_taxonomy('software', 'questions',array(
-		'label' => 'Other Questions',
-		'rewrite' => array('slug' => 'software'),
-		'hierarchical' => false,
+register_taxonomy('software', 'questions',array(
+'label' => 'Other Questions',
+'rewrite' => array('slug' => 'software'),
+'hierarchical' => false,
 
-	));
+));
 }
 add_action('init','questions_custom_taxonomies');

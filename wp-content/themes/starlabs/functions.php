@@ -72,17 +72,17 @@ add_action('init','questions_post_type');
 function questions_custom_taxonomies(){
 	//add new taxonomy hirarchical
 	$labels = array(
-		'name' => 'Questions',
-		'singular_name' => 'Questions',
-		'search_items' => 'Search Questions',
-		'all_items' => 'All Questions',
+		'name' => 'Questions Category',
+		'singular_name' => 'Questions Category',
+		'search_items' => 'Search Questions Category',
+		'all_items' => 'All Questions ',
 		'parent_item' => 'Parent Questions',
 		'parent_item_colon' => 'Parent Questions: ',
-		'edit_item' => 'Edit Questions',
-		'update_item' => 'Update Questions',
-		'add_new_item' => 'Add New Questions',
+		'edit_item' => 'Edit Questions Category',
+		'update_item' => 'Update Questions Category',
+		'add_new_item' => 'Add New Question Category',
 		'new_item_name' => 'New Questions Name',
-		'menu_name' => 'Question Type',
+		'menu_name' => 'Question Category',
 	);
 	$args = array(
 		'hierarchical' => true,

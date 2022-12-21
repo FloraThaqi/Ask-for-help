@@ -9,13 +9,20 @@
     <?php wp_head(); ?>
 </head>
 
+
 <body class="bg-gray-100">
 
 
-    <nav class="p-3 border-gray-300 bg-[#4767C9] ">
+    <nav class=" border-gray-300 bg-black ">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
-            <a href="#" class="flex items-center">
-                <span class="self-center text-lg text-[#F1F3F7] font-semibold whitespace-nowrap">ASK FOR HELP</span>
+
+            <a href="<?php echo home_url(); ?>" class="flex items-center">
+                <?php 
+                $image = get_field('logo_image','option');
+
+            if( !empty( $image ) ): ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <?php endif; ?>
             </a>
             <button type="button"
                 class="mobile-menu-button inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200  "

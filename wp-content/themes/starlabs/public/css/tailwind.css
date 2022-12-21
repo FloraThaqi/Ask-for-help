@@ -755,6 +755,22 @@ video {
   height: 50px;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
+.h-24 {
+  height: 6rem;
+}
+
+.h-32 {
+  height: 8rem;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
 .max-h-full {
   max-height: 100%;
 }
@@ -785,6 +801,10 @@ video {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .w-6 {
@@ -841,6 +861,18 @@ video {
 
 .w-72 {
   width: 18rem;
+}
+
+.w-14 {
+  width: 3.5rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-32 {
+  width: 8rem;
 }
 
 .min-w-\[128px\] {
@@ -977,10 +1009,6 @@ video {
   overflow: visible;
 }
 
-.whitespace-nowrap {
-  white-space: nowrap;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1042,11 +1070,6 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#4767C9\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(71 103 201 / var(--tw-bg-opacity));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1085,6 +1108,11 @@ video {
 .bg-\[\#F2F2F2\] {
   --tw-bg-opacity: 1;
   background-color: rgb(242 242 242 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#4767C9\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(71 103 201 / var(--tw-bg-opacity));
 }
 
 .bg-split-white-blue {
@@ -1293,11 +1321,6 @@ video {
   line-height: 1.5rem;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -1306,6 +1329,11 @@ video {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 
 .text-2xl {
@@ -1371,11 +1399,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-\[\#F1F3F7\] {
-  --tw-text-opacity: 1;
-  color: rgb(241 243 247 / var(--tw-text-opacity));
-}
-
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity));
@@ -1394,6 +1417,11 @@ video {
 .text-\[\#ffffff\] {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-\[\#F1F3F7\] {
+  --tw-text-opacity: 1;
+  color: rgb(241 243 247 / var(--tw-text-opacity));
 }
 
 .text-slate-500 {

@@ -1,3 +1,23 @@
+
+    //Burger Menu 
+    const btn = document.querySelector("button.mobile-menu-button");
+    const menu = document.querySelector(".mobile-menu");
+
+    btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+
+
+    // Dropdown Menu
+    const dropdownBtn = document.querySelector(".dropdown-menu");
+    const div = document.querySelector(".doubleDropdown");
+
+    dropdownBtn.addEventListener("click", () => {
+        div.classList.toggle("hidden");
+    });
+
+
+
 window.addEventListener("load", showActiveName);
 window.addEventListener("load", showActiveDesc);
 
@@ -40,3 +60,5 @@ function changeActiveTab(event, tabID) {
   document.getElementById(tabID).classList.remove("hidden");
   document.getElementById(tabID).classList.add("block");
 }
+
+

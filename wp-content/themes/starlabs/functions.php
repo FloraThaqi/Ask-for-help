@@ -61,7 +61,7 @@ function questions_post_type (){
 			'thumbnail',
 			'revisions',
 		),
-		'taxonomies' => array('category', 'post_tag'),
+		//'taxonomies' => array('category', 'post_tag'),
 		'menu_position' => 5,
 		'exclude_from_search' => false
 	);

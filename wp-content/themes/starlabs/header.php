@@ -16,12 +16,12 @@
     <nav class=" border-gray-300 bg-black ">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
 
-            <a href="<?php echo home_url(); ?>" class="flex items-center">
+            <a href="<?php echo home_url(); ?>" class="w-40 flex items-center">
                 <?php 
                 $header_logo = get_field('header_logo','option');
 
             if( !empty( $header_logo ) ): ?>
-                <img src="<?php echo esc_url($header_logo['url']); ?>"
+                <img class="object-contain " src="<?php echo esc_url($header_logo['url']); ?>"
                     alt="<?php echo esc_attr($header_logo['alt']); ?>" />
                 <?php endif; ?>
             </a>

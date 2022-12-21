@@ -18,11 +18,11 @@
             "return_format": "array",
             "preview_size": "thumbnail",
             "library": "all",
-            "min_width": 150,
-            "min_height": 75,
+            "min_width": "",
+            "min_height": "",
             "min_size": "",
-            "max_width": 200,
-            "max_height": 100,
+            "max_width": "",
+            "max_height": "",
             "max_size": "",
             "mime_types": ""
         }
@@ -44,5 +44,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671627368
+    "modified": 1671629101
 }

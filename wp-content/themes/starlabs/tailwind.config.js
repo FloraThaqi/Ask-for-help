@@ -8,6 +8,7 @@ module.exports = {
       "./footer.php",
       "./header.php",
       "./sidebar.php",
+      "./page-right-sidebar.php",
     ],
   },
   theme: {

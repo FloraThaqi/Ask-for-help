@@ -1,6 +1,6 @@
 <?php  
 /* 
-Template Name: Register 
+Template Name: Register Page
 */  
    
 get_header();   
@@ -11,7 +11,7 @@ if ($user_ID)
    
     // They're already logged in, so we bounce them back to the homepage.  
    
-    // wp_redirect(home_url()); exit;
+    // header( 'Location:' . home_url() );  
    
 } else
  {  
@@ -51,13 +51,12 @@ if ($user_ID)
           $errors['password'] = "Password must be at least six characters";  
         }  
    
-        // Check password password_confirmation  
+        // Check password confirmation_matches  
         if(0 !== strcmp($_POST['password'], $_POST['password_confirmation']))
          {  
           $errors['password_confirmation'] = "Passwords do not match";  
         }  
-
-   
+    
         if(0 === count($errors)) 
          {  
    
@@ -76,7 +75,7 @@ if ($user_ID)
     }  
 }  
   
-?>
+?>  
 
 
 <!-- Register -->

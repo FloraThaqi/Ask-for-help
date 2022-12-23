@@ -65,13 +65,8 @@ if ($user_ID)
             $new_user_id = wp_create_user( $username, $password, $email );   
    
             $success = 1; 
-            
-             // Log the new user in
-             wp_setcookie($username, $password, true);
-             wp_set_current_user($new_user_id, $username);	
-             do_action('wp_login', $username);
              
-             // Send the newly created user to the home page after logging them in
+             // Send the newly created user to the home page 
             wp_redirect(home_url()); exit;
    
         }  

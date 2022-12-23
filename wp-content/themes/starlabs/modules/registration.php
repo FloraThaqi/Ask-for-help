@@ -1,4 +1,5 @@
 <?php  
+ob_start();
 /* 
 Template Name: Register Page
 */  
@@ -10,9 +11,7 @@ if ($user_ID)
 {  
    
     // They're already logged in, so we bounce them back to the homepage.  
-   
-    // header( 'Location:' . home_url() );  
-    echo "you are logged in";
+    wp_redirect(home_url());  
    
 } else
  {  
@@ -63,14 +62,12 @@ if ($user_ID)
    
             $password = $_POST['password'];  
    
-            $new_user_id = wp_create_user( $username, $password, $email );  
+            $new_user_id = wp_create_user( $username, $password, $email );   
    
-            // You could do all manner of other things here like send an email to the user, etc. I leave that to you.  
-   
-            $success = 1;  
-   
-            //header( 'Location:' . get_bloginfo('url') . '/login/?success=1&u=' . $username );  
-            echo "you are registerd";
+            $success = 1; 
+             
+            wp_redirect(home_url()); exit;
+            // echo "you are registerd";
    
         }  
    
@@ -155,5 +152,6 @@ if ($user_ID)
 
     </div>
 </div>
+<?php ob_end_flush(); ?>
 
 <?php get_footer(); ?>

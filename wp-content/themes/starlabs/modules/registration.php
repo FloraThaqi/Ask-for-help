@@ -4,7 +4,7 @@ Template Name: Register Page
 */  
    
 get_header();   
-global $wpdb, $user_ID;  
+global $wpdb, $user_ID,$errors;  
 //Check whether the user is already logged in  
 if ($user_ID) 
 {  
@@ -12,6 +12,7 @@ if ($user_ID)
     // They're already logged in, so we bounce them back to the homepage.  
    
     // header( 'Location:' . home_url() );  
+    echo "you are logged in";
    
 } else
  {  
@@ -69,17 +70,18 @@ if ($user_ID)
             $success = 1;  
    
             //header( 'Location:' . get_bloginfo('url') . '/login/?success=1&u=' . $username );  
+            echo "you are registerd";
    
         }  
    
     }  
 }  
   
-?>  
+?>
 
 
 <!-- Register -->
-<div class="bg-gray-200er min-h-screen flex flex-col">
+<div class="bg-gray-200 min-h-screen flex flex-col">
     <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 m-5">
         <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
             <h1 class="mb-8 text-3xl text-center">Sign up</h1>
@@ -87,17 +89,47 @@ if ($user_ID)
                 method="post">
                 <div>
 
-                    <input type="text" class="block border border-gray-300 w-full p-3 rounded mb-4" name="username"
+                    <input type="text" class="block border border-gray-300 w-full p-3 rounded " name="username"
                         placeholder="Username" />
 
+                    <!-- If exists any error display it -->
+                    <?php if(isset($errors['username'])):?>
+                    <span class="text-red-500 text-sm">
+                        <?php echo $errors['username']?>
+                    </span>
+                    <?php endif ?>
+
+
                 </div>
-                <input type="text" class="block border border-gray-300 w-full p-3 rounded mb-4" name="email"
+                <input type="text" class="block border border-gray-300 w-full p-3 rounded " name="email"
                     placeholder="Email" />
 
-                <input type="password" class="block border border-gray-300 w-full p-3 rounded mb-4" name="password"
+                <!-- If exists any error display it -->
+                <?php if(isset($errors['email'])):?>
+                <span class="text-red-500 text-sm">
+                    <?php echo $errors['email']?>
+                </span>
+                <?php endif ?>
+
+                <input type="password" class="block border border-gray-300 w-full p-3 rounded " name="password"
                     placeholder="Password" />
-                <input type="password" class="block border border-gray-300 w-full p-3 rounded mb-4"
+
+                <!-- If exists any error display it -->
+                <?php if(isset($errors['password'])):?>
+                <span class="text-red-500 text-sm">
+                    <?php echo $errors['password']?>
+                </span>
+                <?php endif ?>
+
+                <input type="password" class="block border border-gray-300 w-full p-3 rounded "
                     name="password_confirmation" placeholder="Confirm Password" />
+
+                <!-- If exists any error display it -->
+                <?php if(isset($errors['password_confirmation'])):?>
+                <span class="text-red-500 text-sm">
+                    <?php echo $errors['password_confirmation']?>
+                </span>
+                <?php endif ?>
 
                 <button type="submit" id="submitbtn" name="submit"
                     class="w-full text-center py-3 rounded bg-[#4767C9] text-white hover:bg-[#4767E9] focus:outline-none my-1">Create

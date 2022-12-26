@@ -1,6 +1,6 @@
 <?php  
 /* 
-Template Name: Login 
+Template Name: Login Page
 */  
 ob_start();
 get_header();   
@@ -30,7 +30,7 @@ if($_POST)
         if(empty($username) ){
             $errors['username']="Please enter a username";
         }
-        elseif(empty($password)){
+        if(empty($password)){
             $errors['password']="Please enter a password";
         }
        else{

@@ -10,6 +10,7 @@ module.exports = {
       "./sidebar.php",
       "./page-right-sidebar.php",
       "./page-register.php",
+      "./page-login.php",
     ],
   },
   theme: {

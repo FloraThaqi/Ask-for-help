@@ -1032,6 +1032,85 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_63aa0fe5d4c12": {
+                    "key": "layout_63aa0fe5d4c12",
+                    "name": "display_posts_category",
+                    "label": "Display Posts Category",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_63aa0fe5d4c13",
+                            "label": "Display Posts Category",
+                            "name": "display_posts_category",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_63aa100ad4c1b",
+                                    "label": "Category Selection",
+                                    "name": "category_selection",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "By default": "By default",
+                                        "Select category": "Select category"
+                                    },
+                                    "default_value": false,
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_63aa1807d4c1c",
+                                    "label": "Relation",
+                                    "name": "relation",
+                                    "type": "relationship",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "post"
+                                    ],
+                                    "taxonomy": "",
+                                    "filters": [
+                                        "search",
+                                        "post_type",
+                                        "taxonomy"
+                                    ],
+                                    "elements": "",
+                                    "min": "",
+                                    "max": "",
+                                    "return_format": "object"
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -1056,5 +1135,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671529856
+    "modified": 1672091777
 }

@@ -93,7 +93,7 @@ if($_POST)
         </form>
         <div class="text-gray-700 m-5">
             Not registered yet?
-            <a class="no-underline border-b border-blue-900 text-blue-900 " href="#">
+            <a class="no-underline border-b border-blue-900 text-blue-900 " href="<?php echo home_url(). '/register'?>">
                 Create an Account
             </a>.
         </div>

@@ -1195,6 +1195,16 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "questions"
             }
         ]
     ],
@@ -1206,5 +1216,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671831423
+    "modified": 1672157150
 }

@@ -1,7 +1,4 @@
  <?php 
-/*
-	Template Name: Key Features
-*/
 $title = $module['title'];
 $paragraph = $module['paragraph'];
 $boxes = $module['boxes'];

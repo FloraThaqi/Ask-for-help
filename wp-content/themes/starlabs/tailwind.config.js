@@ -9,6 +9,7 @@ module.exports = {
       "./header.php",
       "./sidebar.php",
       "./page-right-sidebar.php",
+      "./page-register.php",
     ],
   },
   theme: {

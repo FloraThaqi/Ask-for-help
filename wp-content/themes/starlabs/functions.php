@@ -24,8 +24,6 @@ function style_enqueue() {
 }
 add_action( 'wp_enqueue_scripts', 'style_enqueue' );
 
-
-
 //Add navbar
 
 function add_navbar(){
@@ -69,8 +67,6 @@ function questions_post_type (){
 		'hierarchical' => false,
 		'supports' => array(
 			'title',
-			'editor',
-			'excerpt',
 			'thumbnail',
 			'revisions',
 		),

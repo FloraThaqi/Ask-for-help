@@ -67,7 +67,7 @@ if ($user_ID)
             $success = 1; 
              
              // Send the newly created user to the home page 
-            wp_redirect(home_url()); exit;
+            wp_redirect(home_url('/login')); exit;
    
         }  
    
@@ -145,7 +145,7 @@ if ($user_ID)
         </form>
         <div class="text-gray-700 m-5">
             Already have an account?
-            <a class="no-underline border-b border-blue-900 text-blue-900" href="#">
+            <a class="no-underline border-b border-blue-900 text-blue-900" href="<?php echo home_url(). '/login'?>">
                 Log in
             </a>.
         </div>

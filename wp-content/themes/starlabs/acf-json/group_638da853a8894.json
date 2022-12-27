@@ -1086,13 +1086,22 @@
                                     "type": "relationship",
                                     "instructions": "",
                                     "required": 0,
-                                    "conditional_logic": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_63aa100ad4c1b",
+                                                "operator": "==",
+                                                "value": "Select category"
+                                            }
+                                        ]
+                                    ],
                                     "wrapper": {
                                         "width": "",
                                         "class": "",
                                         "id": ""
                                     },
                                     "post_type": [
+                                        "questions",
                                         "post"
                                     ],
                                     "taxonomy": "",
@@ -1105,6 +1114,36 @@
                                     "min": "",
                                     "max": "",
                                     "return_format": "object"
+                                },
+                                {
+                                    "key": "field_63aae9beb03dc",
+                                    "label": "By default relation",
+                                    "name": "by_default_relation",
+                                    "type": "taxonomy",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_63aa100ad4c1b",
+                                                "operator": "==",
+                                                "value": "By default"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "taxonomy": "category",
+                                    "field_type": "radio",
+                                    "allow_null": 0,
+                                    "add_term": 1,
+                                    "save_terms": 0,
+                                    "load_terms": 0,
+                                    "return_format": "id",
+                                    "multiple": 0
                                 }
                             ]
                         }
@@ -1135,5 +1174,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1672091777
+    "modified": 1672145682
 }

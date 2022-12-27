@@ -1,13 +1,17 @@
 <?php
 $category_selection = $module['category_selection'];
 $category_relation = $module['relation'];
-
+$byDefault_relation = $module['by_default_relation'];
 
 ?>
 
 <?php
+$args = array(
+    'cat' => $byDefault_relation
+);
+
 if ($category_selection == 'By default') {
-    $lastBlog = new WP_Query('type=post');
+    $lastBlog = new WP_Query($args);
 
     if ($lastBlog->have_posts()) :
 

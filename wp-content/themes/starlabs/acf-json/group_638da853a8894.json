@@ -1182,6 +1182,124 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_63ab181215ac2": {
+                    "key": "layout_63ab181215ac2",
+                    "name": "display_posts_category",
+                    "label": "Display Posts Category",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_63ab181215ac3",
+                            "label": "Display Posts Category",
+                            "name": "display_posts_category",
+                            "type": "group",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "layout": "block",
+                            "sub_fields": [
+                                {
+                                    "key": "field_63ab183115aca",
+                                    "label": "Category Selection",
+                                    "name": "category_selection",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "By default": "By default",
+                                        "Select category": "Select category"
+                                    },
+                                    "default_value": false,
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
+                                {
+                                    "key": "field_63ab186115acb",
+                                    "label": "Relation",
+                                    "name": "relation",
+                                    "type": "relationship",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_63ab183115aca",
+                                                "operator": "==",
+                                                "value": "Select category"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [
+                                        "post",
+                                        "questions"
+                                    ],
+                                    "taxonomy": "",
+                                    "filters": [
+                                        "search",
+                                        "post_type",
+                                        "taxonomy"
+                                    ],
+                                    "elements": "",
+                                    "min": "",
+                                    "max": "",
+                                    "return_format": "object"
+                                },
+                                {
+                                    "key": "field_63ab188915acc",
+                                    "label": "By Default Relation",
+                                    "name": "by_default_relation",
+                                    "type": "taxonomy",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_63ab183115aca",
+                                                "operator": "==",
+                                                "value": "By default"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "taxonomy": "category",
+                                    "field_type": "radio",
+                                    "allow_null": 0,
+                                    "add_term": 1,
+                                    "save_terms": 0,
+                                    "load_terms": 0,
+                                    "return_format": "id",
+                                    "multiple": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Row",
@@ -1196,6 +1314,20 @@
                 "operator": "==",
                 "value": "post"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "questions"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -1206,5 +1338,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1671831423
+    "modified": 1672217040
 }

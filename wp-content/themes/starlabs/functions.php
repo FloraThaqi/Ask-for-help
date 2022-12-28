@@ -138,7 +138,7 @@ register_taxonomy('software', 'questions',array(
 }
 add_action('init','questions_custom_taxonomies');
 
-//Make a sidebar that we will include it as a widget.
+/*Make a sidebar that we will include it as a widget.
 function wpb_widgets_init() {
  
     register_sidebar( array(
@@ -163,3 +163,6 @@ function wpb_widgets_init() {
     }
  
 add_action( 'widgets_init', 'wpb_widgets_init' );
+
+
+*/

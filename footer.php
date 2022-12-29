@@ -13,26 +13,34 @@
 <footer class="bg-black text-white font-serif">
     <div class="container mx-auto px-4 py-8 flex justify-between items-center">
         <div class="my-div">
-          <img src="<?php the_field('footer_logo'); ?>" alt="Logo for the site">
+        <a href="<?php echo home_url(); ?>" class="w-40 flex items-center ">
+                <?php 
+                $footer_logo = get_field('footer_logo','option');
+
+                if( !empty( $footer_logo ) ): ?>
+                <img class="object-contain" src="<?php echo esc_url($footer_logo['url']); ?>"
+                    alt="<?php echo esc_attr($footer_logo['alt']); ?>" />
+                <?php endif; ?>
+            </a>
         </div>
-        <div class="flex flex-row justify-around w-1/2 md:w-1/4 text-center md:text-left">
+        <div class="flex flex-row justify-around w-1/2 md:w-1/4 text-left md:text-left">
 
 
-            <ul class="md:w-1/6 text-center md:text-center mt-8 md:mt-0">
+            <ul class="md:w-1/6 text-left md:text-left mt-8 md:mt-0">
                 <li class="mb-4"><a href="<?php the_sub_field('list_one'); ?>" class="text-white hover:text-gray-300">Weebly Themes</a></li>
                 <li class="mb-4"><a href="<?php the_sub_field('list_one'); ?>" class="text-white hover:text-gray-300">Pre-Sale FAQs</a></li>
                 <li class="mb-4"><a href="<?php the_sub_field('list_one'); ?>" class="text-white hover:text-gray-300">Submit a ticket</a></li>
             </ul>
         </div>
 
-        <div class="w-1/2 md:w-1/5 text-center md:text-left mt-8 md:mt-0">
+        <div class="w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
             <ul>
                 <li class="mb-4"><a href="<?php the_sub_field('list_two'); ?>" class="text-white hover:text-gray-300">Services</a></li>
                 <li class="mb-4"><a href="<?php the_sub_field('list_two'); ?>" class="text-white hover:text-gray-300">Theme Tweak</a></li>
             </ul>
         </div>
 
-        <div class="w-1/2 md:w-1/5 text-center md:text-left mt-8 md:mt-0">
+        <div class="w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
             <ul>
                 <li class="mb-4"><a href="<?php the_sub_field('list_three'); ?>" class="text-white hover:text-gray-300">Showcase</a></li>
                 <li class="mb-4"><a href="<?php the_sub_field('list_three'); ?>" class="text-white hover:text-gray-300">Widgetkit</a></li>
@@ -40,7 +48,7 @@
             </ul>
         </div>
 
-        <div class="w-1/2 md:w-1/4 text-center md:text-left mt-8 md:mt-0">
+        <div class="w-1/2 md:w-1/4 text-left md:text-left mt-8 md:mt-0">
             <ul>
                 <li class="mb-4"><a href="<?php the_sub_field('list_four'); ?>" class="text-white hover:text-gray-300">About us</a></li>
                 <li class="mb-4"><a href="<?php the_sub_field('list_four'); ?>" class="text-white hover:text-gray-300">Contact us</a></li>

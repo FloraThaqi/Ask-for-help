@@ -136,4 +136,4 @@ register_taxonomy('software', 'questions',array(
 
 ));
 }
-add_action('init','questions_custom_taxonomies');
+add_action('init','questions_custom_taxonomies');	

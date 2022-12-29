@@ -12,6 +12,7 @@ module.exports = {
       "./page-register.php",
       "./page-login.php",
       "./single-questions.php",
+      "./page-comments.php"
     ],
   },
   theme: {

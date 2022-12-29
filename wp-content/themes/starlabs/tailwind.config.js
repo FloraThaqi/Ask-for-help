@@ -11,6 +11,7 @@ module.exports = {
       "./page-right-sidebar.php",
       "./page-register.php",
       "./page-login.php",
+      "./single-questions.php",
     ],
   },
   theme: {

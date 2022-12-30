@@ -19,6 +19,7 @@ if (function_exists('acf_add_options_page')) {
 }
 function style_enqueue() {
 	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/public/css/tailwind.css');
+	wp_enqueue_style( 'style-comment', get_template_directory_uri() . '/public/css/comment-style.css');
     wp_enqueue_script('script',get_template_directory_uri() . '/js/script.js',array( 'jquery' ), 1.1, true);
     wp_enqueue_style('dashicons');
 }
@@ -69,6 +70,8 @@ function questions_post_type (){
 			'title',
 			'thumbnail',
 			'revisions',
+			'comments',
+			'discussion'
 		),
 		//'taxonomies' => array('category', 'post_tag'),
 		'menu_position' => 5,
@@ -136,4 +139,4 @@ register_taxonomy('software', 'questions',array(
 
 ));
 }
-add_action('init','questions_custom_taxonomies');
+add_action('init','questions_custom_taxonomies');	

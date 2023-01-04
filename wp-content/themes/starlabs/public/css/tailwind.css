@@ -546,6 +546,10 @@ video {
   position: relative;
 }
 
+.sticky {
+  position: sticky;
+}
+
 .top-0 {
   top: 0px;
 }
@@ -644,6 +648,11 @@ video {
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
 }
 
 .mb-2 {
@@ -856,6 +865,10 @@ video {
 
 .h-\[1px\] {
   height: 1px;
+}
+
+.h-64 {
+  height: 16rem;
 }
 
 .max-h-full {
@@ -1314,6 +1327,11 @@ video {
 
 .bg-transparent {
   background-color: transparent;
+}
+
+.bg-blue-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
 .bg-split-white-blue {

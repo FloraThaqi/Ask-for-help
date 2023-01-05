@@ -23,8 +23,8 @@
         },
         {
             "key": "field_63ad7b86be29c",
-            "label": "Links",
-            "name": "links",
+            "label": "Pages",
+            "name": "pages",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -42,8 +42,8 @@
             "sub_fields": [
                 {
                     "key": "field_63ad7b98be29d",
-                    "label": "Questions",
-                    "name": "questions",
+                    "label": "Link",
+                    "name": "link",
                     "type": "link",
                     "instructions": "",
                     "required": 0,
@@ -75,5 +75,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1672781551
+    "modified": 1672837888
 }

@@ -97,6 +97,28 @@ function awesome_widget_setup() {
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h1 class="widget-title">',
 			'after_title'   => '</h1>',
+			'fields' => array(
+				array(
+					'key' => 'field_63aeeb4ddee00',
+					'label' => 'Title',
+					'name' => 'title',
+					'type' => 'text'
+				),
+				array(
+					'key' => 'field_63ad7b86be29c',
+					'label' => 'Pages',
+					'name' => 'pages',
+					'type' => 'repeater',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_63ad7b98be29d',
+							'label' => 'Link',
+							'name' => 'link',
+							'type' => 'link'
+						)
+					)
+				)
+			)
 		)
 	);
 	
@@ -166,53 +188,17 @@ add_action( 'widgets_init', 'wpb_widgets_init' );
 
 
 */
-/*
-	==========================================
- 		ACF Sidebar
-	==========================================
-*/
 
-$args = array(
-  'id' => 'sidebar-acf',
-  'name' => 'Sidebar ACF',
-  'description' => 'This is the second sidebar.',
-  'before_widget' => '<div id="%1$s" class="widget %2$s">',
-  'after_widget' => '</div>',
-  'before_title' => '<h2 class="widget-title">',
-  'after_title' => '</h2>',
-  'fields' => array(
-    array(
-      'key' => 'field_63aeeb4ddee00',
-      'label' => 'Title',
-      'name' => 'title',
-      'type' => 'text'
-    ),
-    array(
-      'key' => 'field_63ad7b86be29c',
-      'label' => 'Links',
-      'name' => 'links',
-      'type' => 'repeater',
-      'sub_fields' => array(
-        array(
-          'key' => 'field_63ad7b98be29d',
-          'label' => 'Questions',
-          'name' => 'questions',
-          'type' => 'link'
-        )
-      )
-    )
-  )
-);
-register_sidebar( $args );
 /*
 	==========================================
  		ACF Custom Widget
 	==========================================
 */
-require( get_template_directory() . '/acf-custom-widget.php' );
+// include_once( get_template_directory() . '/acf-custom-widget.php' );
+include_once( get_template_directory() . '/custom-categories-widget.php' );
 
-function enqueue_acf_scripts_and_styles() {
-  wp_enqueue_script( 'acf-input', get_template_directory_uri() . './plugins/advanced-custom-fields-pro-master/assets/js/acf-input.js', array( 'jquery' ), '1.0', true );
-  wp_enqueue_style( 'acf-input', get_template_directory_uri() . './plugins/advanced-custom-fields-pro-master/assets/css/acf-input.css' );
-}
-add_action( 'admin_enqueue_scripts', 'enqueue_acf_scripts_and_styles' );
+// function enqueue_acf_scripts_and_styles() {
+//   wp_enqueue_script( 'acf-input', get_template_directory_uri() . '/plugins/advanced-custom-fields-pro-master/assets/js/acf-input.js', array( 'jquery' ), '1.0', true );
+//   wp_enqueue_style( 'acf-input', get_template_directory_uri() . '/plugins/advanced-custom-fields-pro-master/assets/css/acf-input.css' );
+// }
+// add_action( 'admin_enqueue_scripts', 'enqueue_acf_scripts_and_styles' );

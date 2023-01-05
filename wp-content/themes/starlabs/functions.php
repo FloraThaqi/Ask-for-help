@@ -160,45 +160,12 @@ register_taxonomy('software', 'questions',array(
 }
 add_action('init','questions_custom_taxonomies');
 
-/*Make a sidebar that we will include it as a widget.
-function wpb_widgets_init() {
- 
-    register_sidebar( array(
-        'name' => __( 'Main Sidebar', 'wpb' ),
-        'id' => 'sidebar-1',
-        'description' => __( 'The main sidebar appears on the right on each page except the front page template', 'wpb' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ) );
- 
-    register_sidebar( array(
-        'name' =>__( 'Front page sidebar', 'wpb'),
-        'id' => 'sidebar-2',
-        'description' => __( 'Appears on the static front page template', 'wpb' ),
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget' => '</aside>',
-        'before_title' => '<h3 class="widget-title">',
-        'after_title' => '</h3>',
-    ) );
-    }
- 
-add_action( 'widgets_init', 'wpb_widgets_init' );
-
-
-*/
-
 /*
 	==========================================
- 		ACF Custom Widget
+ 		ACF Theme Settings
 	==========================================
 */
-// include_once( get_template_directory() . '/acf-custom-widget.php' );
-include_once( get_template_directory() . '/custom-categories-widget.php' );
 
-// function enqueue_acf_scripts_and_styles() {
-//   wp_enqueue_script( 'acf-input', get_template_directory_uri() . '/plugins/advanced-custom-fields-pro-master/assets/js/acf-input.js', array( 'jquery' ), '1.0', true );
-//   wp_enqueue_style( 'acf-input', get_template_directory_uri() . '/plugins/advanced-custom-fields-pro-master/assets/css/acf-input.css' );
-// }
-// add_action( 'admin_enqueue_scripts', 'enqueue_acf_scripts_and_styles' );
+if( function_exists('acf_add_options_page') ) {
+  acf_add_options_page();
+}

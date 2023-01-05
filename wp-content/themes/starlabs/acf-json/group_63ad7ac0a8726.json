@@ -61,9 +61,9 @@
     "location": [
         [
             {
-                "param": "widget",
+                "param": "options_page",
                 "operator": "==",
-                "value": "acf_custom_widget"
+                "value": "theme-settings"
             }
         ]
     ],
@@ -75,5 +75,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1672837888
+    "modified": 1672933082
 }

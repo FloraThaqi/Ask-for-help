@@ -5,7 +5,7 @@
     $question_description = get_field('question_description');
     $question_date = get_field('question_date');
 ?>
-        <div class="min-h-fit flex flex-col md:flex-row m-3">
+        <div class=" flex flex-col md:flex-row my-3 mx-10">
             <div class=" mx-auto md:pt-5 pb-0 shadow-lg shadow-zinc-400 bg-slate-50 md:m-5 w-full md:w-[70%] lg:w-[80%]">
                 <div class="mb-3">
                     <div class="m-3 p-2 text-center bg-slate-100">
@@ -13,12 +13,12 @@
                         <h3 class="text-4xl"><?php echo $question_title ?></h3>
                         <?php endif;?>
                     </div>
-                    <div class="shadow-sm shadow-zinc-400 bg-slate-100 m-5 p-5">
+                    <div class=" bg-slate-100 m-5 p-5">
                         <?php if($question_description):?>
                         <p><?php echo $question_description ?></p>
                         <?php endif;?>
                     </div>
-                    <div class="bg-slate-100 mb-0 mt-5 ml-0 text-xs">
+                    <div class="bg-slate-100 mb-0 mt-5 text-xs">
                         <?php if($question_date):?>
                         <p><?php echo $question_date ?></p>
                         <?php

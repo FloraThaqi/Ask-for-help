@@ -2,7 +2,8 @@
 $category_selection = $module['category_selection'];
 $category_relation = $module['relation'];
 $byDefault_relation = $module['by_default_relation'];
-$test = get_field('');
+/*$BD_CatName = $byDefault_relation['slug'];*/
+$test = $value[$value['acf_fc_layout']];
 
 echo var_dump($test);
 ?>
@@ -10,8 +11,15 @@ echo var_dump($test);
 <?php
 $args = array(
     'post_type' => 'questions',
-    'cat' => $byDefault_relation
-); ?>
+    'tax_query' => array(
+        array(/*
+            'taxonomy' => 'category',
+            'field'    => 'term_id',
+            'terms'    => $cat->byDefault_relation,
+        */),
+    ),
+);
+echo print_r($byDefault_relation); ?>
 <section class="bg-white">
     <?php if ($category_selection == 'By default') {
         $lastBlog = new WP_Query($args); ?>

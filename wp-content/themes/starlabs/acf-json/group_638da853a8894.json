@@ -1251,7 +1251,6 @@
                                         "id": ""
                                     },
                                     "post_type": [
-                                        "post",
                                         "questions"
                                     ],
                                     "taxonomy": "",
@@ -1286,7 +1285,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "taxonomy": "category",
+                                    "taxonomy": "field",
                                     "field_type": "radio",
                                     "allow_null": 0,
                                     "add_term": 1,
@@ -1338,5 +1337,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1672217040
+    "modified": 1672927331
 }

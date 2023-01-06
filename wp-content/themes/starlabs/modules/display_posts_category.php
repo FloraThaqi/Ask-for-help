@@ -2,24 +2,25 @@
 $category_selection = $module['category_selection'];
 $category_relation = $module['relation'];
 $byDefault_relation = $module['by_default_relation'];
-/*$BD_CatName = $byDefault_relation['slug'];*/
-$test = $value[$value['acf_fc_layout']];
+$cats = get_categories();
 
-echo var_dump($test);
 ?>
 
 <?php
+
+$posts = get_posts(array(
+    'post_type' => 'questions'
+));
+
+$post_ID;
+
+
+
 $args = array(
     'post_type' => 'questions',
-    'tax_query' => array(
-        array(/*
-            'taxonomy' => 'category',
-            'field'    => 'term_id',
-            'terms'    => $cat->byDefault_relation,
-        */),
-    ),
+
 );
-echo print_r($byDefault_relation); ?>
+?>
 <section class="bg-white">
     <?php if ($category_selection == 'By default') {
         $lastBlog = new WP_Query($args); ?>
@@ -36,6 +37,7 @@ echo print_r($byDefault_relation); ?>
                             <div class="text-gray-500 max-w-[620px] m-auto my-2">
                                 <h2 class="mb-2 text-gray-800 font-bold"><?php the_title(); ?></h2>
                                 <p class=""><?php the_content(); ?></p>
+                                <p class=""><?php the_category(); ?></p>
                             </div>
                             <div class="flex justify-end bg-gray-200 min-h-[60px] items-center max-w-[620px] mx-auto">
                                 <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded" href="">Answer</a>
@@ -56,9 +58,15 @@ echo print_r($byDefault_relation); ?>
                             <p class="text-gray-500 mr-2">Asked on: 01.01.2023</p>
                             <p class="text-gray-500">In: England</p>
                         </div>
+                        <?php
+                        $title_variable = get_field('question_title', $value->ID);
+                        $description_variable = get_field('question_description', $value->ID);
+                        $date_variable = get_field('question_date', $value->ID);
+                        ?>
                         <div class="text-gray-500 max-w-[620px] m-auto my-2">
-                            <h2 class="mb-2 text-gray-800 font-bold"><?php echo $value->post_title; ?></h2>
-                            <p class=""><?php echo $value->post_content; ?></p>
+                            <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
+                            <p class=""><?php echo $description_variable; ?></p>
+                            <p class=""><?php echo $date_variable; ?></p>
                         </div>
                         <div class="flex justify-end bg-gray-200 min-h-[60px] items-center max-w-[620px] mx-auto">
                             <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded" href="">Answer</a>

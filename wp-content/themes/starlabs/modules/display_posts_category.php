@@ -2,14 +2,19 @@
 $category_selection = $module['category_selection'];
 $category_relation = $module['relation'];
 $byDefault_relation = $module['by_default_relation'];
-
-//echo var_dump($category_relation);
+$cat_name = $byDefault_relation->name;
 ?>
 
 <?php
 $args = array(
     'post_type' => 'questions',
-    'cat' => $byDefault_relation
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'field',
+            'field' => 'slug',
+            'terms' => $cat_name
+        )
+    )
 );
 ?>
 <section class="bg-white">
@@ -28,7 +33,7 @@ $args = array(
                             <div class="flex max-md:justify-between">
                                 <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="user profile">
                                 <p class="text-gray-500 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
-                                <p class="text-gray-500">In: -Category here-</p>
+                                <a class="text-gray-500" href="">In: <?php echo $cat_name ?></a>
                             </div>
                             <div class="text-gray-500 max-w-[620px] m-auto my-2">
                                 <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
@@ -52,15 +57,17 @@ $args = array(
                         $title_variable = get_field('question_title', $value->ID);
                         $description_variable = get_field('question_description', $value->ID);
                         $date_variable = get_field('question_date', $value->ID);
+                        $cat_variable = get_the_terms($value->ID, 'category');
                         ?>
                         <div class="flex max-md:justify-between">
                             <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="user profile">
                             <p class="text-gray-500 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
-                            <p class="text-gray-500">In: -Category here-</p>
+                            <a class="text-gray-500">In: -Category here-</a>
                         </div>
                         <div class="text-gray-500 max-w-[620px] m-auto my-2">
                             <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
                             <p class=""><?php echo $description_variable; ?></p>
+                            <p class=""><?php echo $cat_variable; ?></p>
                         </div>
                         <div class="flex justify-end bg-gray-200 min-h-[60px] items-center max-w-[620px] mx-auto">
                             <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded" href="">Answer</a>

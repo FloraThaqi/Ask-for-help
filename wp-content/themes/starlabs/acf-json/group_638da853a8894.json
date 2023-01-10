@@ -1219,7 +1219,7 @@
                                     },
                                     "choices": {
                                         "By default": "By default",
-                                        "Select category": "Select category"
+                                        "Select posts": "Select posts"
                                     },
                                     "default_value": false,
                                     "allow_null": 0,
@@ -1241,7 +1241,7 @@
                                             {
                                                 "field": "field_63ab183115aca",
                                                 "operator": "==",
-                                                "value": "Select category"
+                                                "value": "Select posts"
                                             }
                                         ]
                                     ],
@@ -1291,7 +1291,7 @@
                                     "add_term": 1,
                                     "save_terms": 0,
                                     "load_terms": 0,
-                                    "return_format": "id",
+                                    "return_format": "object",
                                     "multiple": 0
                                 }
                             ]
@@ -1337,5 +1337,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1672927331
+    "modified": 1673309409
 }

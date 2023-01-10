@@ -5,36 +5,39 @@
     $question_date = get_field('question_date');
     wp_enqueue_script( 'comment-reply' ); 
 ?>
-<div class=" flex flex-col md:flex-row my-3 mx-10">
-    <div class=" mx-auto md:pt-5 pb-0 shadow-lg shadow-zinc-400 bg-slate-50 md:m-5 w-full md:w-[70%] lg:w-[80%]">
+<div class="container mx-auto flex flex-col md:flex-row my-3">
+    <div class=" mx-auto md:pt-5 pb-0 shadow-zinc-400  md:m-5 w-full md:w-[70%] lg:w-[80%]">
         <div class="mb-3">
-            <div class="m-3 p-2 text-center bg-slate-100">
+            <div class="p-5 text-left ">
                 <?php if($question_title):?>
-                <h3 class="text-4xl"><?php echo $question_title ?></h3>
+                <h3 class="text-4xl font-bold"><?php echo $question_title ?></h3>
                 <?php endif;?>
             </div>
-            <div class=" bg-slate-100 m-5 p-5">
+            <div class="p-5 text-slate-500 ">
                 <?php if($question_description):?>
                 <p><?php echo $question_description ?></p>
                 <?php endif;?>
             </div>
-            <div class="bg-slate-100 mb-0 mt-5 text-xs">
+            <div class="mb-0 text-blue-600/75 px-5 pt-2 text-xs text-right flex justify-end">
                 <?php if($question_date):?>
-                <p><?php echo $question_date ?></p>
+                <p class="mr-5"><?php echo $question_date ?></p>
+                <p>by:
                 <?php
                             $author_name  =  get_the_author_meta( 'display_name',get_the_author_posts());
                             echo $author_name;
                         ?>
                 <?php endif;?>
+                </p>
             </div>
         </div>
 
+        <div class="h-[2px] my-10 bg-[#4767C9]"></div>
 
         <!-- Comment Section -->
 
 
-        <section class="bg-white 0 py-8 lg:py-16">
-            <div class="max-w-3xl mx-auto px-4">
+        <section class="bg-gray-100 0 py-4">
+            <div class=" mx-auto px-4">
 
 
                 <?php 
@@ -84,7 +87,7 @@
 
     </div>
 
-    <div class=" p-2 shadow-lg shadow-zinc-400 md:m-5 w-full md:w-[30%] lg:w-[20%]">
+    <div class=" p-2 shadow-zinc-400 w-full md:w-[30%] lg:w-[20%]">
         <?php get_sidebar();?>
     </div>
 </div>

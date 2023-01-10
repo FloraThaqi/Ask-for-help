@@ -1219,7 +1219,7 @@
                                     },
                                     "choices": {
                                         "By default": "By default",
-                                        "Select category": "Select category"
+                                        "Select posts": "Select posts"
                                     },
                                     "default_value": false,
                                     "allow_null": 0,
@@ -1241,7 +1241,7 @@
                                             {
                                                 "field": "field_63ab183115aca",
                                                 "operator": "==",
-                                                "value": "Select category"
+                                                "value": "Select posts"
                                             }
                                         ]
                                     ],
@@ -1251,7 +1251,6 @@
                                         "id": ""
                                     },
                                     "post_type": [
-                                        "post",
                                         "questions"
                                     ],
                                     "taxonomy": "",
@@ -1286,13 +1285,13 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "taxonomy": "category",
+                                    "taxonomy": "field",
                                     "field_type": "radio",
                                     "allow_null": 0,
                                     "add_term": 1,
                                     "save_terms": 0,
                                     "load_terms": 0,
-                                    "return_format": "id",
+                                    "return_format": "object",
                                     "multiple": 0
                                 }
                             ]
@@ -1338,5 +1337,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1672217040
+    "modified": 1673309409
 }

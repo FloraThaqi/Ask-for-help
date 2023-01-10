@@ -27,7 +27,7 @@ $pages = get_field('pages','option');?>
     <div class="flex flex-col rounded-lg bg-gray-200 lg:w-full ">
         <ul class="block"> 
         <?php foreach ( $pages as $page ) :?>
-            <li class="hover:text-[#4767c9] text-gray-600 font-serif py-4 border-b border-gray-400">
+            <li class="hover:text-[#4767c9] text-gray-600 font-serif py-4 border-b border-gray-400 last:border-none">
                 <a href="<?php echo $page['link']['url'];?>" class="px-4 "><?php echo $page['link']['title'];?></a> 
             <?php
             endforeach;

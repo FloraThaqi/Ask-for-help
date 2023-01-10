@@ -100,6 +100,28 @@ function awesome_widget_setup() {
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h1 class="widget-title">',
 			'after_title'   => '</h1>',
+			'fields' => array(
+				array(
+					'key' => 'field_63aeeb4ddee00',
+					'label' => 'Title',
+					'name' => 'title',
+					'type' => 'text'
+				),
+				array(
+					'key' => 'field_63ad7b86be29c',
+					'label' => 'Pages',
+					'name' => 'pages',
+					'type' => 'repeater',
+					'sub_fields' => array(
+						array(
+							'key' => 'field_63ad7b98be29d',
+							'label' => 'Link',
+							'name' => 'link',
+							'type' => 'link'
+						)
+					)
+				)
+			)
 		)
 	);
 	
@@ -139,4 +161,14 @@ register_taxonomy('software', 'questions',array(
 
 ));
 }
-add_action('init','questions_custom_taxonomies');	
+add_action('init','questions_custom_taxonomies');
+
+/*
+	==========================================
+ 		ACF Theme Settings
+	==========================================
+*/
+
+if( function_exists('acf_add_options_page') ) {
+  acf_add_options_page();
+}

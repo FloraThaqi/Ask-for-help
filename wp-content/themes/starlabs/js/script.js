@@ -62,3 +62,15 @@ function changeActiveTab(event, tabID) {
 }
 
 
+
+
+// Add cancel reply button on comment form
+jQuery(function($) {
+  $('.comment-reply-link', '.comment-body').on('click', function() {
+      $('#cancel-comment-reply-link').insertAfter('.form-submit').addClass('button').show();
+  });
+
+  $('#cancel-comment-reply-link').on('click', function() {
+      $(this).hide();
+  });
+});

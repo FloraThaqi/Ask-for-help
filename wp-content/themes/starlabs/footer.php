@@ -1,15 +1,13 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package StarLabs
- */
+<?php 
+
+    $list_1 = get_field('footer_links','option')['list_1'];
+    $list_2 = get_field('footer_links','option')['list_2'];
+    $list_3 = get_field('footer_links','option')['list_3'];
+    $list_4 = get_field('footer_links','option')['list_4'];
+
 
 ?>
+
 <footer class="bg-black text-white font-serif">
     <div class="container mx-auto px-4 py-8 flex justify-between ">
         <div class="my-div">
@@ -24,36 +22,34 @@
             </a>
         </div>
         <div class="flex flex-row justify-around w-1/2 md:w-1/4 text-left md:text-left">
-
-
-            <ul class="md:w-1/7 text-left md:text-left mt-8 md:mt-0">
-                <li class="mb-4"><a href="<?php the_sub_field('list_one'); ?>" class="text-white hover:text-gray-300">Weebly Themes</a></li>
-                <li class="mb-4"><a href="<?php the_sub_field('list_one'); ?>" class="text-white hover:text-gray-300">Pre-Sale FAQs</a></li>
-                <li class="mb-4"><a href="<?php the_sub_field('list_one'); ?>" class="text-white hover:text-gray-300">Submit a ticket</a></li>
+           <ul class="md:w-1/7 text-left md:text-left mt-8 md:mt-0">
+            <?php if ($list_1): foreach ($list_1 as $links): ?>
+                <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-white hover:text-gray-300"><?= $links['links']['title'] ?></a></li>
+            <?php endforeach; endif; ?>  
             </ul>
         </div>
 
         <div class="w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
             <ul>
-                <li class="mb-4"><a href="<?php the_sub_field('list_two'); ?>" class="text-white hover:text-gray-300">Services</a></li>
-                <li class="mb-4"><a href="<?php the_sub_field('list_two'); ?>" class="text-white hover:text-gray-300">Theme Tweak</a></li>
+            <?php if ($list_2): foreach ($list_2 as $links): ?>
+                <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-white hover:text-gray-300"><?= $links['links']['title'] ?></a></li>
+            <?php endforeach; endif; ?>  
             </ul>
         </div>
 
         <div class="w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
             <ul>
-                <li class="mb-4"><a href="<?php the_sub_field('list_three'); ?>" class="text-white hover:text-gray-300">Showcase</a></li>
-                <li class="mb-4"><a href="<?php the_sub_field('list_three'); ?>" class="text-white hover:text-gray-300">Widgetkit</a></li>
-                <li class="mb-4"><a href="<?php the_sub_field('list_three'); ?>" class="text-white hover:text-gray-300">Support</a></li>
+            <?php if ($list_3): foreach ($list_3 as $links): ?>
+                <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-white hover:text-gray-300"><?= $links['links']['title'] ?></a></li>
+            <?php endforeach; endif; ?>  
             </ul>
         </div>
 
         <div class="w-1/2 md:w-1/4 text-left md:text-left mt-8 md:mt-0">
             <ul>
-                <li class="mb-4"><a href="<?php the_sub_field('list_four'); ?>" class="text-white hover:text-gray-300">About us</a></li>
-                <li class="mb-4"><a href="<?php the_sub_field('list_four'); ?>" class="text-white hover:text-gray-300">Contact us</a></li>
-                <li class="mb-4"><a href="<?php the_sub_field('list_four'); ?>" class="text-white hover:text-gray-300">Affiliates</a></li>
-                <li class="mb-4"><a href="<?php the_sub_field('list_four'); ?>" class="text-white hover:text-gray-300">Resources</a></li>
+            <?php if ($list_4): foreach ($list_4 as $links): ?>
+                <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-white hover:text-gray-300"><?= $links['links']['title'] ?></a></li>
+            <?php endforeach; endif; ?>  
             </ul>
         </div>
     </div>
@@ -61,7 +57,7 @@
     <hr class="border-gray-600 mt-4 mb-8" />
 
     <div class="my-div text-center py-8">
-        <div class="justify-center content-center justify-center mb-6">
+        <div class="content-center justify-center mb-6">
             <a href="<?php the_sub_field('facebook_link'); ?>" type="button"
                 class="rounded-full border-2 border-white text-white leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
@@ -107,6 +103,6 @@
         <div class="container mx-auto px-4 py-8 flex justify-center">
 
             <?php wp_footer(); ?>
-            </body>
+    </body>
 
-            </html>
+</html>

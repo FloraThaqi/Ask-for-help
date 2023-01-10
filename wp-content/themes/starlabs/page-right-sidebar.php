@@ -19,7 +19,6 @@ get_header(); ?>
     </div>
 
     <div class="w-full md:w-[30%]">
-      <h1>This is where the sidebar goes</h1>
       <?php get_sidebar();?>
     </div>
   </div>

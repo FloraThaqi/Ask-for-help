@@ -3,8 +3,6 @@ $category_selection = $module['category_selection'];
 $category_relation = $module['relation'];
 $byDefault_relation = $module['by_default_relation'];
 $cat_name = $byDefault_relation->name;
-
-//echo var_dump($category_relation);
 ?>
 
 <?php
@@ -19,10 +17,10 @@ $args = array(
     )
 );
 ?>
-<section class="bg-white flex justify-center max-sm:block">
+<section class="bg-white">
     <?php if ($category_selection == 'By default') {
         $lastBlog = new WP_Query($args); ?>
-        <div class="max-w-[1008px] mr-0 my-10 max-lg:mx-4">
+        <div class="max-w-[1008px] m-auto max-lg:mx-4">
             <?php if ($lastBlog->have_posts()) : ?>
                 <div class="max-w-[700px] m-auto py-8">
                     <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
@@ -51,7 +49,7 @@ $args = array(
         </div>
     <?php wp_reset_postdata();
     } else { ?>
-        <div class="max-w-[1008px] mr-0 my-10 max-lg:mx-4">
+        <div class="max-w-[1008px] m-auto max-lg:mx-4">
             <div class="max-w-[700px] m-auto py-8">
                 <?php foreach ($category_relation as $value) : ?>
                     <div class="border-y-[1px] border-x-[0.5px] border-gray-200 border-collapse p-4">
@@ -80,7 +78,4 @@ $args = array(
         </div>
     <?php }
     ?>
-    <div class="my-10 mx-2 p-2 py-8 shadow-zinc-400 max-w-[380px] min-w-[280px] max-sm:m-auto">
-        <?php get_sidebar(); ?>
-    </div>
 </section>

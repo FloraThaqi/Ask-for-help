@@ -9,12 +9,12 @@
 
     <h1 class="text-center font-bold text-black text-3xl p-10"><?php echo $title?></h1>
 
-    <div class="flex flex-wrap justify-center max-w-screen-2xl items-center row mb-6">
+    <div class="flex flex-wrap items-stretch justify-center max-w-screen-2xl  row">
 
         <?php foreach($team as $value):?>
 
         <div class="container w-full  bg-white border-none rounded-3xl m-10  max-w-md ">
-            <div class=" flex flex-col md:flex-row  items-center">
+            <div class=" flex flex-col  md:flex-row  items-center h-full">
 
                 <!-- Image-->
                 <div class="p-3">

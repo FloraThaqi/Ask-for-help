@@ -23,7 +23,7 @@ $pages = get_field('pages','option');?>
 
 <aside class="box-shadow shadow-lg bg-slate-200	 h-inherit rounded-b-lg w-90 lg:gap-2 ml-6 sticky top-0">
       <h1 class="text-base px-4 font-serif font-semibold tracking-widest uppercase text-gray-600 py-4"><?php echo $title;?></h1>
-    <div class="bg-slate-400	 h-[1px]"></div>
+    <div class="bg-slate-400 h-[1px]"></div>
     <div class="flex flex-col rounded-lg bg-slate-200 lg:w-full ">
         <ul class="block"> 
         <?php foreach ( $pages as $page ) :?>

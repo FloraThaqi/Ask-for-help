@@ -5,7 +5,6 @@
     $list_3 = get_field('footer_links','option')['list_3'];
     $list_4 = get_field('footer_links','option')['list_4'];
 
-
 ?>
 
 <footer class="bg-slate-200	 text-black">
@@ -22,34 +21,50 @@
             </a>
         </div>
         <div class="flex flex-row justify-around w-1/2 md:w-1/4 text-left md:text-left">
-           <ul class="md:w-1/7 text-left md:text-left mt-8 md:mt-0">
-            <?php if ($list_1): foreach ($list_1 as $links): ?>
-                <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
-            <?php endforeach; endif; ?>  
+        <ul>
+            <?php if( $list_1 ):
+                foreach( $list_1 as $links ) : ?>
+                    <?php if( is_array( $links['links'] ) ) : ?>
+                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
+                    <?php endif; 
+                endforeach;
+            endif; ?>
             </ul>
         </div>
 
         <div class="flex flex-row justify-around w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
-            <ul>
-            <?php if ($list_2): foreach ($list_2 as $links): ?>
-                <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
-            <?php endforeach; endif; ?>  
+        <ul>
+            <?php if( $list_2 ):
+                foreach( $list_2 as $links ) : ?>
+                    <?php if( is_array( $links['links'] ) ) : ?>
+                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
+                    <?php endif; 
+                endforeach;
+            endif; ?>
             </ul>
         </div>
 
         <div class="flex flex-row justify-around w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
-            <ul>
-            <?php if ($list_3): foreach ($list_3 as $links): ?>
-                <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
-            <?php endforeach; endif; ?>  
+        <ul>
+            <?php if( $list_3 ):
+                foreach( $list_3 as $links ) : ?>
+                    <?php if( is_array( $links['links'] ) ) : ?>
+                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
+                    <?php endif; 
+                endforeach;
+            endif; ?>
             </ul>
         </div>
 
         <div class="flex flex-row justify-around w-1/2 md:w-1/4 text-left md:text-left mt-8 md:mt-0">
             <ul>
-            <?php if ($list_4): foreach ($list_4 as $links): ?>
-                <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
-            <?php endforeach; endif; ?>  
+            <?php if( $list_4 ):
+                foreach( $list_4 as $links ) : ?>
+                    <?php if( is_array( $links['links'] ) ) : ?>
+                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
+                    <?php endif; 
+                endforeach;
+            endif; ?>
             </ul>
         </div>
     </div>
@@ -100,9 +115,7 @@
             </a>
             <p class="mb-2  py-2">©Copyright. All rights reserved.</p>
         </div>
-        <div class="container mx-auto px-4 py-8 flex justify-center">
-
-            <?php wp_footer(); ?>
+    </div>
     </body>
 
 </html>

@@ -116,6 +116,7 @@
             <p class="mb-2  py-2">©Copyright. All rights reserved.</p>
         </div>
     </div>
+    <?php wp_footer(); ?>
     </body>
 
 </html>

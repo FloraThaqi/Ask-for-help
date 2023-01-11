@@ -24,7 +24,7 @@ $args = array(
             <?php if ($lastBlog->have_posts()) : ?>
                 <div class="w-full m-auto py-8">
                     <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
-                        <div class="border-y-[1px] border-x-[0.5px] border-gray-200 border-collapse p-4 mb-3">
+                        <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
                             <?php
                             $title_variable = get_field('question_title');
                             $description_variable = get_field('question_description');
@@ -53,9 +53,9 @@ $args = array(
     <?php wp_reset_postdata();
     } else { ?>
         <div class="w-full m-auto max-lg:mx-4">
-            <div class="max-w-[700px] m-auto py-8">
+            <div class="w-full m-auto py-8">
                 <?php foreach ($category_relation as $value) : ?>
-                    <div class="border-y-[1px] border-x-[0.5px] border-gray-200 border-collapse p-4 mb-3">
+                    <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
                         <?php
                         $title_variable = get_field('question_title', $value->ID);
                         $description_variable = get_field('question_description', $value->ID);

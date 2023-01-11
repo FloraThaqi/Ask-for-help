@@ -24,6 +24,9 @@ module.exports = {
       screens: {
         xs: "320px",
       },
+      fontFamily: {
+        display: ["Montserrat", "sans-serif"],
+      },
     },
   },
   plugins: [],

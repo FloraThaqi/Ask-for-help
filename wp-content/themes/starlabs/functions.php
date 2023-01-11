@@ -172,3 +172,14 @@ add_action('init','questions_custom_taxonomies');
 if( function_exists('acf_add_options_page') ) {
   acf_add_options_page();
 }
+
+/*
+	==========================================
+ 		Fonts
+	==========================================
+*/
+
+function google_fonts() {
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap', false );
+}
+add_action( 'wp_enqueue_scripts', 'google_fonts' );

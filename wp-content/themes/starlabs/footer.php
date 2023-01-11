@@ -29,7 +29,7 @@
             </ul>
         </div>
 
-        <div class="w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
+        <div class="flex flex-row justify-around w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
             <ul>
             <?php if ($list_2): foreach ($list_2 as $links): ?>
                 <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
@@ -37,7 +37,7 @@
             </ul>
         </div>
 
-        <div class="w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
+        <div class="flex flex-row justify-around w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
             <ul>
             <?php if ($list_3): foreach ($list_3 as $links): ?>
                 <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
@@ -45,7 +45,7 @@
             </ul>
         </div>
 
-        <div class="w-1/2 md:w-1/4 text-left md:text-left mt-8 md:mt-0">
+        <div class="flex flex-row justify-around w-1/2 md:w-1/4 text-left md:text-left mt-8 md:mt-0">
             <ul>
             <?php if ($list_4): foreach ($list_4 as $links): ?>
                 <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>

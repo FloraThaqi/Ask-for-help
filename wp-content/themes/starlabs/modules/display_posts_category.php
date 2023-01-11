@@ -22,7 +22,7 @@ $args = array(
         $lastBlog = new WP_Query($args); ?>
         <div class="w-full m-auto max-lg:mx-4">
             <?php if ($lastBlog->have_posts()) : ?>
-                <div class="max-w-[700px] m-auto py-8">
+                <div class="w-full m-auto py-8">
                     <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
                         <div class="border-y-[1px] border-x-[0.5px] border-gray-200 border-collapse p-4 mb-3">
                             <?php

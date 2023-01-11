@@ -7,7 +7,7 @@ $default_pic = "https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Pr
 ?>
 <section>
     <?php if ($section_title) : ?>
-        <h2 class="text-center text-5xl font-bold my-8"><?php echo $section_title; ?></h2>
+        <h2 class="text-center text-5xl font-bold mb-8 mt-12"><?php echo $section_title; ?></h2>
     <?php else : ?>
         <h2 class="text-center text-5xl font-bold my-8">Read what our customers say</h2>
     <?php endif; ?>

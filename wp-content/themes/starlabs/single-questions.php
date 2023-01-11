@@ -6,7 +6,7 @@
     wp_enqueue_script( 'comment-reply' ); 
 ?>
 <div class="container mx-auto flex flex-col md:flex-row my-3">
-    <div class=" mx-auto md:pt-5 pb-0 shadow-zinc-400  md:m-5 w-full md:w-[70%] lg:w-[80%]">
+    <div class=" mx-auto md:pt-5 pb-0 shadow-zinc-400  md:m-5 w-full ">
         <div class="mb-3">
             <div class="p-5 text-left ">
                 <?php if($question_title):?>
@@ -18,7 +18,7 @@
                 <p><?php echo $question_description ?></p>
                 <?php endif;?>
             </div>
-            <div class="mb-0 text-blue-600/75 px-5 pt-2 text-xs text-right flex justify-end">
+            <div class="mb-0 text-slate-500  px-5 pt-2 text-xs text-right flex justify-end">
                 <?php if($question_date):?>
                 <p class="mr-5"><?php echo $question_date ?></p>
                 <p>by:
@@ -87,8 +87,8 @@
 
     </div>
 
-    <div class=" p-2 shadow-zinc-400 w-full md:w-[30%] lg:w-[20%]">
-        <?php get_sidebar();?>
+    <div class="w-full md:w-[30%]">
+      <?php get_sidebar();?>
     </div>
 </div>
 

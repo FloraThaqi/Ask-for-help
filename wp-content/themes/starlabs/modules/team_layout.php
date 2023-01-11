@@ -9,7 +9,7 @@
 
     <h1 class="text-center font-bold text-black text-3xl p-10"><?php echo $title?></h1>
 
-    <div class="flex flex-wrap justify-center max-w-screen-2xl items-center row">
+    <div class="flex flex-wrap justify-center max-w-screen-2xl items-center row mb-6">
 
         <?php foreach($team as $value):?>
 

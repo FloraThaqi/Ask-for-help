@@ -13,7 +13,7 @@
 <body class="bg-gray-100 ">
 
 
-    <nav class="bg-black ">
+    <nav class="bg-white shadow-lg">
         <div class=" container flex flex-wrap items-center justify-between md:mx-auto max-w-screen-lg px-2 ">
             <!-- Logo  -->
             <a href="<?php echo home_url(); ?>" class="w-40 flex items-center ">

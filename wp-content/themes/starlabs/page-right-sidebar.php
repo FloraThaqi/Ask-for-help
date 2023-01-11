@@ -9,12 +9,14 @@ get_header(); ?>
 <div class="w-full">
   <div class="p-4 container mx-auto flex flex-col md:flex-row">
     <div class="w-full">
-      <?php if(have_posts()):
-        while(have_posts()): the_post();?>
-          <h1><?php the_title();?></h1>
-          <p><?php the_content();?></p>
-        <?php endwhile;
-      endif;
+    <?php 
+   $field = get_field('modules');
+   if (is_array($field)) {
+        foreach ($field as $key => $value) {
+            $module = $value[$value['acf_fc_layout']];
+            include (get_template_directory().'/modules/'.$value['acf_fc_layout'].'.php');
+        }
+   }
       ?>
     </div>
 

@@ -1340,7 +1340,6 @@
                                         "id": ""
                                     },
                                     "post_type": [
-                                        "post",
                                         "questions"
                                     ],
                                     "taxonomy": "",
@@ -1427,5 +1426,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1673428612
+    "modified": 1673435264
 }

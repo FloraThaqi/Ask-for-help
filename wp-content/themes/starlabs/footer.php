@@ -8,7 +8,7 @@
 
 ?>
 
-<footer class="bg-slate-200	 text-black font-serif">
+<footer class="bg-slate-200	 text-black">
     <div class="container mx-auto px-4 py-8 flex justify-between ">
         <div class="my-div">
         <a href="<?php echo home_url(); ?>" class="w-40 flex">

@@ -1340,6 +1340,7 @@
                                         "id": ""
                                     },
                                     "post_type": [
+                                        "post",
                                         "questions"
                                     ],
                                     "taxonomy": "",
@@ -1407,13 +1408,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "questions"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "page"
             }
         ]
@@ -1426,5 +1420,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1673435264
+    "modified": 1673534728
 }

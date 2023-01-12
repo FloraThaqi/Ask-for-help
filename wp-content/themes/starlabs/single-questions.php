@@ -19,14 +19,12 @@
                 <?php endif;?>
             </div>
             <div class="mb-0 text-slate-500  px-5 pt-2 text-xs text-right flex justify-end">
-                <?php if($question_date):?>
-                <p class="mr-5"><?php echo $question_date ?></p>
+                <p class="mr-5"><?php echo get_the_date() ?></p>
                 <p>by:
                     <?php
                             $author_name  =  get_the_author_meta( 'display_name',get_the_author_posts());
                             echo $author_name;
                         ?>
-                    <?php endif;?>
                 </p>
             </div>
         </div>

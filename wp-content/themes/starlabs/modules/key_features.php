@@ -17,7 +17,7 @@ $boxes = $module['boxes'];
 								<img src="<?php echo $box['box_image']['url']; ?>" alt="icon" class="w-[59px] h-[59px] mx-auto">
 					        </span> 
 						   <h4 class="text-lg font-bold mt-5 mx-2.5 mb-0 text-center"><?php echo $box['box_title']; ?></h4>
-						   <p class="text-5xl font-bold mt-[35px] mx-[9] mb-0 text-blue-700 text-center"><?php echo $box['box_number'];?></</p>
+						   <p class="text-5xl font-bold mt-[35px] mx-[9] mb-0 text-[#4767c9] text-center"><?php echo $box['box_number'];?></</p>
 						
 					    </div>
 				    <?php endforeach; ?>	  

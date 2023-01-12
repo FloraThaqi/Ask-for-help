@@ -1,4 +1,4 @@
-<div class="bg-indigo-500" >
+<div class="bg-[#4767c9]" >
 <?php
     $title = $module['title'];
     $sub_title = $module['sub_title'];
@@ -10,7 +10,7 @@
     $privacy_policy = $module['privacy_policy'];
     
 ?>
-<div class="bg-indigo-500" >
+<div class="bg-[#4767c9]" >
     <div class="py-14">
        <?php if($title): ?>
         <h5 class=" leading-3 space-y-1.5 font-semibold flex justify-center text-lg	 text-white"><?php echo $title ?></h5><br>
@@ -30,7 +30,7 @@
             
         <div class=" my-10 text-white flex justify-center">
         <?php if($button): ?>
-        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white rounded-full hover:bg-sky-700"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button['title']?></h3></a>
+        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white rounded-full hover:bg-[#4767c9]"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button['title']?></h3></a>
         <?php endif ?></div>
         <div class="text-[14px] text-white flex justify-center">
     

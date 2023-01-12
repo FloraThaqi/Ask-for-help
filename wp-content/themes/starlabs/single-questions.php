@@ -45,14 +45,14 @@
              <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 block">
             <textarea id="comment" rows="6" name="comment"
             class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none "
-            placeholder="Write a comment..." required></textarea>
+            placeholder="Help with an answer..." required></textarea>
             </div>', 
             'cancel_reply_link'    => __( 'Cancel' ),
         );
         
         ?>
                 <div class="flex justify-between items-center mb-6">
-                    <h2 class="text-lg lg:text-2xl font-bold text-gray-900 ">Comment </h2>
+                    <h2 class="text-lg lg:text-2xl font-bold text-gray-900 ">Answers </h2>
                 </div>
 
                 <?php comment_form($args); ?>

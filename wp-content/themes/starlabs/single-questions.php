@@ -22,11 +22,11 @@
                 <?php if($question_date):?>
                 <p class="mr-5"><?php echo $question_date ?></p>
                 <p>by:
-                <?php
+                    <?php
                             $author_name  =  get_the_author_meta( 'display_name',get_the_author_posts());
                             echo $author_name;
                         ?>
-                <?php endif;?>
+                    <?php endif;?>
                 </p>
             </div>
         </div>
@@ -88,10 +88,24 @@
     </div>
 
     <div class="w-full md:w-[30%]">
-      <?php get_sidebar();?>
+        <?php get_sidebar();?>
     </div>
 </div>
 
 
 
 <?php get_footer();?>
+
+
+<script>
+// Add cancel reply button on comment form
+jQuery(function($) {
+    $('.comment-reply-link', '.comment-body').on('click', function() {
+        $('#cancel-comment-reply-link').insertAfter('.form-submit').addClass('button').show();
+    });
+
+    $('#cancel-comment-reply-link').on('click', function() {
+        $(this).hide();
+    });
+});
+</script>

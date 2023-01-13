@@ -22,7 +22,9 @@
                 <p class="mr-5"><?php echo get_the_date() ?></p>
                 <p>by:
                     <?php
-                            $author_name  =  get_the_author_meta( 'display_name',get_the_author_posts());
+                    $post_id = get_the_ID();
+                    $author_id = get_post_field( 'post_author', $post_id );
+                            $author_name  =  get_the_author_meta( 'display_name', $author_id);
                             echo $author_name;
                         ?>
                 </p>

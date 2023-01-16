@@ -21,7 +21,7 @@
         <?php endif; ?>
 
         <?php if($offer): ?>
-        <h1 class=" font-bold  flex justify-center text-white text-[70px]"><?php echo $offer ?></h1>
+        <h1 class=" font-bold flex justify-center text-white text-[70px] text-center max-lg:text-[50px]"><?php echo $offer ?></h1>
         <?php endif; ?>
 
         <?php if($description): ?>
@@ -30,24 +30,24 @@
             
         <div class=" my-10 text-white flex justify-center">
         <?php if($button): ?>
-        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white rounded-full hover:bg-[#4767c9]"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button['title']?></h3></a>
+        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white rounded-full hover:bg-[#adbce9]"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button['title']?></h3></a>
         <?php endif ?></div>
         <div class="text-[14px] text-white flex justify-center">
     
     <?php 
         if( $copyright ): ?>
-        <p class="text-white flex justify-center"><?php echo $copyright ?>  
+        <p class="text-white text-center"><?php echo $copyright ?> •
     <?php endif;?>
 
     <?php 
         if( $terms ): ?>    
-        <a class="underline underline-offset-1"> <?php echo $terms ?> </a>
+        <a class="underline underline-offset-1">  <?php echo $terms ?> •</a>
     <?php endif; ?>
 
     
     <?php 
         if( $privacy_policy ): ?> 
-     <a class="ml-1 underline underline-offset-1">  <?php echo $privacy_policy ?></a></p>
+     <a class="ml-1 underline underline-offset-1"><?php echo $privacy_policy ?></a></p>
      <?php endif; ?>
     </div>
          </div>

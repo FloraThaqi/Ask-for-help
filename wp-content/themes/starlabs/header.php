@@ -13,8 +13,8 @@
 <body class="bg-gray-100 font-display ">
 
 
-    <nav class="bg-white shadow-lg w-full fixed z-50">
-        <div class=" flex flex-wrap items-center justify-between mx-auto">
+    <nav class="bg-white shadow-lg w-full fixed z-50 ">
+        <div class=" flex flex-wrap items-center justify-between mx-auto px-4 ">
             <!-- Logo  -->
             <a href="<?php echo home_url(); ?>" class="w-40 flex items-center ">
                 <?php 
@@ -40,12 +40,12 @@
             </button>
 
             <!-- Navbar  -->
-            <div class="hidden mobile-menu w-full md:block md:w-auto m-4">
+            <div class="hidden mobile-menu w-full md:block md:w-auto  bg-white ">
 
                 <?php
             			wp_nav_menu(array(
 								'theme_location' => 'primary',
-                                'menu_class'=>'mt-2 flex flex-col  rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent',
+                                'menu_class'=>'flex flex-col  rounded-lg md:flex-row md:space-x-8 md:text-sm md:font-medium md:border-0 md:bg-transparent',
                                 'container' => false,
                                 'walker'=>new Walker_Nav_Primary()
 									)

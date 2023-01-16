@@ -5,8 +5,8 @@ $boxes = $module['boxes'];
 
 ?>
     <div class="w-full">
-        <h1 class=" tracking-normal normal-case font-bold text-5xl text-center mt-10 md:mt-20 mx-auto mb-0"><?php echo $title ?></h1>
-        <p class=" mt-4 mx-auto mb-0 text-gray-400 text-center"><?php echo $paragraph ?> <a href="https://freepik.com/photos/business"  class="underline hover:no-underline p-0 ">Freepik</a></p>
+        <h1 class=" tracking-normal normal-case font-bold text-5xl text-center mt-12 mx-auto mb-0"><?php echo $title ?></h1>
+        <p class=" mt-5 mx-auto mb-0 text-gray-400 text-center w-[70%]"><?php echo $paragraph ?> <a href="https://freepik.com/photos/business"  class="underline hover:no-underline p-0 ">Freepik</a></p>
         <img class="mt-[30px] mb-0 object-cover w-full h-[469px] mx-auto" src="//images03.nicepage.com/c461c07a441a5d220e8feb1a/989ba51b0f1f5d87a311be92/dawq-min.jpg?version=">
         <div class="w-full">
 			<div class="max-w-[1008px] m-auto max-lg:w-11/12 mb-6 md:mb-14">

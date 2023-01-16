@@ -7,10 +7,10 @@
 
 ?>
 
-<footer class="bg-slate-200	 text-black">
-    <div class="container mx-auto px-4 py-8 flex justify-between ">
-        <div class="my-div">
-        <a href="<?php echo home_url(); ?>" class="w-40 flex">
+<footer class="bg-slate-200 text-black">
+    <div class="container mx-auto px-4 py-8 flex flex-col md:flex-row">
+        <div class="w-60 flex">
+        <a href="<?php echo home_url(); ?>">
                 <?php 
                 $footer_logo = get_field('footer_logo','option');
 
@@ -20,7 +20,8 @@
                 <?php endif; ?>
             </a>
         </div>
-        <div class="flex flex-row justify-around w-1/2 md:w-1/4 text-left md:text-left">
+        <div class="w-full flex flex-col md:flex-row">
+        <div class="flex flex-col items-start md:items-center w-1/2 md:w-1/4 mt-8 md:mt-0">
         <ul>
             <?php if( $list_1 ):
                 foreach( $list_1 as $links ) : ?>
@@ -32,7 +33,7 @@
             </ul>
         </div>
 
-        <div class="flex flex-row justify-around w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
+        <div class="flex flex-col items-start md:items-center w-1/2 md:w-1/4 mt-8 md:mt-0">
         <ul>
             <?php if( $list_2 ):
                 foreach( $list_2 as $links ) : ?>
@@ -44,7 +45,7 @@
             </ul>
         </div>
 
-        <div class="flex flex-row justify-around w-1/2 md:w-1/5 text-left md:text-left mt-8 md:mt-0">
+        <div class="flex flex-col items-start md:items-center w-1/2 md:w-1/4 mt-8 md:mt-0">
         <ul>
             <?php if( $list_3 ):
                 foreach( $list_3 as $links ) : ?>
@@ -56,7 +57,7 @@
             </ul>
         </div>
 
-        <div class="flex flex-row justify-around w-1/2 md:w-1/4 text-left md:text-left mt-8 md:mt-0">
+        <div class="flex flex-col items-start md:items-center w-1/2 md:w-1/4 mt-8 md:mt-0">
             <ul>
             <?php if( $list_4 ):
                 foreach( $list_4 as $links ) : ?>
@@ -66,6 +67,7 @@
                 endforeach;
             endif; ?>
             </ul>
+        </div>
         </div>
     </div>
 

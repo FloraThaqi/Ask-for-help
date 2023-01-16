@@ -5,7 +5,7 @@
     $question_date = get_field('question_date');
     wp_enqueue_script( 'comment-reply' ); 
 ?>
-<div class="container mx-auto flex flex-col md:flex-row my-3">
+<div class="container mx-auto flex flex-col md:flex-row  pt-16 ">
     <div class=" mx-auto md:pt-5 pb-0 shadow-zinc-400  md:m-5 w-full ">
         <div class="mb-3">
             <div class="p-5 text-left ">
@@ -87,7 +87,7 @@
 
     </div>
 
-    <div class="w-full md:w-[30%]">
+    <div class="w-full md:w-[30%] pt-16">
         <?php get_sidebar();?>
     </div>
 </div>

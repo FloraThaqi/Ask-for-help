@@ -181,14 +181,14 @@ class Walker_Nav_Primary extends Walker {
 		$atts['aria-current'] = $menu_item->current ? 'page' : '';
         
         // add style for link
-        $atts['class']='block p-1 text-black text-right px-3 ';
+        $atts['class']='block p-1 text-black text-left px-3 hover:bg-gray-200 ';
 		
         //add link style
         if($this->has_children){
           
             $atts['href']='#';
             $atts['role']='button';
-            $atts['class']='dropdown-menu block p-1 px-3 text-black text-right  ';
+            $atts['class']='dropdown-menu block p-1 px-3 text-black text-left  ';
        
 		}
 

@@ -13,8 +13,8 @@
 <body class="bg-gray-100 font-display ">
 
 
-    <nav class="bg-white shadow-lg">
-        <div class=" container flex flex-wrap items-center justify-between md:mx-auto  px-2 ">
+    <nav class="bg-white shadow-lg w-full fixed z-50">
+        <div class=" flex flex-wrap items-center justify-between mx-auto">
             <!-- Logo  -->
             <a href="<?php echo home_url(); ?>" class="w-40 flex items-center ">
                 <?php 
@@ -28,7 +28,7 @@
 
             <!-- Burger Menu -->
             <button type="button"
-                class="mobile-menu-button inline-flex items-center p-2 ml-3 text-sm   rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200  "
+                class="mobile-menu-button inline-flex items-center p-2 ml-3 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200  "
                 aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-8 h-8 " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
@@ -40,7 +40,7 @@
             </button>
 
             <!-- Navbar  -->
-            <div class="hidden mobile-menu w-full md:block md:w-auto">
+            <div class="hidden mobile-menu w-full md:block md:w-auto m-4">
 
                 <?php
             			wp_nav_menu(array(

@@ -33,7 +33,7 @@
                   class="bg-[#f2f2f2] rounded-xl block w-full py-2.5 px-3 m-0 border-none h-auto overflow-visible text-start"
                 />
               </div>
-              <div class="mb-7  w-full lg:w-1/2 text-start block">
+              <div class="mb-7 md:pl-7 w-full lg:w-1/2 text-start block">
                 <label for="email" class="text-start self-start text-base block">Email</label>
                 <input type="email" placeholder="Enter a valid email address" class="bg-[#f2f2f2] rounded-xl block w-full py-2.5 px-3 m-0 border-none h-auto overflow-visible text-start" />
               </div>

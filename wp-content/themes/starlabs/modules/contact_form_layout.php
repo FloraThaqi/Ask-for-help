@@ -18,14 +18,14 @@
             <a href="<?php echo $socials['google+'];?>" target="_blank" class="h-full flex-1 cursor-pointer ml-5"><span class="h-full flex"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 112 112" x="0px" y="0px" id="svg-102d"><path d="M62.2,81.6c-8.6,11.2-24.6,14.4-37.6,10C10.9,87,0.8,73.2,1,58.5c-0.8-18,15.2-34.6,33.1-34.9 c9.2-0.8,18.2,2.7,25,8.6c-2.9,3.1-5.7,6.2-8.9,9.2c-6.2-3.8-13.5-6.5-20.6-4C18.1,40.7,11,54.2,15.4,65.6 c3.5,11.8,17.8,18.3,29.2,13.2c5.8-2.1,9.7-7.4,11.3-13.2c-6.6-0.1-13.2,0-20.1-0.3c0-3.9,0-7.9,0-11.9c11.2,0,22.2,0,33.3,0 C69.9,63.4,68.3,73.9,62.2,81.6z M110.9,63.7c-3.4,0-6.6,0-10,0c0,3.4,0,6.6,0,10c-3.4,0-6.6,0-10,0c0-3.4,0-6.6,0-10 c-3.4,0-6.6,0-10,0c0-3.4,0-6.6,0-10c3.4,0,6.6,0,10,0c0-3.4,0-6.6,0.1-10c3.4,0,6.6,0,10,0c0,3.4,0,6.6,0,10c3.4,0,6.6,0,10,0 C110.9,56.9,110.9,60.3,110.9,63.7z"></path></svg></span></a>
           </div>
         </div>
-        <div class="relative h-auto block lg:py-7 lg:px-10 px-0 py-5">
+        <div class="relative h-auto block lg:py-7 lg:px-10 py-2 px-4">
           <form action="#" class="p-0 lg:mt-12 mt-2.5 flex flex-col flex-wrap">
-            <div class="mb-7 pl-7 w-full text-start self-start text-base block">
+            <div class="mb-7  w-full text-start self-start text-base block">
               <label for="name" class="text-start text-base">Name</label>
               <input type="text" placeholder="Enter your Name" class="bg-[#f2f2f2] rounded-xl block w-full py-2.5 px-3 m-0 border-none h-auto overflow-visible text-start" />
             </div>
             <div class="flex lg:flex-row flex-col">
-              <div class="mb-7 pl-7 w-full lg:w-1/2 text-start block">
+              <div class="mb-7  w-full lg:w-1/2 text-start block">
                 <label for="phone" class="text-start self-start text-base block">Phone</label>
                 <input
                   type="phone number"
@@ -33,12 +33,12 @@
                   class="bg-[#f2f2f2] rounded-xl block w-full py-2.5 px-3 m-0 border-none h-auto overflow-visible text-start"
                 />
               </div>
-              <div class="mb-7 pl-7 w-full lg:w-1/2 text-start block">
+              <div class="mb-7  w-full lg:w-1/2 text-start block">
                 <label for="email" class="text-start self-start text-base block">Email</label>
                 <input type="email" placeholder="Enter a valid email address" class="bg-[#f2f2f2] rounded-xl block w-full py-2.5 px-3 m-0 border-none h-auto overflow-visible text-start" />
               </div>
             </div>
-            <div class="pl-7 w-full text-start block text-[#ffffff]">
+            <div class="pl-7 w-full text-start block text-[#ffffff] py-2 px-4">
               <a href="#" class="bg-[#4767c9] w-full text-center uppercase tracking-[2px] font-bold my-px relative rounded-xl inline-block py-2.5 px-8 mb-7 cursor-pointer"> Request clarification </a>
             </div>
           </form>

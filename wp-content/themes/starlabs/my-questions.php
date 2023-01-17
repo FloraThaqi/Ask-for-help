@@ -5,19 +5,22 @@ Template Name: My Questions
     get_header();
 
     ?>
-<h1 class="text-black text-center text-4xl font-bold p-5 mb-5">My Questions</h1>
+
+
+<div class="container mx-auto flex flex-col md:flex-row  pt-16 ">
 <div class="w-full flex">
     <div class="w-full md:w-[70%]">
         <section class="">
-        <div class="mt-4"
-            <?php
-                $args = array(
-                    'post_type' => 'questions',
-                    'orderby' => 'date',
-                    'order' => 'DESC',
-                    'posts_per_page' => 10
-                );
-
+        <div class="w-full m-auto max-lg:mx-4">
+        <h1 class="text-black text-center text-4xl font-bold p-5 mb-5">My Questions</h1>
+        <?php
+               $args = array(
+                'post_type' => 'questions',
+                'author' => get_current_user_id(),
+                'orderby' => 'date',
+                'order' => 'DESC',
+                'posts_per_page' => 10
+            );
                 $lastBlog = new WP_Query( $args ); ?>
                 <div class="w-full m-auto max-lg:mx-4">
                     <?php if ($lastBlog->have_posts()) : ?>
@@ -63,8 +66,6 @@ Template Name: My Questions
         <?php get_sidebar();?>
     </div>
 </div>
-<?php get_footer();?>
-
-
+</div>
 
 <?php get_footer();?>

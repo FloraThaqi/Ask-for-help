@@ -56,31 +56,31 @@ Template Name: My Questions
                                     </div>
                                 </div>
                             <?php endwhile; ?>
-                            </div>
-                            <!-- Pagination -->
-                            <div class="p-2 text-right">
-                                <?php
-                                $total_pages = $lastBlog->max_num_pages;
-
-                                if ($total_pages > 1){
-                            
-                                    $current_page = max(1, get_query_var('paged'));
-                            
-                                    echo paginate_links(array(
-                                        'base' => get_pagenum_link(1) . '%_%',
-                                        'format' => '/page/%#%',
-                                        'current' => $current_page,
-                                        'total' => $total_pages,
-                                        'prev_text'    => __('« Prev'),
-                                        'next_text'    => __('Next »'),
-                                        'before_page_number' => '<span class="p-2">',
-                                        'after_page_number' => '</span>',
-                                        'current_page_item' => 'active-page',
-                                    ));
-                                }
-                                ?>
-                            </div>
+                            </div> 
                     <?php endif; ?>
+                </div>
+                <!-- Pagination -->
+                <div class="p-2 text-right">
+                <?php
+                    $total_pages = $lastBlog->max_num_pages;
+
+                    if ($total_pages > 1){
+                            
+                        $current_page = max(1, get_query_var('paged'));
+                            
+                        echo paginate_links(array(
+                            'base' => get_pagenum_link(1) . '%_%',
+                            'format' => '/page/%#%',
+                            'current' => $current_page,
+                            'total' => $total_pages,
+                            'prev_text'    => __('« Prev'),
+                            'next_text'    => __('Next »'),
+                            'before_page_number' => '<span class="p-2">',
+                            'after_page_number' => '</span>',
+                            'current_page' => '<span class="underline underline-offset-2">',
+                        ));
+                    }
+                    ?>                
                 </div>
             <?php wp_reset_postdata(); ?>
         </section>

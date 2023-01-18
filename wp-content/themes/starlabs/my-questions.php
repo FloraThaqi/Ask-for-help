@@ -14,12 +14,14 @@ Template Name: My Questions
         <div class="w-full m-auto max-lg:mx-4">
         <h1 class="text-black text-center text-4xl font-bold p-5 mb-5">My Questions</h1>
         <?php
+        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                $args = array(
                 'post_type' => 'questions',
                 'author' => get_current_user_id(),
                 'orderby' => 'date',
                 'order' => 'DESC',
-                'posts_per_page' => 10
+                'posts_per_page' => 10,
+                'paged' => $paged,
             );
                 $lastBlog = new WP_Query( $args ); ?>
                 <div class="w-full m-auto max-lg:mx-4">
@@ -54,8 +56,30 @@ Template Name: My Questions
                                     </div>
                                 </div>
                             <?php endwhile; ?>
-                            </div>
+                            </div> 
                     <?php endif; ?>
+                </div>
+                <!-- Pagination -->
+                <div class="p-2 text-right">
+                <?php
+                    $total_pages = $lastBlog->max_num_pages;
+
+                    if ($total_pages > 1){
+                            
+                        $current_page = max(1, get_query_var('paged'));
+                            
+                        echo paginate_links(array(
+                            'base' => get_pagenum_link(1) . '%_%',
+                            'format' => '/page/%#%',
+                            'current' => $current_page,
+                            'total' => $total_pages,
+                            'prev_text'    => __('« Prev'),
+                            'next_text'    => __('Next »'),
+                            'before_page_number' => '<span class="p-2">',
+                            'after_page_number' => '</span>',
+                        ));
+                    }
+                    ?>                
                 </div>
             <?php wp_reset_postdata(); ?>
         </section>

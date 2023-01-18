@@ -46,7 +46,7 @@ class Walker_Nav_Primary extends Walker {
 			$n = "\n";
 		}
 		$indent = str_repeat( $t, $depth );
-        $output .= "\n$indent<div class=\"doubleDropdown hidden md:absolute bg-white border-2 shadow-lg mx-auto  md:mt-2 z-10 w-full md:w-auto md:min-w-[150px] divide-y md:py-2  \">\n";
+        $output .= "\n$indent<div class=\"doubleDropdown hidden md:absolute bg-white border-2 shadow-lg mx-auto  z-10 w-full md:w-auto md:min-w-[150px] divide-y md:py-2  \">\n";
 		// Default class.
 		$classes = array( 'sub-menu' );
 
@@ -181,19 +181,19 @@ class Walker_Nav_Primary extends Walker {
 		$atts['aria-current'] = $menu_item->current ? 'page' : '';
         
         // add style for link
-        $atts['class']='block p-1 text-black text-left px-3 hover:bg-gray-200 ';
+        $atts['class']='block p-1 text-black text-left px-3 font-display';
 		
         //add link style
         if($this->has_children){
           
             $atts['href']='#';
             $atts['role']='button';
-            $atts['class']='dropdown-menu block p-1 px-3 text-black text-left  ';
+            $atts['class']='dropdown-menu block p-1 px-3 text-black text-left font-display ';
        
 		}
 
 		if($depth > 0){
-			$atts['class']='block p-1  text-black  hover:bg-gray-200 px-3 ';
+			$atts['class']='block p-1  text-black  hover:bg-gray-200 px-3 font-display ';
 		}
 		
 

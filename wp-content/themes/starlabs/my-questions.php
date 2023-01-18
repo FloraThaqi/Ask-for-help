@@ -77,7 +77,6 @@ Template Name: My Questions
                             'next_text'    => __('Next »'),
                             'before_page_number' => '<span class="p-2">',
                             'after_page_number' => '</span>',
-                            'current_page' => '<span class="underline underline-offset-2">',
                         ));
                     }
                     ?>                

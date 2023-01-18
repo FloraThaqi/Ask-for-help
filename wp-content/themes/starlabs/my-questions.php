@@ -60,6 +60,7 @@ Template Name: My Questions
             <?php wp_reset_postdata(); ?>
         </section>
     </div>
+                            </div>
     <div class="w-full md:w-[30%] pt-16">
     <button id="ask-new-question-button" class="bg-indigo-500 text-black rounded-lg px-4 py-2">Ask a New Question</button>
 

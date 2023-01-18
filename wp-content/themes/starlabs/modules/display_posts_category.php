@@ -3,9 +3,11 @@ $category_selection = $module['category_selection'];
 $category_relation = $module['relation'];
 $byDefault_relation = $module['by_default_relation'];
 $cat_name = $byDefault_relation->name;
-?>
 
-<?php
+$currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$arguments = array('posts_per_page' => 3, 'paged' => $currentPage);
+query_posts($arguments);
+
 $args = array(
     'post_type' => 'questions',
     'tax_query' => array(
@@ -14,16 +16,18 @@ $args = array(
             'field' => 'slug',
             'terms' => $cat_name
         )
-    )
+    ),
+    'posts_per_page' => 3,
+    'paged' => $currentPage
 );
 ?>
 <section class="">
     <?php if ($category_selection == 'By default') {
-        $lastBlog = new WP_Query($args); ?>
+        $wp_query = new WP_Query($args); ?>
         <div class="w-full m-auto max-lg:mx-4">
-            <?php if ($lastBlog->have_posts()) : ?>
+            <?php if ($wp_query->have_posts()) : ?>
                 <div class="w-full m-auto py-8">
-                    <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
+                    <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
                         <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
                             <?php
                             $title_variable = get_field('question_title');
@@ -54,7 +58,7 @@ $args = array(
     } else { ?>
         <div class="w-full m-auto max-lg:mx-4">
             <div class="w-full m-auto py-8">
-                <?php foreach ($category_relation as $value) : ?>
+            <?php foreach ($category_relation as $value) : ?>
                     <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
                         <?php
                         $title_variable = get_field('question_title', $value->ID);
@@ -82,6 +86,8 @@ $args = array(
                 <?php endforeach; ?>
             </div>
         </div>
-    <?php }
-    ?>
+    <?php }; ?>
+    <a><?php next_posts_link('<< Previous'); ?></a>
+    <a><?php previous_posts_link('Next >>'); ?></a>
+    <?php wp_reset_query(); ?>
 </section>

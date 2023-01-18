@@ -8,12 +8,12 @@ Template Name: My Questions
 
 
 <div class="container mx-auto flex flex-col md:flex-row  pt-16 ">
-<div class="w-full flex">
-    <div class="w-full md:w-[70%]">
-        <section class="">
-        <div class="w-full m-auto max-lg:mx-4">
-        <h1 class="text-black text-center text-4xl font-bold p-5 mb-5">My Questions</h1>
-        <?php
+    <div class="w-full flex">
+        <div class="w-full md:w-[70%]">
+            <section class="">
+                <div class="w-full m-auto max-lg:mx-4">
+                    <h1 class="text-black text-center text-4xl font-bold p-5 mb-5">My Questions</h1>
+                    <?php
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                $args = array(
                 'post_type' => 'questions',
@@ -24,10 +24,67 @@ Template Name: My Questions
                 'paged' => $paged,
             );
                 $lastBlog = new WP_Query( $args ); ?>
-                <div class="w-full m-auto max-lg:mx-4">
-                    <?php if ($lastBlog->have_posts()) : ?>
-                        <div class="w-full m-auto py-8">
-                            <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); 
+                    <div class="w-full m-auto max-lg:mx-4">
+
+                        <!-- Add new question -->
+                        <div class="flex justify-between  flex-wrap">
+                            <h4 class="text-black text-left text-3xl font-bold mt-5 ">My Questions</h4>
+                            <button type="button"
+                                class="px-4 py-3 bg-[#4767C9]  text-white font-display text-xs uppercase rounded hover:bg-[#4767D9] mt-5 "
+                                onclick="toggleModal('modal-id')">
+                                Add new question
+                            </button>
+
+                            <!-- Main modal -->
+
+                            <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+                                id="modal-id">
+                                <div class="relative w-auto my-6 mx-auto max-w-6xl">
+                                    <!--content-->
+                                    <div
+                                        class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                                        <!--header-->
+                                        <div
+                                            class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
+                                            <h3 class="text-3xl font-semibold">
+                                                Modal Title
+                                            </h3>
+                                            <button
+                                                class="p-1 ml-auto bg-transparent border-0 text-black  float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                                                onclick="toggleModal('modal-id')">
+                                                <span
+                                                    class="bg-transparent text-black opacity-50 hover:opacity-100 h-6 w-6 text-2xl block outline-none focus:outline-none">
+                                                    <span class="dashicons dashicons-no text-2xl"></span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                        <!--body-->
+                                        <div class="relative p-6 flex-auto">
+                                            <p class="my-4 text-slate-500 text-lg leading-relaxed">
+                                                SAra
+                                            </p>
+                                        </div>
+                                        <!--footer-->
+                                        <div
+                                            class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
+                                            <button
+                                                class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                type="button" onclick="toggleModal('modal-id')">
+                                                Close
+                                            </button>
+                                            <button
+                                                class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                type="button" onclick="toggleModal('modal-id')">
+                                                Save Changes
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
+                            <?php if ($lastBlog->have_posts()) : ?>
+                            <div class="w-full m-auto py-8">
+                                <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); 
                                 $title_variable = get_field('question_title');
                                 $description_variable = get_field('question_description');
                                 $date_variable = get_field('question_date');
@@ -38,10 +95,14 @@ Template Name: My Questions
                                     $cat_name = 'N/A';
                                 }
                             ?>
-                                <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
+                                <div
+                                    class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
                                     <div class="flex max-md:justify-between">
-                                        <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="user profile">
-                                        <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
+                                        <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
+                                            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                                            alt="user profile">
+                                        <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?>
+                                            | </p>
                                         <a class="text-gray-500 leading-8">In: <?php echo $cat_name ?></a>
                                     </div>
                                     <div class="text-gray-500 w-full m-auto my-2">
@@ -52,16 +113,17 @@ Template Name: My Questions
                                         </p>
                                     </div>
                                     <div class="flex justify-end  min-h-[40px] items-center w-full mx-auto">
-                                        <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded" href="<?php echo the_permalink(); ?>">Answer</a>
+                                        <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
+                                            href="<?php echo the_permalink(); ?>">Answer</a>
                                     </div>
                                 </div>
-                            <?php endwhile; ?>
-                            </div> 
-                    <?php endif; ?>
-                </div>
-                <!-- Pagination -->
-                <div class="p-2 text-right">
-                <?php
+                                <?php endwhile; ?>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                        <!-- Pagination -->
+                        <div class="p-2 text-right">
+                            <?php
                     $total_pages = $lastBlog->max_num_pages;
 
                     if ($total_pages > 1){
@@ -79,17 +141,29 @@ Template Name: My Questions
                             'after_page_number' => '</span>',
                         ));
                     }
-                    ?>                
-                </div>
-            <?php wp_reset_postdata(); ?>
-        </section>
-    </div>
-    <div class="w-full md:w-[30%] pt-16">
-    <button id="ask-new-question-button" class="bg-indigo-500 text-black rounded-lg px-4 py-2">Ask a New Question</button>
+                    ?>
+                        </div>
+                        <?php wp_reset_postdata(); ?>
+            </section>
+        </div>
+        <div class="w-full md:w-[30%] pt-16">
 
-        <?php get_sidebar();?>
+
+            <?php get_sidebar();?>
+        </div>
     </div>
-</div>
 </div>
 
 <?php get_footer();?>
+
+
+
+
+<script type="text/javascript">
+function toggleModal(modalID) {
+    document.getElementById(modalID).classList.toggle("hidden");
+    document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+    document.getElementById(modalID).classList.toggle("flex");
+    document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+}
+</script>

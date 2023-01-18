@@ -13,15 +13,15 @@
 <body class="bg-gray-100 font-display ">
 
 
-    <nav class="bg-white shadow-lg w-full fixed z-50 ">
-        <div class=" flex flex-wrap items-center justify-between mx-auto px-4 ">
+    <nav class="bg-white shadow-lg w-full fixed z-50 h-16 ">
+        <div class=" md:container flex flex-wrap items-center justify-between mx-auto px-4  ">
             <!-- Logo  -->
             <a href="<?php echo home_url(); ?>" class="w-40 flex items-center ">
                 <?php 
                 $header_logo = get_field('header_logo','option');
 
                 if( !empty( $header_logo ) ): ?>
-                <img class="object-contain " src="<?php echo esc_url($header_logo['url']); ?>"
+                <img class="object-contain h-16 " src="<?php echo esc_url($header_logo['url']); ?>"
                     alt="<?php echo esc_attr($header_logo['alt']); ?>" />
                 <?php endif; ?>
             </a>

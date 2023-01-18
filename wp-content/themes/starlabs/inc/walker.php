@@ -181,19 +181,19 @@ class Walker_Nav_Primary extends Walker {
 		$atts['aria-current'] = $menu_item->current ? 'page' : '';
         
         // add style for link
-        $atts['class']='block p-1 text-black text-left px-3 ';
+        $atts['class']='block p-1 text-black text-left px-3 font-display';
 		
         //add link style
         if($this->has_children){
           
             $atts['href']='#';
             $atts['role']='button';
-            $atts['class']='dropdown-menu block p-1 px-3 text-black text-left  ';
+            $atts['class']='dropdown-menu block p-1 px-3 text-black text-left font-display ';
        
 		}
 
 		if($depth > 0){
-			$atts['class']='block p-1  text-black  hover:bg-gray-200 px-3 ';
+			$atts['class']='block p-1  text-black  hover:bg-gray-200 px-3 font-display ';
 		}
 		
 

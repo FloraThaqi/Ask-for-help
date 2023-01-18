@@ -47,7 +47,7 @@ Template Name: My Questions
                                         <div
                                             class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                                             <h3 class="text-3xl font-semibold">
-                                                Modal Title
+                                                Add a new question
                                             </h3>
                                             <button
                                                 class="p-1 ml-auto bg-transparent border-0 text-black  float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -60,9 +60,53 @@ Template Name: My Questions
                                         </div>
                                         <!--body-->
                                         <div class="relative p-6 flex-auto">
-                                            <p class="my-4 text-slate-500 text-lg leading-relaxed">
-                                                SAra
-                                            </p>
+                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded shadow bg-white">
+                                                    <div class="md:w-1/3">
+                                                        <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
+                                                            Question Title
+                                                        </label>
+                                                    </div>
+                                                    <div class="md:w-[350px]">
+                                                        <input class="form-input block w-full focus:bg-white border border-gray-300 rounded pl-1" id="my-textfield" type="text" value="" placeholder="Title">
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded shadow bg-white">
+                                                    <div class="md:w-1/3">
+                                                        <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textarea">
+                                                            Question Description
+                                                        </label>
+                                                    </div>
+                                                    <div class="md:w-[350px]">
+                                                        <textarea class="form-textarea block w-full focus:bg-white border border-gray-300 rounded pl-1" id="my-textarea" value="" rows="8" placeholder="Description"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded shadow bg-white">
+                                                    <div class="md:w-[350px]">
+                                                        <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-select">
+                                                            Choose a Category
+                                                        </label>
+                                                    </div>
+                                                    <div class="md:w-2/3">
+                                                        <select name="" class="form-select block w-full focus:bg-white border border-gray-300 rounded pl-1" id="my-select">
+                                                            <option value="Default">Category</option>
+                                                            <option value="Programming">Programming</option>
+                                                            <option value="Art">Art</option>
+                                                            <option value=" Books"> Books</option>
+                                                            <option value="Cars">Cars</option>
+                                                            <option value=" Food"> Food</option>
+                                                            <option value=" Gaming"> Gaming</option>
+                                                            <option value="IT">IT</option>
+                                                            <option value=" Movies"> Movies</option>
+                                                            <option value=" Other Categories"> Other Categories</option>
+                                                            <option value="Science">Science</option>
+                                                            <option value="Sports">Sports</option>
+                                                            
+                                                        </select>
+                                                    </div>
+                                                </div>
+
                                         </div>
                                         <!--footer-->
                                         <div

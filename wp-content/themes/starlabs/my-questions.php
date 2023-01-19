@@ -31,12 +31,10 @@ Template Name: My Questions
                                 $title_variable = get_field('question_title');
                                 $description_variable = get_field('question_description');
                                 $date_variable = get_field('question_date');
-                                $category = get_the_category();
-                                if($category){
-                                    $cat_name = $category[0]->cat_name;
-                                }else{
-                                    $cat_name = 'N/A';
-                                }
+                                $terms = get_the_terms( get_the_ID(), 'field' );
+                                if ( $terms && ! is_wp_error( $terms ) ) : 
+                                $cat_name = $terms[0]->name;
+                                endif;
                             ?>
                                 <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
                                     <div class="flex max-md:justify-between">

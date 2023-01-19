@@ -22,7 +22,7 @@ $pages = get_field('pages','option');?>
 
 
 
-<aside class="box-shadow shadow-lg bg-slate-200	 h-inherit rounded-b-lg w-90 lg:gap-2 ml-6 sticky top-0">
+<aside class="box-shadow shadow-lg bg-slate-200	 h-inherit rounded-b-lg w-90 lg:gap-2 ml-6 sticky top-[12%]">
 <h2 class="text-base px-4 font-semibold tracking-widest uppercase text-gray-600 py-4">Categories</h2>
   <ul class="text-sm font-medium">
     <?php wp_get_archives( array(

@@ -192,7 +192,8 @@ Template Name: My Questions
                                         </p>
                                     </div>
                                     <div class="flex justify-end  min-h-[40px] items-center w-full mx-auto">
-                                        <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded" href="<?php echo the_permalink(); ?>">Answer</a>
+                                    <a class="min-w-[80px] h-[35px] bg-indigo-500 text-white flex justify-center items-center mr-3 rounded" href="<?php echo the_permalink(); ?>">View</a>
+                                    <a class="min-w-[80px] h-[35px] bg-red-500 text-white flex justify-center items-center mr-3 rounded" href="<?php echo get_delete_post_link(get_the_ID()); ?>">Delete</a>
                                     </div>
                                 </div>
                             <?php endwhile; ?>

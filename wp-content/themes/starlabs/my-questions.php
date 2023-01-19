@@ -43,7 +43,6 @@ Template Name: My Questions
         <div class="w-full md:w-[70%]">
             <section class="">
                 <div class="w-full m-auto max-lg:mx-4">
-                    <h1 class="text-black text-center text-4xl font-bold p-5 mb-5">My Questions</h1>
                     <?php
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                $args = array(
@@ -175,7 +174,8 @@ Template Name: My Questions
                                 $date_variable = get_field('question_date');
                                 $terms = get_the_terms( get_the_ID(), 'field' );
                                 if ( $terms && ! is_wp_error( $terms ) ) : 
-                                $cat_name = $terms[0]->name;
+                                $cat_name = $terms[0]->name; else :
+                                    $cat_name = 'N/A';
                                 endif;
                             ?>
                                 <div
@@ -232,11 +232,9 @@ Template Name: My Questions
                         <?php wp_reset_postdata(); ?>
             </section>
         </div>
-        <div class="w-full md:w-[30%] pt-16">
-
-
-            <?php get_sidebar();?>
-        </div>
+    </div>
+    <div class="w-full md:w-[30%] pt-16">
+        <?php get_sidebar();?>
     </div>
 </div>
 

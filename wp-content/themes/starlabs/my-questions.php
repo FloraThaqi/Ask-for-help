@@ -20,7 +20,7 @@ Template Name: My Questions
                 'author' => get_current_user_id(),
                 'orderby' => 'date',
                 'order' => 'DESC',
-                'posts_per_page' => 10,
+                'posts_per_page' => 2,
                 'paged' => $paged,
             );
                 $lastBlog = new WP_Query( $args ); ?>
@@ -77,9 +77,9 @@ Template Name: My Questions
                             'next_text' => '>',
                         ));
 
-                        $pagination = str_replace( 'current', 'w-10 h-10 flex justify-center items-center p-2 rounded-full border-2 border-gray-300 text-white font-bold bg-[#1e90ff]' , $pagination );
+                        $pagination = str_replace( 'current', 'w-10 h-10 flex justify-center items-center p-2 rounded-full border border-gray-300 text-white font-bold bg-[#1e90ff]' , $pagination );
 
-                        $pagination = str_replace( '<a', '<a class="w-10 h-10 flex justify-center items-center p-2 rounded-full border-2 border-gray-300 text-gray-400 font-bold hover:bg-gray-200"', $pagination );
+                        $pagination = str_replace( '<a', '<a class="w-10 h-10 flex justify-center items-center p-2 rounded-full border border-gray-300 text-gray-400 font-bold hover:bg-gray-200"', $pagination );
                         echo $pagination;
                     }
                     ?>                

@@ -6,20 +6,24 @@ Template Name: My Questions
 
     ?>
 
+<!-- Add new question -->
 <?php
+    global $wpdb;
+    
+    if ( isset( $_POST['submit'] ) && wp_verify_nonce($_POST['my_form_nonce'],'my_form_submit') ){
 
-if ( isset( $_POST['submit'] ) && wp_verify_nonce($_POST['my_form_nonce'],'my_form_submit') ){
+        if(current_user_can('publish_posts')){
 
-    if(current_user_can('publish_posts')){
-        $post_title =sanitize_text_field($_POST['question_title']);
-        $post_category =  $_POST['question_category'];
 
-        $post_data=array(
-            'post_title'=>$post_title,
-            'post_status'=>'publish',
-            'post_type'=>'questions',
-            'tax_input' => array( 'field' => array($post_category) ),
-        );
+            $post_title =sanitize_text_field($_POST['question_title']);
+            $post_category =  $_POST['question_category'];
+
+            $post_data=array(
+                'post_title'=>$post_title,
+                'post_status'=>'publish',
+                'post_type'=>'questions',
+                'tax_input' => array( 'field' => array($post_category) ),
+            );
 
             //insert the post into the database
 
@@ -31,11 +35,6 @@ if ( isset( $_POST['submit'] ) && wp_verify_nonce($_POST['my_form_nonce'],'my_fo
             update_field('question_description',sanitize_text_field($_POST['question_description']),$post_id);
 
     }
-
- 
-
-
-
 }
 
 ?>
@@ -69,7 +68,7 @@ if ( isset( $_POST['submit'] ) && wp_verify_nonce($_POST['my_form_nonce'],'my_fo
 
                             <!-- Main modal -->
 
-                            <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+                            <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 top-10 z-50 outline-none focus:outline-none justify-center items-center shadow-sm"
                                 id="modal-id">
                                 <div class="relative w-auto my-6 mx-auto max-w-6xl">
                                     <!--content-->
@@ -94,61 +93,54 @@ if ( isset( $_POST['submit'] ) && wp_verify_nonce($_POST['my_form_nonce'],'my_fo
                                         <div class="relative p-6 flex-auto">
                                             <form method="post" action="" id="myform">
                                                 <?php wp_nonce_field('my_form_submit', 'my_form_nonce') ?>
-                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded  bg-white">
-                                                    <div class="md:w-1/3">
-                                                        <label
-                                                            class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4"
-                                                            for="my-textfield">
-                                                            Question Title
-                                                        </label>
-                                                    </div>
-                                                    <div class="md:w-[350px]">
-                                                        <input
-                                                            class=" py-2 form-input block w-full focus:bg-white border border-gray-300 rounded pl-1"
-                                                            id="question_title" name="question_title" type="text"
-                                                            value="" placeholder="Title">
-                                                    </div>
+                                                <div class="flex flex-wrap p-2 mt-0 rounded  bg-white">
+                                                    <label
+                                                        class="block text-gray-600 font-bold md:text-left mb-3 w-full"
+                                                        for="my-textfield">
+                                                        Question Title
+                                                    </label>
+                                                    <input
+                                                        class=" py-2 form-input block w-full focus:bg-white border border-gray-300 rounded pl-1"
+                                                        id="question_title" name="question_title" type="text" value=""
+                                                        placeholder="Title" required>
+
+
                                                 </div>
 
-                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded  bg-white">
-                                                    <div class="md:w-1/3">
-                                                        <label
-                                                            class="py-2 block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4"
-                                                            for="my-textarea">
-                                                            Question Description
-                                                        </label>
-                                                    </div>
-                                                    <div class="md:w-[350px]">
-                                                        <textarea
-                                                            class="form-textarea block w-full focus:bg-white border border-gray-300 rounded pl-1"
-                                                            value="" rows="8" placeholder="Description"
-                                                            id="question_description"
-                                                            name="question_description"></textarea>
-                                                    </div>
+                                                <div class="flex flex-wrap p-2 mt-0 rounded  bg-white">
+                                                    <label
+                                                        class="block text-gray-600 font-bold md:text-left mb-3 w-full"
+                                                        for="my-textfield">
+                                                        Question Description
+                                                    </label>
+                                                    <textarea
+                                                        class="form-textarea block w-full focus:bg-white border border-gray-300 rounded pl-1"
+                                                        value="" rows="8" placeholder="Description"
+                                                        id="question_description" name="question_description"
+                                                        required></textarea>
+
+
                                                 </div>
 
-                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded  bg-white">
-                                                    <div class="md:w-[350px]">
-                                                        <label
-                                                            class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4"
-                                                            for="my-select">
-                                                            Choose a Category
-                                                        </label>
-                                                    </div>
-                                                    <div class="md:w-2/3">
-                                                        <select name="question_category" id="question_category"
-                                                            required>
-                                                            <?php
+                                                <div class="flex flex-wrap p-2 mt-0 rounded  bg-white">
+                                                    <label
+                                                        class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4"
+                                                        for="my-select">
+                                                        Choose a Category
+                                                    </label>
+                                                    <select name="question_category" id="question_category "
+                                                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 p-3"
+                                                        required>
+                                                        <?php
                                                           $terms = get_terms( array(
-                                                                'taxonomy' => 'field',
+                                                                    'taxonomy' => 'field',
                                                                     'hide_empty' => false,
                                                                         ) );
                                                             foreach ( $terms as $term ) {
                                                                         echo '<option value="' . esc_attr( $term->term_id ) . '">' . esc_html( $term->name ) . '</option>';
                                                                         }
-                                                                                    ?>
-                                                        </select>
-                                                    </div>
+                                                        ;?>
+                                                    </select>
                                                 </div>
 
                                         </div>
@@ -165,13 +157,15 @@ if ( isset( $_POST['submit'] ) && wp_verify_nonce($_POST['my_form_nonce'],'my_fo
                                             <button
                                                 class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded  hover:-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                                 type="submit" name="submit">
-                                                Save Changes
+                                                Create
                                             </button>
                                         </div>
                                         </form>
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
                             <?php if ($lastBlog->have_posts()) : ?>
                             <div class="w-full m-auto py-8">

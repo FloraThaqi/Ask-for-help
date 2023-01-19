@@ -6,7 +6,39 @@ Template Name: My Questions
 
     ?>
 
+<?php
 
+if ( isset( $_POST['submit'] ) && wp_verify_nonce($_POST['my_form_nonce'],'my_form_submit') ){
+
+    if(current_user_can('publish_posts')){
+        $post_title =sanitize_text_field($_POST['question_title']);
+        $post_category =  $_POST['question_category'];
+
+        $post_data=array(
+            'post_title'=>$post_title,
+            'post_status'=>'publish',
+            'post_type'=>'questions',
+            'tax_input' => array( 'field' => array($post_category) ),
+        );
+
+            //insert the post into the database
+
+            $post_id=wp_insert_post($post_data);
+    
+            //Update the ACF field
+            update_field('question_title',sanitize_text_field($_POST['question_title']),$post_id);
+
+            update_field('question_description',sanitize_text_field($_POST['question_description']),$post_id);
+
+    }
+
+ 
+
+
+
+}
+
+?>
 <div class="container mx-auto flex flex-col md:flex-row  pt-16 ">
     <div class="w-full flex">
         <div class="w-full md:w-[70%]">
@@ -42,11 +74,11 @@ Template Name: My Questions
                                 <div class="relative w-auto my-6 mx-auto max-w-6xl">
                                     <!--content-->
                                     <div
-                                        class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                                        class="border-0 rounded-lg -lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                         <!--header-->
                                         <div
                                             class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                                            <h3 class="text-3xl font-semibold">
+                                            <h3 class="text-2xl font-semibold">
                                                 Add a new question
                                             </h3>
                                             <button
@@ -60,54 +92,68 @@ Template Name: My Questions
                                         </div>
                                         <!--body-->
                                         <div class="relative p-6 flex-auto">
-                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded shadow bg-white">
+                                            <form method="post" action="" id="myform">
+                                                <?php wp_nonce_field('my_form_submit', 'my_form_nonce') ?>
+                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded  bg-white">
                                                     <div class="md:w-1/3">
-                                                        <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textfield">
+                                                        <label
+                                                            class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4"
+                                                            for="my-textfield">
                                                             Question Title
                                                         </label>
                                                     </div>
                                                     <div class="md:w-[350px]">
-                                                        <input class="form-input block w-full focus:bg-white border border-gray-300 rounded pl-1" id="my-textfield" type="text" value="" placeholder="Title">
+                                                        <input
+                                                            class=" py-2 form-input block w-full focus:bg-white border border-gray-300 rounded pl-1"
+                                                            id="question_title" name="question_title" type="text"
+                                                            value="" placeholder="Title">
                                                     </div>
                                                 </div>
-                                                
-                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded shadow bg-white">
+
+                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded  bg-white">
                                                     <div class="md:w-1/3">
-                                                        <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-textarea">
+                                                        <label
+                                                            class="py-2 block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4"
+                                                            for="my-textarea">
                                                             Question Description
                                                         </label>
                                                     </div>
                                                     <div class="md:w-[350px]">
-                                                        <textarea class="form-textarea block w-full focus:bg-white border border-gray-300 rounded pl-1" id="my-textarea" value="" rows="8" placeholder="Description"></textarea>
+                                                        <textarea
+                                                            class="form-textarea block w-full focus:bg-white border border-gray-300 rounded pl-1"
+                                                            value="" rows="8" placeholder="Description"
+                                                            id="question_description"
+                                                            name="question_description"></textarea>
                                                     </div>
                                                 </div>
 
-                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded shadow bg-white">
+                                                <div class="md:flex mb-6 p-2 lg:mt-0 rounded  bg-white">
                                                     <div class="md:w-[350px]">
-                                                        <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-select">
+                                                        <label
+                                                            class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4"
+                                                            for="my-select">
                                                             Choose a Category
                                                         </label>
                                                     </div>
                                                     <div class="md:w-2/3">
-                                                        <select name="" class="form-select block w-full focus:bg-white border border-gray-300 rounded pl-1" id="my-select">
-                                                            <option value="Default">Category</option>
-                                                            <option value="Programming">Programming</option>
-                                                            <option value="Art">Art</option>
-                                                            <option value=" Books"> Books</option>
-                                                            <option value="Cars">Cars</option>
-                                                            <option value=" Food"> Food</option>
-                                                            <option value=" Gaming"> Gaming</option>
-                                                            <option value="IT">IT</option>
-                                                            <option value=" Movies"> Movies</option>
-                                                            <option value=" Other Categories"> Other Categories</option>
-                                                            <option value="Science">Science</option>
-                                                            <option value="Sports">Sports</option>
-                                                            
+                                                        <select name="question_category" id="question_category"
+                                                            required>
+                                                            <?php
+                                                          $terms = get_terms( array(
+                                                                'taxonomy' => 'field',
+                                                                    'hide_empty' => false,
+                                                                        ) );
+                                                            foreach ( $terms as $term ) {
+                                                                        echo '<option value="' . esc_attr( $term->term_id ) . '">' . esc_html( $term->name ) . '</option>';
+                                                                        }
+                                                                                    ?>
                                                         </select>
                                                     </div>
                                                 </div>
 
                                         </div>
+
+
                                         <!--footer-->
                                         <div
                                             class="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
@@ -117,11 +163,12 @@ Template Name: My Questions
                                                 Close
                                             </button>
                                             <button
-                                                class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                type="button" onclick="toggleModal('modal-id')">
+                                                class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded  hover:-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                type="submit" name="submit">
                                                 Save Changes
                                             </button>
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -212,5 +259,9 @@ function toggleModal(modalID) {
     document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
     document.getElementById(modalID).classList.toggle("flex");
     document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+}
+
+if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
 }
 </script>

@@ -20,7 +20,7 @@ Template Name: My Questions
                 'author' => get_current_user_id(),
                 'orderby' => 'date',
                 'order' => 'DESC',
-                'posts_per_page' => 10,
+                'posts_per_page' => 2,
                 'paged' => $paged,
             );
                 $lastBlog = new WP_Query( $args ); ?>
@@ -174,16 +174,19 @@ Template Name: My Questions
                             
                         $current_page = max(1, get_query_var('paged'));
                             
-                        echo paginate_links(array(
+                        $pagination = paginate_links(array(
                             'base' => get_pagenum_link(1) . '%_%',
                             'format' => '/page/%#%',
                             'current' => $current_page,
                             'total' => $total_pages,
-                            'prev_text'    => __('« Prev'),
-                            'next_text'    => __('Next »'),
-                            'before_page_number' => '<span class="p-2">',
-                            'after_page_number' => '</span>',
+                            'prev_text' => '<',
+                            'next_text' => '>',
                         ));
+
+                        $pagination = str_replace( 'current', 'w-10 h-10 flex justify-center items-center p-2 rounded-full border border-gray-300 text-white font-bold bg-[#1e90ff]' , $pagination );
+
+                        $pagination = str_replace( '<a', '<a class="w-10 h-10 flex justify-center items-center p-2 rounded-full border border-gray-300 text-gray-400 font-bold hover:bg-gray-200"', $pagination );
+                        echo $pagination;
                     }
                     ?>
                         </div>

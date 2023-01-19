@@ -9,10 +9,18 @@ Template Name: My Questions
 
 <div class="container mx-auto flex flex-col md:flex-row  pt-16 ">
 <div class="w-full flex">
-    <div class="w-full md:w-[70%]">
+    <div class="w-full ">
         <section class="">
         <div class="w-full m-auto max-lg:mx-4">
-        <h1 class="text-black text-center text-4xl font-bold p-5 mb-5">My Questions</h1>
+           <div class=" mt-8  p-4">
+             <div class="flex justify-between">
+             <h2 class="text-4xl font-bold">My question</h2>
+              <div class="flex justify-center">
+             <button id="ask-new-question-button" class="bg-indigo-500 text-white rounded-lg px-4 py-2">Ask a New Question</button>
+        </div>
+        </div>
+         <p class="pt-2">Ask more questions: 10+ categories included in your membership.</p>
+        </div>
         <?php
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                $args = array(
@@ -87,8 +95,6 @@ Template Name: My Questions
     </div>
                             </div>
     <div class="w-full md:w-[30%] pt-16">
-    <button id="ask-new-question-button" class="bg-indigo-500 text-black rounded-lg px-4 py-2">Ask a New Question</button>
-
         <?php get_sidebar();?>
     </div>
 </div>

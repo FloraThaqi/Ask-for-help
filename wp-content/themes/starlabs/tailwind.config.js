@@ -13,6 +13,7 @@ module.exports = {
       "./page-login.php",
       "./single-questions.php",
       "./all-categories-widget.php",
+      "./my-questions.php",
     ],
   },
   theme: {

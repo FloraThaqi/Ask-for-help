@@ -50,7 +50,7 @@ Template Name: My Questions
                 'author' => get_current_user_id(),
                 'orderby' => 'date',
                 'order' => 'DESC',
-                'posts_per_page' => 2,
+                'posts_per_page' => 5,
                 'paged' => $paged,
             );
                 $lastBlog = new WP_Query( $args ); ?>
@@ -225,7 +225,7 @@ Template Name: My Questions
         </section>
     </div>
                             </div>
-    <div class="w-full md:w-[30%] pt-16">
+    <div class="w-full md:w-[30%]">
         <?php get_sidebar();?>
     </div>
 </div>

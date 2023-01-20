@@ -241,3 +241,48 @@ function gt_posts_custom_column_views($column)
 
 add_filter('manage_posts_columns', 'gt_posts_column_views');
 add_action('manage_posts_custom_column', 'gt_posts_custom_column_views');
+
+
+
+
+//delete button on comment section
+
+        
+// Add script on single post & pages with comments only, if user has edit rights
+add_action( 'template_redirect', 'boj_idc_addjs_ifcomments' );
+function boj_idc_addjs_ifcomments() {
+    if( is_single() && current_user_can( 'moderate_comments' ) ) {
+        global $post;
+        if( $post->comment_count ) {
+            $path = plugin_dir_url( __FILE__ );
+        
+            wp_enqueue_script( 'boj_idc', $path.'js/script.js' );
+            $protocol = isset( $_SERVER["HTTPS"]) ? 'https://' : 'http://';
+            $params = array(
+              'ajaxurl' =>admin_url( 'admin-ajax.php', $protocol )
+            );
+            wp_localize_script( 'boj_idc', 'boj_idc', $params );
+        }
+    }
+}
+     
+
+// Add an admin link to each comment
+add_filter( 'comment_text', 'delete_button' );
+function delete_button( $text ) {
+    // Get current comment ID
+    global $comment;
+    $comment_id = $comment->comment_ID;
+	
+    // Get link to admin page to trash comment, and add nonces to it
+    $link =printf(
+		'<a class=" text-base absolute p-6 text-red-600 bottom-0 left-0" href="%s">%s</a>',
+		wp_nonce_url(
+			admin_url( "comment.php?c=$comment_id&action=deletecomment" ),
+			'delete-comment_' . $comment_id
+		),
+		esc_html__( 'Delete', 'text-domain' )
+	);
+        
+    return $text;
+}

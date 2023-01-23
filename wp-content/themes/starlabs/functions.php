@@ -1,4 +1,7 @@
 <?php
+ob_start();
+error_reporting(0);
+
 if (function_exists('acf_add_options_page')) {
 
     acf_add_options_page(array(
@@ -210,13 +213,19 @@ add_action('wp_enqueue_scripts', 'google_fonts');
 
 function gt_get_post_view()
 {
-	$count = get_post_meta(get_the_ID(), 'post_views_count', true);
+	$post_id = get_the_ID();
+	$count = get_post_meta($post_id, 'post_views_count', true);
+	return "$count views";
+}
+
+function gt_get_post_views($post_id)
+{
+	$count = get_post_meta($post_id, 'post_views_count', true);
 	return "$count views";
 }
 
 function gt_set_post_view()
 {
-
 	$key = 'post_views_count';
 	$post_id = get_the_ID();
 	$count = (int) get_post_meta($post_id, $key, true);
@@ -225,6 +234,13 @@ function gt_set_post_view()
 	update_post_meta($post_id, $key, $count);
 }
 
+function gt_set_post_views($post_id)
+{
+	$key = 'post_views_count';
+	$count = (int) get_post_meta($post_id, $key, true);
+
+	update_post_meta($post_id, $key, $count);
+}
 
 function gt_posts_column_views($columns)
 {
@@ -271,18 +287,26 @@ function boj_idc_addjs_ifcomments() {
 add_filter( 'comment_text', 'delete_button' );
 function delete_button( $text ) {
     // Get current comment ID
-    global $comment;
+    global $comment , $user_ID;
     $comment_id = $comment->comment_ID;
-	
-    // Get link to admin page to trash comment, and add nonces to it
-    $link =printf(
+	$post_id = get_the_ID();
+	$author_id = get_post_field('post_author', $post_id);
+
+	if($author_id==$user_ID){
+
+		// Get link to admin page to trash comment, and add nonces to it
+		$link =printf(
 		'<a class=" text-base absolute p-6 text-red-600 bottom-0 left-0" href="%s">%s</a>',
+		
+
 		wp_nonce_url(
 			admin_url( "comment.php?c=$comment_id&action=deletecomment" ),
 			'delete-comment_' . $comment_id
 		),
 		esc_html__( 'Delete', 'text-domain' )
 	);
-        
+}
+	
     return $text;
+
 }

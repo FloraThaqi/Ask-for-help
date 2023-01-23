@@ -62,8 +62,8 @@ Template Name: My Questions
                                 <a class="min-w-[80px] h-[35px] bg-red-500 text-white flex justify-center items-center mr-3 rounded" href="#" onClick="showModal()">Delete</a>
 
                        
-                                <div id="deleteModal" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center">
-                                <div class="bg-white p-6 rounded">
+                                <div id="deleteModal" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center ">
+                                <div class="bg-white p-6 rounded  shadow-lg shadow-gray-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 -m-1 flex items-center text-red-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                  </svg>

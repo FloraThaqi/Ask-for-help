@@ -109,7 +109,6 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
                             $date_variable = get_field('question_date', $value->ID);
                             $getslugid = wp_get_post_terms($value->ID, 'field');
                             $getslug = $getslugid[0]->name;
-                            //echo print_r($value->ID);
                             ?>
                             <div class="flex max-md:justify-between">
                                 <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="user profile">

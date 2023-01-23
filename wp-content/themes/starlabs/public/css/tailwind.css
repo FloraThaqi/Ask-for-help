@@ -622,6 +622,11 @@ video {
   margin-right: auto;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
@@ -878,8 +883,12 @@ video {
   height: 1rem;
 }
 
-.h-\[2px\] {
-  height: 2px;
+.h-4 {
+  height: 1rem;
+}
+
+.h-\[1px\] {
+  height: 1px;
 }
 
 .h-\[35px\] {
@@ -1382,9 +1391,9 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-gray-200 {
+.bg-slate-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 
 .bg-\[\#4767C9\] {
@@ -1517,6 +1526,10 @@ video {
   padding: 1rem;
 }
 
+.p-1 {
+  padding: 0.25rem;
+}
+
 .p-3 {
   padding: 0.75rem;
 }
@@ -1529,8 +1542,12 @@ video {
   padding: 1px;
 }
 
-.p-1 {
-  padding: 0.25rem;
+.p-\[1px\] {
+  padding: 1px;
+}
+
+.p-\[1px\] {
+  padding: 1px;
 }
 
 .p-6 {
@@ -1675,6 +1692,10 @@ video {
 
 .pt-16 {
   padding-top: 4rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .pb-0 {
@@ -1860,6 +1881,11 @@ video {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
+.text-\[\#4767C9\] {
+  --tw-text-opacity: 1;
+  color: rgb(71 103 201 / var(--tw-text-opacity));
+}
+
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
@@ -1935,12 +1961,12 @@ video {
   color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
-.text-\[\#4767c9\] {
+.text-red-600 {
   --tw-text-opacity: 1;
-  color: rgb(71 103 201 / var(--tw-text-opacity));
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
-.text-\[\#4767C9\] {
+.text-\[\#4767c9\] {
   --tw-text-opacity: 1;
   color: rgb(71 103 201 / var(--tw-text-opacity));
 }
@@ -2046,6 +2072,10 @@ video {
   border-style: none;
 }
 
+.visited\:text-purple-500:visited {
+  color: rgb(168 85 247 );
+}
+
 .hover\:bg-black:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -2083,6 +2113,10 @@ video {
 .hover\:text-\[\#4767c9\]:hover {
   --tw-text-opacity: 1;
   color: rgb(71 103 201 / var(--tw-text-opacity));
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 .hover\:no-underline:hover {

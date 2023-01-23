@@ -23,7 +23,6 @@ Template Name: My Questions
             );
                 $lastBlog = new WP_Query( $args ); ?>
                     <div class="w-full m-auto max-lg:mx-4">
-
                         <!-- Add new question -->
                         <?php include get_template_directory(). './add-modal.php' ?>
 

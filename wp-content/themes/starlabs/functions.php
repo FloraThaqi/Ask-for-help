@@ -281,13 +281,16 @@ function delete_button( $text ) {
 		// Get link to admin page to trash comment, and add nonces to it
 		$link =printf(
 		'<a class=" text-base absolute p-6 text-red-600 bottom-0 left-0" href="%s">%s</a>',
+		
+
 		wp_nonce_url(
 			admin_url( "comment.php?c=$comment_id&action=deletecomment" ),
 			'delete-comment_' . $comment_id
 		),
 		esc_html__( 'Delete', 'text-domain' )
 	);
+}
 	
     return $text;
-}
+
 }

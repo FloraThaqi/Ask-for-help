@@ -18,7 +18,7 @@ if (function_exists('acf_add_options_page')) {
     ));
 }
 function style_enqueue() {
-	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/public/css/tailwind.css');
+	wp_enqueue_style( 'style-name', get_template_directory_uri() . './public/css/tailwind.css');
 	wp_enqueue_style( 'style-comment', get_template_directory_uri() . '/public/css/comment-style.css');
     wp_enqueue_script('script',get_template_directory_uri() . '/js/script.js',array( 'jquery' ), 1.1, true);
     wp_enqueue_style('dashicons');
@@ -210,13 +210,19 @@ add_action('wp_enqueue_scripts', 'google_fonts');
 
 function gt_get_post_view()
 {
-	$count = get_post_meta(get_the_ID(), 'post_views_count', true);
+	$post_id = get_the_ID();
+	$count = get_post_meta($post_id, 'post_views_count', true);
+	return "$count views";
+}
+
+function gt_get_post_views($post_id)
+{
+	$count = get_post_meta($post_id, 'post_views_count', true);
 	return "$count views";
 }
 
 function gt_set_post_view()
 {
-
 	$key = 'post_views_count';
 	$post_id = get_the_ID();
 	$count = (int) get_post_meta($post_id, $key, true);
@@ -225,6 +231,13 @@ function gt_set_post_view()
 	update_post_meta($post_id, $key, $count);
 }
 
+function gt_set_post_views($post_id)
+{
+	$key = 'post_views_count';
+	$count = (int) get_post_meta($post_id, $key, true);
+
+	update_post_meta($post_id, $key, $count);
+}
 
 function gt_posts_column_views($columns)
 {

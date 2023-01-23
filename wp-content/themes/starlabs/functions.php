@@ -1,4 +1,7 @@
 <?php
+ob_start();
+error_reporting(0);
+
 if (function_exists('acf_add_options_page')) {
 
     acf_add_options_page(array(

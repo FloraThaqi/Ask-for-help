@@ -8,6 +8,7 @@
     font-weight: strong; 
 }
 .comment-body{
+    position: relative;
     padding: 1.5rem; 
     margin-bottom: 1.0rem; 
     background-color: #ffffff; 

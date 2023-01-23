@@ -11,12 +11,12 @@ gt_set_post_view();
         <div class="mb-3">
             <div class="p-5 text-left ">
                 <?php if ($question_title) : ?>
-                    <h3 class="text-4xl font-bold"><?php echo $question_title ?></h3>
+                <h3 class="text-4xl font-bold"><?php echo $question_title ?></h3>
                 <?php endif; ?>
             </div>
             <div class="p-5 text-slate-500 ">
                 <?php if ($question_description) : ?>
-                    <p><?php echo $question_description ?></p>
+                <p><?php echo $question_description ?></p>
                 <?php endif; ?>
             </div>
             <div class="mb-0 text-slate-500 px-5 pt-2 text-xs flex justify-between">
@@ -84,14 +84,17 @@ gt_set_post_view();
                         'reverse_top_level' => true
 
                     ), $comments);
+
+                    
                     ?>
+
                 </ol>
 
             </div>
 
             <?php
             if (is_single() && comments_open() && get_option('thread_comments')) {   ?>
-                <?php wp_enqueue_script('comment-reply'); ?>
+            <?php wp_enqueue_script('comment-reply'); ?>
             <?php   } ?>
 
         </section>
@@ -109,14 +112,14 @@ gt_set_post_view();
 
 
 <script>
-    // Add cancel reply button on comment form
-    jQuery(function($) {
-        $('.comment-reply-link', '.comment-body').on('click', function() {
-            $('#cancel-comment-reply-link').insertAfter('.form-submit').addClass('button').show();
-        });
-
-        $('#cancel-comment-reply-link').on('click', function() {
-            $(this).hide();
-        });
+// Add cancel reply button on comment form
+jQuery(function($) {
+    $('.comment-reply-link', '.comment-body').on('click', function() {
+        $('#cancel-comment-reply-link').insertAfter('.form-submit').addClass('button').show();
     });
+
+    $('#cancel-comment-reply-link').on('click', function() {
+        $(this).hide();
+    });
+});
 </script>

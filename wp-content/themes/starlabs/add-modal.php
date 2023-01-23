@@ -26,10 +26,13 @@
 
             update_field('question_description',sanitize_text_field($_POST['question_description']),$post_id);
 
-    }
-}
+    }?>
 
+<?php 
+    wp_redirect(home_url('/my-questions')); exit;}
 ?>
+
+
 
 <!-- Add new question -->
 <div class="flex justify-between  flex-wrap">
@@ -97,14 +100,13 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5 p-3"
                                 required>
                                 <?php
-                                                          $terms = get_terms( array(
-                                                                    'taxonomy' => 'field',
-                                                                    'hide_empty' => false,
-                                                                        ) );
-                                                            foreach ( $terms as $term ) {
-                                                                        echo '<option value="' . esc_attr( $term->term_id ) . '">' . esc_html( $term->name ) . '</option>';
-                                                                        }
-                                                        ;?>
+                                     $terms = get_terms( array(
+                                                    'taxonomy' => 'field',
+                                                                  'hide_empty' => false,
+                                                ));
+                                            foreach( $terms as $term ) {
+                                     echo '<option value="' . esc_attr( $term->term_id ) . '">' . esc_html( $term->name ) . '</option>';
+                                        } ?>
                             </select>
                         </div>
 

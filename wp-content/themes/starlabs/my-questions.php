@@ -116,19 +116,3 @@ Template Name: My Questions
 </div>
 <?php get_footer();?>
 
-<script>
-
-  function showModal() {
-    document.getElementById("deleteModal").classList.remove("hidden");
-  }
-
-  function hideModal() {
-    document.getElementById("deleteModal").classList.add("hidden");
-  }
-
-
-  function deletePost() {
-  
-    hideModal();
-  }
-</script>

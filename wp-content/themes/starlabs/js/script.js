@@ -1,22 +1,18 @@
+//Burger Menu
+const btn = document.querySelector("button.mobile-menu-button");
+const menu = document.querySelector(".mobile-menu");
 
-    //Burger Menu 
-    const btn = document.querySelector("button.mobile-menu-button");
-    const menu = document.querySelector(".mobile-menu");
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
 
-    btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-    });
+// Dropdown Menu
+const dropdownBtn = document.querySelector(".dropdown-menu");
+const div = document.querySelector(".doubleDropdown");
 
-
-    // Dropdown Menu
-    const dropdownBtn = document.querySelector(".dropdown-menu");
-    const div = document.querySelector(".doubleDropdown");
-
-    dropdownBtn.addEventListener("click", () => {
-        div.classList.toggle("hidden");
-    });
-
-
+dropdownBtn.addEventListener("click", () => {
+  div.classList.toggle("hidden");
+});
 
 window.addEventListener("load", showActiveName);
 window.addEventListener("load", showActiveDesc);
@@ -61,4 +57,41 @@ function changeActiveTab(event, tabID) {
   document.getElementById(tabID).classList.add("block");
 }
 
+//Add Modal
+function toggleModal(modalID) {
+  document.getElementById(modalID).classList.toggle("hidden");
+  document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
+  document.getElementById(modalID).classList.toggle("flex");
+  document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+}
 
+if (window.history.replaceState) {
+  window.history.replaceState(null, null, window.location.href);
+}
+
+//Delete question pop up window
+function showModal() {
+  document.getElementById("deleteModal").classList.remove("hidden");
+}
+
+function hideModal() {
+  document.getElementById("deleteModal").classList.add("hidden");
+}
+
+function deletePost() {
+  hideModal();
+}
+
+// Add cancel reply button on comment form
+jQuery(function ($) {
+  $(".comment-reply-link", ".comment-body").on("click", function () {
+    $("#cancel-comment-reply-link")
+      .insertAfter(".form-submit")
+      .addClass("button")
+      .show();
+  });
+
+  $("#cancel-comment-reply-link").on("click", function () {
+    $(this).hide();
+  });
+});

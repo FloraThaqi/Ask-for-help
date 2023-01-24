@@ -49,6 +49,7 @@ if (isset($_POST['submit']) && wp_verify_nonce($_POST['my_form_nonce'], 'my_form
           <?php echo $paragraph; ?>
         </p>
       </div>
+      <?php if(is_user_logged_in()) : ?>
       <div class="h-auto block text-left bg-[#4767c9] rounded-3xl mt-6 relative text-base">
         <form method="post" action="" id="myform" class="p-[40px] -ml-2 mt-0 w-[calc(100%+10px)] flex flex-wrap items-end">
         <?php wp_nonce_field('my_form_submit', 'my_form_nonce') ?>
@@ -82,6 +83,7 @@ if (isset($_POST['submit']) && wp_verify_nonce($_POST['my_form_nonce'], 'my_form
           </div>
         </form>
       </div>
+      <?php endif; ?>
     </div>
   </div>
 </div>

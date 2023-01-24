@@ -40,7 +40,8 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<div class="min-h-screen max-w-full bg-right-bottom bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center" style="
+<div class="min-h-screen max-w-full bg-right-bottom bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center"
+        style="
         background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/14932e39a84a5afe9272d0c1/pexels-photo-301930copy.jpg);
       ">
   <div class="h-full mt-20 flex lg:flex-row gap-20 justify-start lg:basis-[69%] flex-col p-[30px]">

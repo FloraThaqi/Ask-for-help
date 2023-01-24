@@ -23,10 +23,10 @@ $pages = get_field('pages','option');?>
 
 
 <aside class="box-shadow shadow-lg bg-slate-200	 h-inherit rounded-b-lg w-90 lg:gap-2 ml-6 sticky top-[12%]">
-     <div> 
-              <div class="p-4">
+     
+        <div class="p-4">
     
-              <h4 class="text-base px-4 font-semibold tracking-widest uppercase text-gray-600 py-4">Most Popular Questions</h4>
+              <h4 class="text-base px-2 font-semibold tracking-widest uppercase text-gray-600 py-4">Most Popular Questions</h4>
               <ul class="text-sm font-medium">
                 <?php
                   $args = array(
@@ -34,7 +34,7 @@ $pages = get_field('pages','option');?>
                       'meta_key' => 'post_views_count',
                       'orderby' => 'meta_value_num',
                       'order' => 'DESC',
-                      'posts_per_page' => 6
+                      'posts_per_page' => 8
                       
                   );
       
@@ -50,19 +50,9 @@ $pages = get_field('pages','option');?>
                   }
                 ?>
               </ul>
-              <div class="h-[1px] my-5 bg-[#4767C9]"></div>
-          </div>   
-     </div>
-    <div>
-        <h2 class="text-base px-4 font-semibold tracking-widest uppercase text-gray-600 py-4">Categories</h2>
-        <ul class="text-sm font-medium">
-            <?php wp_get_archives( array(
-            'type' => 'postbypost',
-            'limit' => 10,
-            'before' => '<li class="hover:text-[#4767c9] mx-5 text-black py-4 border-b border-slate-300 last:border-none">',
-            'after' => '</li>'
-            ) ); ?>
-        </ul>
-    </div>
+          
+        </div>   
+  
+
 </aside>
 

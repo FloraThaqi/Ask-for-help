@@ -15,7 +15,8 @@ module.exports = {
       "./all-categories-widget.php",
       "./inc/walker.php",
       "./my-questions.php",
-      "./add-modal.php"
+      "./add-modal.php",
+      "./functions.php",
     ],
   },
   theme: {

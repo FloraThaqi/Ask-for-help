@@ -138,6 +138,7 @@ Template Name: My Questions
 </div>
 <?php get_footer();?>
 
+
 <script>
 function showModal() {
     document.getElementById("deleteModal").classList.remove("hidden");

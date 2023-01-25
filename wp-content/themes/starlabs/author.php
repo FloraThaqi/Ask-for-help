@@ -26,11 +26,11 @@
                         $author_url = get_author_posts_url($author_id);
                         gt_set_post_views($post_ID);
                         ?>
-                        <div class="flex max-md:justify-between">
+                        <div class="flex max-md:flex-wrap">
                             <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="user profile">
                             <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
                             <a class="text-gray-500 leading-8 mr-2">In: <?php echo $cat_name ?> | </a>
-                            <a class="text-gray-500 leading-8 mr-2">Posted by: <?php echo '<a class="text-gray-500 leading-8 mr-2" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
+                            <a class="text-gray-500 leading-8 mr-2">Posted by: <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
                         </div>
                         <div class="text-gray-500 w-full m-auto my-2">
                             <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>

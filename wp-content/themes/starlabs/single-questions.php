@@ -1,12 +1,16 @@
 <?php
-get_header();
-$question_title = get_field('question_title');
-$question_description = get_field('question_description');
-$question_date = get_field('question_date');
-wp_enqueue_script('comment-reply');
-gt_set_post_view();
+    get_header();
+    $question_title = get_field('question_title');
+    $question_description = get_field('question_description');
+    $question_date = get_field('question_date');
+    $close=get_field('close');
+    wp_enqueue_script('comment-reply');
+    gt_set_post_view();
 ?>
+
 <div class="container mx-auto flex flex-col md:flex-row  pt-16 ">
+
+
     <div class=" mx-auto md:pt-5 pb-0 shadow-zinc-400  md:m-5 w-full ">
         <div class="mb-3">
             <div class="flex justify-between">
@@ -17,16 +21,28 @@ gt_set_post_view();
                     <?php endif; ?>
                 </div>
                 <div class="p-5">
-                    <button type="button" onclick="change()" id="close-btn"
+                    <?php if(!$close) :?>
+                    <button type="button" id="button1" name="button1"
                         class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
-                        <span class="sr-only">Close question</span>
-                        <!-- Heroicon name: outline/x -->
-                        <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
+                        <p class=" text-slate-500 text-lg">Mark as solved</p>
+
                     </button>
+                    <?php
+                    
+                    ?>
+                    <?php else  :?>
+
+
+                    <div class="w-16  overflow-hidden inline-block relative">
+                        <div class=" h-8  bg-green-600 -rotate-45 ">
+                        </div>
+                        <div>
+                            <p class=" text-black font-bold text-lg absolute top-0 ">Solved </p>
+                        </div>
+                    </div>
+
+
+                    <?php endif ;?>
                 </div>
             </div>
             <div class="p-5 text-slate-500 ">
@@ -71,12 +87,12 @@ gt_set_post_view();
                 <?php
                 $args = array(
 
-                    'comment_field' => '
-             <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 block">
-            <textarea id="comment" rows="6" name="comment"
-            class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none "
-            placeholder="Help with an answer..." required></textarea>
-            </div>',
+                    'comment_field' =>
+                    '<div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 block">
+                    <textarea id="comment" rows="6" name="comment"
+                    class="px-0 w-full text-sm text-gray-900 border-0 focus:ring-0 focus:outline-none "
+                    placeholder="Help with an answer..." required></textarea>
+                    </div>',
                     'cancel_reply_link'    => __('Cancel'),
                 );
 

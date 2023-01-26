@@ -46,6 +46,39 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
                                 <div class="flex">
                                     <a class="text-gray-500 leading-8 mr-2">Posted by: <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
                                 </div>
+                                <div class="absolute top-0 right-0">
+                                    <?php
+                                    global $user_ID;
+                                    $post_id = get_the_ID();
+                                    $author_id = get_post_field('post_author', $post_id);
+                                    if (!$close) : ?>
+                                        <?php if ($author_id == $user_ID) : ?>
+                                            <form action="" method="POST">
+
+                                                <button type="submit" id=<?php echo $post_ID; ?> name=<?php echo $post_ID; ?> class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
+                                                    <p class=" text-slate-500 text-lg">Mark as solved</p>
+                                                </button>
+                                            </form>
+                                        <?php else : ?>
+                                        <?php endif; ?>
+                                        <?php
+                                        if (isset($_POST[$post_ID])) {
+                                            update_field('close', 1, $post_ID);
+                                            echo "<script type='text/javascript'>
+                                            location.reload();
+                                            </script>";
+                                        }
+                                        ?>
+                                    <?php else : ?>
+                                        <div class="w-16  overflow-hidden inline-block relative">
+                                            <div class=" h-8  bg-green-600 -rotate-45 ">
+                                            </div>
+                                            <div>
+                                                <p class=" text-black font-bold text-lg absolute top-0 ">Solved </p>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
                             </div>
                             <div class="text-gray-500 w-full m-auto my-2">
                                 <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>

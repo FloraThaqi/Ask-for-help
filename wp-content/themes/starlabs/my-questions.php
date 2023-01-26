@@ -60,20 +60,30 @@ Template Name: My Questions
                                     <div class="absolute top-0 right-0">
 
                                         <div class="">
-                                            <?php if(!$close) :?>
+                                            <?php
+                                                global $user_ID;
+                                                $post_id = get_the_ID();
+                                                $author_id = get_post_field('post_author', $post_id); 
+                                               
+                                                if(!$close) :?>
+                                            <?php if($author_id==$user_ID): ?>
                                             <form action="" method="POST">
 
                                                 <button type="submit" id=<?php  echo $post_ID ;?>
                                                     name=<?php  echo $post_ID ;?>
                                                     class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
                                                     <p class=" text-slate-500 text-lg">Mark as solved</p>
-
                                                 </button>
                                             </form>
+                                            <?php else:?>
 
+
+
+
+                                            <?php endif ;?>
 
                                             <?php
-
+                                           
                                                     if(isset($_POST[$post_ID])  ){
 
                                                      

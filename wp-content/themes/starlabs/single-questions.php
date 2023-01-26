@@ -157,6 +157,17 @@ if(isset($_GET['date_filter'])){
         ), $comments);
         echo '</ol>';
     }
+} else { //If date filter is not set, show all comments by default
+    $comments = get_comments(array(
+        'post_id' => get_the_ID(),
+        'status' => 'approve',
+    ));
+    echo '<ol class="commentlist">';
+    wp_list_comments(array(
+        'per_page' => -1,
+        'reverse_top_level' => true
+    ), $comments);
+    echo '</ol>';
 }
 ?>
 
@@ -177,3 +188,4 @@ if(isset($_GET['date_filter'])){
 
 
 <?php get_footer(); ?>
+

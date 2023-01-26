@@ -29,10 +29,19 @@ if (isset($_POST['submit']) && wp_verify_nonce($_POST['my_form_nonce'], 'my_form
 
     update_field('question_description', sanitize_text_field($_POST['question_description']), $post_id);
   }
+};
+
+if (isset($_POST['submit'])) {
+  if (!is_user_logged_in()) {
+    wp_redirect(site_url().'/login');
+    exit;
+  }
 }
+
 ?>
 
-<div class="min-h-screen max-w-full bg-right-bottom bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center" style="
+<div class="min-h-screen max-w-full bg-right-bottom bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center"
+        style="
         background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/14932e39a84a5afe9272d0c1/pexels-photo-301930copy.jpg);
       ">
   <div class="h-full mt-20 flex lg:flex-row gap-20 justify-start lg:basis-[69%] flex-col p-[30px]">
@@ -51,7 +60,7 @@ if (isset($_POST['submit']) && wp_verify_nonce($_POST['my_form_nonce'], 'my_form
       </div>
       <div class="h-auto block text-left bg-[#4767c9] rounded-3xl mt-6 relative text-base">
         <form method="post" action="" id="myform" class="p-[40px] -ml-2 mt-0 w-[calc(100%+10px)] flex flex-wrap items-end">
-        <?php wp_nonce_field('my_form_submit', 'my_form_nonce') ?>
+          <?php wp_nonce_field('my_form_submit', 'my_form_nonce') ?>
           <div class="w-full text-start">
             <label for="my-textfield" class="text-base"></label>
             <input class="bg-[#ffffff] text-[#111111] rounded-2xl block w-full mb-3 py-2.5 px-3 border-none text-start" id="question_title" name="question_title" type="text" value="" placeholder="Title" required />
@@ -76,9 +85,13 @@ if (isset($_POST['submit']) && wp_verify_nonce($_POST['my_form_nonce'], 'my_form
             <textarea class="bg-[#ffffff] text-[#111111] rounded-2xl block w-full mb-3 py-2.5 px-3 border-none text-start" value="" rows="4" placeholder="Description" id="question_description" name="question_description" required></textarea>
           </div>
           <div class="w-full mb-0">
+            <?php
+
+            ?>
             <button class="bg-blue-100 text-[#111111] border-none hover:font-medium rounded-2xl cursor-pointer text-center px-4 py-2 min-w-[100px] hover:bg-white hover:text-[#4767c9]" type="submit" name="submit">
               Create
             </button>
+            <?php ?>
           </div>
         </form>
       </div>

@@ -1,22 +1,18 @@
+//Burger Menu
+const btn = document.querySelector("button.mobile-menu-button");
+const menu = document.querySelector(".mobile-menu");
 
-    //Burger Menu 
-    const btn = document.querySelector("button.mobile-menu-button");
-    const menu = document.querySelector(".mobile-menu");
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+});
 
-    btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-    });
+// Dropdown Menu
+const dropdownBtn = document.querySelector(".dropdown-menu");
+const div = document.querySelector(".doubleDropdown");
 
-
-    // Dropdown Menu
-    const dropdownBtn = document.querySelector(".dropdown-menu");
-    const div = document.querySelector(".doubleDropdown");
-
-    dropdownBtn.addEventListener("click", () => {
-        div.classList.toggle("hidden");
-    });
-
-
+dropdownBtn.addEventListener("click", () => {
+  div.classList.toggle("hidden");
+});
 
 window.addEventListener("load", showActiveName);
 window.addEventListener("load", showActiveDesc);
@@ -61,4 +57,57 @@ function changeActiveTab(event, tabID) {
   document.getElementById(tabID).classList.add("block");
 }
 
+// Handle like and dislike
+// Add click event to like-button
+jQuery(document).ready(function ($) {
+  $(".like-button").on("click", function (e) {
+    e.preventDefault();
+    var $this = $(this);
 
+    // Send AJAX request
+    $.ajax({
+      type: "post",
+      dataType: "json",
+      url: ajax_object.ajax_url,
+      data: {
+        action: "like",
+        nonce: $this.data("nonce"),
+        comment_id: $this.data("comment-id"),
+      },
+      success: function (response) {
+        //update the count of the element
+        var countElem = $this.siblings(".like-count");
+        var current_count = parseInt(countElem.attr("data-count"));
+        var new_count = current_count == 0 ? 1 : 0;
+        countElem.attr("data-count", new_count);
+        countElem.text(new_count);
+      },
+    });
+  });
+
+  // Add click event to dislike-button
+  $(".dislike-button").on("click", function (e) {
+    e.preventDefault();
+    var $this = $(this);
+
+    // Send AJAX request
+    $.ajax({
+      type: "post",
+      dataType: "json",
+      url: ajax_object.ajax_url,
+      data: {
+        action: "dislike",
+        nonce: $this.data("nonce"),
+        comment_id: $this.data("comment-id"),
+      },
+      success: function (response) {
+        //update the count of the element
+        var countElem = $this.siblings(".dislike-count");
+        var current_count = parseInt(countElem.attr("data-count"));
+        var new_count = current_count == 0 ? 1 : 0;
+        countElem.attr("data-count", new_count);
+        countElem.text(new_count);
+      },
+    });
+  });
+});

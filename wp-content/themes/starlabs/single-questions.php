@@ -22,17 +22,25 @@
                 </div>
                 <div class="p-5">
                     <?php if(!$close) :?>
-                    <button type="button" id="button1" name="button1"
-                        class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
-                        <p class=" text-slate-500 text-lg">Mark as solved</p>
+                    <form action="" method="POST">
 
-                    </button>
+                        <button type="submit" id="button1" name="button1"
+                            class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
+                            <p class=" text-slate-500 text-lg">Mark as solved</p>
+
+                        </button>
+                    </form>
+
+
                     <?php
-                    
+                    if(isset($_POST['button1'])){
+                        update_field('close',1,$post_id);
+                        wp_redirect(get_permalink());
+                    }
+          
                     ?>
-                    <?php else  :?>
 
-
+                    <?php else :?>
                     <div class="w-16  overflow-hidden inline-block relative">
                         <div class=" h-8  bg-green-600 -rotate-45 ">
                         </div>
@@ -40,6 +48,8 @@
                             <p class=" text-black font-bold text-lg absolute top-0 ">Solved </p>
                         </div>
                     </div>
+
+
 
 
                     <?php endif ;?>

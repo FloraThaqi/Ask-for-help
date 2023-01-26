@@ -17,6 +17,7 @@ module.exports = {
       "./my-questions.php",
       "./add-modal.php",
       "./functions.php",
+      "./like-dislike.php",
     ],
   },
   theme: {

@@ -48,18 +48,42 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     <div class="absolute top-0 right-0">
 
                         <div class="">
-                            <?php if(!$close) :?>
-                            <button type="button" id="button1" name="button1"
-                                class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
-                                <p class=" text-slate-500 text-lg">Mark as solved</p>
+                            <?php
+                                                global $user_ID;
+                                                $post_id = get_the_ID();
+                                                $author_id = get_post_field('post_author', $post_id); 
+                                               
+                                                    if(!$close) :?>
+                            <?php if($author_id==$user_ID): ?>
+                            <form action="" method="POST">
 
-                            </button>
+                                <button type="submit" id=<?php  echo $post_ID ;?> name=<?php  echo $post_ID ;?>
+                                    class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
+                                    <p class=" text-slate-500 text-lg">Mark as solved</p>
+                                </button>
+                            </form>
+                            <?php else:?>
+
+
+
+
+                            <?php endif ;?>
+
+
                             <?php
 
-?>
-                            <?php else  :?>
+                                    if(isset($_POST[$post_ID])  ){
 
+                                    
+                                            update_field('close',1, $post_ID);
+                                            echo "<script type='text/javascript'>
+                                            location.reload();
+                                            </script>";
+                                        
+                                        }
+                                    ?>
 
+                            <?php else :?>
                             <div class="w-16  overflow-hidden inline-block relative">
                                 <div class=" h-8  bg-green-600 -rotate-45 ">
                                 </div>
@@ -67,8 +91,6 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
                                     <p class=" text-black font-bold text-lg absolute top-0 ">Solved </p>
                                 </div>
                             </div>
-
-
                             <?php endif ;?>
                         </div>
                     </div>
@@ -145,14 +167,68 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
                             $date_variable = get_field('question_date', $value->ID);
                             $getslugid = wp_get_post_terms($value->ID, 'field');
                             $getslug = $getslugid[0]->name;
+                            $close=get_field('close');
+                            $post_ID = get_the_ID();
                             //echo print_r($value->ID);
                             ?>
-                <div class="flex max-md:justify-between">
+                <div class="flex max-md:justify-between relative">
                     <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                         src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                         alt="user profile">
                     <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
                     <a class="text-gray-500 leading-8 mr-2">In: <?php echo $getslug ?></a>
+
+
+                    <div class="absolute top-0 right-0">
+
+                        <div class="">
+                            <?php
+                                   global $user_ID;
+                                      $post_id = get_the_ID();
+                                        $author_id = get_post_field('post_author', $post_id); 
+                                               
+                        if(!$close) :?>
+                            <?php if($author_id==$user_ID): ?>
+                            <form action="" method="POST">
+
+                                <button type="submit" id=<?php  echo $post_ID ;?> name=<?php  echo $post_ID ;?>
+                                    class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
+                                    <p class=" text-slate-500 text-lg">Mark as solved</p>
+                                </button>
+                            </form>
+                            <?php else:?>
+
+
+
+
+                            <?php endif ;?>
+
+
+                            <?php
+
+                                    if(isset($_POST[$post_ID])  ){
+
+                                    
+                                            update_field('close',1, $post_ID);
+                                            echo "<script type='text/javascript'>
+                                            location.reload();
+                                            </script>";
+                                        
+                                            return;
+                                        }
+                                    ?>
+
+                            <?php else :?>
+                            <div class="w-16  overflow-hidden inline-block relative">
+                                <div class=" h-8  bg-green-600 -rotate-45 ">
+                                </div>
+                                <div>
+                                    <p class=" text-black font-bold text-lg absolute top-0 ">Solved </p>
+                                </div>
+                            </div>
+                            <?php endif ;?>
+                        </div>
+                    </div>
                 </div>
                 <div class="text-gray-500 w-full m-auto my-2">
                     <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>

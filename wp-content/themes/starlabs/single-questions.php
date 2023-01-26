@@ -103,27 +103,73 @@
 
                 <?php comment_form($args); ?>
 
-                <ol class="commentlist">
-                    <?php
-                    //Gather comments for a specific page/post 
-                    $comments = get_comments(array(
-                        'post_id' => get_the_ID(),
-                        'status' => 'approve' //Change this to the type of comments to be displayed
-                    ));
+ <form>
+  <label for="date_filter" class="text-gray-700">Filter by date:</label>
+  <input type="date" id="date_filter" name="date_filter" class="bg-white rounded-lg p-2">
+  <button type="submit" id="filter_button" class="bg-[#4767C9] text-white rounded-lg p-2 mb-4">
+    Filter
+  </button>
+</form>
 
-                    //Display the list of comments
-                    wp_list_comments(array(
-                        'per_page' => -1,
-                        'reverse_top_level' => true
+<?php
+if(isset($_GET['date_filter'])){
+    $date = $_GET['date_filter'];
+    //Check if the date is not empty
+    if(!empty($date)){
+        //Validate the date
+        $date_format = 'Y-m-d';
+        $date_object = DateTime::createFromFormat($date_format, $date);
+        if($date_object && $date_object->format($date_format) == $date) {
+            //Gather comments for a specific page/post 
+            $comments = get_comments(array(
+                'post_id' => get_the_ID(),
+                'status' => 'approve',
+                'date_query' => array(
+                    array(
+                        'after' => $date,
+                        'before' => $date,
+                        'inclusive' => true,
+                    ),
+                ),
+            ));
 
-                    ), $comments);
-
-                    
-                    ?>
-
-                </ol>
-
-            </div>
+            //Display the list of comments
+            echo '<ol class="commentlist">';
+            wp_list_comments(array(
+                'per_page' => -1,
+                'reverse_top_level' => true
+            ), $comments);
+            echo '</ol>';
+        } else {
+            //Invalid date
+            echo 'Invalid date format. Please use the format YYYY-MM-DD';
+        }
+    }else{
+        //If no date is selected, show all comments
+        $comments = get_comments(array(
+            'post_id' => get_the_ID(),
+            'status' => 'approve',
+        ));
+        echo '<ol class="commentlist">';
+        wp_list_comments(array(
+            'per_page' => -1,
+            'reverse_top_level' => true
+        ), $comments);
+        echo '</ol>';
+    }
+} else { //If date filter is not set, show all comments by default
+    $comments = get_comments(array(
+        'post_id' => get_the_ID(),
+        'status' => 'approve',
+    ));
+    echo '<ol class="commentlist">';
+    wp_list_comments(array(
+        'per_page' => -1,
+        'reverse_top_level' => true
+    ), $comments);
+    echo '</ol>';
+}
+?>
 
             <?php
             if (is_single() && comments_open() && get_option('thread_comments')) {   ?>
@@ -142,3 +188,4 @@
 
 
 <?php get_footer(); ?>
+

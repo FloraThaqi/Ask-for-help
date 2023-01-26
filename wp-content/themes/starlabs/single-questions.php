@@ -21,16 +21,23 @@
                     <?php endif; ?>
                 </div>
                 <div class="p-5">
-                    <?php if(!$close) :?>
+                    <?php
+                        global $user_ID;
+                         $post_id = get_the_ID();
+                         $author_id = get_post_field('post_author', $post_id); 
+                                               
+                    if(!$close) :?>
+                    <?php if($author_id==$user_ID): ?>
                     <form action="" method="POST">
 
-                        <button type="submit" id="button1" name="button1"
+                        <button type="submit" id=<?php  echo $post_ID ;?> name=<?php  echo $post_ID ;?>
                             class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
                             <p class=" text-slate-500 text-lg">Mark as solved</p>
-
                         </button>
                     </form>
+                    <?php else:?>
 
+                    <?php endif ;?>
 
                     <?php
                     if(isset($_POST['button1'])){
@@ -48,10 +55,6 @@
                             <p class=" text-black font-bold text-lg absolute top-0 ">Solved </p>
                         </div>
                     </div>
-
-
-
-
                     <?php endif ;?>
                 </div>
             </div>
@@ -113,22 +116,31 @@
 
                 <?php comment_form($args); ?>
                 <div class="flex justify-end mb-7">
-<button class="text-black bg-white font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button" data-dropdown-toggle="dropdown">Sort by <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
-        <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
-            <ul class="py-1" aria-labelledby="dropdown">
-            <li>
-                <a href="?sort=newest" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Newest to Oldest</a>
-            </li>
-            <li>
-                <a href="?sort=oldest" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Oldest to Newest</a>
-            </li>
-            </ul>
-        </div>
-            </div>
-        <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
-        
-        <ol class="commentlist">
-     <?php
+                    <button
+                        class="text-black bg-white font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
+                        type="button" data-dropdown-toggle="dropdown">Sort by <svg class="w-4 h-4 ml-2" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg></button>
+                    <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4"
+                        id="dropdown">
+                        <ul class="py-1" aria-labelledby="dropdown">
+                            <li>
+                                <a href="?sort=newest"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Newest to Oldest</a>
+                            </li>
+                            <li>
+                                <a href="?sort=oldest"
+                                    class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Oldest to Newest</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+
+                <ol class="commentlist">
+                    <?php
 if(isset($_GET['sort'])) {
     if($_GET['sort'] == "newest") {
         //Sort comments by date created, newest to oldest
@@ -162,12 +174,12 @@ wp_list_comments(array(
 
 ?>
 
-</ol>
+                </ol>
 
-            <?php
+                <?php
             if (is_single() && comments_open() && get_option('thread_comments')) {   ?>
-            <?php wp_enqueue_script('comment-reply'); ?>
-            <?php   } ?>
+                <?php wp_enqueue_script('comment-reply'); ?>
+                <?php   } ?>
 
         </section>
 
@@ -181,4 +193,3 @@ wp_list_comments(array(
 
 
 <?php get_footer(); ?>
-

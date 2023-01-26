@@ -95,3 +95,57 @@ jQuery(function ($) {
     $(this).hide();
   });
 });
+
+// Handle like and dislike
+// Add click event to like-button
+jQuery(document).ready(function ($) {
+  $(".like-button").on("click", function (e) {
+    e.preventDefault();
+    var $this = $(this);
+
+    // Send AJAX request
+    $.ajax({
+      type: "post",
+      dataType: "json",
+      url: ajax_object.ajax_url,
+      data: {
+        action: "like",
+        nonce: $this.data("nonce"),
+        comment_id: $this.data("comment-id"),
+      },
+      success: function (response) {
+        //update the count of the element
+        var countElem = $this.siblings(".like-count");
+        var current_count = parseInt(countElem.attr("data-count"));
+        var new_count = current_count == 0 ? 1 : 0;
+        countElem.attr("data-count", new_count);
+        countElem.text(new_count);
+      },
+    });
+  });
+  // Add click event to dislike-button
+  $(".dislike-button").on("click", function (e) {
+    e.preventDefault();
+    var $this = $(this);
+
+    // Send AJAX request
+    $.ajax({
+      type: "post",
+      dataType: "json",
+      url: ajax_object.ajax_url,
+      data: {
+        action: "dislike",
+        nonce: $this.data("nonce"),
+        comment_id: $this.data("comment-id"),
+      },
+      success: function (response) {
+        //update the count of the element
+        var countElem = $this.siblings(".dislike-count");
+        var current_count = parseInt(countElem.attr("data-count"));
+        var new_count = current_count == 0 ? 1 : 0;
+        countElem.attr("data-count", new_count);
+        countElem.text(new_count);
+      },
+    });
+  });
+});

@@ -352,40 +352,71 @@ function handle_dislike() {
 }
 
 function handle_like_dislike($meta_key, $nonce_key) {
-    // Verify nonce
-    if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], $nonce_key . $_POST['comment_id'] ) ) {
-        wp_die( 'Invalid request.' );
-    }
+	// Verify nonce
+	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], $nonce_key . $_POST['comment_id'] ) ) {
+					wp_die( 'Invalid request.' );
+	}
 
-    // Get comment ID
-    $comment_id = intval( $_POST['comment_id'] );
+	// Get comment ID
+	$comment_id = intval( $_POST['comment_id'] );
+
+	// Get the user ID
+	$user_id = get_current_user_id();
+
+	// Check if the user has already voted
+	$user_vote = get_comment_meta($comment_id, 'user_vote', true);
+	if ($user_vote) {
+					// If the user has already voted, check if the vote matches the current vote
+					if ($user_vote == $meta_key) {
+									// If the vote matches, remove the vote
+									delete_comment_meta($comment_id, 'user_vote');
+									delete_comment_meta($comment_id, 'user_id');
+									$current_count = get_comment_meta($comment_id, $meta_key, true);
+									if ($current_count > 0) {
+													$current_count--;
+									}
+									update_comment_meta($comment_id, $meta_key, $current_count);
+            } else {
+                    // If the vote does not match, update the vote
+                    update_comment_meta($comment_id, 'user_vote', $meta_key);
+                    update_comment_meta($comment_id, 'user_id', $user_id);
+                    $current_count = get_comment_meta($comment_id, $meta_key, true);
+                    if(!$current_count){
+                            $current_count = 1;
+                    }else{
+                            $current_count++;
+                    }
+                    update_comment_meta( $comment_id, $meta_key, $current_count);
+
+                    // Decrement the count of the previous vote
+                    $opposite_vote = $meta_key == "like_count" ? "dislike_count" : "like_count";
+                    $opposite_count = get_comment_meta($comment_id, $opposite_vote, true);
+                    if ($opposite_count > 0) {
+                        $opposite_count--;
+                    }
+                    update_comment_meta($comment_id, $opposite_vote, $opposite_count);
+            }
+    } else {
+            // If the user has not voted, add the vote
+            add_comment_meta($comment_id, 'user_vote', $meta_key);
+            add_comment_meta($comment_id, 'user_id', $user_id);
+            $current_count = get_comment_meta($comment_id, $meta_key, true);
+            if(!$current_count){
+                    $current_count = 1;
+            }else{
+                    $current_count++;
+            }
+            update_comment_meta( $comment_id, $meta_key, $current_count);
+    }
 
     $like_count = get_comment_meta($comment_id, 'like_count', true);
     $dislike_count = get_comment_meta($comment_id, 'dislike_count', true);
 
-		if($meta_key == 'like_count' && $dislike_count == 1) {
-			wp_die();
-	}
-
-	if($meta_key == 'dislike_count' && $like_count == 1) {
-			wp_die();
-	}
-
-		if ($like_count || $dislike_count) {
-			delete_comment_meta( $comment_id, $meta_key);
-	} else {
-		 
-			// Perform action
-			add_comment_meta( $comment_id, $meta_key, 1, true );
-	}
-
-	$like_count = get_comment_meta($comment_id, 'like_count', true);
-	$dislike_count = get_comment_meta($comment_id, 'dislike_count', true);
-
-	// Return a response
-	wp_send_json_success(array('meta_key'=>$meta_key,'count'=>$like_count));
-	exit;
+    // Return a response
+    wp_send_json_success(array('like_count'=>$like_count, 'dislike_count'=>$dislike_count));
+    exit;
 }
+
 // Enqueue JS script
 add_action( 'wp_enqueue_scripts', 'enqueue_like_dislike_script' );
 function enqueue_like_dislike_script() {

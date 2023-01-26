@@ -19,18 +19,22 @@ window.addEventListener("load", showActiveDesc);
 
 //This function gets the ID of the first Tab Description Div and removes class 'hidden' from it
 function showActiveName() {
-  let div = document.querySelector(".tab-content");
-  let firstElement = div.firstElementChild;
-  firstElement.classList.remove("hidden");
+  let tabContent = document.querySelector(".tab-content");
+  if (tabContent) {
+    let firstElement = tabContent.firstElementChild;
+    firstElement.classList.remove("hidden");
+  }
 }
 
 //This function adds text color and background color to the first Tab name which is active on load
 function showActiveDesc() {
-  let element = document.getElementById("list-item");
-  element.classList.add("bg-[#4767c9]");
-  element.classList.add("text-white");
-  element.classList.remove("text-gray-600");
-  element.classList.remove("bg-white");
+  let element = document.querySelector("#list-item");
+  if (element) {
+    element.classList.add("bg-[#4767c9]");
+    element.classList.add("text-white");
+    element.classList.remove("text-gray-600");
+    element.classList.remove("bg-white");
+  }
 }
 
 //This function changes the tab description based on which Tab Name we click

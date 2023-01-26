@@ -102,74 +102,57 @@
                 </div>
 
                 <?php comment_form($args); ?>
-
- <form>
-  <label for="date_filter" class="text-gray-700">Filter by date:</label>
-  <input type="date" id="date_filter" name="date_filter" class="bg-white rounded-lg p-2">
-  <button type="submit" id="filter_button" class="bg-[#4767C9] text-white rounded-lg p-2 mb-4">
-    Filter
-  </button>
-</form>
-
-<?php
-if(isset($_GET['date_filter'])){
-    $date = $_GET['date_filter'];
-    //Check if the date is not empty
-    if(!empty($date)){
-        //Validate the date
-        $date_format = 'Y-m-d';
-        $date_object = DateTime::createFromFormat($date_format, $date);
-        if($date_object && $date_object->format($date_format) == $date) {
-            //Gather comments for a specific page/post 
-            $comments = get_comments(array(
-                'post_id' => get_the_ID(),
-                'status' => 'approve',
-                'date_query' => array(
-                    array(
-                        'after' => $date,
-                        'before' => $date,
-                        'inclusive' => true,
-                    ),
-                ),
-            ));
-
-            //Display the list of comments
-            echo '<ol class="commentlist">';
-            wp_list_comments(array(
-                'per_page' => -1,
-                'reverse_top_level' => true
-            ), $comments);
-            echo '</ol>';
-        } else {
-            //Invalid date
-            echo 'Invalid date format. Please use the format YYYY-MM-DD';
-        }
-    }else{
-        //If no date is selected, show all comments
+                <div class="flex justify-end mb-7">
+<button class="text-black bg-white font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center" type="button" data-dropdown-toggle="dropdown">Sort by <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
+            <ul class="py-1" aria-labelledby="dropdown">
+            <li>
+                <a href="?sort=newest" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Newest to Oldest</a>
+            </li>
+            <li>
+                <a href="?sort=oldest" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Oldest to Newest</a>
+            </li>
+            </ul>
+        </div>
+            </div>
+        <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+        
+        <ol class="commentlist">
+     <?php
+if(isset($_GET['sort'])) {
+    if($_GET['sort'] == "newest") {
+        //Sort comments by date created, newest to oldest
         $comments = get_comments(array(
             'post_id' => get_the_ID(),
             'status' => 'approve',
+            'order' => 'ASC'
         ));
-        echo '<ol class="commentlist">';
-        wp_list_comments(array(
-            'per_page' => -1,
-            'reverse_top_level' => true
-        ), $comments);
-        echo '</ol>';
+    } elseif($_GET['sort'] == "oldest") {
+        //Sort comments by date created, oldest to newest
+        $comments = get_comments(array(
+            'post_id' => get_the_ID(),
+            'status' => 'approve',
+            'order' => 'DESC'
+        ));
     }
-} else { //If date filter is not set, show all comments by default
+} else {
     $comments = get_comments(array(
         'post_id' => get_the_ID(),
-        'status' => 'approve',
+        'status' => 'approve'
     ));
-    echo '<ol class="commentlist">';
-    wp_list_comments(array(
-        'per_page' => -1,
-        'reverse_top_level' => true
-    ), $comments);
-    echo '</ol>';
 }
+
+//Display the list of comments
+wp_list_comments(array(
+                        'per_page' => -1,
+                        'reverse_top_level' => true
+
+                    ), $comments);
+
+
 ?>
+
+</ol>
 
             <?php
             if (is_single() && comments_open() && get_option('thread_comments')) {   ?>

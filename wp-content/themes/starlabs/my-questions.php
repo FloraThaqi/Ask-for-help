@@ -6,7 +6,7 @@ get_header();
 
 ?>
 
-<div class="container mx-auto flex flex-col md:flex-row  pt-16 ">
+<div class="container mx-auto flex flex-col md:flex-row pt-16 ">
     <div class="w-full flex">
         <div class="w-full ">
             <section class="">
@@ -41,31 +41,21 @@ get_header();
                                         $cat_name = $terms[0]->name;
                                     else :
                                         $cat_name = 'N/A';
-                                    endif;
-                                ?>
+                                    endif; ?>
                                     <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
                                         <div class="flex max-md:justify-between relative">
                                             <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="user profile">
                                             <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> |
                                             </p>
                                             <a class="text-gray-500 leading-8">In: <?php echo $cat_name ?></a>
-
-
-
                                             <div class="absolute top-0 right-0">
-
                                                 <div class="">
                                                     <?php if (!$close) : ?>
                                                         <button type="button" id="button1" name="button1" class="bg-transparent rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
                                                             <p class=" text-slate-500 text-lg">Mark as solved</p>
-
                                                         </button>
-                                                        <?php
-
-                                                        ?>
+                                                        <?php ?>
                                                     <?php else : ?>
-
-
                                                         <div class="w-16  overflow-hidden inline-block relative">
                                                             <div class=" h-8  bg-green-600 -rotate-45 ">
                                                             </div>
@@ -73,8 +63,6 @@ get_header();
                                                                 <p class=" text-black font-bold text-lg absolute top-0 ">Solved </p>
                                                             </div>
                                                         </div>
-
-
                                                     <?php endif; ?>
                                                 </div>
                                             </div>
@@ -108,7 +96,7 @@ get_header();
 
                                                 <div id="deleteModal" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center ">
                                                     <div class="bg-white p-6 rounded shadow-lg shadow-gray-400" ">
-                                <svg xmlns=" http://www.w3.org/2000/svg" class="w-4 h-4 -m-1 flex items-center text-red-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <svg xmlns=" http://www.w3.org/2000/svg" class="w-4 h-4 -m-1 flex items-center text-red-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                                         </svg>
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 flex items-center text-red-500 mx-auto" viewBox="0 0 20 20" fill="currentColor">
@@ -121,12 +109,12 @@ get_header();
                                                         </div>
                                                     </div>
                                                 </div>
-
                                             </div>
                                         </div>
-                                    <?php endwhile; ?>
                                     </div>
-                                <?php endif; ?>
+                                <?php endwhile; ?>
+
+                            <?php endif; ?>
                             </div>
                             <!-- Pagination -->
                             <div class="p-2 mb-2 flex flex-row justify-end items-end gap-1">
@@ -151,6 +139,8 @@ get_header();
                                 ?>
                             </div>
                             <?php wp_reset_postdata(); ?>
+                    </div>
+                </div>
             </section>
         </div>
     </div>

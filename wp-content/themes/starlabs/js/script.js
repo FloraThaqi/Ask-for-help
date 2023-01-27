@@ -119,11 +119,14 @@ jQuery(document).ready(function ($) {
       },
       success: function (response) {
         //update the count of the element
-        var countElem = $this.siblings(".like-count");
-        var current_count = parseInt(countElem.attr("data-count"));
-        var new_count = current_count == 0 ? 1 : 0;
-        countElem.attr("data-count", new_count);
-        countElem.text(new_count);
+        var like_count = response.data.like_count;
+        var dislike_count = response.data.dislike_count;
+        var like_count_elem = $this.siblings(".like-count");
+        var dislike_count_elem = $this.siblings(".dislike-count");
+        like_count_elem.attr("data-count", like_count);
+        dislike_count_elem.attr("data-count", dislike_count);
+        like_count_elem.text(like_count);
+        dislike_count_elem.text(dislike_count);
       },
     });
   });
@@ -144,11 +147,14 @@ jQuery(document).ready(function ($) {
       },
       success: function (response) {
         //update the count of the element
-        var countElem = $this.siblings(".dislike-count");
-        var current_count = parseInt(countElem.attr("data-count"));
-        var new_count = current_count == 0 ? 1 : 0;
-        countElem.attr("data-count", new_count);
-        countElem.text(new_count);
+        var like_count = response.data.like_count;
+        var dislike_count = response.data.dislike_count;
+        var like_count_elem = $this.siblings(".like-count");
+        var dislike_count_elem = $this.siblings(".dislike-count");
+        like_count_elem.attr("data-count", like_count);
+        dislike_count_elem.attr("data-count", dislike_count);
+        like_count_elem.text(like_count);
+        dislike_count_elem.text(dislike_count);
       },
     });
   });

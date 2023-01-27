@@ -2173,6 +2173,11 @@ video {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
+.hover\:text-sky-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(2 132 199 / var(--tw-text-opacity));
+}
+
 .hover\:no-underline:hover {
   text-decoration-line: none;
 }
@@ -2278,8 +2283,17 @@ video {
 
 @media not all and (min-width: 768px) {
 
+  .max-md\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
   .max-md\:justify-between {
     justify-content: space-between;
+  }
+
+  .max-md\:text-sky-600 {
+    --tw-text-opacity: 1;
+    color: rgb(2 132 199 / var(--tw-text-opacity));
   }
 }
 

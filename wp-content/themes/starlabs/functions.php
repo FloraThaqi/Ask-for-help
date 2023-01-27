@@ -337,13 +337,17 @@ function like_dislike_button( $content ) {
 add_action( 'wp_ajax_like', 'handle_like' );
 add_action( 'wp_ajax_nopriv_like', 'handle_like' );
 function handle_like() {
-    handle_like_dislike('like_count', 'like_');
+	if (is_user_logged_in()) {
+			handle_like_dislike('like_count', 'like_');
+	}
 }
 
 add_action( 'wp_ajax_dislike', 'handle_dislike' );
 add_action( 'wp_ajax_nopriv_dislike', 'handle_dislike' );
 function handle_dislike() {
-    handle_like_dislike('dislike_count', 'dislike_');
+	if (is_user_logged_in()) {
+			handle_like_dislike('dislike_count', 'dislike_');
+	}
 }
 
 function handle_like_dislike($meta_key, $nonce_key) {
@@ -360,9 +364,10 @@ function handle_like_dislike($meta_key, $nonce_key) {
 
 	// Check if the user has already voted
 	$user_vote = get_comment_meta($comment_id, 'user_vote', true);
+	$user_meta = get_comment_meta($comment_id, 'user_id', true);
 	if ($user_vote) {
 					// If the user has already voted, check if the vote matches the current vote
-					if ($user_vote == $meta_key) {
+					if ($user_meta == $user_id && $user_vote == $meta_key) {
 									// If the vote matches, remove the vote
 									delete_comment_meta($comment_id, 'user_vote');
 									delete_comment_meta($comment_id, 'user_id');

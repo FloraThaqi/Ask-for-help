@@ -423,3 +423,17 @@ function enqueue_like_dislike_script() {
     wp_enqueue_script( 'like-dislike-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true );
     wp_localize_script( 'like-dislike-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 }
+
+/*
+	======================================================
+ 		Prevent MyQuestions URL access without logging in
+	======================================================
+*/
+
+function restrict_my_questions_page() {
+	if ( is_page( 'my-questions' ) && ! is_user_logged_in() ) {
+			wp_redirect( home_url( '/login' ) );
+			exit;
+	}
+}
+add_action( 'template_redirect', 'restrict_my_questions_page' );

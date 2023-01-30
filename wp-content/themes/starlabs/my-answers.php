@@ -50,6 +50,7 @@ if(isset($_POST['update'])) {
               </div>
             </form>';
     } else {
+      echo '<h2 class="text-xl font-medium mb-2"><a href="'.get_permalink($comment->comment_post_ID).'">'.get_the_title($comment->comment_post_ID).'</a></h2>';
       echo $comment->comment_content;
       echo '<div class="flex justify-end min-h-[40px] items-center w-full mx-auto">
               <form action="" method="post">

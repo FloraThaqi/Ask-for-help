@@ -12,7 +12,7 @@
     <?php  endif; ?>
     <div class="py-20">
         <?php if($banner_title): ?>
-        <h1 class="text-white text-center text-6xl font-bold"><?php echo $banner_title ?></h1>
+        <h1 class="text-white text-center text-6xl font-bold max-lg:text-5xl max-sm:text-3xl"><?php echo $banner_title ?></h1>
         <?php endif;?>
 
         <?php if($banner_description): ?>

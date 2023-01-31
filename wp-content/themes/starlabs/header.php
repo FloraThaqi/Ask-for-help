@@ -40,17 +40,18 @@
             </button>
 
             <!-- Navbar  -->
-            <div class="hidden mobile-menu w-full md:block md:w-auto  bg-white ">
+
+            <div class="md:flex flex-row-reverse items-center  hidden mobile-menu w-full  md:w-auto  bg-white">
 
                 <?php
             			wp_nav_menu(array(
-								'theme_location' => 'primary',
+                            'theme_location' => 'primary',
                                 'menu_class'=>'flex flex-col  rounded-lg md:flex-row md:space-x-8 md:text-sm md:font-medium md:border-0 md:bg-transparent',
                                 'container' => false,
                                 'walker'=>new Walker_Nav_Primary()
-									)
+                                )
 								);
-				?>
+                                ?>
 
             </div>
 

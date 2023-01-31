@@ -429,8 +429,8 @@ function enqueue_like_dislike_script() {
 add_filter('wp_nav_menu','add_custom_nav_elements', 10, 1);
 function add_custom_nav_elements( $nav ) {
 
-    $elements = '<div class=" active md:absolute md:right-0 block p-1 text-black text-left px-3 font-display">
-				<span class="dashicons dashicons-search md:w-12 md:h-12  cursor-pointer" ></span>
+    $elements = '<div class=" active  block p-1 text-black text-left px-3 font-display">
+				<span class="dashicons dashicons-search md:w-12 md:h-12 flex items-center  cursor-pointer" ></span>
 			</div>';
     return $elements . $nav;
 }
@@ -502,4 +502,3 @@ function send_email_on_comment( $comment_id ) {
   wp_mail( $to, $subject, $message, $headers );
 }
 add_action( 'comment_post', 'send_email_on_comment' );
-

@@ -129,48 +129,80 @@ gt_set_post_view();
                             <li>
                                 <a href="?sort=oldest" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Oldest to Newest</a>
                             </li>
+                            <li>
+                                <a href="?sort=liked" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Most liked</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
                 <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+</div>
+<ol class="commentlist">
+<?php
 
-                <ol class="commentlist">
-                    <?php
-                    if (isset($_GET['sort'])) {
-                        if ($_GET['sort'] == "newest") {
-                            //Sort comments by date created, newest to oldest
-                            $comments = get_comments(array(
-                                'post_id' => get_the_ID(),
-                                'status' => 'approve',
-                                'order' => 'ASC'
-                            ));
-                        } elseif ($_GET['sort'] == "oldest") {
-                            //Sort comments by date created, oldest to newest
-                            $comments = get_comments(array(
-                                'post_id' => get_the_ID(),
-                                'status' => 'approve',
-                                'order' => 'DESC'
-                            ));
-                        }
-                    } else {
-                        $comments = get_comments(array(
-                            'post_id' => get_the_ID(),
-                            'status' => 'approve'
-                        ));
-                    }
+if (isset($_GET['sort'])) {
+    if ($_GET['sort'] == "newest") {
+        //Sort comments by date created, newest to oldest
+        $comments = get_comments(array(
+            'post_id' => get_the_ID(),
+            'status' => 'approve',
+            'order' => 'ASC'
+        ));
+    } elseif ($_GET['sort'] == "oldest") {
+        //Sort comments by date created, oldest to newest
+        $comments = get_comments(array(
+            'post_id' => get_the_ID(),
+            'status' => 'approve',
+            'order' => 'DESC'
+        ));
+    } elseif ($_GET['sort'] == "liked") {
+        //Get all comments
+        $comments = get_comments(array(
+            'post_id' => get_the_ID(),
+            'status' => 'approve'
+        ));
+    
+        //Sort the comments based on the like count
+        usort($comments, function($a, $b) {
+            $a_likes = get_comment_meta($a->comment_ID, 'like_count', true);
+            $b_likes = get_comment_meta($b->comment_ID, 'like_count', true);
+    
+            if ($a_likes == $b_likes) {
+                return 0;
+            }
+    
+            return ($a_likes < $b_likes) ? -1 : 1;
+        });
+    
+        //Get the index of the first comment without a like count
+        $index = 0;
+        for ($i = 0; $i < count($comments); $i++) {
+            if (!get_comment_meta($comments[$i]->comment_ID, 'like_count', true)) {
+                $index = $i;
+                break;
+            }
+        }
+    
+        //Move all comments without a like count to the end of the array
+        $unliked_comments = array_splice($comments, $index);
+        $comments = array_merge($comments, $unliked_comments);
+    
+    }
+} else {
+    $comments = get_comments(array(
+        'post_id' => get_the_ID(),
+        'status' => 'approve'
+    ));
+}
 
-                    //Display the list of comments
-                    wp_list_comments(array(
-                        'per_page' => -1,
-                        'reverse_top_level' => true
+//Display the list of comments
+wp_list_comments(array(
+    'per_page' => -1,
+    'reverse_top_level' => true
+), $comments);
 
-                    ), $comments);
-
-
-                    ?>
-
-                </ol>
-
+?>
+</ol>
                 <?php
                 if (is_single() && comments_open() && get_option('thread_comments')) {   ?>
                     <?php wp_enqueue_script('comment-reply'); ?>

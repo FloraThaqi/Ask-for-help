@@ -46,6 +46,7 @@ class Walker_Nav_Primary extends Walker {
 			$n = "\n";
 		}
 		$indent = str_repeat( $t, $depth );
+
         $output .= "\n$indent<div class=\"doubleDropdown hidden md:absolute bg-white border-2 shadow-lg mx-auto  z-10 w-full md:w-auto md:min-w-[150px] divide-y md:py-2  \">\n";
 		// Default class.
 		$classes = array( 'sub-menu' );
@@ -85,6 +86,7 @@ class Walker_Nav_Primary extends Walker {
 			$n = "\n";
 		}
 		$indent  = str_repeat( $t, $depth );
+		
         $output .= "$indent</ul></div>\n";
 		// $output .= "$indent</ul>{$n}";
 	}
@@ -167,6 +169,7 @@ class Walker_Nav_Primary extends Walker {
 		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
 		$output .= $indent . '<li' . $id . $class_names . '>';
+		
 
 
 		$atts           = array();
@@ -272,6 +275,7 @@ class Walker_Nav_Primary extends Walker {
 		 * @param int      $depth       Depth of menu item. Used for padding.
 		 * @param stdClass $args        An object of wp_nav_menu() arguments.
 		 */
+
 		$output .= apply_filters( 'walker_nav_menu_start_el', $atts, $menu_item, $depth, $args );
 	}
 
@@ -298,6 +302,7 @@ class Walker_Nav_Primary extends Walker {
 		}
         
 		$output .= "</li>{$n}";
+				
 	}
 
 }

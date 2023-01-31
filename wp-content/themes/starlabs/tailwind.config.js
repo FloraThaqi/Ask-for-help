@@ -19,6 +19,7 @@ module.exports = {
       "./functions.php",
       "./like-dislike.php",
       "./my-answers.php",
+      "./search.php"
     ],
   },
   theme: {

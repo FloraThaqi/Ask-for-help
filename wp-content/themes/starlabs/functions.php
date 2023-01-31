@@ -424,6 +424,17 @@ function enqueue_like_dislike_script() {
     wp_localize_script( 'like-dislike-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 }
 
+
+//Added search icon on nav menu
+add_filter('wp_nav_menu','add_custom_nav_elements', 10, 1);
+function add_custom_nav_elements( $nav ) {
+
+    $elements = '<div class=" active md:absolute md:right-0 block p-1 text-black text-left px-3 font-display">
+				<span class="dashicons dashicons-search md:w-12 md:h-12  cursor-pointer" ></span>
+			</div>';
+    return $elements . $nav;
+}
+
 /*
 	======================================================
  		Prevent MyQuestions URL access without logging in
@@ -437,3 +448,18 @@ function restrict_my_questions_page() {
 	}
 }
 add_action( 'template_redirect', 'restrict_my_questions_page' );
+
+
+
+
+//search filter with pagination
+
+function search_filter($query) {
+	if ( !is_admin() && $query->is_main_query() ) {
+	  if ($query->is_search) {
+		$query->set('paged', ( get_query_var('paged') ) ? get_query_var('paged') : 1 );
+		$query->set('posts_per_page',10);
+	  }
+	}
+  }
+  add_action( 'pre_get_posts', 'search_filter' );

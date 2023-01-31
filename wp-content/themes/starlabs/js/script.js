@@ -159,3 +159,12 @@ jQuery(document).ready(function ($) {
     });
   });
 });
+
+
+
+//search bar toggle
+jQuery(document).ready(function($) {
+    $('.dashicons-search').on('click', function() {
+        $('.search-box').slideToggle();
+    });
+});

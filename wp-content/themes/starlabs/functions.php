@@ -463,3 +463,43 @@ function search_filter($query) {
 	}
   }
   add_action( 'pre_get_posts', 'search_filter' );
+
+/*
+	==========================================================
+ 		Email notification when someone answers your question
+	==========================================================
+*/
+
+// Send email via SMTP
+add_action( 'phpmailer_init', 'send_smtp_email' );
+function send_smtp_email( $phpmailer ) {
+    $phpmailer->isSMTP();     
+    $phpmailer->Host = SMTP_HOST;
+    $phpmailer->SMTPAuth = SMTP_AUTH;
+    $phpmailer->Port = SMTP_PORT;
+    $phpmailer->Username = SMTP_USER;
+    $phpmailer->Password = SMTP_PASS;
+    $phpmailer->SMTPSecure = SMTP_SECURE;
+    $phpmailer->From = SMTP_FROM;
+    $phpmailer->FromName = SMTP_NAME;
+}
+
+function send_email_on_comment( $comment_id ) {
+  $comment = get_comment( $comment_id );
+  $post = get_post( $comment->comment_post_ID );
+  $author = get_userdata( $post->post_author );
+
+  $to = $author->user_email;
+  $subject = "New comment on your question";
+  $message = "A new comment has been added to the question you posted: \n\n" .
+             get_the_title( $post->ID ) . "\n\n" .
+             "Comment: " . $comment->comment_content . "\n\n" .
+             "You can view the comment here: " . get_permalink( $post->ID ) . "#comments";
+  $headers = array();
+  $headers[] = 'From: Your Name <sender@example.com>';
+  $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+
+  wp_mail( $to, $subject, $message, $headers );
+}
+add_action( 'comment_post', 'send_email_on_comment' );
+

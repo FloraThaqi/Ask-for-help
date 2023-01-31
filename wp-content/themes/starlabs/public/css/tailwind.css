@@ -1872,6 +1872,11 @@ video {
   font-size: 14px;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .font-semibold {
   font-weight: 600;
 }
@@ -2291,6 +2296,11 @@ video {
     padding-left: 0px;
   }
 
+  .max-lg\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .max-lg\:text-\[50px\] {
     font-size: 50px;
   }
@@ -2309,6 +2319,14 @@ video {
   .max-md\:text-sky-600 {
     --tw-text-opacity: 1;
     color: rgb(2 132 199 / var(--tw-text-opacity));
+  }
+}
+
+@media not all and (min-width: 640px) {
+
+  .max-sm\:text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 

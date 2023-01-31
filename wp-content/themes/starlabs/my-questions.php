@@ -118,11 +118,11 @@ get_header();
                                     <div class="flex justify-end  min-h-[40px] items-center w-full mx-auto">
                                         <a class="min-w-[80px] h-[35px] bg-indigo-500 text-white flex justify-center items-center mr-3 rounded"
                                             href="<?php echo the_permalink(); ?>">View</a>
-                                        <a class="min-w-[80px] h-[35px] bg-red-500 text-white flex justify-center items-center mr-3 rounded"
-                                            href="#" onClick="showModal()">Delete</a>
+                                        <a class="btn-delete min-w-[80px] h-[35px] bg-red-500 text-white flex justify-center items-center mr-3 rounded"
+                                            href="#" onClick="showModal()" data-item-id="<?php echo $post_ID; ?>">Delete</a>
 
 
-                                        <div id="deleteModal"
+                                        <div id="deleteModal-<?php echo $post_ID; ?>"
                                             class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center">
                                             <div class="bg-white p-6 rounded">
                                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +144,7 @@ get_header();
                                                 </p>
                                                 <div class="p-3  mt-2 text-center space-x-4 md:block">
                                                     <button class="bg-gray-500 text-white p-2 rounded"
-                                                        onClick="hideModal()">Cancel</button>
+                                                        onClick="hideModal(<?php echo $post_ID; ?>)">Cancel</button>
                                                     <a class="bg-red-500 text-white p-2 rounded"
                                                         href="<?php echo get_delete_post_link(get_the_ID()); ?>">Delete</a>
                                                 </div>
@@ -193,13 +193,21 @@ get_header();
 
 
 <script>
-function showModal() {
-    document.getElementById("deleteModal").classList.remove("hidden");
-}
+    let deleteButtons = document.querySelectorAll('.btn-delete');
 
-function hideModal() {
-    document.getElementById("deleteModal").classList.add("hidden");
-}
+    for (var i = 0; i < deleteButtons.length; i++) {
+        deleteButtons[i].addEventListener('click', function(event) {
+            var itemId = event.target.dataset.itemId;
+            console.log("datasetId", itemId);
+            var modal = document.querySelector('#deleteModal-' + itemId);
+            modal.classList.remove('hidden');
+        });
+    }
+
+
+    function hideModal(postId) {
+        document.getElementById(`deleteModal-${postId}`).classList.add("hidden");
+    }
 
 
 function deletePost() {

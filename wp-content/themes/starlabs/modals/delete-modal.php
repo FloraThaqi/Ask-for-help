@@ -1,8 +1,9 @@
-<a class="min-w-[80px] h-[35px] bg-red-500 text-white flex justify-center items-center mr-3 rounded" href="#"
-    onClick="showModal()">Delete</a>
+<a class="btn-delete min-w-[80px] h-[35px] bg-red-500 text-white flex justify-center items-center mr-3 rounded" href="#"
+    onClick="showModal()" data-item-id="<?php echo $post_ID; ?>">Delete</a>
 
 
-<div id="deleteModal" class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center">
+<div id="deleteModal-<?php echo $post_ID; ?>"
+    class="hidden fixed top-0 left-0 w-full h-full flex items-center justify-center">
     <div class="bg-white p-6 rounded">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 -m-1 flex items-center text-red-500 mx-auto" fill="none"
             viewBox="0 0 24 24" stroke="currentColor">
@@ -19,7 +20,8 @@
         <p class="text-lg mb-4">Are you sure you want to delete this question?
         </p>
         <div class="p-3  mt-2 text-center space-x-4 md:block">
-            <button class="bg-gray-500 text-white p-2 rounded" onClick="hideModal()">Cancel</button>
+            <button class="bg-gray-500 text-white p-2 rounded"
+                onClick="hideModal(<?php echo $post_ID; ?>)">Cancel</button>
             <a class="bg-red-500 text-white p-2 rounded"
                 href="<?php echo get_delete_post_link(get_the_ID()); ?>">Delete</a>
         </div>

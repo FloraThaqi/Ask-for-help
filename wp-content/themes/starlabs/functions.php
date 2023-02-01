@@ -424,6 +424,17 @@ function enqueue_like_dislike_script() {
     wp_localize_script( 'like-dislike-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 }
 
+
+//Added search icon on nav menu
+add_filter('wp_nav_menu','add_custom_nav_elements', 10, 1);
+function add_custom_nav_elements( $nav ) {
+
+    $elements = '<div class=" active  block p-1 text-black text-left px-3 font-display">
+				<span class="dashicons dashicons-search md:w-12 md:h-12 flex items-center  cursor-pointer" ></span>
+			</div>';
+    return $elements . $nav;
+}
+
 /*
 	======================================================
  		Prevent MyQuestions URL access without logging in
@@ -437,3 +448,57 @@ function restrict_my_questions_page() {
 	}
 }
 add_action( 'template_redirect', 'restrict_my_questions_page' );
+
+
+
+
+//search filter with pagination
+
+function search_filter($query) {
+	if ( !is_admin() && $query->is_main_query() ) {
+	  if ($query->is_search) {
+		$query->set('paged', ( get_query_var('paged') ) ? get_query_var('paged') : 1 );
+		$query->set('posts_per_page',10);
+	  }
+	}
+  }
+  add_action( 'pre_get_posts', 'search_filter' );
+
+/*
+	==========================================================
+ 		Email notification when someone answers your question
+	==========================================================
+*/
+
+// Send email via SMTP
+add_action( 'phpmailer_init', 'send_smtp_email' );
+function send_smtp_email( $phpmailer ) {
+    $phpmailer->isSMTP();     
+    $phpmailer->Host = SMTP_HOST;
+    $phpmailer->SMTPAuth = SMTP_AUTH;
+    $phpmailer->Port = SMTP_PORT;
+    $phpmailer->Username = SMTP_USER;
+    $phpmailer->Password = SMTP_PASS;
+    $phpmailer->SMTPSecure = SMTP_SECURE;
+    $phpmailer->From = SMTP_FROM;
+    $phpmailer->FromName = SMTP_NAME;
+}
+
+function send_email_on_comment( $comment_id ) {
+  $comment = get_comment( $comment_id );
+  $post = get_post( $comment->comment_post_ID );
+  $author = get_userdata( $post->post_author );
+
+  $to = $author->user_email;
+  $subject = "New comment on your question";
+  $message = "A new comment has been added to the question you posted: \n\n" .
+             get_the_title( $post->ID ) . "\n\n" .
+             "Comment: " . $comment->comment_content . "\n\n" .
+             "You can view the comment here: " . get_permalink( $post->ID ) . "#comments";
+  $headers = array();
+  $headers[] = 'From: Your Name <sender@example.com>';
+  $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+
+  wp_mail( $to, $subject, $message, $headers );
+}
+add_action( 'comment_post', 'send_email_on_comment' );

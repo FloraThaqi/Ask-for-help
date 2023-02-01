@@ -160,11 +160,27 @@ jQuery(document).ready(function ($) {
   });
 });
 
-
-
 //search bar toggle
-jQuery(document).ready(function($) {
-    $('.dashicons-search').on('click', function() {
-        $('.search-box').slideToggle();
-    });
+jQuery(document).ready(function ($) {
+  $(".dashicons-search").on("click", function () {
+    $(".search-box").slideToggle();
+  });
 });
+
+// Mark an answer as correct
+function markAsCorrect(comment_id) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", ajax_object.ajax_url, true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      document.getElementById("iscorrect" + comment_id).innerHTML = "Correct";
+    }
+  };
+  xhr.send("action=mark_as_correct&comment_id=" + comment_id);
+}
+
+// add the onclick event handler to the button
+document.getElementById("iscorrect" + comment_id).onclick = function () {
+  markAsCorrect(comment_id);
+};

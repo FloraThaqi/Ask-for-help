@@ -537,7 +537,4 @@ function mark_as_correct_handler() {
     wp_send_json_success();
 }
 
-add_action( 'wp_enqueue_scripts', 'correct_answer_script' );
-function correct_answer_script() {
-    wp_localize_script( 'correct-answer-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-}
+wp_localize_script( 'correct-answer-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );

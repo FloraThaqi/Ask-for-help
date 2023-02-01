@@ -168,3 +168,19 @@ jQuery(document).ready(function($) {
         $('.search-box').slideToggle();
     });
 });
+
+// Delete Modal
+
+function showModal() {
+  document.getElementById("deleteModal").classList.remove("hidden");
+}
+
+function hideModal() {
+  document.getElementById("deleteModal").classList.add("hidden");
+}
+
+
+function deletePost() {
+
+  hideModal();
+}

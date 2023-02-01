@@ -12,14 +12,14 @@ get_header();
             <section class="">
                 <div class="w-full m-auto">
                     <?php
-                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                   // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $args = array(
                         'post_type' => 'questions',
                         'author' => get_current_user_id(),
                         'orderby' => 'date',
                         'order' => 'DESC',
-                        'posts_per_page' => 5,
-                        'paged' => $paged,
+                        'posts_per_page' =>-1,
+                        //'paged' => $paged,
                     );
                     $lastBlog = new WP_Query($args); ?>
                     <div class="w-full m-auto">
@@ -29,6 +29,9 @@ get_header();
                         <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
                         <?php if ($lastBlog->have_posts()) : ?>
                             <div class="w-full m-auto py-8">
+                               
+                                <?php  require(get_template_directory() . '/filter-solved-notsolved.php'); ?>
+                              
                                 <?php while ($lastBlog->have_posts()) : $lastBlog->the_post();
                                     $title_variable = get_field('question_title');
                                     $description_variable = get_field('question_description');
@@ -137,10 +140,12 @@ get_header();
                             </div>
                         <?php endif; ?>
                     </div>
-                    <!-- Pagination -->
+                  <!-- Pagination -->
+                    <!--
                     <div class="p-2 mb-2 flex flex-row justify-end items-end gap-1">
                         <?php
-                        $total_pages = $lastBlog->max_num_pages;
+                        // $total_pages = $lastBlog->max_num_pages;
+                        /*
                         if ($total_pages > 1) {
 
                             $current_page = max(1, get_query_var('paged'));
@@ -157,8 +162,11 @@ get_header();
                             $pagination = str_replace('<a', '<a class="w-10 h-10 flex justify-center items-center p-2 rounded-full border border-gray-300 text-gray-400 font-bold hover:bg-gray-200"', $pagination);
                             echo $pagination;
                         }
+                        */
                         ?>
                     </div>
+                    -->
+
                     <?php wp_reset_postdata(); ?>
             </section>
         </div>

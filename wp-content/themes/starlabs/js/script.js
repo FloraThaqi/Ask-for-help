@@ -168,3 +168,6 @@ jQuery(document).ready(function($) {
         $('.search-box').slideToggle();
     });
 });
+
+// Delete Modal
+

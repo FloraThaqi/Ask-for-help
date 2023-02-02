@@ -502,3 +502,39 @@ function send_email_on_comment( $comment_id ) {
   wp_mail( $to, $subject, $message, $headers );
 }
 add_action( 'comment_post', 'send_email_on_comment' );
+
+/*
+	===============================
+ 		Mark an answer as correct
+	===============================
+*/
+
+add_filter( 'comment_text', 'add_correct_answer_button' );
+function add_correct_answer_button( $text ) {
+    global $comment, $post;
+    $comment_id = $comment->comment_ID;
+    $author_id = $post->post_author;
+    $user_id = get_current_user_id();
+    $is_correct = get_comment_meta( $comment_id, 'is_correct', true );
+    if($author_id==$user_id){
+        if ($is_correct) {
+            $text .= '<p class="absolute top-0 right-0 pr-4"><button name="is_correct" id="iscorrect">Correct</button></p>';
+        } else {
+            $text .= '<p class="absolute top-0 right-0 pr-4"><button name="is_correct" id="iscorrect'.$comment_id.'" onclick="markAsCorrect('.$comment_id.')">Mark as correct</button></p>';
+        }
+    }
+    return $text;
+}
+
+function markAsCorrect($comment_id) {
+    update_comment_meta($comment_id, 'is_correct', true);
+}
+
+add_action( 'wp_ajax_mark_as_correct', 'mark_as_correct_handler' );
+function mark_as_correct_handler() {
+    $comment_id = intval($_POST['comment_id']);
+    update_comment_meta($comment_id, 'is_correct', true);
+    wp_send_json_success();
+}
+
+wp_localize_script( 'correct-answer-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );

@@ -160,14 +160,56 @@ jQuery(document).ready(function ($) {
   });
 });
 
-
-
 //search bar toggle
-jQuery(document).ready(function($) {
-    $('.dashicons-search').on('click', function() {
-        $('.search-box').slideToggle();
-    });
+jQuery(document).ready(function ($) {
+  $(".dashicons-search").on("click", function () {
+    $(".search-box").slideToggle();
+  });
 });
 
 // Delete Modal
 
+function showModal() {
+  document.getElementById("deleteModal").classList.remove("hidden");
+}
+
+function hideModal() {
+  document.getElementById("deleteModal").classList.add("hidden");
+}
+
+let deleteButtons = document.querySelectorAll(".btn-delete");
+
+for (var i = 0; i < deleteButtons.length; i++) {
+  deleteButtons[i].addEventListener("click", function (event) {
+    var itemId = event.target.dataset.itemId;
+    console.log("datasetId", itemId);
+    var modal = document.querySelector("#deleteModal-" + itemId);
+    modal.classList.remove("hidden");
+  });
+}
+
+function hideModal(postId) {
+  document.getElementById(`deleteModal-${postId}`).classList.add("hidden");
+}
+
+function deletePost() {
+  hideModal();
+}
+
+// Mark an answer as correct
+function markAsCorrect(comment_id) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", ajax_object.ajax_url, true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+      document.getElementById("iscorrect" + comment_id).innerHTML = "Correct";
+    }
+  };
+  xhr.send("action=mark_as_correct&comment_id=" + comment_id);
+}
+
+// add the onclick event handler to the button
+document.getElementById("iscorrect" + comment_id).onclick = function () {
+  markAsCorrect(comment_id);
+};

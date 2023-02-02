@@ -1,11 +1,4 @@
 <?php
-/**
- * The sidebar containing the main widget area
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package StarLabs
- */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
     return;
@@ -23,12 +16,13 @@ $pages = get_field('pages','option');?>
 
 
 <aside class="box-shadow shadow-lg bg-slate-200	 h-inherit rounded-b-lg w-90 lg:gap-2 ml-6 sticky top-[12%]">
-     
-        <div class="p-4">
-    
-              <h4 class="text-base px-2 font-semibold tracking-widest uppercase text-gray-600 py-4">Most Popular Questions</h4>
-              <ul class="text-sm font-medium">
-                <?php
+
+    <div class="p-4">
+
+        <h4 class="text-base px-2 font-semibold tracking-widest uppercase text-gray-600 py-4">Most Popular Questions
+        </h4>
+        <ul class="text-sm font-medium">
+            <?php
                   $args = array(
                       'post_type' => 'questions',   
                       'meta_key' => 'post_views_count',
@@ -49,10 +43,9 @@ $pages = get_field('pages','option');?>
                       wp_reset_postdata();
                   }
                 ?>
-              </ul>
-          
-        </div>   
-  
+        </ul>
+
+    </div>
+
 
 </aside>
-

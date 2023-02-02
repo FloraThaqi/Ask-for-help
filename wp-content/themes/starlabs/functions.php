@@ -329,7 +329,7 @@ function like_dislike_button( $content ) {
     $like_count = $like_count ? $like_count : 0;
     $dislike_count = $dislike_count ? $dislike_count : 0;
 
-    require(get_template_directory() . '/like-dislike.php');
+    require(get_template_directory() . '/partials/content-like-dislike.php');
     return $content;
 }
 

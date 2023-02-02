@@ -19,8 +19,8 @@ module.exports = {
       "./functions.php",
       "./like-dislike.php",
       "./my-answers.php",
-      "./search.php",
-      "./partials/*.php"
+      "./filter-solved-notsolved.php",
+      "./search.php"
     ],
   },
   theme: {

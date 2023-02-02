@@ -20,7 +20,8 @@ module.exports = {
       "./like-dislike.php",
       "./my-answers.php",
       "./filter-solved-notsolved.php",
-      "./search.php"
+      "./search.php",
+      "./partials/*.php"
     ],
   },
   theme: {

@@ -170,17 +170,4 @@ jQuery(document).ready(function($) {
 });
 
 // Delete Modal
-function showModal() {
-  document.getElementById("deleteModal").classList.remove("hidden");
-}
 
-function hideModal() {
-  document.getElementById("deleteModal").classList.add("hidden");
-}
-
-
-function deletePost() {
-
-  hideModal();
-
-}

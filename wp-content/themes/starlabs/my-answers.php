@@ -9,11 +9,11 @@ get_header();
         <div class="w-full ">
             <section class="">
                 <div class="w-full m-auto">
-                <div class="text-center my-8">
-    <h1 class="text-3xl font-bold">My Answers</h1>
-</div>
-                
-<?php
+                    <div class="text-center my-8">
+                        <h1 class="text-3xl font-bold">My Answers</h1>
+                    </div>
+
+                    <?php
 if(isset($_POST['update'])) {
     $new_content = $_POST['new_content'];
     $comment_id = $_POST['comment_id'];
@@ -58,11 +58,9 @@ if(isset($_POST['update'])) {
                 <input type="submit" name="edit" value="Edit" class="min-w-[80px] h-[35px] bg-blue-500 text-white flex justify-center items-center mr-3 rounded">
               </form>
               <a href="'.get_permalink($comment->comment_post_ID).'" class="min-w-[80px] h-[35px] bg-indigo-400 text-white flex justify-center items-center mr-3 rounded">View</a>
-            
+             
               <a class="btn-delete min-w-[80px] h-[35px] bg-red-500 text-white flex justify-center items-center mr-3 rounded"
               href="#" data-item-id="'.$comment->comment_ID.'">Delete</a>
-
-
               <div id="deleteModal-'.$comment->comment_ID.'" class="hidden fixed top-0 left-0 w-full h-full flex items-center drop-shadow-2xl justify-center">
                 <div class="bg-white p-6 rounded">
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 -m-1 flex items-center text-red-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,25 +90,20 @@ if(isset($_POST['update'])) {
   ?>
 
 
-                    
+
+
                 </div>
-          
+
             </section>
         </div>
     </div>
 
 
-<div class="w-full md:w-[30%] pt-16">
+    <div class="w-full md:w-[30%] pt-16">
         <?php get_sidebar(); ?>
- </div>
- </div>
+    </div>
+</div>
 <?php get_footer(); ?>
-
-
-
-
-
-                             
 
 
 <script>

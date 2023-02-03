@@ -12,39 +12,31 @@ get_header();
             <section class="">
                 <div class="w-full m-auto">
                     <?php
-                   // $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                    $args = array(
-                        'post_type' => 'questions',
-                        'author' => get_current_user_id(),
-                        'orderby' => 'date',
-                        'order' => 'DESC',
-                        'posts_per_page' => -1,
-                        //'paged' => $paged,
-                    );
-                    $lastBlog = new WP_Query($args); ?>
+       $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+       $args = array(
+        'post_type' => 'questions',
+        'author' => get_current_user_id(),
+        'orderby' => 'date',
+        'order' => 'DESC',
+        'posts_per_page' => 5,
+        'paged' => $paged,
+    );
+        $lastBlog = new WP_Query( $args ); ?>
                     <div class="w-full m-auto">
                         <!-- Add new question -->
                         <?php include get_template_directory() . '/modals/add-question-modal.php' ?>
 
                         <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
                         <?php if ($lastBlog->have_posts()) : ?>
-                            <div class="w-full m-auto py-8">
-                               
-                                <?php  require(get_template_directory() . '/filter-solved-notsolved.php'); ?>
-                              
-                                <?php while ($lastBlog->have_posts()) : $lastBlog->the_post();
-                                    $title_variable = get_field('question_title');
-                                    $description_variable = get_field('question_description');
-                                    $date_variable = get_field('question_date');
-                                    $close = get_field('close');
-                                    $terms = get_the_terms(get_the_ID(), 'field');
-                                    $post_ID = get_the_ID();
-                                    gt_set_post_views($post_ID);
-                                    if ($terms && !is_wp_error($terms)) :
-                                        $cat_name = $terms[0]->name;
-                                    else :
-                                        $cat_name = 'N/A';
-                                    endif; ?>
+                        <div class="w-full m-auto py-8">
+                            <!-- Filted solved and not solved -->
+                            <?php  require(get_template_directory() . '/filter-solved-notsolved.php'); ?>
+
+                            <?php while ($lastBlog->have_posts()) : $lastBlog->the_post();
+                                // Get field variables
+                                    require(get_template_directory() . '/partials/content-get-field.php');
+                    
+                                   ?>
                             <div
                                 class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
                                 <div class="flex max-md:justify-between relative">
@@ -84,32 +76,10 @@ get_header();
                         </div>
                         <?php endif; ?>
                     </div>
-                  <!-- Pagination -->
-                    <!--
-                    <div class="p-2 mb-2 flex flex-row justify-end items-end gap-1">
-                        <?php
-                        // $total_pages = $lastBlog->max_num_pages;
-                        /*
-                        if ($total_pages > 1) {
-
-                            $current_page = max(1, get_query_var('paged'));
-
-                            $pagination = paginate_links(array(
-                                'base' => get_pagenum_link(1) . '%_%',
-                                'format' => '/page/%#%',
-                                'current' => $current_page,
-                                'total' => $total_pages,
-                                'prev_text' => '<',
-                                'next_text' => '>',
-                            ));
-                            $pagination = str_replace('current', 'w-10 h-10 flex justify-center items-center p-2 rounded-full border border-gray-300 text-white font-bold bg-[#1e90ff]', $pagination);
-                            $pagination = str_replace('<a', '<a class="w-10 h-10 flex justify-center items-center p-2 rounded-full border border-gray-300 text-gray-400 font-bold hover:bg-gray-200"', $pagination);
-                            echo $pagination;
-                        }
-                        */
-                        ?>
-                    </div>
-                    -->
+                    <!-- Pagination -->
+                    <?php 
+                              require(get_template_directory() . '/partials/content-pagination.php');
+                            ?>
 
                     <?php wp_reset_postdata(); ?>
             </section>
@@ -122,36 +92,3 @@ get_header();
 </div>
 
 <?php get_footer(); ?>
-
-<script>
-function showModal() {
-    document.getElementById("deleteModal").classList.remove("hidden");
-}
-
-function hideModal() {
-    document.getElementById("deleteModal").classList.add("hidden");
-}
-
-
-let deleteButtons = document.querySelectorAll('.btn-delete');
-
-for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].addEventListener('click', function(event) {
-        var itemId = event.target.dataset.itemId;
-        console.log("datasetId", itemId);
-        var modal = document.querySelector('#deleteModal-' + itemId);
-        modal.classList.remove('hidden');
-    });
-}
-
-
-function hideModal(postId) {
-    document.getElementById(`deleteModal-${postId}`).classList.add("hidden");
-}
-
-
-function deletePost() {
-
-    hideModal();
-}
-</script>

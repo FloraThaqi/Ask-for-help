@@ -21,7 +21,8 @@ module.exports = {
       "./my-answers.php",
       "./filter-solved-notsolved.php",
       "./search.php",
-      "./partials/*.php"
+      "./modals/*.php",
+      "./partials/*.php",
     ],
   },
   theme: {

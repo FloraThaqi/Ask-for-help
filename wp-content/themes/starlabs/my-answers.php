@@ -104,26 +104,3 @@ if(isset($_POST['update'])) {
     </div>
 </div>
 <?php get_footer(); ?>
-
-
-<script>
-let deleteButtons = document.querySelectorAll('.btn-delete');
-console.log("here", deleteButtons)
-for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].addEventListener('click', function(event) {
-        var itemId = event.target.dataset.itemId;
-        console.log("datasetId", itemId);
-        var modal = document.querySelector('#deleteModal-' + itemId);
-        modal.classList.remove('hidden');
-    });
-}
-
-function hideModal(commentId) {
-    document.getElementById(`deleteModal-${commentId}`).classList.add("hidden");
-}
-
-function deletePost(commentId) {
-    // Insert code to make an HTTP request to delete the post here
-    hideModal(commentId);
-}
-</script>

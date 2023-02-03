@@ -519,13 +519,7 @@ function add_correct_answer_button( $text ) {
     $author_id = $post->post_author;
     $user_id = get_current_user_id();
     $is_correct = get_comment_meta( $comment_id, 'is_correct', true );
-    if($author_id==$user_id){
-        if ($is_correct) {
-            $text .= '<p class="absolute top-0 right-0 pr-4"><button name="is_correct" id="iscorrect">Correct</button></p>';
-        } else {
-            $text .= '<p class="absolute top-0 right-0 pr-4"><button name="is_correct" id="iscorrect'.$comment_id.'" onclick="markAsCorrect('.$comment_id.')">Mark as correct</button></p>';
-        }
-    }
+		require(get_template_directory() . '/partials/content-correct.php');
     return $text;
 }
 

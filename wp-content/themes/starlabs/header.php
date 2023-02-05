@@ -37,7 +37,7 @@
                     <button id="dark-mode" class="w-6 h-6 bg-[#4767c9] rounded-3xl mx-1 my-1 duration-200"></button>
                 </div>
                 <!-- Navbar  -->
-                <div class="md:flex flex-row-reverse items-center  hidden mobile-menu w-full  md:w-auto  bg-white">
+                <div class="md:flex flex-row-reverse items-center  hidden mobile-menu w-full  md:w-auto">
 
                     <?php
                     wp_nav_menu(

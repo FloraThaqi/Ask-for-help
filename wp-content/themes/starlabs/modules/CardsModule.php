@@ -3,7 +3,7 @@ $cards = $module['cards'];
 $cards_title = $module['cards_title'];
 
 ?>
-<div class="mt-20">
+<div class="mt-20" id="cards-module">
       <h1 class="mt-8 mx-auto max-w-md text-4xl font-bold text-center">
       <?php echo $cards_title; ?>
       </h1>

@@ -6,7 +6,7 @@
         $email = $module['email'];
         $socials = $module['socials'];
 ?>
-<section class="min-h-screen bg-gradient-to-r from-white  via-blue-200 to-blue-400 dark:from-blue-500">
+<section class="min-h-screen bg-gradient-to-r from-blue-500  via-blue-200  to-white  dark:from-blue-500">
     <div class="container flex flex-col min-h-screen px-6 py-12 mx-auto">
         <div class="flex-1 lg:flex lg:items-center lg:-mx-6">
             <div class="text-white lg:w-1/2 lg:mx-6">
@@ -81,26 +81,26 @@
             </div>
 
             <div class="mt-8 lg:w-1/2 lg:mx-6">
-                <div class="w-full px-8 py-10 mx-auto overflow-hidden bg-white shadow-2xl rounded-xl dark:bg-[#4767C9] lg:max-w-xl">
-                    <h1 class="text-xl font-medium text-gray-700 dark:text-gray-200">Contact form</h1>
+                <div class="w-full px-8 py-10 mx-auto overflow-hidden shadow-2xl rounded-xl bg-white lg:max-w-xl">
+                    <h1 class="text-xl font-medium text-black">Contact form</h1>
 
                     <form class="mt-4">
                         <div class="flex-1">
-                            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Full Name</label>
+                            <label class="block mb-2 text-sm text-black">Full Name</label>
                             <input type="text" placeholder="Full Name..." class="block w-full px-5 py-3 mt-2 text-gray-700  border border-gray-200 rounded-md bg-white dark:text-gray-300 dark:border-gray-600  focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                         <div class="flex-1 mt-6">
-                            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Email address</label>
+                            <label class="block mb-2 text-sm text-black">Email address</label>
                             <input type="email" placeholder="starlabs@example.com" class="block w-full px-5 py-3 mt-2 text-gray-700 border border-gray-200 rounded-md bg-white dark:text-gray-300 dark:border-gray-600  focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" />
                         </div>
 
                         <div class="w-full mt-6">
-                            <label class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Message</label>
+                            <label class="block mb-2 text-sm text-black">Message</label>
                             <textarea class="block w-full h-32 px-5 py-3 mt-2 text-gray-700 placeholder-gray-400  border border-gray-200 rounded-md md:h-48 bg-white dark:text-gray-300 dark:border-gray-600  focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring" placeholder="Your Message Here ..."></textarea>
                         </div>
 
-                        <button class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide bg-blue-500 text-white capitalize transition-colors duration-300 transform  rounded-md hover:bg-blue-700 focus:outline-none focus:ring-blue-300 focus:ring-opacity-50 ">
+                        <button class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide bg-[#4767c9] text-white capitalize transition-colors duration-300 transform  rounded-md hover:bg-blue-300 focus:outline-none focus:ring-blue-300 focus:ring-opacity-50 ">
                             get in touch
                         </button>
                     </form>

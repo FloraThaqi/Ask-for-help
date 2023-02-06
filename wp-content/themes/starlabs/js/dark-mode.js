@@ -5,7 +5,9 @@ function darkMode() {
 
   const bodyColor = document.querySelector("body");
   const navBar = document.querySelector("nav");
-  const aText = document.querySelectorAll("a");
+  const navText = document.getElementById("navbar-text");
+  const navDropDown = document.getElementById("double-dropdown");
+  const navSearch = document.getElementById("navbar-search");
   const footerColor = document.querySelector("footer");
 
   button.classList.toggle("translate-x-full");
@@ -13,14 +15,17 @@ function darkMode() {
   bodyColor.classList.toggle("bg-gray-500");
   navBar.classList.toggle("bg-white");
   navBar.classList.toggle("bg-black");
-  for (let i = 0; i < aText.length; i++) {
-    aText[i].classList.toggle("text-black");
-  }
-  for (let i = 0; i < aText.length; i++) {
-    aText[i].classList.toggle("text-white");
-  }
+  navText.classList.toggle("text-black");
+  navText.classList.toggle("text-white");
+  navDropDown.classList.toggle("bg-white");
+  navDropDown.classList.toggle("bg-black");
+  navSearch.classList.toggle("text-white");
+  navSearch.classList.toggle("bg-white");
+  navSearch.classList.toggle("fill-white");
   footerColor.classList.toggle("bg-slate-200");
   footerColor.classList.toggle("bg-black");
+  footerColor.classList.toggle("text-black");
+  footerColor.classList.toggle("text-white");
 
   //cards module
 
@@ -162,14 +167,13 @@ function darkMode() {
       loginText[i].classList.toggle("text-gray-700");
       loginText[i].classList.toggle("text-gray-200");
     }
-    
   }
-  
+
   //register page dark mode
   const registerPage = document.getElementById("register-page");
   let registerContainer;
   if (registerPage !== null && registerPage !== undefined) {
-    registerInnerDiv = registerPage.firstElementChild
+    registerInnerDiv = registerPage.firstElementChild;
     registerContainer = registerInnerDiv.firstElementChild;
     registerContainer.classList.toggle("bg-white");
     registerContainer.classList.toggle("bg-black");
@@ -181,7 +185,35 @@ function darkMode() {
       registerText[i].classList.toggle("text-gray-200");
     }
   }
+
+  //display posts category module
+
+  const displayCategoryModule = document.getElementById("display-category");
+  if (displayCategoryModule !== null && displayCategoryModule !== undefined) {
+    const innerContainers = displayCategoryModule.firstElementChild;
+    const innerSecondContainers = innerContainers.firstElementChild;
+    const singlePost =
+      innerSecondContainers.querySelectorAll(".border-collapse");
+    for (let i = 0; i < singlePost.length; i++) {
+      singlePost[i].classList.toggle("bg-white");
+      singlePost[i].classList.toggle("bg-black");
+      singlePost[i].classList.toggle("border-y-[1px]");
+      singlePost[i].classList.toggle("border-x-[0.5px]");
+    }
+    const singlePostContent = document.querySelectorAll("#post-content");
+    for (let i = 0; i < singlePostContent.length; i++) {
+      singlePostContent[i].classList.toggle("text-gray-800");
+      singlePostContent[i].classList.toggle("text-white");
+    }
+    const answerButton = document.querySelectorAll("#answer-button");
+    for (let i = 0; i < answerButton.length; i++) {
+      answerButton[i].classList.toggle("text-black");
+      answerButton[i].classList.toggle("text-white");
+      answerButton[i].classList.toggle("bg-black");
+      answerButton[i].classList.toggle("bg-[#4767c9]");
+    }
+    //console.log(postHeader);
+  }
 }
 
 button.addEventListener("click", darkMode);
-console.log(loginPage);

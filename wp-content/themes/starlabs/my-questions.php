@@ -28,7 +28,7 @@ get_header();
 
                         <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
                         <?php if ($lastBlog->have_posts()) : ?>
-                        <div class="w-full m-auto py-8">
+                        <div class="w-full m-auto py-4">
                             <!-- Filted solved and not solved -->
                             <?php  require(get_template_directory() . '/filter-solved-notsolved.php'); ?>
 

@@ -23,6 +23,8 @@ module.exports = {
       "./search.php",
       "./modals/*.php",
       "./partials/*.php",
+      "./contactus.php",
+
     ],
   },
   theme: {

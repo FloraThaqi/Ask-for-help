@@ -5,7 +5,7 @@ $section_button = $module['section_button'];
 
 $default_pic = "https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Profile-pic.jpg";
 ?>
-<section>
+<section id="user-reactions">
     <?php if ($section_title) : ?>
         <h2 class="text-center text-5xl font-bold mb-8 mt-12"><?php echo $section_title; ?></h2>
     <?php else : ?>
@@ -15,7 +15,7 @@ $default_pic = "https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Pr
         <div class="w-[1008px] m-auto max-lg:w-11/12">
             <div class="grid grid-cols-2 gap-8 max-lg:grid-cols-1">
                 <?php foreach ($users as $value) : ?>
-                    <div class="bg-white w-full px-16 pt-10 pb-10 rounded-3xl max-lg:p-4">
+                    <div class="bg-white w-full px-16 pt-10 pb-10 rounded-3xl max-lg:p-4" id="user-card">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="fill-[#4767c9] w-10 h-10 mb-4">
                             <!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                             <path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V320 288 216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H320c-35.3 0-64-28.7-64-64V320 288 216z" />
@@ -28,7 +28,7 @@ $default_pic = "https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Pr
                                 <img src="<?php echo $default_pic ?>" alt="profile" class="rounded-full w-[50px] h-[50px] object-cover">
                             <?php endif; ?>
                             <div class="pl-6 max-lg:pl-0">
-                                <p class="font-bold"><?php echo $value['name']; ?></p>
+                                <p class="font-bold" id="user-name"><?php echo $value['name']; ?></p>
                                 <p class="text-gray-400"><?php echo $value['job_role']; ?></p>
                             </div>
                         </div>

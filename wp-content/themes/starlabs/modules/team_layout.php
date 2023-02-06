@@ -5,7 +5,7 @@
     $default_pic="https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Profile-pic.jpg";
 ?>
 
-<section class="bg-[#F2F2F2] flex flex-col items-center ">
+<section class="bg-[#F2F2F2] flex flex-col items-center" id="team-layout">
 
     <h1 class="text-center font-bold text-black text-3xl p-10"><?php echo $title?></h1>
 

@@ -4,26 +4,52 @@ const navBar = document.querySelector("nav");
 const aText = document.querySelectorAll("a");
 const footerColor = document.querySelector("footer");
 const cardsModule = document.getElementById("cards-module");
-const cardsTitle = cardsModule.querySelector("h1");
-const cards = cardsModule.querySelector("div");
-const cardsIndividual = cards.querySelectorAll("div");
+let cardsTitle;
+let cards;
+if (cardsModule !== null && cardsModule !== undefined) {
+  cardsTitle = cardsModule.querySelector("h1");
+  cards = cardsModule.querySelector("div");
+}
+let cardsIndividual;
+if (cards !== null && cards !== undefined) {
+  cardsIndividual = cards.querySelectorAll("div");
+}
 const tabsColor = document.getElementById("tabs-id");
 const tabsTitle = document.querySelectorAll("#list-item");
 const tabsDescriptions = document.querySelector(".tab-content");
-const tabsIndividual = tabsDescriptions.querySelectorAll("p");
+let tabsIndividual;
+if (tabsDescriptions !== null && tabsDescriptions !== undefined) {
+  tabsIndividual = tabsDescriptions.querySelectorAll("p");
+}
 const keyFeaturesModule = document.getElementById("key-features");
-const keyFeaturesTitle = keyFeaturesModule.querySelector("h1");
+let keyFeaturesTitle;
+if (keyFeaturesModule !== null && keyFeaturesModule !== undefined) {
+  keyFeaturesTitle = keyFeaturesModule.querySelector("h1");
+}
 const offerModuleColor = document.getElementById("offer-module");
 const userReactionsModule = document.getElementById("user-reactions");
-const userTitle = userReactionsModule.querySelector("h2");
+let userTitle;
+if (userReactionsModule !== null && userReactionsModule !== undefined) {
+  userTitle = userReactionsModule.querySelector("h2");
+}
 const userCard = document.querySelectorAll("#user-card");
 const userName = document.querySelectorAll("#user-name");
 const contactFormColor = document.querySelector("#contact-form");
-const innerContactFormColor = contactFormColor.querySelector("div");
+let innerContactFormColor;
+if (contactFormColor !== null && contactFormColor !== undefined) {
+  innerContactFormColor = contactFormColor.querySelector("div");
+}
 const teamLayoutColor = document.getElementById("team-layout");
-const teamLayoutTitle = teamLayoutColor.querySelector("h1");
-const teamLayoutCards = teamLayoutColor.querySelector("div");
-const teamCard = teamLayoutCards.querySelectorAll("div");
+let teamLayoutTitle;
+let teamLayoutCards;
+if (teamLayoutColor !== null && teamLayoutColor !== undefined) {
+  teamLayoutTitle = teamLayoutColor.querySelector("h1");
+  teamLayoutCards = teamLayoutColor.querySelector("div");
+}
+let teamCard;
+if (teamLayoutCards !== null && teamLayoutCards !== undefined) {
+  teamCard = teamLayoutCards.querySelectorAll("div");
+}
 
 function darkMode() {
   button.classList.toggle("translate-x-full");

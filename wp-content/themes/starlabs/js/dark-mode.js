@@ -2,14 +2,13 @@ const button = document.getElementById("dark-mode");
 
 function darkMode() {
   //permanent elements dark mode
-
+  
   const bodyColor = document.querySelector("body");
   const navBar = document.querySelector("nav");
   const navText = document.getElementById("navbar-text");
   const navDropDown = document.getElementById("double-dropdown");
-  const navSearch = document.getElementById("navbar-search");
+  const navSearch = navText.querySelectorAll("span");
   const footerColor = document.querySelector("footer");
-
   button.classList.toggle("translate-x-full");
   bodyColor.classList.toggle("bg-gray-100");
   bodyColor.classList.toggle("bg-gray-500");
@@ -17,11 +16,11 @@ function darkMode() {
   navBar.classList.toggle("bg-black");
   navText.classList.toggle("text-black");
   navText.classList.toggle("text-white");
+  for (let i = 0; i < navSearch.length; i++) {
+    navSearch[i].classList.toggle("text-white");
+  }
   navDropDown.classList.toggle("bg-white");
   navDropDown.classList.toggle("bg-black");
-  navSearch.classList.toggle("text-white");
-  navSearch.classList.toggle("bg-white");
-  navSearch.classList.toggle("fill-white");
   footerColor.classList.toggle("bg-slate-200");
   footerColor.classList.toggle("bg-black");
   footerColor.classList.toggle("text-black");
@@ -56,6 +55,7 @@ function darkMode() {
     tabsColor.classList.toggle("bg-black");
   }
   const tabsTitle = document.querySelectorAll("#list-item");
+
   const tabsDescriptions = document.querySelector(".tab-content");
   let tabsIndividual;
   if (tabsDescriptions !== null && tabsDescriptions !== undefined) {
@@ -67,12 +67,8 @@ function darkMode() {
       tabsIndividual[i].classList.toggle("text-white");
     }
   }
-
   for (let i = 0; i < tabsTitle.length; i++) {
     tabsTitle[i].classList.toggle("text-black");
-  }
-  for (let i = 0; i < tabsTitle.length; i++) {
-    tabsTitle[i].classList.toggle("text-white");
   }
   for (let i = 0; i < tabsTitle.length; i++) {
     tabsTitle[i].classList.toggle("text-gray-600");
@@ -153,6 +149,7 @@ function darkMode() {
   }
 
   //login page dark mode
+
   const loginPage = document.getElementById("login-page");
   let loginContainer;
   if (loginPage !== null && loginPage !== undefined) {
@@ -170,6 +167,7 @@ function darkMode() {
   }
 
   //register page dark mode
+
   const registerPage = document.getElementById("register-page");
   let registerContainer;
   if (registerPage !== null && registerPage !== undefined) {
@@ -212,7 +210,97 @@ function darkMode() {
       answerButton[i].classList.toggle("bg-black");
       answerButton[i].classList.toggle("bg-[#4767c9]");
     }
-    //console.log(postHeader);
+  }
+
+  //my questions dark mode
+
+  const myQuestionSingle = document.querySelectorAll("#single-my-question");
+  if (myQuestionSingle !== null && myQuestionSingle !== undefined) {
+    for (let i = 0; i < myQuestionSingle.length; i++) {
+      myQuestionSingle[i].classList.toggle("bg-black");
+      myQuestionSingle[i].classList.toggle("bg-white");
+      myQuestionSingle[i].classList.toggle("border-y-[1px]");
+      myQuestionSingle[i].classList.toggle("border-x-[0.5px]");
+    }
+    const singleQuestionContent = document.querySelectorAll(
+      "#my-question-single-content"
+    );
+    for (let i = 0; i < singleQuestionContent.length; i++) {
+      singleQuestionContent[i].classList.toggle("text-gray-800");
+      singleQuestionContent[i].classList.toggle("text-white");
+    }
+  }
+
+  //my answers dark mode
+
+  const myAnswers = document.getElementById("my-answers");
+  if (myAnswers !== null && myAnswers !== undefined) {
+    const myAnswersTitle = myAnswers.querySelector("h1");
+    myAnswersTitle.classList.toggle("text-black");
+    myAnswersTitle.classList.toggle("text-white");
+    const myAnswersBg = myAnswers.querySelectorAll(".border-collapse");
+    for (let i = 0; i < myAnswersBg.length; i++) {
+      myAnswersBg[i].classList.toggle("bg-black");
+      myAnswersBg[i].classList.toggle("bg-white");
+      myAnswersBg[i].classList.toggle("border-y-[1px]");
+      myAnswersBg[i].classList.toggle("border-x-[0.5px]");
+      myAnswersBg[i].classList.toggle("text-white");
+    }
+    //console.log(myAnswersBg);
+  }
+
+  //single question dark mode
+
+  const singleTitle = document.getElementById("single-question-title");
+  if (singleTitle !== null && singleTitle !== undefined) {
+    singleTitle.classList.toggle("text-black");
+    singleTitle.classList.toggle("text-white");
+    const singleMyQuestionComment = document.getElementById(
+      "content-comment-section"
+    );
+    if (
+      singleMyQuestionComment !== null &&
+      singleMyQuestionComment !== undefined
+    ) {
+      singleMyQuestionComment.classList.toggle("bg-black");
+      singleMyQuestionComment.classList.toggle("bg-gray-100");
+      const singleMyQuestionCommentTitle =
+        singleMyQuestionComment.querySelector("h2");
+      singleMyQuestionCommentTitle.classList.toggle("text-gray-900");
+      singleMyQuestionCommentTitle.classList.toggle("text-white");
+    }
+  }
+
+  //author page dark mode
+
+  const authorPage = document.getElementById("author-page");
+  if (authorPage !== null && authorPage !== undefined) {
+    const authorPageTitle = authorPage.querySelector("h4");
+    authorPageTitle.classList.toggle("text-black");
+    authorPageTitle.classList.toggle("text-white");
+    const authorPageSinglePost = authorPage.querySelectorAll(
+      "#single-author-post"
+    );
+    for (let i = 0; i < authorPageSinglePost.length; i++) {
+      authorPageSinglePost[i].classList.toggle("bg-black");
+      authorPageSinglePost[i].classList.toggle("bg-white");
+      authorPageSinglePost[i].classList.toggle("border-y-[1px]");
+      authorPageSinglePost[i].classList.toggle("border-x-[0.5px]");
+    }
+    const authorPageSinglePostTitle = authorPage.querySelectorAll("h2");
+    for (let i = 0; i < authorPageSinglePostTitle.length; i++) {
+      authorPageSinglePostTitle[i].classList.toggle("text-gray-800");
+      authorPageSinglePostTitle[i].classList.toggle("text-white");
+    }
+    const authorPageAnswerButton = authorPage.querySelectorAll(
+      "#author-page-answer"
+    );
+    for (let i = 0; i < authorPageAnswerButton.length; i++) {
+      authorPageAnswerButton[i].classList.toggle("text-black");
+      authorPageAnswerButton[i].classList.toggle("text-white");
+      authorPageAnswerButton[i].classList.toggle("bg-black");
+      authorPageAnswerButton[i].classList.toggle("bg-[#4767c9]");
+    }
   }
 }
 

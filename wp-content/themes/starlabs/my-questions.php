@@ -38,7 +38,7 @@ get_header();
                     
                                    ?>
                             <div
-                                class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
+                                class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3" id="single-my-question">
                                 <div class="flex max-md:justify-between relative">
                                     <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                                         src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
@@ -51,7 +51,7 @@ get_header();
                                     </div>
                                 </div>
                                 <div class="text-gray-500 w-full m-auto my-2">
-                                    <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
+                                    <h2 id="my-question-single-content" class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
                                     <p class="">
                                         <?php $desc_string = strval($description_variable);
                                                 echo substr($desc_string, 0, 200); ?><b> . . .</b>

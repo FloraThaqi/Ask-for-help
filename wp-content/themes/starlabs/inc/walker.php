@@ -257,7 +257,7 @@ class Walker_Nav_Primary extends Walker
 		//add children icon style
 		if ($this->has_children) {
 
-			$atts .= '<span id="navbar-search" class="dashicons dashicons-arrow-down-alt2 w-1 h-1 p-1 md:p-0.5 px-1 ml-1 "></span>';
+			$atts .= '<span class="dashicons dashicons-arrow-down-alt2 w-1 h-1 p-1 md:p-0.5 px-1 ml-1 "></span>';
 		}
 		$atts .= '</a>';
 

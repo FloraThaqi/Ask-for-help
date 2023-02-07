@@ -7,7 +7,7 @@ get_header();
 <div class="container mx-auto flex flex-col md:flex-row pt-16 ">
     <div class="w-full flex">
         <div class="w-full ">
-            <section class="">
+            <section class="" id="my-answers">
                 <div class="w-full m-auto">
                     <div class="text-center my-8">
                         <h1 class="text-3xl font-bold">My Answers</h1>

@@ -1,27 +1,15 @@
-
-
-<div class="flex justify-end mb-2">
-    <button class="text-black bg-white font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center"
-        type="button" data-dropdown-toggle="dropdown">Filter by <svg class="w-4 h-4 ml-2" fill="none"
-            stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-            </path>
-        </svg></button>
-    <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded shadow my-4" id="dropdown">
-        <ul class="py-1" aria-labelledby="dropdown">
-            <li>
-            <a href="?" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">All Questions</a>
-            </li>
-            <li>
-                <a href="?filter=solved" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Solved</a>
-            </li>
-            <li>
-                <a href="?filter=notsolved" class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2">Not solved</a>
-            </li>
-        </ul>
-    </div>
+<div class="relative inline-flex float-right">
+  <svg class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 412 232"><path d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z" fill="#648449" fill-rule="nonzero"/></svg>
+  <select class="border border-gray-300 rounded-full text-black h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none" id="filter-select">
+    <option >Filter by</option>
+    <option >All questions</option>
+    <option >Solved</option>
+    <option >Not Solved</option>
+  </select>
 </div>
+
 </div>
+
 <?php
 $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 
@@ -55,4 +43,27 @@ if ($lastBlog->have_posts()) {
 }
 ?>              </div>
 
-                        <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+
+<script>
+document.getElementById("filter-select").addEventListener("change", function() {
+  var selectedOption = this.value;
+  
+  if (selectedOption === "All questions") {
+    window.location.href = "?";
+  } else if (selectedOption === "Solved") {
+    window.location.href = "?filter=solved";
+  } else if (selectedOption === "Not Solved") {
+    window.location.href = "?filter=notsolved";
+  }
+  
+  localStorage.setItem("selectedOption", selectedOption);
+});
+
+var storedOption = localStorage.getItem("selectedOption");
+
+if (storedOption) {
+  document.getElementById("filter-select").value = storedOption;
+}
+
+
+</script>

@@ -2,7 +2,7 @@ const button = document.getElementById("dark-mode");
 
 function darkMode() {
   //permanent elements dark mode
-  
+
   const bodyColor = document.querySelector("body");
   const navBar = document.querySelector("nav");
   const navText = document.getElementById("navbar-text");

@@ -15,7 +15,7 @@ $pages = get_field('pages','option');?>
 
 
 
-<aside class="box-shadow shadow-lg bg-slate-200	 h-inherit rounded-b-lg w-90 lg:gap-2 ml-6 sticky top-[12%]">
+<aside class="box-shadow shadow-lg bg-slate-200	 h-inherit rounded-b-lg w-full lg:gap-2 md:ml-6 sticky top-[12%]">
 
     <div class="p-4">
 

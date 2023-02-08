@@ -14,9 +14,9 @@
 
 
     <nav class="bg-white shadow-lg w-full fixed z-50 h-16 ">
-        <div class=" md:container flex flex-wrap items-center justify-between mx-auto px-4  ">
+        <div class=" md:container flex flex-wrap items-center justify-between mx-auto">
             <!-- Logo  -->
-            <a href="<?php echo home_url(); ?>" class="w-40 flex items-center ">
+            <a href="<?php echo home_url(); ?>" class="w-40 flex items-center pl-4">
                 <?php 
                 $header_logo = get_field('header_logo','option');
 
@@ -28,7 +28,7 @@
 
             <!-- Burger Menu -->
             <button type="button"
-                class="mobile-menu-button inline-flex items-center p-2 ml-3 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200  "
+                class="mobile-menu-button inline-flex items-center mr-4 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200  "
                 aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-8 h-8 " aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"

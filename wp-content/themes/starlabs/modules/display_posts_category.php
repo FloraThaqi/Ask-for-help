@@ -32,7 +32,7 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 // Get Fields
                      include get_template_directory() . '/partials/content-get-field.php'; 
                 ?>
-                <div class="flex max-md:flex-wrap relative">
+                <div class="flex max-md:justify-between relative flex-col md:flex-row">
                     <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                         src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                         alt="user profile">

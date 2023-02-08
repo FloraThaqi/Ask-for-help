@@ -38,6 +38,10 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
         
         <?php if ($lastBlog->have_posts()) : ?>
         <div class="w-full m-auto py-8">
+        <div class="mb-2 text-black">
+                <?php $total_questions = $lastBlog->found_posts;
+                    echo $total_questions . ' questions';?>
+            </div>
             <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
             <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3 ">
                 <?php 

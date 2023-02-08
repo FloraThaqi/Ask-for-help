@@ -24,6 +24,18 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
         );
         $lastBlog = new WP_Query($args); ?>
     <div class="w-full m-auto max-lg:mx-0">
+        <!-- Add new question -->
+        <div class="flex justify-between  flex-wrap">
+            <h4 class="text-black text-left text-3xl font-bold mt-5 ">All Questions</h4>
+            <button type="button" class="px-4 py-3 bg-[#4767C9] text-white font-display text-xs uppercase rounded hover:bg-[#4767D9] mt-5" 
+            onclick="<?php if (!is_user_logged_in()) { echo 'window.location.href = \'' . home_url('/login') . '\';'; } else { echo 'toggleModal(\'modal-id\');'; } ?>">
+            Ask a question
+            </button>
+
+        <?php include get_template_directory() . '/modals/add-question-modal.php' ?>
+
+        <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
+        
         <?php if ($lastBlog->have_posts()) : ?>
         <div class="w-full m-auto py-8">
             <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>

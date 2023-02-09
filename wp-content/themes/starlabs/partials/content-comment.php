@@ -26,7 +26,12 @@
 
         <?php 
         // Sort comments
-        include get_template_directory() . '/partials/content-sort.php'; 
+        $comments_number = get_comments_number();
+        if ( $comments_number == 0 ) {
+            echo '<p class="text-center font-bold">Be the first to give an answer</p>';
+        } else {
+            include get_template_directory() . '/partials/content-sort.php';
+        }
   
               //Display the list of comments
                     wp_list_comments(array(

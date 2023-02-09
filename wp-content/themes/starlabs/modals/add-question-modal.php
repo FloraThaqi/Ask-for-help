@@ -29,25 +29,13 @@
     }?>
 
 <?php 
-    wp_redirect(home_url('/my-questions')); exit;}
+    wp_redirect( $_SERVER['HTTP_REFERER'] ); exit;}
 ?>
-
-
-
-<!-- Add new question -->
-<div class="flex justify-between  flex-wrap">
-    <h4 class="text-black text-left text-3xl font-bold mt-5 ">My Questions</h4>
-    <button type="button"
-        class="px-4 py-3 bg-[#4767C9]  text-white font-display text-xs uppercase rounded hover:bg-[#4767D9] mt-5 "
-        onclick="toggleModal('modal-id')">
-        Add new question
-    </button>
-
     <!-- Main modal -->
 
     <div class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 top-10 z-50 outline-none focus:outline-none justify-center items-center shadow-sm"
         id="modal-id">
-        <div class="relative w-auto my-6 mx-auto max-w-6xl">
+        <div class="relative w-auto my-6 mx-auto max-w-[420px]">
             <!--content-->
             <div class="border-0 rounded-lg -lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                 <!--header-->

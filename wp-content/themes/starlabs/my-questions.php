@@ -24,6 +24,13 @@ get_header();
         $lastBlog = new WP_Query( $args ); ?>
                     <div class="w-full m-auto">
                         <!-- Add new question -->
+                        <div class="flex justify-between  flex-wrap">
+                            <h4 class="text-black text-left text-3xl font-bold mt-5 ">My Questions</h4>
+                            <button type="button"
+                                class="px-4 py-3 bg-[#4767C9]  text-white font-display text-xs uppercase rounded hover:bg-[#4767D9] mt-5 "
+                                onclick="toggleModal('modal-id')">
+                                Add new question
+                            </button>
                         <?php include get_template_directory() . '/modals/add-question-modal.php' ?>
 
                         <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>

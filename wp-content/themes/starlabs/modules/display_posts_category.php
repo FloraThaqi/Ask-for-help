@@ -38,13 +38,14 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
         <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
         
         <?php if ($lastBlog->have_posts()) : ?>
-        <div class="w-full m-auto py-10">
+        <div class="w-full m-auto ">
             
-        <?php  include get_template_directory() . '/filters.php'; ?>
+        
         <div class="w-full m-auto py-8">
-        <div class="mb-2 text-black">
+        <div class="flex justify-between items-start md:items-center flex-col md:flex-row">
                 <?php $total_questions = $lastBlog->found_posts;
                     echo $total_questions . ' questions';?>
+                    <?php  include get_template_directory() . '/filters.php'; ?>
             </div>
             <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
             <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3 ">

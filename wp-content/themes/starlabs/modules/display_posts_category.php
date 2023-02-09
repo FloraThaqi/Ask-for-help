@@ -23,6 +23,7 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
             'paged' => $currentPage
         );
         $lastBlog = new WP_Query($args); ?>
+    <div class="w-full md:container m-auto max-lg:mx-0">
     <div class="w-full m-auto max-lg:mx-0">
         <!-- Add new question -->
         <div class="flex justify-between  flex-wrap">
@@ -37,6 +38,9 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
         <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
         
         <?php if ($lastBlog->have_posts()) : ?>
+        <div class="w-full m-auto py-10">
+            
+        <?php  include get_template_directory() . '/filters.php'; ?>
         <div class="w-full m-auto py-8">
         <div class="mb-2 text-black">
                 <?php $total_questions = $lastBlog->found_posts;
@@ -153,6 +157,7 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
             <?php include get_template_directory() . '/partials/content-pagination.php' ?>
         </div>
     </div>
+            
     <?php };
     }; ?>
 </section>

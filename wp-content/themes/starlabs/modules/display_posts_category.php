@@ -4,6 +4,11 @@ $category_relation = $module['relation'];
 $byDefault_relation = $module['by_default_relation'];
 
 $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
+if (isset($_POST['posts_per_page'])) {
+    $posts_per_page = $_POST['posts_per_page'];
+  } else {
+    $posts_per_page = 5;
+  }
 
 ?>
 <section class="">
@@ -13,15 +18,15 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array(
             'post_type' => 'questions',
             'tax_query' => array(
-                array(
-                    'taxonomy' => 'field',
-                    'field' => 'slug',
-                    'terms' => $cat_name
-                )
+              array(
+                'taxonomy' => 'field',
+                'field' => 'slug',
+                'terms' => $cat_name
+              )
             ),
-            'posts_per_page' => 3,
+            'posts_per_page' => $posts_per_page,
             'paged' => $currentPage
-        );
+          );
         $lastBlog = new WP_Query($args); ?>
     <div class="w-full md:container m-auto max-lg:mx-0">
     <div class="w-full m-auto max-lg:mx-0">
@@ -41,6 +46,7 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
         <div class="w-full m-auto py-10">
             
         <?php  include get_template_directory() . '/filters.php'; ?>
+        </div>
         <div class="w-full m-auto py-8">
         <div class="mb-2 text-black">
                 <?php $total_questions = $lastBlog->found_posts;
@@ -90,14 +96,14 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
         <?php endif; ?>
     </div>
     <!-- Pagination-->
-    <div class="p-2 mb-2 flex flex-row justify-end items-end gap-1">
+  
         <?php
                include get_template_directory() . '/partials/content-pagination.php'
             ?>
-    </div>
+
     <?php wp_reset_postdata();
     } else {
-        $posts_per_page = 3;
+        $posts_per_page = 5;
         $offset = ($currentPage - 1) * $posts_per_page;
         $category_relation_pagination = array_slice($category_relation, $offset, $posts_per_page);
         if (have_posts()) {
@@ -152,9 +158,7 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
                 </div>
             </div>
             <?php endforeach; ?>
-            <!-- Pagination -->
 
-            <?php include get_template_directory() . '/partials/content-pagination.php' ?>
         </div>
     </div>
             

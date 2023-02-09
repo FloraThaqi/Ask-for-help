@@ -22,6 +22,7 @@ module.exports = {
       "./filter-solved-notsolved.php",
       "./search.php",
       "./modals/*.php",
+      "./filters.php",
       "./partials/*.php",
 
 

@@ -23,7 +23,7 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
             'paged' => $currentPage
         );
         $lastBlog = new WP_Query($args); ?>
-    <div class="w-full m-auto max-lg:mx-0">
+    <div class="w-full md:container m-auto max-lg:mx-0">
         <?php if ($lastBlog->have_posts()) : ?>
         <div class="w-full m-auto py-10">
             

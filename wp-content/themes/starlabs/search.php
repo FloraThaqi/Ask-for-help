@@ -21,7 +21,7 @@ include get_template_directory() . '/partials/content-get-field.php';
     <?php if (have_posts()) : ?>
 
     <?php while (have_posts()) : the_post();?>
-    <div class="mx-auto  w-4/6 py-5">
+    <div class="mx-auto  md:w-4/6 w-10/12  py-5">
 
         <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse  p-4 ">
             <div class="flex flex-wrap ">

@@ -25,7 +25,9 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $lastBlog = new WP_Query($args); ?>
     <div class="w-full md:container m-auto max-lg:mx-0">
         <?php if ($lastBlog->have_posts()) : ?>
-        <div class="w-full m-auto py-8">
+        <div class="w-full m-auto py-10">
+            
+        <?php  include get_template_directory() . '/filters.php'; ?>
             <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
             <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3 ">
                 <?php 
@@ -137,6 +139,7 @@ $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
             <?php include get_template_directory() . '/partials/content-pagination.php' ?>
         </div>
     </div>
+            
     <?php };
     }; ?>
 </section>

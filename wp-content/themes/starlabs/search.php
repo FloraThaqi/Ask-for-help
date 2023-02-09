@@ -6,21 +6,37 @@ include get_template_directory() . '/partials/content-get-field.php';
 ?>
 
 <div class="w-full flex flex-col  justify-center pt-16">
+    <div class="flex justify-center">
+
+        <?php 
+        if (is_search()) {
+            echo
+            "<h1 class='text-indigo-500 font-semibold text-2xl p-10'>
+            You searched for: "  . 
+            get_search_query() . 
+            "</h1>";
+        }
+        ?>
+    </div>
     <?php if (have_posts()) : ?>
 
     <?php while (have_posts()) : the_post();?>
     <div class="mx-auto  md:w-4/6 w-10/12  py-5">
 
         <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse  p-4 ">
-            <div class="flex max-md:justify-between ">
+            <div class="flex flex-wrap ">
                 <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                     src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                     alt="user profile">
-                <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> |
+                <p class="text-gray-500 leading-8 mr-2">Asked on:
                 </p>
+                <span class="text-gray-500 leading-8 mr-2"> <?php echo get_the_date(); ?> |</span>
                 <a class="text-gray-500 leading-8">In: <?php echo $cat_name ?></a>
 
+
             </div>
+
+
             <div class="text-gray-500 w-full m-auto my-2">
                 <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
                 <p class="">

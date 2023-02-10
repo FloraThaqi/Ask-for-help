@@ -134,13 +134,8 @@ if (isset($_POST['posts_per_page'])) {
 
                     </div>
                 </div>
-                <div class="text-gray-500 w-full m-auto my-2">
-                    <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
-                    <p class="">
-                    <p class=""><?php $desc_string = strval($description_variable);
-                                            echo substr($desc_string, 0, 200); ?><b> . . .</b></p>
-                    </p>
-                </div>
+                <?php include get_template_directory() . '/partials/content-questions.php' ?>
+                
                 <div class="flex justify-between min-h-[40px] items-center w-full mx-auto">
                     <div class="flex">
                         <!--Content view with ID  -->

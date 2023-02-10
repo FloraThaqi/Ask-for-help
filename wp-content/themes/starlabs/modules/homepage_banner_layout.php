@@ -34,7 +34,8 @@ if (isset($_POST['submit']) && wp_verify_nonce($_POST['my_form_nonce'], 'my_form
 if (isset($_POST['submit'])) {
   if (!is_user_logged_in()) {
     wp_redirect(site_url().'/login');
-    exit;
+  } else {
+    wp_redirect( get_permalink($post_id) );
   }
 }
 

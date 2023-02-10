@@ -29,7 +29,7 @@
     }?>
 
 <?php 
-    wp_redirect( $_SERVER['HTTP_REFERER'] ); exit;}
+    wp_redirect( get_permalink($post_id) ); exit;}
 ?>
     <!-- Main modal -->
 

@@ -14,7 +14,7 @@
 $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 
 if ($filter == 'solved') {
-    $args['posts_per_page'] = -1;
+    $args['posts_per_page'] = $posts_per_page;
     $args['meta_query'] = array(
         array(
             'key' => 'close',
@@ -22,7 +22,7 @@ if ($filter == 'solved') {
         ),
     );
 } elseif ($filter == 'notsolved') {
-    $args['posts_per_page'] = -1;
+    $args['posts_per_page'] = $posts_per_page;
     $args['meta_query'] = array(
         array(
             'key' => 'close',
@@ -30,7 +30,7 @@ if ($filter == 'solved') {
         ),
     );
 } else {
-    $args['posts_per_page'] = 5;
+    $args['posts_per_page'] = $posts_per_page;
 }
 
 $lastBlog = new WP_Query($args);

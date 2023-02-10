@@ -13,6 +13,11 @@ get_header();
                 <div class="w-full m-auto">
                     <?php
        $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+       if (isset($_POST['posts_per_page'])) {
+        $posts_per_page = $_POST['posts_per_page'];
+      } else {
+        $posts_per_page = 5;
+      }
        $args = array(
         'post_type' => 'questions',
         'author' => get_current_user_id(),

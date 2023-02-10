@@ -1,5 +1,4 @@
-
-    <div class="flex justify-end mb-7" role="group">
+<div class="flex justify-end mb-4" role="group">
         <a href="?filter=newest"  id ="newest" class="rounded-l-lg border border-gray-200 bg-white text-sm font-medium px-4 py-2 text-gray-900 hover:bg-gray-200 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
            Newest
         </a>
@@ -18,7 +17,7 @@
  $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
 
 if ($filter == 'solved') {
-    $args['posts_per_page'] = -1;
+    $args['posts_per_page'] = $posts_per_page;
     $args['meta_query'] = array(
         array(
             'key' => 'close',
@@ -26,7 +25,7 @@ if ($filter == 'solved') {
         ),
     );
 } elseif ($filter == 'notsolved') {
-    $args['posts_per_page'] = -1;
+    $args['posts_per_page'] = $posts_per_page;
     $args['meta_query'] = array(
         array(
             'key' => 'close',
@@ -34,15 +33,15 @@ if ($filter == 'solved') {
         ),
     );
 } elseif ($filter == 'newest') {
-    $args['posts_per_page'] = -1;
+    $args['posts_per_page'] = $posts_per_page;
     $args['orderby'] = 'date';
     $args['order'] = 'DESC';
 } elseif ($filter == 'oldest') {
-    $args['posts_per_page'] = -1;
+    $args['posts_per_page'] = $posts_per_page;
     $args['orderby'] = 'date';
     $args['order'] = 'ASC';
 } else {
-    $args['posts_per_page'] = 5;
+    $args['posts_per_page'] = $posts_per_page;
 }
 
 $lastBlog = new WP_Query($args);

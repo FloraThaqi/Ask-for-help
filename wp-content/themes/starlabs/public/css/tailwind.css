@@ -798,10 +798,6 @@ video {
   margin-top: 0.5rem;
 }
 
-.mb-7 {
-  margin-bottom: 1.75rem;
-}
-
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -836,6 +832,10 @@ video {
 
 .ml-5 {
   margin-left: 1.25rem;
+}
+
+.mb-7 {
+  margin-bottom: 1.75rem;
 }
 
 .ml-0\.5 {
@@ -1978,6 +1978,14 @@ video {
 
 .pl-1 {
   padding-left: 0.25rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .text-left {

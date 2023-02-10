@@ -45,3 +45,4 @@ function deletePost() {
 
     hideModal();
 }
+

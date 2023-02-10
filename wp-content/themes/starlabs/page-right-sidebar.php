@@ -8,7 +8,7 @@ get_header(); ?>
 
 <div class="w-full">
 
-    <div class="p-4 md:container mx-auto flex flex-col md:flex-row ">
+    <div class="p-4 md:container  mx-auto flex flex-col md:flex-row ">
         <div class="w-full pt-16">
 
             <?php 

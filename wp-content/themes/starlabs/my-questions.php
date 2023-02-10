@@ -57,14 +57,7 @@ get_header();
                                         <?php get_template_part('partials/content','solved'); ?>
                                     </div>
                                 </div>
-                                <div class="text-gray-500 w-full m-auto my-2">
-                                    <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
-                                    <p class="">
-                                        <?php $desc_string = strval($description_variable);
-                                                echo substr($desc_string, 0, 200); ?><b> . . .</b>
-                                    </p>
-
-                                </div>
+                                <?php include get_template_directory() . '/partials/content-questions.php' ?>
                                 <div class="flex">
                                     <div class="flex flex-row text-xs ">
                                         <!--Content view with ID  -->

@@ -68,23 +68,18 @@ if (isset($_POST['posts_per_page'])) {
                                     <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
                             </div>
 
-                            <!-- Mark as solved and Solved Section -->
-                            <div class="absolute top-0 right-0">
-                                <?php get_template_part('partials/content','solved'); ?>
-                            </div>
-                        </div>
-                        <div class="text-gray-500 w-full m-auto my-2">
-                            <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
-                            <p class="">
-                            <p class=""><?php $desc_string = strval($description_variable);
-                                            echo substr($desc_string, 0, 200); ?><b> . . .</b></p>
-                            </p>
-                        </div>
-                        <div class="flex justify-between  min-h-[40px] items-center w-full mx-auto">
-                            <!--Content view with ID  -->
-                            <div class="flex">
-                                <?php get_template_part('partials/content','viewID'); ?>
-                            </div>
+                    <!-- Mark as solved and Solved Section -->
+                    <div class="absolute top-0 right-0">
+                        <?php get_template_part('partials/content','solved'); ?>
+                    </div>
+                </div>
+                <?php include get_template_directory() . '/partials/content-questions.php' ?>
+                
+                <div class="flex justify-between  min-h-[40px] items-center w-full mx-auto">
+                    <!--Content view with ID  -->
+                    <div class="flex">
+                        <?php get_template_part('partials/content','viewID'); ?>
+                    </div>
 
                             <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
                                 href="<?php echo the_permalink(); ?>">Answer</a>
@@ -138,25 +133,20 @@ if (isset($_POST['posts_per_page'])) {
                             <div class="absolute top-0 right-0">
                                 <?php get_template_part('partials/content','solved'); ?>
 
-                            </div>
-                        </div>
-                        <div class="text-gray-500 w-full m-auto my-2">
-                            <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
-                            <p class="">
-                            <p class=""><?php $desc_string = strval($description_variable);
-                                            echo substr($desc_string, 0, 200); ?><b> . . .</b></p>
-                            </p>
-                        </div>
-                        <div class="flex justify-between min-h-[40px] items-center w-full mx-auto">
-                            <div class="flex">
-                                <!--Content view with ID  -->
-                                <?php get_template_part('partials/content','viewID'); ?>
-                            </div>
-                            <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
-                                href="<?php echo the_permalink($value->ID); ?>">Answer</a>
-                        </div>
                     </div>
-                    <?php endforeach; ?>
+                </div>
+                <?php include get_template_directory() . '/partials/content-questions.php' ?>
+                
+                <div class="flex justify-between min-h-[40px] items-center w-full mx-auto">
+                    <div class="flex">
+                        <!--Content view with ID  -->
+                        <?php get_template_part('partials/content','viewID'); ?>
+                    </div>
+                    <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
+                        href="<?php echo the_permalink($value->ID); ?>">Answer</a>
+                </div>
+            </div>
+            <?php endforeach; ?>
 
                 </div>
             </div>

@@ -11,7 +11,7 @@ function darkMode() {
   const footerColor = document.querySelector("footer");
   button.classList.toggle("translate-x-full");
   bodyColor.classList.toggle("bg-gray-100");
-  bodyColor.classList.toggle("bg-gray-500");
+  bodyColor.classList.toggle("bg-[#0c0d38]");
   navBar.classList.toggle("bg-white");
   navBar.classList.toggle("bg-black");
   navText.classList.toggle("text-black");
@@ -305,3 +305,11 @@ function darkMode() {
 }
 
 button.addEventListener("click", darkMode);
+
+const buttonValue = button.innerText;
+console.log(buttonValue);
+
+if (buttonValue == 1 || buttonValue == true) {
+  darkMode();
+} else {
+}

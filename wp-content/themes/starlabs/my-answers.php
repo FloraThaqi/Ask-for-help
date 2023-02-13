@@ -4,7 +4,7 @@ Template Name: My Answers
 */
 get_header();
 ?>
-<div class="md:container lg:mx-auto md:mx-auto mx-8 flex flex-col md:flex-row pt-16 ">
+<div class=" container w-full mx-auto md:w-auto px-8  flex flex-col md:flex-row pt-16 ">
     <div class="w-full flex">
         <div class="w-full ">
             <section class="">

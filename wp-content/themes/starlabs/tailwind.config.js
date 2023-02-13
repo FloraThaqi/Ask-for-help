@@ -30,13 +30,21 @@ module.exports = {
   },
   theme: {
     extend: {
+      container: {
+        screens: {
+          'xs':'100%',
+            'sm': '100%',
+            'md': '100%',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1600px',
+        }
+          },
       backgroundImage: {
         "split-white-blue":
           "linear-gradient(to bottom, #ffffff 50% , #4767c9 50%);",
       },
-      screens: {
-        xs: "320px",
-      },
+   
       fontFamily: {
         display: ["Montserrat", "sans-serif"],
       },

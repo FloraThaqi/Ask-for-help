@@ -28,44 +28,45 @@ if (isset($_POST['posts_per_page'])) {
             'paged' => $currentPage
           );
         $lastBlog = new WP_Query($args); ?>
-    <div class="w-full md:container m-auto max-lg:mx-0">
-    <div class="w-full m-auto max-lg:mx-0">
-        <!-- Add new question -->
-        <div class="flex justify-between  flex-wrap">
-            <h4 class="text-black text-left text-3xl font-bold mt-5 ">All Questions</h4>
-            <button type="button" class="px-4 py-3 bg-[#4767C9] text-white font-display text-xs uppercase rounded hover:bg-[#4767D9] mt-5" 
-            onclick="<?php if (!is_user_logged_in()) { echo 'window.location.href = \'' . home_url('/login') . '\';'; } else { echo 'toggleModal(\'modal-id\');'; } ?>">
-            Ask a question
-            </button>
+    <div class=" container w-full mx-auto md:w-auto px-8 m-auto max-lg:mx-0">
+        <div class="w-full m-auto max-lg:mx-0">
+            <!-- Add new question -->
+            <div class="flex justify-between  flex-wrap">
+                <h4 class="text-black text-left text-3xl font-bold mt-5 ">All Questions</h4>
+                <button type="button"
+                    class="px-4 py-3 bg-[#4767C9] text-white font-display text-xs uppercase rounded hover:bg-[#4767D9] mt-5"
+                    onclick="<?php if (!is_user_logged_in()) { echo 'window.location.href = \'' . home_url('/login') . '\';'; } else { echo 'toggleModal(\'modal-id\');'; } ?>">
+                    Ask a question
+                </button>
 
-        <?php include get_template_directory() . '/modals/add-question-modal.php' ?>
+                <?php include get_template_directory() . '/modals/add-question-modal.php' ?>
 
-        <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
-        
-        <?php if ($lastBlog->have_posts()) : ?>
+                <div class="hidden opacity-25 fixed inset-0 z-40 bg-black" id="modal-id-backdrop"></div>
 
-        <div class="w-full m-auto py-8">
-        <div class="flex justify-between items-start md:items-center flex-col md:flex-row">
-                <?php $total_questions = $lastBlog->found_posts;
+                <?php if ($lastBlog->have_posts()) : ?>
+
+                <div class="w-full m-auto py-8">
+                    <div class="flex justify-between items-start md:items-center flex-col md:flex-row">
+                        <?php $total_questions = $lastBlog->found_posts;
                     echo $total_questions . ' questions';?>
-                    <?php  include get_template_directory() . '/filters.php'; ?>
-            </div>
-            <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
-            <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3 ">
-                <?php 
+                        <?php  include get_template_directory() . '/filters.php'; ?>
+                    </div>
+                    <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
+                    <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3 ">
+                        <?php 
                 // Get Fields
                      include get_template_directory() . '/partials/content-get-field.php'; 
                 ?>
-                <div class="flex max-md:justify-between relative flex-col md:flex-row">
-                    <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
-                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                        alt="user profile">
-                    <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
-                    <a class="text-gray-500 leading-8 mr-2">In: <?php echo $cat_name ?> | </a>
-                    <div class="flex">
-                        <a class="text-gray-500 leading-8 mr-2">Posted by:
-                            <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
-                    </div>
+                        <div class="flex max-md:justify-between relative flex-col md:flex-row">
+                            <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
+                                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                                alt="user profile">
+                            <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
+                            <a class="text-gray-500 leading-8 mr-2">In: <?php echo $cat_name ?> | </a>
+                            <div class="flex">
+                                <a class="text-gray-500 leading-8 mr-2">Posted by:
+                                    <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
+                            </div>
 
                     <!-- Mark as solved and Solved Section -->
                     <div class="absolute top-0 right-0">
@@ -80,32 +81,32 @@ if (isset($_POST['posts_per_page'])) {
                         <?php get_template_part('partials/content','viewID'); ?>
                     </div>
 
-                    <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
-                        href="<?php echo the_permalink(); ?>">Answer</a>
+                            <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
+                                href="<?php echo the_permalink(); ?>">Answer</a>
+                        </div>
+                    </div>
+                    <?php endwhile; ?>
                 </div>
+                <?php endif; ?>
             </div>
-            <?php endwhile; ?>
-        </div>
-        <?php endif; ?>
-    </div>
-    <!-- Pagination-->
-  
-        <?php
+            <!-- Pagination-->
+
+            <?php
                include get_template_directory() . '/partials/content-pagination.php'
             ?>
 
-    <?php wp_reset_postdata();
+            <?php wp_reset_postdata();
     } else {
         $posts_per_page = 5;
         $offset = ($currentPage - 1) * $posts_per_page;
         $category_relation_pagination = array_slice($category_relation, $offset, $posts_per_page);
         if (have_posts()) {
         ?>
-    <div class="w-full m-auto">
-        <div class="w-full m-auto py-8">
-            <?php foreach ($category_relation_pagination as $value) : ?>
-            <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
-                <?php
+            <div class=" container w-full mx-auto md:w-auto px-8">
+                <div class="w-full m-auto py-8">
+                    <?php foreach ($category_relation_pagination as $value) : ?>
+                    <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
+                        <?php
                             gt_set_post_views($value->ID);
                             $title_variable = get_field('question_title', $value->ID);
                             $description_variable = get_field('question_description', $value->ID);
@@ -118,19 +119,19 @@ if (isset($_POST['posts_per_page'])) {
                             $author_url = get_author_posts_url($author_id);
                             $author_name = get_the_author_meta('display_name', $author_id);
                             ?>
-                <div class="flex max-md:flex-wrap relative">
-                    <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
-                        src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-                        alt="user profile">
-                    <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
-                    <a class="text-gray-500 leading-8 mr-2">In: <?php echo $getslug ?> |</a>
-                    <a class="text-gray-500 leading-8 mr-2">Posted by:
-                        <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . $author_name . '</a>'; ?></a>
+                        <div class="flex max-md:flex-wrap relative">
+                            <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
+                                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                                alt="user profile">
+                            <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
+                            <a class="text-gray-500 leading-8 mr-2">In: <?php echo $getslug ?> |</a>
+                            <a class="text-gray-500 leading-8 mr-2">Posted by:
+                                <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . $author_name . '</a>'; ?></a>
 
-                    <!-- Mark as solved and Solved Section -->
+                            <!-- Mark as solved and Solved Section -->
 
-                    <div class="absolute top-0 right-0">
-                        <?php get_template_part('partials/content','solved'); ?>
+                            <div class="absolute top-0 right-0">
+                                <?php get_template_part('partials/content','solved'); ?>
 
                     </div>
                 </div>
@@ -147,9 +148,9 @@ if (isset($_POST['posts_per_page'])) {
             </div>
             <?php endforeach; ?>
 
-        </div>
-    </div>
-            
-    <?php };
+                </div>
+            </div>
+
+            <?php };
     }; ?>
 </section>

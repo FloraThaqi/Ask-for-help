@@ -8,16 +8,15 @@
                 $current_page = max(1, get_query_var('paged'));
 
                   if ( strpos( $_SERVER['REQUEST_URI'], '?filter' ) !== false ) {
+
                     $pagination = paginate_links( array(
                         'format'  => '?paged=%#%',
-                        'current' => max( 1, get_query_var('paged') ),
-                        'format' => '/page/%#%',
                         'current' => $current_page,
                         'total' => $total_pages,
                         'prev_text' => '<',
                         'next_text' => '>',
                     ) );
-      
+             
              
                   }
                     else{

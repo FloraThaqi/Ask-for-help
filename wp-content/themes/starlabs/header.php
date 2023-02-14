@@ -35,13 +35,21 @@
 
             <div class="flex">
                 <div class="dark-mode-button w-[56px] h-8 bg-gray-100 rounded-3xl shadow-[inset_0_3px_6px_0_rgb(0,0,0,0.2)]">
-                    <button id="dark-mode" class="w-6 h-6 bg-[#4767c9] rounded-3xl mx-1 my-1 duration-200 text-[#4767c9]">
-                        <?php $dark_mode = get_field('dark_mode', 'option');
-                        echo $dark_mode; ?>
-                    </button>
+                    <form action="" method="post">
+                        <button name="dark-mode-button" id="dark-mode" class="w-6 h-6 bg-[#4767c9] rounded-3xl mx-1 my-1 duration-200 text-[#4767c9]">
+                            <?php $dark_mode = get_field('dark_mode', 'option');
+                            echo $dark_mode; ?>
+                        </button>
+                    </form>
                 </div>
                 <?php
-                    
+                if (isset($_POST['dark-mode-button'])) {
+                    if ($dark_mode = 1) {
+                        update_field('dark_mode', 0, 'option');
+                    }
+                    header("Location: " . $_SERVER['PHP_SELF']);
+                    exit;
+                }
                 ?>
                 <!-- Navbar  -->
                 <div class="md:flex flex-row-reverse items-center  hidden mobile-menu w-full text-black md:w-auto" id="navbar-text">

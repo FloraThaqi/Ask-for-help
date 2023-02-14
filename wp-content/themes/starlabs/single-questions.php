@@ -9,7 +9,7 @@ $author_url = get_author_posts_url($author_id);
 
 ?>
 
-<div class="container mx-auto flex flex-col md:flex-row  pt-16 ">
+<div class=" container w-full mx-auto md:w-auto px-8 flex flex-col md:flex-row  pt-16  ">
     <div class=" mx-auto md:pt-5 pb-0 shadow-zinc-400  md:m-5 w-full mb-3 ">
         <div class="flex justify-between">
 

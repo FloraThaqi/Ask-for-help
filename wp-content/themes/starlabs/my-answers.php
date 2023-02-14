@@ -4,7 +4,7 @@ Template Name: My Answers
 */
 get_header();
 ?>
-<div class="container mx-auto flex flex-col md:flex-row pt-16 ">
+<div class=" container w-full mx-auto md:w-auto px-8  flex flex-col md:flex-row pt-16 ">
     <div class="w-full flex">
         <div class="w-full ">
             <section class="" id="my-answers">
@@ -41,21 +41,25 @@ if(isset($_POST['update'])) {
   foreach ($comments as $comment) {
     echo '<div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">';
     if(isset($_POST['edit']) && $_POST['comment_id'] == $comment->comment_ID) {
-      echo '<form action="" method="post">
-              <textarea name="new_content" class="w-full h-40 p-4 border border-gray-400 rounded" >'.$comment->comment_content.'</textarea>
-              <input type="hidden" name="comment_id" value="'.$comment->comment_ID.'">
-              <div class="flex justify-end min-h-[40px] items-center w-full mx-auto">
-              <input type="submit" name="update" value="Update" class="min-w-[80px] h-[35px] bg-blue-500 text-white flex justify-center items-center mr-3 rounded">
-              <input type="submit" name="cancel" value="Cancel" class="min-w-[80px] h-[35px] bg-red-500 text-white flex justify-center items-center mr-3 rounded">
-              </div>
-            </form>';
+      echo '
+      <form action="" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+      My answer:
+      </label>
+      <textarea name="new_content" row="4"  class="h-28 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >'.$comment->comment_content.'</textarea>
+      <input type="hidden" name="comment_id" value="'.$comment->comment_ID.'">
+      <div class="flex justify-end min-h-[40px] items-center w-full mx-auto">
+      <input type="submit" name="update" value="Update" class="cursor-pointer min-w-[80px] h-[35px] bg-blue-500 text-white flex justify-center items-center mr-3 rounded">
+      <input type="submit" name="cancel" value="Cancel" class=" cursor-pointer min-w-[80px] h-[35px] bg-red-500 text-white flex justify-center items-center mr-3 rounded">
+      </div>
+      </form>';
     } else {
       echo '<h2 class="text-xl font-medium mb-2"><a href="'.get_permalink($comment->comment_post_ID).'">'.get_the_title($comment->comment_post_ID).'</a></h2>';
       echo $comment->comment_content;
       echo '<div class="flex justify-end min-h-[40px] items-center w-full mx-auto">
               <form action="" method="post">
                 <input type="hidden" name="comment_id" value="'.$comment->comment_ID.'">
-                <input type="submit" name="edit" value="Edit" class="min-w-[80px] h-[35px] bg-blue-500 text-white flex justify-center items-center mr-3 rounded">
+                <input type="submit" name="edit" value="Edit" class="cursor-pointer min-w-[80px] h-[35px] bg-blue-500 text-white flex justify-center items-center mr-3 rounded">
               </form>
               <a href="'.get_permalink($comment->comment_post_ID).'" class="min-w-[80px] h-[35px] bg-indigo-400 text-white flex justify-center items-center mr-3 rounded">View</a>
              
@@ -75,8 +79,8 @@ if(isset($_POST['update'])) {
                   <div class="p-3  mt-2 text-center space-x-4 md:block">
                   <form action="" method="post">
                   <input type="hidden" name="comment_id" value="'.$comment->comment_ID.'">
-                  <input type="submit" name="delete" value="Delete" class="bg-red-500 text-white p-2 rounded cursor-pointer">
-                  <button type="button" class="bg-gray-500 text-white p-2 rounded" onClick="hideModal('.$comment->comment_ID.')">Cancel</button>
+                  <input type="submit" name="delete" value="Delete" class=" bg-red-500 text-white p-2 rounded cursor-pointer">
+                  <button type="button" class= " cursor-pointer bg-gray-500 text-white p-2 rounded" onClick="hideModal('.$comment->comment_ID.')">Cancel</button>
                   </form>
                   </div>
                 </div>

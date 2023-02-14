@@ -1,5 +1,5 @@
-<!-- Pagination in case IF-->
-<div class="p-2 mb-2 flex flex-row justify-end items-end gap-1">
+<div class="p-2 mb-2 flex flex-row justify-between gap-1">
+  <div class="flex flex-row justify-start">
     <?php
             $total_pages = $lastBlog->max_num_pages;
 
@@ -22,4 +22,20 @@
                 echo $pagination;
             }
             ?>
-</div>
+            
+            </div>
+            <hr>
+<form action="" method="post">
+  <div class="flex flex-row justify-end ">
+  <input type="submit" class="w-10 h-10 flex justify-center items-center mr-2 p-2 rounded-md  border border-gray-300 text-gray-400 font-bold hover:bg-gray-200" name="posts_per_page" value="5" style="cursor:pointer;  <?php if ($posts_per_page == 5) echo 'background-color: #1e90ff; color: white;'; ?>" title="Show 5 items per page">
+    <input type="submit" class="w-10 h-10 flex justify-center items-center mr-2 p-2 rounded-md  border border-gray-300 text-gray-400 font-bold hover:bg-gray-200"name="posts_per_page" value="10" style="cursor:pointer; <?php if ($posts_per_page == 10) echo 'background-color: #1e90ff; color: white;'; ?>"title="Show 10 items per page" >
+    <input type="submit" class="w-10 h-10 flex justify-center items-center mr-2 p-2 rounded-md  border border-gray-300 text-gray-400 font-bold hover:bg-gray-200" name="posts_per_page" value="15" style="cursor:pointer; <?php if ($posts_per_page == 15) echo 'background-color: #1e90ff; color: white;'; ?>"title="Show 15 items per page">
+    <p class="text-xs mt-2.5 ">per page</p>
+  </div>
+</form>
+
+
+
+
+
+ </div>

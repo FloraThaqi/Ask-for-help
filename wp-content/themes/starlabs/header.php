@@ -36,7 +36,7 @@
             <div class="flex">
                 <div class="dark-mode-button w-[56px] h-8 bg-gray-100 rounded-3xl shadow-[inset_0_3px_6px_0_rgb(0,0,0,0.2)]">
                     <form action="" method="post">
-                        <button name="dark-mode-button" id="dark-mode" class="w-6 h-6 bg-[#4767c9] rounded-3xl mx-1 my-1 duration-200 text-[#4767c9]">
+                        <button name="dark-mode-button" id="dark-mode" class="w-6 h-6 bg-[#4767c9] rounded-3xl mx-1 my-1 duration-200 text-[#4767c9]" onclick="reloadPage()">
                             <?php $dark_mode = get_field('dark_mode', 'option');
                             echo $dark_mode; ?>
                         </button>
@@ -44,9 +44,7 @@
                 </div>
                 <?php
                 if (isset($_POST['dark-mode-button'])) {
-                    if ($dark_mode = 1) {
-                        update_field('dark_mode', 0, 'option');
-                    }
+                    update_field('dark_mode', !$dark_mode, 'option');
                     header("Location: " . $_SERVER['PHP_SELF']);
                     exit;
                 }

@@ -49,6 +49,8 @@ $author_url = get_author_posts_url($author_id);
         <!-- Comment Section -->
         <?php   
         include get_template_directory() . '/partials/content-comment.php'; ?>
+        <!-- Related Questions -->
+       <?php include get_template_directory() . '/partials/related-questions.php'; ?>
 
 
     </div>

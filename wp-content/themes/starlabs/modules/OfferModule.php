@@ -1,4 +1,4 @@
-<div class="bg-[#4767c9]" >
+<div class="bg-[#4767c9]" id="offer-module">
 <?php
     $title = $module['title'];
     $sub_title = $module['sub_title'];
@@ -10,7 +10,7 @@
     $privacy_policy = $module['privacy_policy'];
     
 ?>
-<div class="bg-[#4767c9]" >
+<div class="" >
     <div class="py-14">
        <?php if($title): ?>
         <h5 class=" leading-3 space-y-1.5 font-semibold flex justify-center text-lg	 text-white"><?php echo $title ?></h5><br>

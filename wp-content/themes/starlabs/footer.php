@@ -26,7 +26,7 @@
             <?php if( $list_1 ):
                 foreach( $list_1 as $links ) : ?>
                     <?php if( is_array( $links['links'] ) ) : ?>
-                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
+                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class=" "><?= $links['links']['title'] ?></a></li>
                     <?php endif; 
                 endforeach;
             endif; ?>
@@ -38,7 +38,7 @@
             <?php if( $list_2 ):
                 foreach( $list_2 as $links ) : ?>
                     <?php if( is_array( $links['links'] ) ) : ?>
-                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
+                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class=" "><?= $links['links']['title'] ?></a></li>
                     <?php endif; 
                 endforeach;
             endif; ?>
@@ -50,7 +50,7 @@
             <?php if( $list_3 ):
                 foreach( $list_3 as $links ) : ?>
                     <?php if( is_array( $links['links'] ) ) : ?>
-                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
+                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class=" "><?= $links['links']['title'] ?></a></li>
                     <?php endif; 
                 endforeach;
             endif; ?>
@@ -62,7 +62,7 @@
             <?php if( $list_4 ):
                 foreach( $list_4 as $links ) : ?>
                     <?php if( is_array( $links['links'] ) ) : ?>
-                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class="text-black"><?= $links['links']['title'] ?></a></li>
+                        <li class="mb-4"><a href="<?= $links['links']['url'] ?>" class=" "><?= $links['links']['title'] ?></a></li>
                     <?php endif; 
                 endforeach;
             endif; ?>
@@ -76,7 +76,7 @@
     <div class="my-div text-center py-8">
         <div class="content-center justify-center mb-6">
             <a href="<?php the_sub_field('facebook_link'); ?>" type="button"
-                class="rounded-full border-2 border-black text-black leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+                class="rounded-full border-2 border-black   leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f"
                     class="w-2 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                     <path fill="currentColor"
@@ -86,7 +86,7 @@
             </a>
 
             <a href="<?php the_sub_field('twitter_link'); ?>" type="button"
-                class="rounded-full border-2 border-black text-black leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+                class="rounded-full border-2 border-black   leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
                     class="w-3 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path fill="currentColor"
@@ -97,7 +97,7 @@
 
 
             <a href="<?php the_sub_field('linkedin_link'); ?>" type="button"
-                class="rounded-full border-2 border-black text-black leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+                class="rounded-full border-2 border-black   leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in"
                     class="w-3 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path fill="currentColor"
@@ -107,7 +107,7 @@
             </a>
 
             <a href="<?php the_sub_field('github_link'); ?>" type="button"
-                class="rounded-full border-2 border-black text-black leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
+                class="rounded-full border-2 border-black   leading-normal uppercase hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-9 h-9 m-1">
                 <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
                     class="w-3 h-full mx-auto" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                     <path fill="currentColor"

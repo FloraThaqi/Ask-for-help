@@ -27,6 +27,7 @@ function style_enqueue()
 	wp_enqueue_script('header-script', get_template_directory_uri() . '/js/header.js', [], null, true);
 	wp_enqueue_script('modals-script', get_template_directory_uri() . '/js/modals.js', [], null, true);
 	wp_enqueue_script('comment-script', get_template_directory_uri() . '/js/comment.js', [], null, true);
+	wp_enqueue_script('backtotop-script', get_template_directory_uri() . '/js/back-to-top.js', [], null, true);
 	wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', [], null, true);
 	wp_enqueue_script('darkmode-script', get_template_directory_uri() . '/js/dark-mode.js', [], null, true);
 	wp_enqueue_style('dashicons');
@@ -445,7 +446,7 @@ add_filter('wp_nav_menu', 'add_custom_nav_elements', 10, 1);
 function add_custom_nav_elements($nav)
 {
 
-    $elements = '<div class=" active  block p-1 text-black text-left px-3 font-display">
+	$elements = '<div class=" active  block p-1 text-black text-left px-3 font-display">
 				<span class="dashicons dashicons-search md:h-12 flex items-center  cursor-pointer" ></span>
 			</div>';
 	return $elements . $nav;

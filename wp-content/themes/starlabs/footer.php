@@ -118,6 +118,11 @@
             <p class="mb-2  py-2">©Copyright. All rights reserved.</p>
         </div>
     </div>
+    <div class="back-to-top hidden fixed w-28 bottom-0 transition-all z-[100] right-0 mb-2 mr-4">
+  <a href="#" class="bg-blue-500 px-4 py-2 flex items-center justify-center rounded-3xl text-white font-bold transform">
+    Back to Top
+  </a>
+</div>
     <?php wp_footer(); ?>
     </body>
 

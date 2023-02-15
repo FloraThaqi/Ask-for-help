@@ -26,6 +26,7 @@ function style_enqueue() {
 	wp_enqueue_script('header-script', get_template_directory_uri() . '/js/header.js',[], null, true);
 	wp_enqueue_script('modals-script', get_template_directory_uri() . '/js/modals.js',[], null, true);
 	wp_enqueue_script('comment-script', get_template_directory_uri() . '/js/comment.js',[], null, true);
+	wp_enqueue_script('backtotop-script', get_template_directory_uri() . '/js/back-to-top.js',[], null, true);
 	wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js',[], null, true);
   wp_enqueue_style('dashicons');
 }

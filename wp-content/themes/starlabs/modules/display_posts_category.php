@@ -47,9 +47,36 @@ if (isset($_POST['posts_per_page'])) {
 
                 <div class="w-full m-auto py-8">
                     <div class="flex justify-between items-start md:items-center flex-col md:flex-row">
-                        <?php $total_questions = $lastBlog->found_posts;
-                    echo $total_questions . ' questions';?>
-                        <?php  include get_template_directory() . '/filters.php'; ?>
+                    <?php
+                        $total_questions = $lastBlog->found_posts;
+                        // Check if the posts are filtered by "solved" or "not solved"
+                        $filter = isset($_GET['filter']) ? $_GET['filter'] : '';
+                        if ($filter == 'solved') {
+                            $args['meta_query'] = array(
+                                array(
+                                    'key' => 'close',
+                                    'value' => 1,
+                                ),
+                            );
+                        } elseif ($filter == 'notsolved') {
+                            $args['meta_query'] = array(
+                                array(
+                                    'key' => 'close',
+                                    'compare' => 'NOT EXISTS',
+                                ),
+                            );
+                        }
+
+                        // Get the number of posts after the filter is applied
+                        $filtered_query = new WP_Query($args);
+                        $filtered_posts_count = $filtered_query->found_posts;
+                      
+                        echo $filtered_posts_count . ' questions';
+
+                        include get_template_directory() . '/filters.php';
+                     ?>
+
+
                     </div>
                     <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
                     <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3 ">

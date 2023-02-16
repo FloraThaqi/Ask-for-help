@@ -118,7 +118,7 @@
             <p class="mb-2  py-2">©Copyright. All rights reserved.</p>
         </div>
     </div>
-<div class="back-to-top hidden fixed bottom-0 transition-all z-[100] right-0 mb-2 mr-4">
+<div class="back-to-top hidden fixed bottom-0 transition-all z-[100] right-0 mb-8 mr-8">
     <button class="bg-blue-500 p-4 flex items-center justify-center rounded-full text-white font-bold transform">
         <svg
             aria-hidden="true"

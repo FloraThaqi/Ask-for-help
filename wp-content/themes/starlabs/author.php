@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="container mx-auto w-full flex flex-col pt-16 md:flex-row">
-    <section class="w-full">
+    <section class="w-full" id="author-page">
         <?php
         $author_name = get_query_var('author_name');
         $author = get_user_by('slug', $author_name);
@@ -16,7 +16,7 @@
             <?php if ($lastBlog->have_posts()) : ?>
             <div class="w-full m-auto py-8">
                 <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
-                <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3">
+                <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3" id="single-author-post">
                     <?php
                           // Get Fields
                           include get_template_directory() . '/partials/content-get-field.php'; 
@@ -42,7 +42,7 @@
                             <!--Content view with ID  -->
                             <?php get_template_part('partials/content','viewID'); ?>
                         </div>
-                        <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
+                        <a id="author-page-answer" class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
                             href="<?php echo the_permalink(); ?>">Answer</a>
                     </div>
                 </div>

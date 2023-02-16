@@ -11,7 +11,7 @@ if (isset($_POST['posts_per_page'])) {
   }
 
 ?>
-<section class="">
+<section class="" id="display-category">
     <?php if ($category_selection == 'By default') {
         $cat_name = $byDefault_relation->name;
 
@@ -57,7 +57,7 @@ if (isset($_POST['posts_per_page'])) {
                 // Get Fields
                      include get_template_directory() . '/partials/content-get-field.php'; 
                 ?>
-                        <div class="flex max-md:justify-between relative flex-col md:flex-row">
+                        <div class="flex max-md:justify-between relative flex-col md:flex-row" id="post-header">
                             <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                                 alt="user profile">
@@ -81,7 +81,7 @@ if (isset($_POST['posts_per_page'])) {
                         <?php get_template_part('partials/content','viewID'); ?>
                     </div>
 
-                            <a class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
+                            <a id="answer-button" class="min-w-[80px] h-[35px] bg-black text-white flex justify-center items-center mr-3 rounded"
                                 href="<?php echo the_permalink(); ?>">Answer</a>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ if (isset($_POST['posts_per_page'])) {
                             $author_url = get_author_posts_url($author_id);
                             $author_name = get_the_author_meta('display_name', $author_id);
                             ?>
-                        <div class="flex max-md:flex-wrap relative">
+                        <div id="post-header" class="flex max-md:flex-wrap relative">
                             <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                                 alt="user profile">

@@ -4,7 +4,7 @@ $paragraph = $module['paragraph'];
 $boxes = $module['boxes'];
 
 ?>
-    <div class="w-full">
+    <div class="w-full" id="key-features">
         <h1 class=" tracking-normal normal-case font-bold text-5xl text-center mt-12 mx-auto mb-0"><?php echo $title ?></h1>
         <p class=" mt-5 mx-auto mb-0 text-gray-400 text-center w-[70%]"><?php echo $paragraph ?> <a href="https://freepik.com/photos/business"  class="underline hover:no-underline p-0 ">Freepik</a></p>
         <img class="mt-[30px] mb-0 object-cover w-full h-[469px] mx-auto" src="//images03.nicepage.com/c461c07a441a5d220e8feb1a/989ba51b0f1f5d87a311be92/dawq-min.jpg?version=">

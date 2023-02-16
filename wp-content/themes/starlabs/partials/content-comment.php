@@ -1,6 +1,6 @@
 <!-- Comment Section -->
 <?php wp_enqueue_script('comment-reply'); ?>
-<section class="bg-gray-100 0 py-4">
+<section class="bg-gray-100 0 py-4" id="content-comment-section">
     <div class=" mx-auto px-4">
         <?php
                 $args = array(

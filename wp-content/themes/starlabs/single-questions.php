@@ -15,7 +15,7 @@ $author_url = get_author_posts_url($author_id);
 
             <div class="p-5 text-left ">
                 <?php if ($question_title) : ?>
-                <h3 class="text-4xl font-bold"><?php echo $question_title ?></h3>
+                <h3 id="single-question-title" class="text-4xl font-bold"><?php echo $question_title ?></h3>
                 <?php endif; ?>
             </div>
 
@@ -49,6 +49,8 @@ $author_url = get_author_posts_url($author_id);
         <!-- Comment Section -->
         <?php   
         include get_template_directory() . '/partials/content-comment.php'; ?>
+        <!-- Related Questions -->
+       <?php include get_template_directory() . '/partials/related-questions.php'; ?>
 
 
     </div>

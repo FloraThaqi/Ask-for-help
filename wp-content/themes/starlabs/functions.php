@@ -4,52 +4,56 @@ error_reporting(0);
 
 if (function_exists('acf_add_options_page')) {
 
-    acf_add_options_page(array(
-        'page_title'     => 'Theme Settings',
-        'menu_title'    => 'Theme Settings',
-        'menu_slug'     => 'theme-settings',
-        'capability'    => 'edit_posts',
-        'redirect'        => false
-    ));
+	acf_add_options_page(array(
+		'page_title'     => 'Theme Settings',
+		'menu_title'    => 'Theme Settings',
+		'menu_slug'     => 'theme-settings',
+		'capability'    => 'edit_posts',
+		'redirect'        => false
+	));
 
-    acf_add_options_page(array(
-        'page_title'     => 'Footer Settings',
-        'menu_title'    => 'Footer Settings',
-        'menu_slug'     => 'footer-settings',
-        'capability'    => 'edit_posts',
-        'redirect'        => false
-    ));
+	acf_add_options_page(array(
+		'page_title'     => 'Footer Settings',
+		'menu_title'    => 'Footer Settings',
+		'menu_slug'     => 'footer-settings',
+		'capability'    => 'edit_posts',
+		'redirect'        => false
+	));
 }
-function style_enqueue() {
-	wp_enqueue_style( 'style-name', get_template_directory_uri() . '/public/css/tailwind.css');
-	wp_enqueue_style( 'style-comment', get_template_directory_uri() . '/public/css/comment-style.css');
-	wp_enqueue_script('header-script', get_template_directory_uri() . '/js/header.js',[], null, true);
-	wp_enqueue_script('modals-script', get_template_directory_uri() . '/js/modals.js',[], null, true);
-	wp_enqueue_script('comment-script', get_template_directory_uri() . '/js/comment.js',[], null, true);
-	wp_enqueue_script('backtotop-script', get_template_directory_uri() . '/js/back-to-top.js',[], null, true);
-	wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js',[], null, true);
-  wp_enqueue_style('dashicons');
+function style_enqueue()
+{
+	wp_enqueue_style('style-name', get_template_directory_uri() . '/public/css/tailwind.css');
+	wp_enqueue_style('style-comment', get_template_directory_uri() . '/public/css/comment-style.css');
+	wp_enqueue_script('header-script', get_template_directory_uri() . '/js/header.js', [], null, true);
+	wp_enqueue_script('modals-script', get_template_directory_uri() . '/js/modals.js', [], null, true);
+	wp_enqueue_script('comment-script', get_template_directory_uri() . '/js/comment.js', [], null, true);
+	wp_enqueue_script('backtotop-script', get_template_directory_uri() . '/js/back-to-top.js', [], null, true);
+	wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', [], null, true);
+	wp_enqueue_script('darkmode-script', get_template_directory_uri() . '/js/dark-mode.js', [], null, true);
+	wp_enqueue_style('dashicons');
 }
-add_action( 'wp_enqueue_scripts', 'style_enqueue' );
+add_action('wp_enqueue_scripts', 'style_enqueue');
 
 //Add navbar
 
-function add_navbar(){
-    add_theme_support('menus');
-    register_nav_menu('primary','Primary Header Navigation');
+function add_navbar()
+{
+	add_theme_support('menus');
+	register_nav_menu('primary', 'Primary Header Navigation');
 }
-add_action('init','add_navbar');
+add_action('init', 'add_navbar');
 
-    // Include Walker file
-    require get_template_directory() . '/inc/walker.php';
+// Include Walker file
+require get_template_directory() . '/inc/walker.php';
 
 /*
 ==========================================
 Questions Post Type
 ==========================================
 */
-function questions_post_type (){
-	
+function questions_post_type()
+{
+
 	$labels = array(
 		'name' => 'Questions',
 		'singular_name' => 'Questions',
@@ -84,27 +88,28 @@ function questions_post_type (){
 		'menu_position' => 5,
 		'exclude_from_search' => false
 	);
-	register_post_type('questions',$args);
+	register_post_type('questions', $args);
 }
-add_action('init','questions_post_type');
+add_action('init', 'questions_post_type');
 
-add_action('check_admin_referer', 'logout_without_confirm', 10, 2); 
-function logout_without_confirm($action, $result) 
-{ 
-    /** 
-     * Allow logout without confirmation 
-     */ 
-    if ($action == "log-out" && !isset($_GET['_wpnonce'])) { 
-        $redirect_to = isset($_REQUEST['redirect_to']) ? $_REQUEST['redirect_to'] : ''; 
-        $location = str_replace('&amp;', '&', wp_logout_url($redirect_to));; 
-        header("Location: $location"); 
-        die; 
-    } 
+add_action('check_admin_referer', 'logout_without_confirm', 10, 2);
+function logout_without_confirm($action, $result)
+{
+	/** 
+	 * Allow logout without confirmation 
+	 */
+	if ($action == "log-out" && !isset($_GET['_wpnonce'])) {
+		$redirect_to = isset($_REQUEST['redirect_to']) ? $_REQUEST['redirect_to'] : '';
+		$location = str_replace('&amp;', '&', wp_logout_url($redirect_to));;
+		header("Location: $location");
+		die;
+	}
 }
-add_action('wp_logout','ps_redirect_after_logout');
-function ps_redirect_after_logout(){
-         wp_redirect( home_url() );
-         exit();
+add_action('wp_logout', 'ps_redirect_after_logout');
+function ps_redirect_after_logout()
+{
+	wp_redirect(home_url());
+	exit();
 }
 
 /*
@@ -112,10 +117,11 @@ function ps_redirect_after_logout(){
 	 Sidebar function
 	==========================================
 */
-function awesome_widget_setup() {
-	
+function awesome_widget_setup()
+{
+
 	register_sidebar(
-		array(	
+		array(
 			'name'	=> 'Sidebar',
 			'id'	=> 'sidebar-1',
 			'class'	=> 'custom',
@@ -148,10 +154,10 @@ function awesome_widget_setup() {
 			)
 		)
 	);
-	
 }
-add_action('widgets_init','awesome_widget_setup');
-function questions_custom_taxonomies(){
+add_action('widgets_init', 'awesome_widget_setup');
+function questions_custom_taxonomies()
+{
 	//add new taxonomy hirarchical
 	$labels = array(
 		'name' => 'Questions Category',
@@ -174,18 +180,18 @@ function questions_custom_taxonomies(){
 		'query_var' => true,
 		'rewrite' => array('slug' => 'questions')
 	);
-	register_taxonomy('field',array('questions'),$args);
+	register_taxonomy('field', array('questions'), $args);
 
-// add new taxonomy NOT hirarchical
+	// add new taxonomy NOT hirarchical
 
-register_taxonomy('software', 'questions',array(
-'label' => 'Other Questions',
-'rewrite' => array('slug' => 'software'),
-'hierarchical' => false,
+	register_taxonomy('software', 'questions', array(
+		'label' => 'Other Questions',
+		'rewrite' => array('slug' => 'software'),
+		'hierarchical' => false,
 
-));
+	));
 }
-add_action('init','questions_custom_taxonomies');
+add_action('init', 'questions_custom_taxonomies');
 
 /*
 	==========================================
@@ -193,8 +199,8 @@ add_action('init','questions_custom_taxonomies');
 	==========================================
 */
 
-if( function_exists('acf_add_options_page') ) {
-  acf_add_options_page();
+if (function_exists('acf_add_options_page')) {
+	acf_add_options_page();
 }
 
 /*
@@ -267,52 +273,53 @@ add_action('manage_posts_custom_column', 'gt_posts_custom_column_views');
 
 //delete button on comment section
 
-        
+
 // Add script on single post & pages with comments only, if user has edit rights
-add_action( 'template_redirect', 'boj_idc_addjs_ifcomments' );
-function boj_idc_addjs_ifcomments() {
-    if( is_single() && current_user_can( 'moderate_comments' ) ) {
-        global $post;
-        if( $post->comment_count ) {
-            $path = plugin_dir_url( __FILE__ );
-        
-            wp_enqueue_script( 'boj_idc', $path.'js/script.js' );
-            $protocol = isset( $_SERVER["HTTPS"]) ? 'https://' : 'http://';
-            $params = array(
-              'ajaxurl' =>admin_url( 'admin-ajax.php', $protocol )
-            );
-            wp_localize_script( 'boj_idc', 'boj_idc', $params );
-        }
-    }
+add_action('template_redirect', 'boj_idc_addjs_ifcomments');
+function boj_idc_addjs_ifcomments()
+{
+	if (is_single() && current_user_can('moderate_comments')) {
+		global $post;
+		if ($post->comment_count) {
+			$path = plugin_dir_url(__FILE__);
+
+			wp_enqueue_script('boj_idc', $path . 'js/script.js');
+			$protocol = isset($_SERVER["HTTPS"]) ? 'https://' : 'http://';
+			$params = array(
+				'ajaxurl' => admin_url('admin-ajax.php', $protocol)
+			);
+			wp_localize_script('boj_idc', 'boj_idc', $params);
+		}
+	}
 }
-     
+
 
 // Add an admin link to each comment
-add_filter( 'comment_text', 'delete_button' );
-function delete_button( $text ) {
-    // Get current comment ID
-    global $comment , $user_ID;
-    $comment_id = $comment->comment_ID;
+add_filter('comment_text', 'delete_button');
+function delete_button($text)
+{
+	// Get current comment ID
+	global $comment, $user_ID;
+	$comment_id = $comment->comment_ID;
 	$post_id = get_the_ID();
 	$author_id = get_post_field('post_author', $post_id);
 
-	if($author_id==$user_ID){
+	if ($author_id == $user_ID) {
 
 		// Get link to admin page to trash comment, and add nonces to it
-		$link =printf(
-		'<a class=" text-base absolute p-6 text-red-600 bottom-0 left-0" href="%s">%s</a>',
-		
+		$link = printf(
+			'<a class=" text-base absolute p-6 text-red-600 bottom-0 left-0" href="%s">%s</a>',
 
-		wp_nonce_url(
-			admin_url( "comment.php?c=$comment_id&action=deletecomment" ),
-			'delete-comment_' . $comment_id
-		),
-		esc_html__( 'Delete', 'text-domain' )
-	);
-}
-	
-    return $text;
 
+			wp_nonce_url(
+				admin_url("comment.php?c=$comment_id&action=deletecomment"),
+				'delete-comment_' . $comment_id
+			),
+			esc_html__('Delete', 'text-domain')
+		);
+	}
+
+	return $text;
 }
 
 /*
@@ -322,46 +329,50 @@ function delete_button( $text ) {
 */
 
 // Add like and dislike button to comments
-add_filter( 'comment_text', 'like_dislike_button' );
-function like_dislike_button( $content ) {
-    global $comment;
-    $comment_id = $comment->comment_ID;
+add_filter('comment_text', 'like_dislike_button');
+function like_dislike_button($content)
+{
+	global $comment;
+	$comment_id = $comment->comment_ID;
 
-    $like_count = get_comment_meta($comment_id, 'like_count', true);
-    $dislike_count = get_comment_meta($comment_id, 'dislike_count', true);
+	$like_count = get_comment_meta($comment_id, 'like_count', true);
+	$dislike_count = get_comment_meta($comment_id, 'dislike_count', true);
 
-    $like_count = $like_count ? $like_count : 0;
-    $dislike_count = $dislike_count ? $dislike_count : 0;
+	$like_count = $like_count ? $like_count : 0;
+	$dislike_count = $dislike_count ? $dislike_count : 0;
 
-    require(get_template_directory() . '/partials/content-like-dislike.php');
-    return $content;
+	require(get_template_directory() . '/partials/content-like-dislike.php');
+	return $content;
 }
 
 // Handle like button action
-add_action( 'wp_ajax_like', 'handle_like' );
-add_action( 'wp_ajax_nopriv_like', 'handle_like' );
-function handle_like() {
+add_action('wp_ajax_like', 'handle_like');
+add_action('wp_ajax_nopriv_like', 'handle_like');
+function handle_like()
+{
 	if (is_user_logged_in()) {
-			handle_like_dislike('like_count', 'like_');
+		handle_like_dislike('like_count', 'like_');
 	}
 }
 
-add_action( 'wp_ajax_dislike', 'handle_dislike' );
-add_action( 'wp_ajax_nopriv_dislike', 'handle_dislike' );
-function handle_dislike() {
+add_action('wp_ajax_dislike', 'handle_dislike');
+add_action('wp_ajax_nopriv_dislike', 'handle_dislike');
+function handle_dislike()
+{
 	if (is_user_logged_in()) {
-			handle_like_dislike('dislike_count', 'dislike_');
+		handle_like_dislike('dislike_count', 'dislike_');
 	}
 }
 
-function handle_like_dislike($meta_key, $nonce_key) {
+function handle_like_dislike($meta_key, $nonce_key)
+{
 	// Verify nonce
-	if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( $_POST['nonce'], $nonce_key . $_POST['comment_id'] ) ) {
-					wp_die( 'Invalid request.' );
+	if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], $nonce_key . $_POST['comment_id'])) {
+		wp_die('Invalid request.');
 	}
 
 	// Get comment ID
-	$comment_id = intval( $_POST['comment_id'] );
+	$comment_id = intval($_POST['comment_id']);
 
 	// Get the user ID
 	$user_id = get_current_user_id();
@@ -370,73 +381,75 @@ function handle_like_dislike($meta_key, $nonce_key) {
 	$user_vote = get_comment_meta($comment_id, 'user_vote', true);
 	$user_meta = get_comment_meta($comment_id, 'user_id', true);
 	if ($user_vote) {
-					// If the user has already voted, check if the vote matches the current vote
-					if ($user_meta == $user_id && $user_vote == $meta_key) {
-									// If the vote matches, remove the vote
-									delete_comment_meta($comment_id, 'user_vote');
-									delete_comment_meta($comment_id, 'user_id');
-									$current_count = get_comment_meta($comment_id, $meta_key, true);
-									if ($current_count > 0) {
-													$current_count--;
-									}
-									update_comment_meta($comment_id, $meta_key, $current_count);
-            } else {
-                    // If the vote does not match, update the vote
-                    update_comment_meta($comment_id, 'user_vote', $meta_key);
-                    update_comment_meta($comment_id, 'user_id', $user_id);
-                    $current_count = get_comment_meta($comment_id, $meta_key, true);
-                    if(!$current_count){
-                            $current_count = 1;
-                    }else{
-                            $current_count++;
-                    }
-                    update_comment_meta( $comment_id, $meta_key, $current_count);
+		// If the user has already voted, check if the vote matches the current vote
+		if ($user_meta == $user_id && $user_vote == $meta_key) {
+			// If the vote matches, remove the vote
+			delete_comment_meta($comment_id, 'user_vote');
+			delete_comment_meta($comment_id, 'user_id');
+			$current_count = get_comment_meta($comment_id, $meta_key, true);
+			if ($current_count > 0) {
+				$current_count--;
+			}
+			update_comment_meta($comment_id, $meta_key, $current_count);
+		} else {
+			// If the vote does not match, update the vote
+			update_comment_meta($comment_id, 'user_vote', $meta_key);
+			update_comment_meta($comment_id, 'user_id', $user_id);
+			$current_count = get_comment_meta($comment_id, $meta_key, true);
+			if (!$current_count) {
+				$current_count = 1;
+			} else {
+				$current_count++;
+			}
+			update_comment_meta($comment_id, $meta_key, $current_count);
 
-                    // Decrement the count of the previous vote
-                    $opposite_vote = $meta_key == "like_count" ? "dislike_count" : "like_count";
-                    $opposite_count = get_comment_meta($comment_id, $opposite_vote, true);
-                    if ($opposite_count > 0) {
-                        $opposite_count--;
-                    }
-                    update_comment_meta($comment_id, $opposite_vote, $opposite_count);
-            }
-    } else {
-            // If the user has not voted, add the vote
-            add_comment_meta($comment_id, 'user_vote', $meta_key);
-            add_comment_meta($comment_id, 'user_id', $user_id);
-            $current_count = get_comment_meta($comment_id, $meta_key, true);
-            if(!$current_count){
-                    $current_count = 1;
-            }else{
-                    $current_count++;
-            }
-            update_comment_meta( $comment_id, $meta_key, $current_count);
-    }
+			// Decrement the count of the previous vote
+			$opposite_vote = $meta_key == "like_count" ? "dislike_count" : "like_count";
+			$opposite_count = get_comment_meta($comment_id, $opposite_vote, true);
+			if ($opposite_count > 0) {
+				$opposite_count--;
+			}
+			update_comment_meta($comment_id, $opposite_vote, $opposite_count);
+		}
+	} else {
+		// If the user has not voted, add the vote
+		add_comment_meta($comment_id, 'user_vote', $meta_key);
+		add_comment_meta($comment_id, 'user_id', $user_id);
+		$current_count = get_comment_meta($comment_id, $meta_key, true);
+		if (!$current_count) {
+			$current_count = 1;
+		} else {
+			$current_count++;
+		}
+		update_comment_meta($comment_id, $meta_key, $current_count);
+	}
 
-    $like_count = get_comment_meta($comment_id, 'like_count', true);
-    $dislike_count = get_comment_meta($comment_id, 'dislike_count', true);
+	$like_count = get_comment_meta($comment_id, 'like_count', true);
+	$dislike_count = get_comment_meta($comment_id, 'dislike_count', true);
 
-    // Return a response
-    wp_send_json_success(array('like_count'=>$like_count, 'dislike_count'=>$dislike_count));
-    exit;
+	// Return a response
+	wp_send_json_success(array('like_count' => $like_count, 'dislike_count' => $dislike_count));
+	exit;
 }
 
 // Enqueue JS script
-add_action( 'wp_enqueue_scripts', 'enqueue_like_dislike_script' );
-function enqueue_like_dislike_script() {
-    wp_enqueue_script( 'like-dislike-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0', true );
-    wp_localize_script( 'like-dislike-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+add_action('wp_enqueue_scripts', 'enqueue_like_dislike_script');
+function enqueue_like_dislike_script()
+{
+	wp_enqueue_script('like-dislike-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0', true);
+	wp_localize_script('like-dislike-script', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
 }
 
 
 //Added search icon on nav menu
-add_filter('wp_nav_menu','add_custom_nav_elements', 10, 1);
-function add_custom_nav_elements( $nav ) {
+add_filter('wp_nav_menu', 'add_custom_nav_elements', 10, 1);
+function add_custom_nav_elements($nav)
+{
 
-    $elements = '<div class=" active  block p-1 text-black text-left px-3 font-display">
+	$elements = '<div class=" active  block p-1 text-black text-left px-3 font-display">
 				<span class="dashicons dashicons-search md:h-12 flex items-center  cursor-pointer" ></span>
 			</div>';
-    return $elements . $nav;
+	return $elements . $nav;
 }
 
 /*
@@ -445,28 +458,30 @@ function add_custom_nav_elements( $nav ) {
 	======================================================
 */
 
-function restrict_my_questions_page() {
-	if ( is_page( 'my-questions' ) && ! is_user_logged_in() ) {
-			wp_redirect( home_url( '/login' ) );
-			exit;
+function restrict_my_questions_page()
+{
+	if (is_page('my-questions') && !is_user_logged_in()) {
+		wp_redirect(home_url('/login'));
+		exit;
 	}
 }
-add_action( 'template_redirect', 'restrict_my_questions_page' );
+add_action('template_redirect', 'restrict_my_questions_page');
 
 
 
 
 //search filter with pagination
 
-function search_filter($query) {
-	if ( !is_admin() && $query->is_main_query() ) {
-	  if ($query->is_search) {
-		$query->set('paged', ( get_query_var('paged') ) ? get_query_var('paged') : 1 );
-		$query->set('posts_per_page',10);
-	  }
+function search_filter($query)
+{
+	if (!is_admin() && $query->is_main_query()) {
+		if ($query->is_search) {
+			$query->set('paged', (get_query_var('paged')) ? get_query_var('paged') : 1);
+			$query->set('posts_per_page', 10);
+		}
 	}
-  }
-  add_action( 'pre_get_posts', 'search_filter' );
+}
+add_action('pre_get_posts', 'search_filter');
 
 /*
 	==========================================================
@@ -488,24 +503,25 @@ function search_filter($query) {
 //     $phpmailer->FromName = SMTP_NAME;
 // }
 
-function send_email_on_comment( $comment_id ) {
-  $comment = get_comment( $comment_id );
-  $post = get_post( $comment->comment_post_ID );
-  $author = get_userdata( $post->post_author );
+function send_email_on_comment($comment_id)
+{
+	$comment = get_comment($comment_id);
+	$post = get_post($comment->comment_post_ID);
+	$author = get_userdata($post->post_author);
 
-  $to = $author->user_email;
-  $subject = "New comment on your question";
-  $message = "A new comment has been added to the question you posted: \n\n" .
-             get_the_title( $post->ID ) . "\n\n" .
-             "Comment: " . $comment->comment_content . "\n\n" .
-             "You can view the comment here: " . get_permalink( $post->ID ) . "#comments";
-  $headers = array();
-  $headers[] = 'From: Your Name <sender@example.com>';
-  $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+	$to = $author->user_email;
+	$subject = "New comment on your question";
+	$message = "A new comment has been added to the question you posted: \n\n" .
+		get_the_title($post->ID) . "\n\n" .
+		"Comment: " . $comment->comment_content . "\n\n" .
+		"You can view the comment here: " . get_permalink($post->ID) . "#comments";
+	$headers = array();
+	$headers[] = 'From: Your Name <sender@example.com>';
+	$headers[] = 'Content-Type: text/plain; charset=UTF-8';
 
-  wp_mail( $to, $subject, $message, $headers );
+	wp_mail($to, $subject, $message, $headers);
 }
-add_action( 'comment_post', 'send_email_on_comment' );
+add_action('comment_post', 'send_email_on_comment');
 
 /*
 	===============================
@@ -513,26 +529,29 @@ add_action( 'comment_post', 'send_email_on_comment' );
 	===============================
 */
 
-add_filter( 'comment_text', 'add_correct_answer_button' );
-function add_correct_answer_button( $text ) {
-    global $comment, $post;
-    $comment_id = $comment->comment_ID;
-    $author_id = $post->post_author;
-    $user_id = get_current_user_id();
-    $is_correct = get_comment_meta( $comment_id, 'is_correct', true );
-		require(get_template_directory() . '/partials/content-correct.php');
-    return $text;
+add_filter('comment_text', 'add_correct_answer_button');
+function add_correct_answer_button($text)
+{
+	global $comment, $post;
+	$comment_id = $comment->comment_ID;
+	$author_id = $post->post_author;
+	$user_id = get_current_user_id();
+	$is_correct = get_comment_meta($comment_id, 'is_correct', true);
+	require(get_template_directory() . '/partials/content-correct.php');
+	return $text;
 }
 
-function markAsCorrect($comment_id) {
-    update_comment_meta($comment_id, 'is_correct', true);
+function markAsCorrect($comment_id)
+{
+	update_comment_meta($comment_id, 'is_correct', true);
 }
 
-add_action( 'wp_ajax_mark_as_correct', 'mark_as_correct_handler' );
-function mark_as_correct_handler() {
-    $comment_id = intval($_POST['comment_id']);
-    update_comment_meta($comment_id, 'is_correct', true);
-    wp_send_json_success();
+add_action('wp_ajax_mark_as_correct', 'mark_as_correct_handler');
+function mark_as_correct_handler()
+{
+	$comment_id = intval($_POST['comment_id']);
+	update_comment_meta($comment_id, 'is_correct', true);
+	wp_send_json_success();
 }
 
-wp_localize_script( 'correct-answer-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
+wp_localize_script('correct-answer-script', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));

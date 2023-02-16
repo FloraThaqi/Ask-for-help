@@ -4,7 +4,7 @@ $cards_title = $module['cards_title'];
 
 ?>
 <div class="mt-20" id="cards-module">
-      <h1 class="mt-8 mx-auto max-w-md text-4xl font-bold text-center">
+      <h1 class="mt-8 mx-auto max-w-md text-4xl font-bold text-center dark:text-white">
       <?php echo $cards_title; ?>
       </h1>
 

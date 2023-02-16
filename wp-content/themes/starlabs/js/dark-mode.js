@@ -7,7 +7,6 @@ function darkMode() {
 button.addEventListener("click", darkMode);
 
 const buttonValue = button.innerText;
-console.log(buttonValue);
 
 if (buttonValue == 1 || buttonValue == true) {
   darkMode();

@@ -32,7 +32,7 @@ if (isset($_POST['posts_per_page'])) {
         <div class="w-full m-auto max-lg:mx-0">
             <!-- Add new question -->
             <div class="flex justify-between  flex-wrap">
-                <h4 class="text-black text-left text-3xl font-bold mt-5 ">All Questions</h4>
+                <h4 class="text-black text-left text-3xl font-bold mt-5 dark:text-white">All Questions</h4>
                 <button type="button"
                     class="px-4 py-3 bg-[#4767C9] text-white font-display text-xs uppercase rounded hover:bg-[#4767D9] mt-5"
                     onclick="<?php if (!is_user_logged_in()) { echo 'window.location.href = \'' . home_url('/login') . '\';'; } else { echo 'toggleModal(\'modal-id\');'; } ?>">
@@ -46,7 +46,7 @@ if (isset($_POST['posts_per_page'])) {
                 <?php if ($lastBlog->have_posts()) : ?>
 
                 <div class="w-full m-auto py-8">
-                    <div class="flex justify-between items-start md:items-center flex-col md:flex-row">
+                    <div class="flex justify-between items-start md:items-center flex-col md:flex-row dark:text-white ">
                     <?php
                         $total_questions = $lastBlog->found_posts;
                         // Check if the posts are filtered by "solved" or "not solved"
@@ -79,7 +79,7 @@ if (isset($_POST['posts_per_page'])) {
 
                     </div>
                     <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
-                    <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3 ">
+                    <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3 dark:bg-[#181f2a] dark:border-gray-600">
                         <?php 
                 // Get Fields
                      include get_template_directory() . '/partials/content-get-field.php'; 
@@ -88,11 +88,11 @@ if (isset($_POST['posts_per_page'])) {
                             <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                                 alt="user profile">
-                            <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
-                            <a class="text-gray-500 leading-8 mr-2">In: <?php echo $cat_name ?> | </a>
+                            <p class="text-gray-500 leading-8 mr-2 dark:text-white">Asked on: <?php echo $date_variable; ?> | </p>
+                            <a class="text-gray-500 leading-8 mr-2 dark:text-white">In: <?php echo $cat_name ?> | </a>
                             <div class="flex">
-                                <a class="text-gray-500 leading-8 mr-2">Posted by:
-                                    <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
+                                <a class="text-gray-500 leading-8 mr-2 dark:text-white">Posted by:
+                                    <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600 dark:text-white" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
                             </div>
 
                     <!-- Mark as solved and Solved Section -->
@@ -104,7 +104,7 @@ if (isset($_POST['posts_per_page'])) {
                 
                 <div class="flex justify-between  min-h-[40px] items-center w-full mx-auto">
                     <!--Content view with ID  -->
-                    <div class="flex">
+                    <div class="flex dark:text-white">
                         <?php get_template_part('partials/content','viewID'); ?>
                     </div>
 

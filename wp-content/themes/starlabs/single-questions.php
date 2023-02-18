@@ -10,12 +10,12 @@ $author_url = get_author_posts_url($author_id);
 ?>
 
 <div class=" container w-full mx-auto md:w-auto px-8 flex flex-col md:flex-row  pt-16  ">
-    <div class=" mx-auto md:pt-5 pb-0 shadow-zinc-400  md:m-5 w-full mb-3 ">
+    <div class=" mx-auto md:pt-5 pb-0 shadow-zinc-400   md:m-5 w-full mb-3 ">
         <div class="flex justify-between">
 
             <div class="p-5 text-left ">
                 <?php if ($question_title) : ?>
-                <h3 id="single-question-title" class="text-4xl font-bold"><?php echo $question_title ?></h3>
+                <h3 id="single-question-title" class="text-4xl font-bold dark:text-white"><?php echo $question_title ?></h3>
                 <?php endif; ?>
             </div>
 
@@ -25,7 +25,7 @@ $author_url = get_author_posts_url($author_id);
             </div>
 
         </div>
-        <div class="p-5 text-slate-500 ">
+        <div class="p-5 text-slate-500  dark:text-white">
             <?php if ($question_description) : ?>
             <p><?php echo $question_description ?></p>
             <?php endif; ?>
@@ -38,8 +38,8 @@ $author_url = get_author_posts_url($author_id);
             <div class="flex">
                 <?php 
                     ?>
-                <p class="mr-5"><?php echo get_the_date() ?></p>
-                <a class="hover:text-sky-600 max-md:text-sky-600" href="<?php echo $author_url; ?>">by:
+                <p class="mr-5 dark:text-white"><?php echo get_the_date() ?></p>
+                <a class="hover:text-sky-600 max-md:text-sky-600 dark:text-white" href="<?php echo $author_url; ?>">by:
                     <?php echo $author_name; ?>
                 </a>
             </div>

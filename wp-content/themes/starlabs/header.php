@@ -10,7 +10,7 @@
 </head>
 
 
-<body class="bg-gray-100 dark:bg-[#003366] font-display ">
+<body class="bg-gray-100 dark:bg-[#1c2431] font-display ">
 
 
     <nav class="bg-white dark:bg-black shadow-lg w-full fixed z-50 h-16 ">
@@ -35,20 +35,8 @@
 
             <div class="flex">
                 <div class="dark-mode-button w-[56px] h-8 bg-gray-100 rounded-3xl shadow-[inset_0_3px_6px_0_rgb(0,0,0,0.2)] my-auto">
-                    <form id="dark-mode-form" action="" method="post">
-                        <button name="dark-mode-button" id="dark-mode" class="w-6 h-6 bg-[#4767c9] rounded-3xl mx-1 my-1 duration-200 text-[#4767c9] dark:translate-x-full">
-                            <?php $dark_mode = get_field('dark_mode', 'option');
-                            echo $dark_mode; ?>
-                        </button>
-                    </form>
+                    <button name="dark-mode-button" id="dark-mode" class="w-6 h-6 bg-[#4767c9] rounded-3xl mx-1 my-1 duration-200 text-[#4767c9] dark:translate-x-full"></button>
                 </div>
-                <?php
-                if (isset($_POST['dark-mode-button'])) {
-                    update_field('dark_mode', !$dark_mode, 'option');
-                    header("Location: " . $_SERVER['PHP_SELF']);
-                    exit;
-                }
-                ?>
                 <!-- Navbar  -->
                 <div class="md:flex flex-row-reverse items-center hidden mobile-menu w-full text-black dark:text-white md:w-auto" id="navbar-text">
 

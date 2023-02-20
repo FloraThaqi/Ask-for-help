@@ -30,7 +30,7 @@
             
         <div class=" my-10 text-white flex justify-center">
         <?php if($button): ?>
-        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white dark:bg-[#5bbde7] dark:hover:bg-[#7fcef0] rounded-full hover:bg-[#adbce9]"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button['title']?></h3></a>
+        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white dark:bg-[#5bbde7] dark:hover:bg-[#7fcef0] rounded-full hover:bg-[#adbce9]"><h3 class="px-20 py-4 text-lg font-bold text-slate-500 dark:text-white"><?php echo $button['title']?></h3></a>
         <?php endif ?></div>
         <div class="text-[14px] text-white flex justify-center">
     

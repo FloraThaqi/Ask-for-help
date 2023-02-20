@@ -38,7 +38,7 @@
                 <input type="email" placeholder="Enter a valid email address" class="bg-[#f2f2f2] rounded-xl block w-full py-2.5 px-3 m-0 border-none h-auto overflow-visible text-start" />
               </div>
             </div>
-            <div class="w-full text-start block text-[#ffffff] py-2 px-4">
+            <div class="w-full text-start block text-[#ffffff] py-2">
               <a href="#" class="bg-[#4767c9] w-full text-center uppercase tracking-[2px] font-bold my-px relative rounded-xl inline-block py-2.5 px-8 mb-7 cursor-pointer dark:bg-[#5bbde7] dark:text-white dark:hover:bg-[#7fcef0] "> Request clarification </a>
             </div>
           </form>

@@ -36,7 +36,7 @@
     
     <?php 
         if( $copyright ): ?>
-        <p class="text-white text-center"><?php echo $copyright ?> •
+        <p class="text-white text-center"><?php echo $copyright ?><span class="dark:text-[#4767C9]"> •</span>
     <?php endif;?>
 
     <?php 

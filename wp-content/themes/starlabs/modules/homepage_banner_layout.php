@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<div class="min-h-screen max-w-full bg-right-bottom bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center bg-[url('https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/14932e39a84a5afe9272d0c1/pexels-photo-301930copy.jpg')] dark:bg-[url('https://cdn.discordapp.com/attachments/1053338653415456768/1076515748257726474/pexels-photo-301930dark.jpg')]">
+<div class="min-h-screen max-w-full bg-right-bottom bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center bg-[url('https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/14932e39a84a5afe9272d0c1/pexels-photo-301930copy.jpg')] dark:bg-[url('https://cdn.discordapp.com/attachments/1053338653415456768/1077212011051618314/homepage-darkmode.jpg')]">
   <div class="h-full mt-20 flex lg:flex-row gap-20 justify-start lg:basis-[69%] flex-col p-[30px]">
     <div class="max-w-full flex flex-row justify-start items-center lg:flex-col flex-1">
       <h1 class="text-5xl font-bold">

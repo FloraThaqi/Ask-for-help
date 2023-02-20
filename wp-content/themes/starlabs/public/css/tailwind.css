@@ -2604,6 +2604,10 @@ video {
   fill: #65e2d9;
 }
 
+.dark .dark\:fill-\[\#4767c9\] {
+  fill: #4767c9;
+}
+
 .dark .dark\:text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -2647,6 +2651,11 @@ video {
 .dark .dark\:text-\[\#65e2d9\] {
   --tw-text-opacity: 1;
   color: rgb(101 226 217 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-\[\#4767C9\] {
+  --tw-text-opacity: 1;
+  color: rgb(71 103 201 / var(--tw-text-opacity));
 }
 
 .dark .dark\:hover\:bg-blue-400:hover {

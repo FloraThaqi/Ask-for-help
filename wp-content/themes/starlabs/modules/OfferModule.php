@@ -10,7 +10,7 @@
     $privacy_policy = $module['privacy_policy'];
     
 ?>
-<div class="" >
+<div class="dark:bg-[#181f2a]" >
     <div class="py-14">
        <?php if($title): ?>
         <h5 class=" leading-3 space-y-1.5 font-semibold flex justify-center text-lg	 text-white"><?php echo $title ?></h5><br>
@@ -25,29 +25,29 @@
         <?php endif; ?>
 
         <?php if($description): ?>
-        <p class="tracking-tight text-white flex justify-center px-6 text-center"><?php echo $description ?></p>
+        <p class="tracking-tight text-white flex justify-center px-6 text-center  dark:text-slate-300"><?php echo $description ?></p>
         <?php endif; ?>
             
         <div class=" my-10 text-white flex justify-center">
         <?php if($button): ?>
-        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white rounded-full hover:bg-[#adbce9]"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button['title']?></h3></a>
+        <a href="<?php echo $button['url'] ?>" target="_blank" class="self-center font-bold bg-white dark:bg-[#5bbde7] dark:hover:bg-[#7fcef0] rounded-full hover:bg-[#adbce9]"><h3 class="px-20 py-4 text-lg font-bold text-slate-500"><?php echo $button['title']?></h3></a>
         <?php endif ?></div>
         <div class="text-[14px] text-white flex justify-center">
     
     <?php 
         if( $copyright ): ?>
-        <p class="text-white text-center"><?php echo $copyright ?> •
+        <p class="text-white text-center"><?php echo $copyright ?><span class="dark:text-[#4767C9]"> •</span>
     <?php endif;?>
 
     <?php 
         if( $terms ): ?>    
-        <a class="underline underline-offset-1">  <?php echo $terms ?> •</a>
+        <a class="underline underline-offset-1 dark:text-[#4767C9]">  <?php echo $terms ?> •</a>
     <?php endif; ?>
 
     
     <?php 
         if( $privacy_policy ): ?> 
-     <a class="ml-1 underline underline-offset-1"><?php echo $privacy_policy ?></a></p>
+     <a class="ml-1 underline underline-offset-1 dark:text-[#4767C9]"><?php echo $privacy_policy ?></a></p>
      <?php endif; ?>
     </div>
          </div>

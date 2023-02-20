@@ -5,15 +5,15 @@
     $default_pic="https://rugby.vlaanderen/wp-content/uploads/2018/03/Anonymous-Profile-pic.jpg";
 ?>
 
-<section class="bg-[#F2F2F2] flex flex-col items-center" id="team-layout">
+<section class="bg-[#F2F2F2] flex flex-col items-center dark:bg-[#181f2a]" id="team-layout">
 
-    <h1 class="text-center font-bold text-black text-3xl p-10"><?php echo $title?></h1>
+    <h1 class="text-center font-bold text-black text-3xl p-10 dark:text-white"><?php echo $title?></h1>
 
     <div class="flex flex-wrap items-stretch justify-center max-w-screen-2xl  row">
 
         <?php foreach($team as $value):?>
 
-        <div class="container w-full  bg-white border-none rounded-3xl m-10  max-w-md ">
+        <div class="container w-full  bg-white dark:bg-[#222c3b] border-none rounded-3xl m-10  max-w-md ">
             <div class=" flex flex-col  md:flex-row  items-center h-full">
 
                 <!-- Image-->
@@ -31,9 +31,9 @@
                 <!-- Name and Description -->
                 <div class="p-3 flex flex-col justify-between w-full space-y-3 ">
                     <span class=" text-slate-300 font-semibold text-center
-                        md:text-left"><?php  echo $value['job_role'];?>
+                        md:text-left  dark:text-slate-300"><?php  echo $value['job_role'];?>
                     </span>
-                    <h4 class="text-lg font-bold text-center md:text-left text-[#4767C9]">
+                    <h4 class="text-lg font-bold text-center md:text-left text-[#4767C9] dark:text-white">
                         <?php  echo $value['name'];?>
                     </h4>
                     <p class="text-slate-400 text-sm"><?php echo $value['description'];?></p>
@@ -45,7 +45,7 @@
 
                         <a rel="noopener noreferrer" href="<?php echo $value['facebook_url']['url']; ?>"
                             target=<?php echo $value['facebook_url']['target'] ?> aria-label="Dribble"
-                            class="p-1 rounded-full bg-[#4767C9] ">
+                            class="p-1 rounded-full bg-[#4767C9]">
                             <svg class="h-6 w-6 text-white" width="6" height="6" viewBox="0 0 24 24" stroke-width="1"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />

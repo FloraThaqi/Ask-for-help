@@ -1,4 +1,3 @@
-
 window.addEventListener("load", showActiveName);
 window.addEventListener("load", showActiveDesc);
 
@@ -19,6 +18,7 @@ function showActiveDesc() {
     element.classList.add("text-white");
     element.classList.remove("text-gray-600");
     element.classList.remove("bg-white");
+    element.classList.remove("dark:bg-[#181f2a]");
   }
 }
 
@@ -35,19 +35,18 @@ function changeActiveTab(event, tabID) {
     aElements[i].classList.remove("bg-[#4767c9]");
     aElements[i].classList.add("text-gray-600");
     aElements[i].classList.add("bg-white");
+    aElements[i].classList.add("dark:bg-[#181f2a]");
     tabContents[i].classList.add("hidden");
     tabContents[i].classList.remove("block");
   }
   element.classList.remove("text-gray-600");
   element.classList.remove("bg-white");
+  element.classList.remove("dark:bg-[#181f2a]");
   element.classList.add("text-white");
   element.classList.add("bg-[#4767c9]");
   document.getElementById(tabID).classList.remove("hidden");
   document.getElementById(tabID).classList.add("block");
 }
-
-
-
 
 // Mark an answer as correct
 function markAsCorrect(comment_id) {

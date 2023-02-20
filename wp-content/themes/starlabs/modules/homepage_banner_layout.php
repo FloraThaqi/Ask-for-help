@@ -41,10 +41,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<div class="min-h-screen max-w-full bg-right-bottom bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center"
-        style="
-        background-image: url(https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/14932e39a84a5afe9272d0c1/pexels-photo-301930copy.jpg);
-      ">
+<div class="min-h-screen max-w-full bg-right-bottom bg-cover bg-no-repeat text-white flex flex-wrap justify-center items-center bg-[url('https://images01.nicepage.com/a1389d7bc73adea1e1c1fb7e/14932e39a84a5afe9272d0c1/pexels-photo-301930copy.jpg')] dark:bg-[url('https://cdn.discordapp.com/attachments/1053338653415456768/1076515748257726474/pexels-photo-301930dark.jpg')]">
   <div class="h-full mt-20 flex lg:flex-row gap-20 justify-start lg:basis-[69%] flex-col p-[30px]">
     <div class="max-w-full flex flex-row justify-start items-center lg:flex-col flex-1">
       <h1 class="text-5xl font-bold">
@@ -59,7 +56,7 @@ if (isset($_POST['submit'])) {
           <?php echo $paragraph; ?>
         </p>
       </div>
-      <div class="h-auto block text-left bg-[#4767c9] rounded-3xl mt-6 relative text-base">
+      <div class="h-auto block text-left bg-[#4767c9] dark:bg-[#243042] rounded-3xl mt-6 relative text-base">
         <form method="post" action="" id="myform" class="p-[40px] -ml-2 mt-0 w-[calc(100%+10px)] flex flex-wrap items-end">
           <?php wp_nonce_field('my_form_submit', 'my_form_nonce') ?>
           <div class="w-full text-start">
@@ -89,7 +86,7 @@ if (isset($_POST['submit'])) {
             <?php
 
             ?>
-            <button class="bg-blue-100 text-[#111111] border-none hover:font-medium rounded-2xl cursor-pointer text-center px-4 py-2 min-w-[100px] hover:bg-white hover:text-[#4767c9]" type="submit" name="submit">
+            <button class="bg-blue-100 text-[#111111] border-none hover:font-medium rounded-2xl cursor-pointer text-center px-4 py-2 min-w-[100px] hover:bg-white hover:text-[#4767c9]  dark:bg-[#5bbde7] dark:text-white dark:hover:bg-[#7fcef0]" type="submit" name="submit">
               Create
             </button>
             <?php ?>

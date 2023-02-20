@@ -42,6 +42,7 @@ module.exports = {
       backgroundImage: {
         "split-white-blue":
           "linear-gradient(to bottom, #ffffff 50% , #4767c9 50%);",
+        "split-gray": "linear-gradient(to bottom, #181f2a 50% , #243042 50%);",
       },
 
       fontFamily: {

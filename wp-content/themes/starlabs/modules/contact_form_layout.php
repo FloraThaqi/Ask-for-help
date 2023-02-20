@@ -4,7 +4,7 @@
         $socials = $module['socials'];
 ?>
 
-<div class="bg-split-white-blue w-full min-h-[539px] relative flex justify-center items-center" id="contact-form">
+<div class="bg-split-white-blue dark:bg-split-gray w-full min-h-[539px] relative flex justify-center items-center" id="contact-form">
       <div class="lg:min-h-[377px] lg:w-[965px] w-[340px] my-10 shadow-[0px_0px_20px_-0_rgba(0,0,0,0.15)] h-auto text-left text-[#111111] bg-[#ffffff] dark:bg-[#222c3b] rounded-3xl relative flex lg:flex-row justify-center items-start flex-col">
         <div class="max-w-full relative py-7 px-10 flex flex-col flex-1">
           <h1 class="relative normal-case text-5xl font-bold mt-6 mr-auto text-center dark:text-white"><?php echo $title ?></h1>

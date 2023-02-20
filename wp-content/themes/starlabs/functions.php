@@ -446,7 +446,7 @@ add_filter('wp_nav_menu', 'add_custom_nav_elements', 10, 1);
 function add_custom_nav_elements($nav)
 {
 
-	$elements = '<div class=" active  block p-1 text-black text-left px-3 font-display">
+	$elements = '<div class=" active  block p-1 text-black text-left px-3 font-display dark:text-white">
 				<span class="dashicons dashicons-search md:h-12 flex items-center  cursor-pointer" ></span>
 			</div>';
 	return $elements . $nav;

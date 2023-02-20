@@ -23,22 +23,22 @@ include get_template_directory() . '/partials/content-get-field.php';
     <?php while (have_posts()) : the_post();?>
     <div class="mx-auto  md:w-4/6 w-10/12  py-5">
 
-        <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse  p-4 ">
+        <div class="border-y-[1px] border-x-[0.5px] bg-white dark:bg-[#181f2a] border-gray-200  dark:border-gray-600  border-collapse  p-4 ">
             <div class="flex flex-wrap ">
                 <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                     src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                     alt="user profile">
-                <p class="text-gray-500 leading-8 mr-2">Asked on:
+                <p class="text-gray-500 leading-8 mr-2 dark:text-white">Asked on:
                 </p>
-                <span class="text-gray-500 leading-8 mr-2"> <?php echo get_the_date(); ?> |</span>
-                <a class="text-gray-500 leading-8">In: <?php echo $cat_name ?></a>
+                <span class="text-gray-500 leading-8 mr-2 dark:text-white "> <?php echo get_the_date(); ?> |</span>
+                <a class="text-gray-500 leading-8 dark:text-white">In: <?php echo $cat_name ?></a>
 
 
             </div>
 
 
-            <div class="text-gray-500 w-full m-auto my-2">
-                <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
+            <div class="text-gray-500 w-full m-auto my-2 dark:text-white">
+                <h2 class="mb-2 text-gray-800 font-bold dark:text-white"><?php echo $title_variable; ?></h2>
                 <p class="">
                     <?php $desc_string = strval($description_variable);
                                                     echo substr($desc_string, 0, 200); ?><b> . . .</b>
@@ -46,7 +46,7 @@ include get_template_directory() . '/partials/content-get-field.php';
 
             </div>
             <div class="flex">
-                <div class="flex flex-row text-xs ">
+                <div class="flex flex-row text-xs  ">
                     <!--Content view with ID  -->
                     <?php get_template_part('partials/content','viewID'); ?>
 

@@ -37,10 +37,10 @@
         id="modal-id">
         <div class="relative w-auto my-6 mx-auto max-w-[420px]">
             <!--content-->
-            <div class="border-0 rounded-lg -lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+            <div class="border-0 rounded-lg -lg relative flex flex-col w-full bg-white dark:bg-[#202a3c] outline-none focus:outline-none">
                 <!--header-->
                 <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
-                    <h3 class="text-2xl font-semibold">
+                    <h3 class="text-2xl font-semibold dark:text-white">
                         Add a new question
                     </h3>
                     <button
@@ -56,8 +56,8 @@
                 <div class="relative p-6 flex-auto">
                     <form method="post" action="" id="myform">
                         <?php wp_nonce_field('my_form_submit', 'my_form_nonce') ?>
-                        <div class="flex flex-wrap p-2 mt-0 rounded  bg-white">
-                            <label class="block text-gray-600 font-bold md:text-left mb-3 w-full" for="my-textfield">
+                        <div class="flex flex-wrap p-2 mt-0 rounded  bg-white dark:bg-[#202a3c]">
+                            <label class="block text-gray-600 font-bold md:text-left mb-3 w-full dark:text-white" for="my-textfield">
                                 Question Title
                             </label>
                             <input
@@ -68,8 +68,8 @@
 
                         </div>
 
-                        <div class="flex flex-wrap p-2 mt-0 rounded  bg-white">
-                            <label class="block text-gray-600 font-bold md:text-left mb-3 w-full" for="my-textfield">
+                        <div class="flex flex-wrap p-2 mt-0 rounded  bg-white dark:bg-[#202a3c] ">
+                            <label class="block text-gray-600 font-bold md:text-left mb-3 w-full dark:text-white" for="my-textfield">
                                 Question Description
                             </label>
                             <textarea
@@ -80,8 +80,8 @@
 
                         </div>
 
-                        <div class="flex flex-wrap p-2 mt-0 rounded  bg-white">
-                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4" for="my-select">
+                        <div class="flex flex-wrap p-2 mt-0 rounded  bg-white dark:bg-[#202a3c]">
+                            <label class="block text-gray-600 font-bold md:text-left mb-3 md:mb-0 pr-4 dark:text-white" for="my-select">
                                 Choose a Category
                             </label>
                             <select name="question_category" id="question_category "

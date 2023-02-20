@@ -1,4 +1,4 @@
-<div class="p-2 mb-2 flex flex-row justify-between gap-1">
+<div class="p-2 mb-2 flex flex-row justify-between gap-1 dark:text-white">
     <div class="flex flex-row justify-start">
         <?php
             $total_pages = $lastBlog->max_num_pages;
@@ -59,7 +59,7 @@
                 name="posts_per_page" value="15"
                 style="cursor:pointer; <?php if ($posts_per_page == 15) echo 'background-color: #1e90ff; color: white;'; ?>"
                 title="Show 15 items per page">
-            <p class="text-xs mt-2.5 ">per page</p>
+            <p class="text-xs mt-2.5 dark:text-white">per page</p>
         </div>
     </form>
 

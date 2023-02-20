@@ -27,10 +27,10 @@
 
          if ( $my_query->have_posts() ) {
          ?>
-        <h4 class="text-base px-2 font-semibold tracking-widest uppercase text-gray-600 py-4">Related Questions:</h4>
+        <h4 class="text-base px-2 font-semibold tracking-widest uppercase text-gray-600 py-4 dark:text-white">Related Questions:</h4>
         <ul class="space-y-2">
           <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
-            <li class="hover:text-[#4767c9] mx-5 text-black py-4 border-b border-slate-300 last:border-none">
+            <li class="hover:text-[#4767c9] mx-5 text-black py-4 border-b border-slate-300 last:border-none dark:text-gray-300">
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </li>
           <?php endwhile; ?>

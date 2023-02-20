@@ -10,7 +10,7 @@
 </head>
 
 
-<body class="bg-gray-100 dark:bg-[#003366] font-display ">
+<body class="bg-gray-100 dark:bg-[#181f2a] font-display ">
 
 
     <nav class="bg-white dark:bg-black shadow-lg w-full fixed z-50 h-16 ">

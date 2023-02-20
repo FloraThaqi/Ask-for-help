@@ -49,7 +49,7 @@ class Walker_Nav_Primary extends Walker
 		}
 		$indent = str_repeat($t, $depth);
 
-		$output .= "\n$indent<div id='double-dropdown' class=\"doubleDropdown hidden md:absolute bg-white border-2 shadow-lg mx-auto  z-10 w-full md:w-auto md:min-w-[150px] divide-y md:py-2  \">\n";
+		$output .= "\n$indent<div id='double-dropdown' class=\"doubleDropdown hidden md:absolute bg-white  dark:bg-black dark:text-white   border-2 shadow-lg mx-auto  z-10 w-full md:w-auto md:min-w-[150px] divide-y md:py-2  \">\n";
 		// Default class.
 		$classes = array('sub-menu');
 
@@ -199,7 +199,7 @@ class Walker_Nav_Primary extends Walker
 		}
 
 		if ($depth > 0) {
-			$atts['class'] = 'block p-1     hover:bg-gray-200 px-3 font-display ';
+			$atts['class'] = 'block p-1   dark:hover:bg-gray-800  hover:bg-gray-200 px-3 font-display ';
 		}
 
 

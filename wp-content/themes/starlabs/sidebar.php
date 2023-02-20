@@ -15,11 +15,11 @@ $pages = get_field('pages','option');?>
 
 
 
-<aside class="box-shadow shadow-lg bg-slate-200	 h-inherit rounded-b-lg w-full lg:gap-2 md:ml-6 sticky top-[12%] mb-5">
+<aside class="box-shadow shadow-lg bg-slate-200	 dark:bg-[#202a3c] h-inherit rounded-b-lg w-full lg:gap-2 md:ml-6 sticky top-[12%] mb-5">
 
     <div class="p-4">
 
-        <h4 class="text-base px-2 font-semibold tracking-widest uppercase text-gray-600 py-4">Most Popular Questions
+        <h4 class="text-base px-2 font-semibold tracking-widest uppercase dark:text-white text-gray-600 py-4">Most Popular Questions
         </h4>
         <ul class="text-sm font-medium">
             <?php
@@ -38,7 +38,7 @@ $pages = get_field('pages','option');?>
                       while ( $most_viewed_query->have_posts() ) {
                           $most_viewed_query->the_post();
                       
-                          echo '<li class="hover:text-[#4767c9] mx-5 text-black py-4 border-b border-slate-300 last:border-none"><a href="' . get_permalink() . '">' . get_the_title() . '</a> <span class="view-count">'  . '</span></li>'; // . gt_get_post_view($post_id)
+                          echo '<li class="hover:text-[#4767c9] mx-5 text-black py-4 border-b border-slate-300 last:border-none dark:text-gray-300"><a href="' . get_permalink() . '">' . get_the_title() . '</a> <span class="view-count">'  . '</span></li>'; // . gt_get_post_view($post_id)
                       }
                       wp_reset_postdata();
                   }

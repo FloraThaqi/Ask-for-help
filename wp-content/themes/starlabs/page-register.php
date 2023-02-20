@@ -80,13 +80,13 @@ if ($user_ID)
 <!-- Register -->
 <div class="min-h-screen flex flex-col pt-16" id="register-page">
     <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 m-5">
-        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+        <div class="bg-white  dark:bg-[#181f2a] px-6 py-8 rounded shadow-md text-black w-full dark:text-white">
             <h1 class="mb-8 text-3xl text-center">Sign up</h1>
             <form class="space-y-4 md:space-y-6" id="wp_signup_form" action="<?php echo $_SERVER['REQUEST_URI']; ?>"
                 method="post">
                 <div>
 
-                    <input type="text" class="block border border-gray-300 w-full p-3 rounded " name="username"
+                    <input type="text" class="block border border-gray-300 w-full p-3 rounded dark:text-gray-800" name="username"
                         placeholder="Username" />
 
                     <!-- If exists any error display it -->
@@ -98,7 +98,7 @@ if ($user_ID)
 
 
                 </div>
-                <input type="text" class="block border border-gray-300 w-full p-3 rounded " name="email"
+                <input type="text" class="block border border-gray-300 w-full p-3 rounded dark:text-gray-800" name="email"
                     placeholder="Email" />
 
                 <!-- If exists any error display it -->
@@ -108,7 +108,7 @@ if ($user_ID)
                 </span>
                 <?php endif ?>
 
-                <input type="password" class="block border border-gray-300 w-full p-3 rounded " name="password"
+                <input type="password" class="block border border-gray-300 w-full p-3 rounded dark:text-gray-800 " name="password"
                     placeholder="Password" />
 
                 <!-- If exists any error display it -->
@@ -118,7 +118,7 @@ if ($user_ID)
                 </span>
                 <?php endif ?>
 
-                <input type="password" class="block border border-gray-300 w-full p-3 rounded "
+                <input type="password" class="block border border-gray-300 w-full p-3 rounded dark:text-gray-800"
                     name="password_confirmation" placeholder="Confirm Password" />
 
                 <!-- If exists any error display it -->
@@ -132,18 +132,18 @@ if ($user_ID)
                     class="w-full text-center py-3 rounded bg-[#4767C9] text-white hover:bg-[#4767E9] focus:outline-none my-1">Create
                     Account</button>
 
-                <div class="text-center text-sm text-gray-700 mt-4">
+                <div class="text-center text-sm text-gray-700 mt-4 dark:text-gray-300">
                     By signing up, you agree to the
-                    <a class="no-underline border-b border-gray-700 text-gray-700" href="#">
+                    <a class="no-underline border-b border-gray-700 text-gray-700 dark:text-gray-400" href="#">
                         Terms of Service
                     </a> and
-                    <a class="no-underline border-b border-gray-700 text-gray-700" href="#">
+                    <a class="no-underline border-b border-gray-700 text-gray-700 dark:text-gray-400" href="#">
                         Privacy Policy
                     </a>
                 </div>
         </div>
         </form>
-        <div class="text-gray-700 m-5">
+        <div class="text-gray-700 m-5 dark:text-gray-100">
             Already have an account?
             <a class="no-underline border-b border-blue-900 text-blue-900" href="<?php echo home_url(). '/login'?>">
                 Log in

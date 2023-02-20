@@ -317,9 +317,9 @@ class Walker_Comment extends Walker {
 		?>
 		<<?php echo $tag; ?> <?php comment_class( $this->has_children ? 'parent' : '', $comment ); ?> id="comment-<?php comment_ID(); ?>">
 		<?php if ( 'div' !== $args['style'] ) : ?>
-		<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
+		<div id="div-comment-<?php comment_ID(); ?>" class="comment-body dark:bg-[#181f2a] dark:text-white  dark:border-gray-600">
 		<?php endif; ?>
-		<div class="comment-author vcard">
+		<div class="comment-author vcard ">
 			<?php
 			if ( 0 != $args['avatar_size'] ) {
 				echo get_avatar( $comment, $args['avatar_size'] );
@@ -334,7 +334,7 @@ class Walker_Comment extends Walker {
 
 			printf(
 				/* translators: %s: Comment author link. */
-				__( '%s <span class="says">says:</span>' ),
+				__( '%s <span class="says ">says:</span>' ),
 				sprintf( '<cite class="fn">%s</cite>', $comment_author )
 			);
 			?>
@@ -344,7 +344,7 @@ class Walker_Comment extends Walker {
 		<br />
 		<?php endif; ?>
 
-		<div class="comment-meta commentmetadata">
+		<div class="comment-meta commentmetadata ">
 			<?php
 			printf(
 				'<a href="%s">%s</a>',

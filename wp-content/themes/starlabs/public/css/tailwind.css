@@ -892,6 +892,10 @@ video {
   margin-left: 0.5rem;
 }
 
+.-mr-6 {
+  margin-right: -1.5rem;
+}
+
 .block {
   display: block;
 }
@@ -1731,6 +1735,14 @@ video {
   fill: #64748b;
 }
 
+.fill-white {
+  fill: #fff;
+}
+
+.stroke-white {
+  stroke: #fff;
+}
+
 .object-contain {
   -o-object-fit: contain;
      object-fit: contain;
@@ -1980,6 +1992,10 @@ video {
 
 .pl-1 {
   padding-left: 0.25rem;
+}
+
+.pl-0 {
+  padding-left: 0px;
 }
 
 .text-left {
@@ -2618,6 +2634,10 @@ video {
 
 .dark .dark\:fill-\[\#65e2d9\] {
   fill: #65e2d9;
+}
+
+.dark .dark\:fill-white {
+  fill: #fff;
 }
 
 .dark .dark\:text-white {

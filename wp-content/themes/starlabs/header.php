@@ -33,7 +33,7 @@
             </button>
 
             <!-- Navbar  -->
-            <div class="md:flex flex-row-reverse items-center hidden mobile-menu w-full text-black dark:text-white md:w-auto" id="navbar-text">
+            <div class="md:flex flex-row-reverse items-center bg-white dark:bg-[#0b1523] hidden mobile-menu w-full text-black dark:text-white md:w-auto" id="navbar-text">
 
                 <?php
                 wp_nav_menu(

@@ -86,7 +86,7 @@ if (isset($_POST['submit'])) {
             <?php
 
             ?>
-            <button class="bg-blue-100 text-[#111111] border-none hover:font-medium rounded-2xl cursor-pointer text-center px-4 py-2 min-w-[100px] hover:bg-white hover:text-[#4767c9]" type="submit" name="submit">
+            <button class="bg-blue-100 text-[#111111] border-none hover:font-medium rounded-2xl cursor-pointer text-center px-4 py-2 min-w-[100px] hover:bg-white hover:text-[#4767c9]  dark:bg-[#5bbde7] dark:text-white dark:hover:bg-[#7fcef0]" type="submit" name="submit">
               Create
             </button>
             <?php ?>

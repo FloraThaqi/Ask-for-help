@@ -45,7 +45,7 @@
 
                         <a rel="noopener noreferrer" href="<?php echo $value['facebook_url']['url']; ?>"
                             target=<?php echo $value['facebook_url']['target'] ?> aria-label="Dribble"
-                            class="p-1 rounded-full bg-[#4767C9] dark:bg-[#65e2d9]">
+                            class="p-1 rounded-full bg-[#4767C9]">
                             <svg class="h-6 w-6 text-white" width="6" height="6" viewBox="0 0 24 24" stroke-width="1"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />
@@ -56,7 +56,7 @@
 
                         <a rel="noopener noreferrer" href="<?php echo $value['twitter_url']['url']; ?>"
                             target=<?php echo $value['twitter_url']['target'] ?> aria-label="Twitter"
-                            class="p-1 rounded-full bg-[#4767C9] ml-5 dark:bg-[#65e2d9]">
+                            class="p-1 rounded-full bg-[#4767C9] ml-5">
                             <svg class="h-6 w-6 text-white " viewBox="0 0 24 24" fill="white" stroke="currentColor"
                                 stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
                                 <path
@@ -66,7 +66,7 @@
 
                         <a rel="noopener noreferrer" href="<?php echo $value['instagram_url']['url']; ?>"
                             target=<?php echo $value['instagram_url']['target'] ?> aria-label="Email"
-                            class="p-1 rounded-full bg-[#4767C9]  ml-5 dark:bg-[#65e2d9]">
+                            class="p-1 rounded-full bg-[#4767C9]  ml-5">
                             <svg class="h-6 w-6 text-white" width="4" height="4" viewBox="0 0 24 24" stroke-width="1"
                                 stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" />

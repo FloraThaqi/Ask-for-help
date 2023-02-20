@@ -106,7 +106,7 @@ $list_4 = get_field('footer_links', 'option')['list_4'];
         </div>
     </div>
 <div class="back-to-top hidden fixed bottom-0 transition-all z-[100] right-0 mb-8 mr-8">
-    <button class="bg-blue-500 dark:bg-[#5bbde7] p-4 flex items-center justify-center rounded-full text-white font-bold transform">
+    <button class="bg-blue-500 dark:bg-[#5bbde7] dark:hover:bg-[#7fcef0] p-4 flex items-center justify-center rounded-full text-white font-bold transform">
         <svg
             aria-hidden="true"
             focusable="false"

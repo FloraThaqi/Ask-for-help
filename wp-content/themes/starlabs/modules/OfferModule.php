@@ -41,13 +41,13 @@
 
     <?php 
         if( $terms ): ?>    
-        <a class="underline underline-offset-1 dark:text-[#65e2d9]">  <?php echo $terms ?> •</a>
+        <a class="underline underline-offset-1 dark:text-[#4767C9]">  <?php echo $terms ?> •</a>
     <?php endif; ?>
 
     
     <?php 
         if( $privacy_policy ): ?> 
-     <a class="ml-1 underline underline-offset-1 dark:text-[#65e2d9]"><?php echo $privacy_policy ?></a></p>
+     <a class="ml-1 underline underline-offset-1 dark:text-[#4767C9]"><?php echo $privacy_policy ?></a></p>
      <?php endif; ?>
     </div>
          </div>

@@ -10,10 +10,10 @@
 </head>
 
 
-<body class="bg-gray-100 dark:bg-[#003366] font-display ">
+<body class="bg-gray-100 dark:bg-[#181f2a] font-display ">
 
 
-    <nav class="bg-white dark:bg-black shadow-lg w-full fixed z-50 h-16 ">
+    <nav class="bg-white dark:bg-[#0b1523] shadow-lg w-full fixed z-50 h-16 ">
         <div class=" md:container flex flex-wrap items-center justify-between mx-auto">
             <!-- Logo  -->
             <a href="<?php echo home_url(); ?>" class="w-40 flex items-center pl-4">

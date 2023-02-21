@@ -2573,6 +2573,11 @@ video {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
+.dark .dark\:border-\[\#243042\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(36 48 66 / var(--tw-border-opacity));
+}
+
 .dark .dark\:bg-\[\#0b1523\] {
   --tw-bg-opacity: 1;
   background-color: rgb(11 21 35 / var(--tw-bg-opacity));

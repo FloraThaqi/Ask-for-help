@@ -38,7 +38,7 @@ $pages = get_field('pages','option');?>
                       while ( $most_viewed_query->have_posts() ) {
                           $most_viewed_query->the_post();
                       
-                          echo '<li class="hover:text-[#4767c9] mx-5 text-black py-4 border-b border-slate-300 last:border-none dark:text-gray-300"><a href="' . get_permalink() . '">' . get_the_title() . '</a> <span class="view-count">'  . '</span></li>'; // . gt_get_post_view($post_id)
+                          echo '<li class=" mx-5 text-black py-4 border-b border-slate-300 last:border-none dark:text-gray-300"><a href="' . get_permalink() . '" class="hover:text-[#4767c9]">' . get_the_title() . '</a> <span class="view-count">'  . '</span></li>'; // . gt_get_post_view($post_id)
                       }
                       wp_reset_postdata();
                   }

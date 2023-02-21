@@ -10,13 +10,13 @@
             'posts_per_page' => 3,
             'paged' => $currentPage
         ); ?>
-        <h4 class="text-black text-left text-3xl font-bold mt-5">Posts from <?php echo get_the_author(); ?></h4>
+        <h4 class="text-black dark:text-white text-left text-3xl font-bold mt-5">Posts from <?php echo get_the_author(); ?></h4>
         <?php $lastBlog = new WP_Query($args); ?>
         <div class="w-full m-auto max-lg:mx-0">
             <?php if ($lastBlog->have_posts()) : ?>
             <div class="w-full m-auto py-8">
                 <?php while ($lastBlog->have_posts()) : $lastBlog->the_post(); ?>
-                <div class="border-y-[1px] border-x-[0.5px] bg-white border-gray-200 border-collapse p-4 mb-3" id="single-author-post">
+                <div class="border-y-[1px] border-x-[0.5px] bg-white dark:bg-[#181f2a] border-gray-200 border-collapse p-4 mb-3" id="single-author-post">
                     <?php
                           // Get Fields
                           include get_template_directory() . '/partials/content-get-field.php'; 
@@ -25,13 +25,13 @@
                         <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                             src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                             alt="user profile">
-                        <p class="text-gray-500 leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
-                        <a class="text-gray-500 leading-8 mr-2">In: <?php echo $cat_name ?> | </a>
-                        <a class="text-gray-500 leading-8 mr-2">Posted by:
-                            <?php echo '<a class="text-gray-500 leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
+                        <p class="text-gray-500 dark:text-white leading-8 mr-2">Asked on: <?php echo $date_variable; ?> | </p>
+                        <a class="text-gray-500 dark:text-white leading-8 mr-2">In: <?php echo $cat_name ?> | </a>
+                        <a class="text-gray-500 dark:text-white leading-8 mr-2">Posted by:
+                            <?php echo '<a class="text-gray-500 dark:text-white leading-8 mr-2 hover:text-sky-600 max-md:text-sky-600" href="' . $author_url . '">' . get_the_author() . '</a>'; ?></a>
                     </div>
-                    <div class="text-gray-500 w-full m-auto my-2">
-                        <h2 class="mb-2 text-gray-800 font-bold"><?php echo $title_variable; ?></h2>
+                    <div class="text-gray-500 dark:text-white w-full m-auto my-2">
+                        <h2 class="mb-2 text-gray-800 dark:text-white font-bold"><?php echo $title_variable; ?></h2>
                         <p class="">
                         <p class=""><?php $desc_string = strval($description_variable);
                                             echo substr($desc_string, 0, 200); ?><b> . . .</b></p>

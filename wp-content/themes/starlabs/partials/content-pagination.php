@@ -1,5 +1,5 @@
 <div class="p-2 mb-2 flex flex-row justify-between gap-1 dark:text-white">
-    <div class="flex flex-row justify-start">
+    <div class="flex flex-row justify-end items-end">
         <?php
             $total_pages = $lastBlog->max_num_pages;
 

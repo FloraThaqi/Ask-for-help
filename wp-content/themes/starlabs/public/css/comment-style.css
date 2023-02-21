@@ -104,7 +104,7 @@ padding: 5px;
 }
 .comment-respond .comment-form-author input{
     margin-left: 1rem;
-    background-color: #ffffff; 
+    
     border-radius: 0.5rem; 
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem; 
@@ -131,7 +131,7 @@ padding: 5px;
 }
 .comment-respond .comment-form-email input{
     margin-left: 1rem;
-    background-color: #ffffff; 
+    
     border-radius: 0.5rem; 
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem; 
@@ -200,9 +200,6 @@ padding: 5px;
     font-size: 1rem;
     line-height: 1.5rem; 
     width: 80%;
-}
-.parent .children .comment .comment-body{
-    background-color: #FBFBFB;
 }
 
 #respond{

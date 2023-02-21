@@ -49,7 +49,7 @@ if($_POST)
 <!-- Login -->
 <div class="min-h-screen flex flex-col pt-16" id="login-page">
     <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2 m-5">
-        <div class="bg-white dark:bg-[#181f2a] px-6 py-8 rounded shadow-md text-black dark:text-white">
+        <div class="bg-white dark:bg-[#222c3b] px-6 py-8 rounded shadow-md text-black dark:text-white">
             <h1 class="mb-8 text-3xl text-center">Log in</h1>
             <form class="space-y-4 md:space-y-6" id="login1" name="form" action="<?php echo home_url(); ?>/login/"
                 method="post">

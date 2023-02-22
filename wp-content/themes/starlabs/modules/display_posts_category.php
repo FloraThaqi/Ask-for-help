@@ -28,7 +28,7 @@ if (isset($_POST['posts_per_page'])) {
             'paged' => $currentPage
           );
         $lastBlog = new WP_Query($args); ?>
-    <div class=" container w-full mx-auto md:w-auto px-8 m-auto max-lg:mx-0">
+    <div class=" container w-full mx-auto md:w-auto px-8 md:px-0 m-auto max-lg:mx-0">
         <div class="w-full m-auto max-lg:mx-0">
             <!-- Add new question -->
             <div class="flex justify-between  flex-wrap">

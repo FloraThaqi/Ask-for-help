@@ -2,12 +2,20 @@
 <div class="container mx-auto w-full flex flex-col pt-16 md:flex-row">
     <section class="w-full" id="author-page">
         <?php
+        
+        $currentPage = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        if (isset($_POST['posts_per_page'])) {
+            $posts_per_page = $_POST['posts_per_page'];
+          } else {
+            $posts_per_page = 5;
+          }
+
         $author_name = get_query_var('author_name');
         $author = get_user_by('slug', $author_name);
         $args = array(
             'post_type' => 'questions',
             'author' => $author->ID,
-            'posts_per_page' => 3,
+            'posts_per_page' => $posts_per_page,
             'paged' => $currentPage
         ); ?>
         <h4 class="text-black dark:text-white text-left text-3xl font-bold mt-5">Posts from <?php echo get_the_author(); ?></h4>

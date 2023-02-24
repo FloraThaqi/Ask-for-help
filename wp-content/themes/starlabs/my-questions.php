@@ -50,7 +50,7 @@ get_header();
                                         <div id="single-my-question" class="border-y-[1px] border-x-[0.5px]  bg-white border-gray-200 border-collapse p-4 mb-3 dark:bg-[#181f2a] dark:border-gray-600">
                                             <div class="flex max-md:justify-between relative flex-col md:flex-row ">
                                                 <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="user profile">
-                                                <p class="text-gray-500 leading-8 mr-2 dark:text-white">Asked on: <?php echo $date_variable; ?>
+                                                <p class="text-gray-500 leading-8 mr-2 dark:text-white">Asked on: <?php echo get_the_date(); ?>
                                                 </p>
                                                 <a class="text-gray-500 leading-8 dark:text-white">In: <?php echo $cat_name ?></a>
                                                 <div class="absolute top-0 right-0">

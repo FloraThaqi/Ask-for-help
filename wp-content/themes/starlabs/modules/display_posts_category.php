@@ -88,7 +88,7 @@ if (isset($_POST['posts_per_page'])) {
                             <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                                 alt="user profile">
-                            <p class="text-gray-500 leading-8 mr-2 dark:text-white">Asked on: <?php echo $date_variable; ?> | </p>
+                            <p class="text-gray-500 leading-8 mr-2 dark:text-white">Asked on: <?php echo get_the_date(); ?> | </p>
                             <a class="text-gray-500 leading-8 mr-2 dark:text-white">In: <?php echo $cat_name ?> | </a>
                             <div class="flex">
                                 <a class="text-gray-500 leading-8 mr-2 dark:text-white">Posted by:

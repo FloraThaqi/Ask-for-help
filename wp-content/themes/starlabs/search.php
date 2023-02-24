@@ -28,7 +28,7 @@ include get_template_directory() . '/partials/content-get-field.php';
                 <img class="w-8 h-8 rounded-3xl mr-2 border-sky-600 border-2 p-[1px]"
                     src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
                     alt="user profile">
-                <p class="text-gray-500 leading-8 mr-2 dark:text-white">Asked on:
+                <p class="text-gray-500 leading-8 mr-2 dark:text-white">Asked on: <?php echo get_the_date(); ?>
                 </p>
                 <span class="text-gray-500 leading-8 mr-2 dark:text-white "> <?php echo get_the_date(); ?> |</span>
                 <a class="text-gray-500 leading-8 dark:text-white">In: <?php echo $cat_name ?></a>
